@@ -5,6 +5,16 @@ from dataclasses import dataclass
 from sentence_transformers import SentenceTransformer
 from sources.fetcher import LocalHTMLFetcher
 
+# At the top of search_index.py, outside the class
+from sentence_transformers import SentenceTransformer
+_MODEL_CACHE = None
+
+def _get_model():
+    global _MODEL_CACHE
+    if _MODEL_CACHE is None:
+        _MODEL_CACHE = SentenceTransformer('all-MiniLM-L6-v2')
+    return _MODEL_CACHE
+
 @dataclass
 class SearchResult:
     url: str
@@ -23,7 +33,7 @@ class SearchIndex:
 
         # 2. Load the embedding model (all-MiniLM-L6-v2)
         # This model is fast and ideal for local RAG testing
-        self.model = SentenceTransformer('all-MiniLM-L6-v2')
+        self.model = _get_model()
 
         # 3. Compute embeddings for all snippets (the 'description' field)
         # We do this once at startup to keep queries fast

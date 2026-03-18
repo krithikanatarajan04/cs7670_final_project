@@ -11,18 +11,17 @@ class SourceFetcher(ABC):
         pass
 
 class LocalHTMLFetcher(SourceFetcher):
-    """Simulates web fetching by reading local HTML files from a corpus."""
-
     def __init__(self, index_path: str = "corpus_index.json"):
-        # 1. Deterministic path resolution for the index file
         self.index_file = self._resolve_path(index_path)
-        self.base_dir = self.index_file.parent
+        
+        # Fix: base_dir should be project root, not the index file's directory.
+        # Index file lives at corpus/indices/xxx.json — going up 2 levels
+        # gives us the project root where corpus/pages/ is also anchored.
+        self.base_dir = self.index_file.parents[2]
 
-        # 2. Load index once during initialization (efficiency)
         with open(self.index_file, "r", encoding="utf-8") as f:
             corpus_data = json.load(f)
         
-        # Build lookup table: { "url": "relative/path/to/file.html" }
         self.url_to_path = {item["url"]: item["file_path"] for item in corpus_data}
 
     def _resolve_path(self, path_str: str) -> Path:

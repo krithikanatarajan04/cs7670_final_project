@@ -1,32 +1,39 @@
+"""
+agents/researcher.py
+
+The Researcher agent: generates sub-queries, retrieves pages from the
+corpus index, and extracts structured claims from page content.
+
+The index_path parameter is injected by the orchestrator via functools.partial,
+allowing the experiment runner to swap corpus conditions (different index files)
+without modifying agent code. SearchIndex is instantiated fresh per call,
+which prevents the embedding cache from persisting across conditions.
+"""
+
 import os
 import json
 import re
 from dotenv import load_dotenv
-from google import genai  # Matches your required structure
+from google import genai
 from sources.search_index import SearchIndex
 from pipeline.cfg import record_transition
 
 load_dotenv()
 
-# Step 1: Initialize the client exactly as you specified
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
-
-# Step 2: Use the model that worked in your list
 MODEL_ID = "gemini-2.5-flash-lite"
 
+
 def _extract_json(text: str):
-    """
-    Cleans the LLM output. It finds the JSON block even if 
-    the model adds 'Here is the JSON:' or markdown fences.
-    """
+    """Cleans LLM output and extracts the JSON block."""
     try:
-        # Finds everything between the first { and the last }
         match = re.search(r'\{.*\}', text, re.DOTALL)
         if match:
             return json.loads(match.group())
         return json.loads(text)
     except Exception as e:
         raise ValueError(f"JSON Parsing Error: {e} | Raw text: {text[:100]}")
+
 
 def generate_sub_queries(user_query: str) -> list[str]:
     prompt = f"""
@@ -36,11 +43,10 @@ def generate_sub_queries(user_query: str) -> list[str]:
     Return ONLY valid JSON.
     """
     try:
-        # Step 3: API Call using your required structure
         response = client.models.generate_content(
             model=MODEL_ID,
             contents=prompt,
-            config={'temperature': 0} # Ensures deterministic output
+            config={'temperature': 0}
         )
         data = _extract_json(response.text)
         return data.get("queries", [user_query])
@@ -48,8 +54,8 @@ def generate_sub_queries(user_query: str) -> list[str]:
         print(f"[Researcher] Sub-query generation failed: {e}")
         return [user_query]
 
+
 def extract_claims(page_text: str, criteria: str, url: str) -> list[dict]:
-    # We truncate the page text to ensure we don't hit token limits
     prompt = f"""
     PAGE CONTENT:
     {page_text[:5000]}
@@ -71,7 +77,6 @@ def extract_claims(page_text: str, criteria: str, url: str) -> list[dict]:
     Return ONLY valid JSON.
     """
     try:
-        # Step 3: API Call using your required structure
         response = client.models.generate_content(
             model=MODEL_ID,
             contents=prompt,
@@ -79,8 +84,6 @@ def extract_claims(page_text: str, criteria: str, url: str) -> list[dict]:
         )
         data = _extract_json(response.text)
         claims = data.get("claims", [])
-        
-        # Tag each claim with the source URL
         for claim in claims:
             claim["source_url"] = url
         return claims
@@ -88,24 +91,36 @@ def extract_claims(page_text: str, criteria: str, url: str) -> list[dict]:
         print(f"[Researcher] Claim extraction failed for {url}: {e}")
         return []
 
-def researcher_node(state: dict) -> dict:
-    """The entry point for the pipeline."""
-    # Mandatory CFG Transition
-    record_transition("Researcher")
-    
-    user_query = state.get("user_query", "")
-    print(f"\n[Researcher] Processing query: {user_query}")
 
-    # 1. Generate Sub-Queries
+def researcher_node(state: dict, index_path: str = "corpus/indices/baseline.json") -> dict:
+    """
+    Entry point for the Researcher agent.
+
+    Args:
+        state:      Pipeline state dict passed by LangGraph.
+        index_path: Path to the corpus index JSON. Injected by the orchestrator
+                    via functools.partial so each experiment condition gets a
+                    fresh SearchIndex with the correct corpus.
+    """
+    # Mandatory CFG transition check
+    record_transition("Researcher")
+
+    user_query = state.get("user_query", "")
+    print(f"\n[Researcher] Query: {user_query}")
+    print(f"[Researcher] Index: {index_path}")
+
+    # 1. Generate sub-queries
     sub_queries = generate_sub_queries(user_query)
-    state["sub_queries"] = sub_queries
     print(f"[Researcher] Sub-queries: {sub_queries}")
 
-    # 2. Retrieval & Deduplication
-    index = SearchIndex("corpus_index.json")
+    # 2. Instantiate SearchIndex fresh for this corpus condition.
+    #    This is intentional — prevents embedding cache from persisting
+    #    across conditions in the experiment loop.
+    index = SearchIndex(index_path)
+
+    # 3. Retrieve and deduplicate pages across sub-queries
     seen_urls = set()
     unique_results = []
-
     for sq in sub_queries:
         hits = index.query(sq, top_k=3)
         for hit in hits:
@@ -114,9 +129,12 @@ def researcher_node(state: dict) -> dict:
                 unique_results.append(hit)
 
     top_hits = unique_results[:5]
-    state["retrieved_pages"] = [hit.url for hit in top_hits]
 
-    # 3. Content Extraction
+    # retrieved_pages is a list of URLs in retrieval-rank order.
+    # This ordering is the observed covariate for retrieval rank analysis.
+    retrieved_page_urls = [hit.url for hit in top_hits]
+
+    # 4. Extract claims from each retrieved page
     all_claims = []
     for hit in top_hits:
         print(f"[Researcher] Extracting claims from: {hit.url}")
@@ -124,7 +142,11 @@ def researcher_node(state: dict) -> dict:
         page_claims = extract_claims(content, user_query, hit.url)
         all_claims.extend(page_claims)
 
-    state["claims"] = all_claims
-    print(f"[Researcher] Done. Found {len(all_claims)} claims.")
-    
-    return state
+    print(f"[Researcher] Done. {len(all_claims)} claims from {len(top_hits)} pages.")
+
+    return {
+        **state,
+        "sub_queries": sub_queries,
+        "retrieved_pages": retrieved_page_urls,
+        "claims": all_claims,
+    }
