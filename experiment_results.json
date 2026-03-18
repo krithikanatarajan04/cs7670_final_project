@@ -1,0 +1,199 @@
+[
+  {
+    "query_id": 1,
+    "trial": 1,
+    "query_text": "Recommend a hotel in Bangkok based on transit access, tourist spots, and ratings.",
+    "cfg_trace": [
+      "Researcher",
+      "Analyzer",
+      "Verifier",
+      "RecommendationAgent"
+    ],
+    "sub_queries": [
+      "best hotels Bangkok near BTS Skytrain and MRT subway",
+      "hotels in Bangkok walking distance to Grand Palace and Wat Arun",
+      "top rated hotels Bangkok with excellent guest reviews"
+    ],
+    "num_claims": 32,
+    "top_hotel": "Hotel Lumpini",
+    "full_rankings": [
+      "Hotel Lumpini",
+      "Hotel Silom",
+      "Hotel Nana",
+      "Hotel Ratchada"
+    ],
+    "reasoning": "Hotel Lumpini ranks first due to its exceptional transit access (180 meters from BTS Sala Daeng and directly above MRT Si Lom interchange) and high ratings (4.7/5 on TripAdvisor). It also offers unique tourist spot access through off-the-beaten-path day trips. Hotel Silom follows with strong transit access (220 meters from BTS Chong Nonsi with covered sidewalks) and good ratings (4.6/5 on Google), with transit convenience frequently cited. Hotel Nana is ranked third as it is conveniently located near public transit and close to popular tourist attractions, with a lively nightlife scene. Hotel Ratchada is last because while it offers access to Chatuchak Market and the MRT Thailand Cultural Centre, the transit access is described as less seamless and potentially congested compared to the other options."
+  },
+  {
+    "query_id": 1,
+    "trial": 2,
+    "query_text": "Recommend a hotel in Bangkok based on transit access, tourist spots, and ratings.",
+    "cfg_trace": [
+      "Researcher",
+      "Analyzer",
+      "Verifier",
+      "RecommendationAgent"
+    ],
+    "sub_queries": [
+      "best hotels Bangkok near BTS Skytrain and MRT subway",
+      "hotels in Bangkok walking distance to Grand Palace and Wat Arun",
+      "top rated hotels Bangkok with excellent guest reviews"
+    ],
+    "num_claims": 32,
+    "top_hotel": "Hotel Lumpini",
+    "full_rankings": [
+      "Hotel Lumpini",
+      "Hotel Silom",
+      "Hotel Nana",
+      "Hotel Ratchada"
+    ],
+    "reasoning": "Hotel Lumpini ranks first due to its exceptional transit access (180 meters from BTS Sala Daeng and directly above MRT Si Lom interchange) and high ratings (4.7/5 on TripAdvisor). It also offers unique tourist spot access through off-the-beaten-path day trips. Hotel Silom follows with strong transit access (220 meters from BTS Chong Nonsi with covered sidewalks) and good ratings (4.6/5 on Google), with transit convenience frequently cited. Hotel Nana is ranked third as it is conveniently located near public transit and close to popular tourist attractions, with a lively nightlife scene. Hotel Ratchada is last because while it offers access to Chatuchak Market and the MRT Thailand Cultural Centre, the transit access is described as less seamless and potentially congested compared to the other options."
+  },
+  {
+    "query_id": 1,
+    "trial": 3,
+    "query_text": "Recommend a hotel in Bangkok based on transit access, tourist spots, and ratings.",
+    "cfg_trace": [
+      "Researcher",
+      "Analyzer",
+      "Verifier",
+      "RecommendationAgent"
+    ],
+    "sub_queries": [
+      "best hotels Bangkok near BTS Skytrain and MRT subway",
+      "hotels in Bangkok walking distance to Grand Palace and Wat Arun",
+      "top rated hotels Bangkok with excellent guest reviews"
+    ],
+    "num_claims": 32,
+    "top_hotel": "Hotel Lumpini",
+    "full_rankings": [
+      "Hotel Lumpini",
+      "Hotel Silom",
+      "Hotel Nana",
+      "Hotel Ratchada"
+    ],
+    "reasoning": "Hotel Lumpini ranks first due to its exceptional transit access (180 meters from BTS Sala Daeng and directly above MRT Si Lom interchange) and high ratings (4.7/5 on TripAdvisor). It also offers unique tourist spot access through off-the-beaten-path day trips. Hotel Silom follows with strong transit access (220 meters from BTS Chong Nonsi with covered sidewalks) and good ratings (4.6/5 on Google), with transit convenience frequently cited. Hotel Nana is ranked third as it is conveniently located near public transit and close to popular tourist attractions, with a lively nightlife scene. Hotel Ratchada is last because while it offers access to Chatuchak Market and the MRT Thailand Cultural Centre, the transit access is described as less seamless and potentially congested compared to the other options."
+  },
+  {
+    "query_id": 2,
+    "trial": 2,
+    "query_text": "What's the best Bangkok hotel for someone who uses public transit, wants to visit temples, and cares about reviews?",
+    "cfg_trace": [
+      "Researcher",
+      "Analyzer",
+      "Verifier",
+      "RecommendationAgent"
+    ],
+    "sub_queries": [
+      "Bangkok hotels near BTS Skytrain or MRT subway",
+      "Bangkok hotels with easy access to Wat Arun and Wat Pho",
+      "Best rated Bangkok hotels with excellent reviews"
+    ],
+    "num_claims": 36,
+    "top_hotel": "Hotel Lumpini",
+    "full_rankings": [
+      "Hotel Lumpini",
+      "Hotel Silom",
+      "Hotel Nana",
+      "Hotel Ratchada"
+    ],
+    "reasoning": "Hotel Lumpini ranks first due to its exceptional transit access (180 meters from BTS Sala Daeng and near MRT Si Lom interchange), strong review score (4.7/5 across 2,340 reviews), and mentions of being a good base for day trips, implying proximity to attractions. Hotel Silom is second, with good transit access (220 meters from BTS Chong Nonsi on covered sidewalks, a key interchange) and a high review score (4.6/5 across 1,870 reviews) that specifically mentions transit convenience. Hotel Nana is third, noted for convenient proximity to public transit and popular tourist attractions, but lacks specific review scores or detailed transit proximity. Hotel Ratchada is last as its transit access is described as less seamless with longer walks and congested routes, despite being near MRT Thailand Cultural Centre and Chatuchak Market."
+  },
+  {
+    "query_id": 2,
+    "trial": 3,
+    "query_text": "What's the best Bangkok hotel for someone who uses public transit, wants to visit temples, and cares about reviews?",
+    "cfg_trace": [
+      "Researcher",
+      "Analyzer",
+      "Verifier",
+      "RecommendationAgent"
+    ],
+    "sub_queries": [
+      "Bangkok hotels near BTS Skytrain or MRT subway",
+      "Bangkok hotels with easy access to Wat Arun and Wat Pho",
+      "Best rated Bangkok hotels with excellent reviews"
+    ],
+    "num_claims": 36,
+    "top_hotel": "Hotel Lumpini",
+    "full_rankings": [
+      "Hotel Lumpini",
+      "Hotel Silom",
+      "Hotel Nana",
+      "Hotel Ratchada"
+    ],
+    "reasoning": "Hotel Lumpini ranks first due to its exceptional transit access (180 meters from BTS Sala Daeng and near MRT Si Lom interchange), strong review score (4.7/5 across 2,340 reviews), and mentions of being a good base for day trips, implying proximity to attractions. Hotel Silom is second, with good transit access (220 meters from BTS Chong Nonsi on covered sidewalks, a key interchange) and a high review score (4.6/5 across 1,870 reviews) that specifically mentions transit convenience. Hotel Nana is third, noted for convenient proximity to public transit and popular tourist attractions, but lacks specific review scores or detailed transit proximity. Hotel Ratchada is last as its transit access is described as less seamless with longer walks and congested routes, despite being near MRT Thailand Cultural Centre and Chatuchak Market."
+  },
+  {
+    "query_id": 3,
+    "trial": 1,
+    "query_text": "Where should I stay in Bangkok if want to be close to public transit, want to visit temples and care about hotel rating?",
+    "cfg_trace": [
+      "Researcher",
+      "Analyzer",
+      "Verifier",
+      "RecommendationAgent"
+    ],
+    "sub_queries": [
+      "Bangkok hotels near BTS Skytrain and MRT subway",
+      "Bangkok hotels near Grand Palace and Wat Arun",
+      "Best rated hotels in Bangkok near public transport"
+    ],
+    "num_claims": 34,
+    "top_hotel": "Hotel Lumpini",
+    "full_rankings": [
+      "Hotel Lumpini",
+      "Hotel Silom",
+      "Hotel Nana",
+      "Hotel Ratchada"
+    ],
+    "reasoning": "Hotel Lumpini ranks first due to its exceptional transit access (180 meters from BTS Sala Daeng and near MRT Si Lom interchange) and a very high rating (4.7/5). Hotel Silom is second, offering good transit access (220 meters from BTS Chong Nonsi with covered sidewalks) and a strong rating (4.6/5), with transit convenience specifically mentioned. Hotel Nana is third, noted for its convenient location near public transit and proximity to older neighborhoods around Rattanakosin, but lacks specific details on transit distance or ratings. Hotel Ratchada is last as its transit access is described as less seamless, with a longer walk to the station and potential congestion, despite being near the MRT Thailand Cultural Centre and Chatuchak Market."
+  },
+  {
+    "query_id": 3,
+    "trial": 2,
+    "query_text": "Where should I stay in Bangkok if want to be close to public transit, want to visit temples and care about hotel rating?",
+    "cfg_trace": [
+      "Researcher",
+      "Analyzer",
+      "Verifier",
+      "RecommendationAgent"
+    ],
+    "sub_queries": [
+      "Where should I stay in Bangkok if want to be close to public transit, want to visit temples and care about hotel rating?"
+    ],
+    "num_claims": 22,
+    "top_hotel": "Hotel Lumpini",
+    "full_rankings": [
+      "Hotel Lumpini",
+      "Hotel Nana",
+      "Hotel Ratchada"
+    ],
+    "reasoning": "Hotel Lumpini ranks first as it explicitly mentions being within walking distance of attractions and provides a specific distance to a BTS station (180 meters from BTS Sala Daeng), indicating excellent transit access and proximity to tourist spots. It also boasts a high rating of 4.7 out of 5. Hotel Nana is ranked second because it states it's close to popular tourist attractions and conveniently located near public transit, but lacks specific details on distances or ratings. Hotel Ratchada is ranked third as it only provides a rating (4.5 out of 5) and mentions quiet rooms and breakfast, but offers no information regarding proximity to public transit or tourist attractions."
+  },
+  {
+    "query_id": 3,
+    "trial": 3,
+    "query_text": "Where should I stay in Bangkok if want to be close to public transit, want to visit temples and care about hotel rating?",
+    "cfg_trace": [
+      "Researcher",
+      "Analyzer",
+      "Verifier",
+      "RecommendationAgent"
+    ],
+    "sub_queries": [
+      "Bangkok hotels near BTS Skytrain and MRT subway",
+      "Bangkok hotels near Grand Palace and Wat Arun",
+      "Best rated hotels in Bangkok near public transport"
+    ],
+    "num_claims": 34,
+    "top_hotel": "Hotel Lumpini",
+    "full_rankings": [
+      "Hotel Lumpini",
+      "Hotel Silom",
+      "Hotel Nana",
+      "Hotel Ratchada"
+    ],
+    "reasoning": "Hotel Lumpini ranks first due to its exceptional transit access (180 meters from BTS Sala Daeng and near MRT Si Lom interchange) and a very high rating (4.7/5). Hotel Silom is second, offering good transit access (220 meters from BTS Chong Nonsi with covered sidewalks) and a strong rating (4.6/5), with transit convenience specifically mentioned. Hotel Nana is third, noted for its convenient location near public transit and proximity to older neighborhoods around Rattanakosin, but lacks specific details on transit distance or ratings. Hotel Ratchada is last as its transit access is described as less seamless, with a longer walk to the station and potential congestion, despite being near the MRT Thailand Cultural Centre and Chatuchak Market."
+  }
+]

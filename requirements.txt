@@ -1,0 +1,11 @@
+lark
+langgraph
+pytest
+langchain 
+langchain-openai
+beautifulsoup4
+google-genai
+python-dotenv
+numpy
+sentence-transformers
+
