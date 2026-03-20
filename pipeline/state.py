@@ -8,22 +8,35 @@ responsible for each section. No agent modifies another agent's fields.
 Design notes:
   - user_query is set at invocation time and is immutable for the entire
     execution. Agents may read it but must never overwrite it.
+
   - claims and the provenance log are conceptually distinct even though they
     carry similar information. claims is the Researcher's raw extraction output
     stored on state for downstream agents to read. The provenance log is the
-    separate audit structure that enables the Verifier's concentration check.
+    separate audit structure that enables the Verifier's checks.
+
   - concentration_flag is False by default. The Verifier sets it to True
     if the source concentration check fires.
-  - Defense fields (provenance_log, concentration_score, defense_triggered)
-    are None in no_defense and controlvalve_only configurations. Only
-    populated when defense_config == "full_system".
+
+  - Defense fields (provenance_log, concentration_score, defense_triggered,
+    flagged_sources) are None in no_defense and controlvalve_only
+    configurations. Only populated when defense_config == "full_system"
+    or "observe".
+
+  - flagged_sources is the primary output of the new detection system.
+    It is a list of dicts, one per flagged source URL, each containing:
+        url             (str)   — the source URL
+        reason          (str)   — "concentration", "coordination", or "both"
+        claim_count     (int)   — number of claims from this source
+        claim_fraction  (float) — fraction of top hotel's total claims
+        coordination_partners (list[str]) — URLs of sources this one is
+                                coordinated with (empty if reason is
+                                "concentration" only)
+        max_cross_similarity  (float) — highest mean cross-source similarity
+                                        with any partner source
+    None unless defense_config is "full_system" or "observe".
 """
 
 from typing import Optional, Any
-
-
-# LangGraph requires TypedDict for state — using that here for compatibility
-# while keeping field documentation from the original dataclass design.
 from typing import TypedDict, List
 
 
@@ -80,34 +93,60 @@ class PipelineState(TypedDict, total=False):
     """
     True if the top-ranked hotel's evidence derives disproportionately
     from a single source URL. False by default (no_defense / controlvalve_only).
+    Legacy field — kept for backward compatibility with experiment runner.
     """
 
     provenance_log: Optional[List[dict]]
     """
     Audit log of claim-to-source mappings for the top-ranked hotel.
-    Each entry: { "claim": str, "source_url": str, "criterion": str }
-    None unless defense_config == "full_system".
+    Each entry: { "claim": str, "source_url": str, "criterion": str,
+                  "source_flagged": bool }
+    None unless defense_config is "full_system" or "observe".
     """
 
     concentration_score: Optional[float]
     """
     Fraction of top-ranked hotel's claims derived from the single most
-    dominant source URL. None unless defense_config == "full_system".
-    Range [0.0, 1.0]. Threshold for flagging is set in verifier.py.
+    dominant source URL. Range [0.0, 1.0].
+    None unless defense_config is "full_system" or "observe".
     """
 
     concentration_flagged: Optional[bool]
     """
-    True if concentration_score exceeds the detection threshold.
-    Distinct from concentration_flag: this is the computed result,
-    concentration_flag is the legacy boolean stub.
-    None unless defense_config == "full_system".
+    True if concentration_score exceeds the concentration threshold.
+    None unless defense_config is "full_system" or "observe".
+    """
+
+    flagged_sources: Optional[List[dict]]
+    """
+    The primary output of the provenance-based detection system.
+    Each entry describes one flagged source URL and why it was flagged.
+
+    Keys per entry:
+        url                   (str)        — the source URL
+        reason                (str)        — "concentration", "coordination",
+                                             or "both"
+        claim_count           (int)        — number of claims from this source
+                                             for the top-ranked hotel
+        claim_fraction        (float)      — fraction of top hotel's total
+                                             claims from this source
+        coordination_partners (list[str])  — URLs of other sources this one
+                                             appears coordinated with; empty
+                                             if reason is "concentration" only
+        max_cross_similarity  (float)      — highest mean cross-source
+                                             similarity with any partner source;
+                                             0.0 if no coordination detected
+
+    None unless defense_config is "full_system" or "observe".
+    Populated even when no sources are flagged (empty list = clean run).
     """
 
     defense_triggered: Optional[bool]
     """
-    True if any defense component (provenance + concentration check)
-    intervened in the pipeline output. None unless defense_config == "full_system".
+    True if any defense component fired (concentration or coordination).
+    In "observe" mode this is always False — detection runs but does not
+    intervene. In "full_system" mode this reflects actual detection.
+    None unless defense_config is "full_system" or "observe".
     """
 
     # ------------------------------------------------------------------ #

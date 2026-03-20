@@ -1,32 +1,39 @@
 # cs7670_final_project
 
 project/
-├── .env
-├── .gitignore
-├── main.py
+├── corpus/
+│   └── pages/
+│       ├── legitimate/          # 8 clean hotel pages
+│       └── attacker/            # 2 poisoned hotel pages
 ├── pipeline/
 │   ├── __init__.py
-│   ├── cfg.py              ← already done
-│   ├── provenance.py       ← empty for now
-│   ├── orchestrator.py     ← empty for now
+│   ├── state.py                 # PipelineState dataclass
+│   ├── cfg.py                   # Lark grammar + CFG enforcement
+│   ├── provenance.py            # ProvenanceLog + SourceEvidenceRecord
+│   ├── orchestrator.py          # LangGraph graph assembly
 │   └── agents/
 │       ├── __init__.py
-│       ├── researcher.py   ← empty for now
-│       ├── analyzer.py     ← empty for now
-│       ├── verifier.py     ← empty for now
-│       └── recommendation.py ← empty for now
+│       ├── researcher.py
+│       ├── analyzer.py
+│       ├── verifier.py
+│       └── recommendation.py
 ├── sources/
 │   ├── __init__.py
-│   └── fetcher.py          ← empty for now
-├── corpus/
-│   ├── CORPUS_README.md    ← your ground truth document
-│   └── pages/
-│       ├── page_01.html
-│       ├── ...             ← your existing HTML files
-│       └── page_08.html
-└── tests/
-    ├── test_cfg.py         ← already done
-    └── test_ground_truth.py ← empty for now
+│   └── fetcher.py               # LocalHTMLFetcher (swappable)
+├── defense/
+│   ├── __init__.py
+│   ├── graph.py                 # SourceClaimGraph construction
+│   ├── homogeneity.py           # pairwise similarity computation
+│   └── contribution.py          # per-source contribution analysis
+├── tests/
+│   ├── test_cfg.py
+│   ├── test_provenance.py
+│   └── test_defense.py
+├── evaluation/
+│   ├── run_matrix.py            # 2x3 attack matrix runner
+│   └── metrics.py               # ASR, rank displacement, detection rate
+├── requirements.txt
+└── main.py
 
 
 pip install -r requirements.txt

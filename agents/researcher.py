@@ -4,15 +4,26 @@ agents/researcher.py
 The Researcher agent: generates sub-queries, retrieves pages from the
 corpus index, and extracts structured claims from page content.
 
-The index_path parameter is injected by the orchestrator via functools.partial,
-allowing the experiment runner to swap corpus conditions (different index files)
-without modifying agent code. SearchIndex is instantiated fresh per call,
-which prevents the embedding cache from persisting across conditions.
+Two parameters are injected by the orchestrator via functools.partial:
+
+    index_path: controls which corpus is used. Instantiated fresh per
+                call to prevent embedding cache persisting across conditions.
+
+    top_k:      controls how many pages are retrieved in total. Each of
+                the 3 sub-queries retrieves ceil(top_k / 3) results, and
+                the deduplicated union is capped at top_k. This makes k
+                a controlled experimental variable rather than a hardcoded
+                constant, allowing the experiment runner to sweep k=5,
+                k=8, k=10 without touching agent code.
+
+                Default is 5 to preserve backward compatibility with
+                existing experiment conditions.
 """
 
 import os
 import json
 import re
+import math
 from dotenv import load_dotenv
 from google import genai
 from sources.search_index import SearchIndex
@@ -92,7 +103,11 @@ def extract_claims(page_text: str, criteria: str, url: str) -> list[dict]:
         return []
 
 
-def researcher_node(state: dict, index_path: str = "corpus/indices/baseline.json") -> dict:
+def researcher_node(
+    state: dict,
+    index_path: str = "corpus/indices/baseline.json",
+    top_k: int = 5
+) -> dict:
     """
     Entry point for the Researcher agent.
 
@@ -101,37 +116,42 @@ def researcher_node(state: dict, index_path: str = "corpus/indices/baseline.json
         index_path: Path to the corpus index JSON. Injected by the orchestrator
                     via functools.partial so each experiment condition gets a
                     fresh SearchIndex with the correct corpus.
+        top_k:      Total number of pages to retrieve. Injected by the
+                    orchestrator so the experiment runner can sweep k values
+                    without touching agent code. Each sub-query retrieves
+                    ceil(top_k / 3) results; the deduplicated union is capped
+                    at top_k.
     """
-    # Mandatory CFG transition check
     record_transition("Researcher")
 
     user_query = state.get("user_query", "")
     print(f"\n[Researcher] Query: {user_query}")
-    print(f"[Researcher] Index: {index_path}")
+    print(f"[Researcher] Index: {index_path} | top_k: {top_k}")
 
     # 1. Generate sub-queries
     sub_queries = generate_sub_queries(user_query)
     print(f"[Researcher] Sub-queries: {sub_queries}")
 
-    # 2. Instantiate SearchIndex fresh for this corpus condition.
-    #    This is intentional — prevents embedding cache from persisting
-    #    across conditions in the experiment loop.
+    # 2. Instantiate SearchIndex fresh for this corpus condition
     index = SearchIndex(index_path)
 
-    # 3. Retrieve and deduplicate pages across sub-queries
+    # 3. Retrieve and deduplicate pages across sub-queries.
+    #    Each sub-query retrieves ceil(top_k / n_queries) results so that
+    #    the union can fill top_k slots even if there is overlap.
+    n_queries = len(sub_queries)
+    per_query_k = math.ceil(top_k / n_queries)
+
     seen_urls = set()
     unique_results = []
     for sq in sub_queries:
-        hits = index.query(sq, top_k=3)
+        hits = index.query(sq, top_k=per_query_k)
         for hit in hits:
             if hit.url not in seen_urls:
                 seen_urls.add(hit.url)
                 unique_results.append(hit)
 
-    top_hits = unique_results[:5]
+    top_hits = unique_results[:top_k]
 
-    # retrieved_pages is a list of URLs in retrieval-rank order.
-    # This ordering is the observed covariate for retrieval rank analysis.
     retrieved_page_urls = [hit.url for hit in top_hits]
 
     # 4. Extract claims from each retrieved page
