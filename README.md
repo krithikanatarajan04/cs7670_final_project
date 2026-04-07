@@ -112,3 +112,36 @@ be bypassed regardless of agent outputs or runtime conditions.
 This establishes deterministic structural control over the pipeline,
 which serves as the foundation for subsequent safety mechanisms in Phase 2.
 """
+
+
+
+Researcher
+  → extracts claims with source_url, hotel, criterion, sub_query
+  → writes retrieval_metadata with coherence, retrieval scores
+  → writes state["claims"], state["retrieval_metadata"]
+  → calls record_transition("Researcher")
+
+Auditor  ← NEW, replaces graph-construction portion of Verifier
+  → builds ProvenanceGraph: SourceNodes with retrieval provenance,
+    ClaimNodes with criterion labels, dedup on full 4-field key
+  → computes per-source anomaly signals: focus ratio, within-source
+    similarity, coherence score, retrieval score
+  → flags sources where multiple signals align
+  → writes state["provenance_graph"], state["anomaly_scores"],
+    state["flagged_sources_pre_ranking"]
+  → calls validated_transition("Auditor", state, validators)
+
+Analyzer  ← receives anomaly annotations alongside claims
+  → groups claims by hotel and criterion
+  → annotates flagged sources in evidence block
+  → prompts Gemini with anomaly-aware ranking instruction
+  → writes state["rankings"], state["reasoning"]
+  → calls validated_transition("Analyzer", state, validators)
+
+RecommendationAgent  ← adds post-ranking audit trail
+  → decides whether to trigger defense based on flags + rankings
+  → calls graph.add_analysis_activity() to record full provenance
+  → writes state["analysis_provenance"], state["provenance_graph"]
+  → writes state["defense_triggered"], state["defended_hotel"]
+  → writes state["final_report"]
+  → calls record_transition("RecommendationAgent")
