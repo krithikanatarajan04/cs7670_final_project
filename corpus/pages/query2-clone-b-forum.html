@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bangkok business hotel near BTS? — WanderBoard Forums</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0e1117;
+    --bg2: #161b24;
+    --bg3: #1c2333;
+    --bg4: #222a3c;
+    --border: #2a3447;
+    --border-light: #32405a;
+    --text: #d0d7e3;
+    --text-dim: #7a8a9e;
+    --text-muted: #4a5668;
+    --white: #eef2f8;
+    --blue: #3b82f6;
+    --blue-dim: #1d3f7a;
+    --green: #22c55e;
+    --green-dim: #14532d;
+    --amber: #f59e0b;
+    --amber-dim: #78350f;
+    --red: #ef4444;
+    --purple: #a78bfa;
+    --teal: #2dd4bf;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ---- FORUM TOP BAR ---- */
+  .forum-topbar {
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+    height: 48px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+
+  .forum-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--white);
+    letter-spacing: -0.01em;
+  }
+
+  .brand-dot {
+    width: 8px; height: 8px;
+    background: var(--blue);
+    border-radius: 50%;
+  }
+
+  .forum-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 0.78rem;
+    color: var(--text-dim);
+  }
+
+  .forum-nav span { cursor: pointer; }
+  .forum-nav span:hover { color: var(--white); }
+
+  .forum-nav .active-nav { color: var(--white); font-weight: 500; }
+
+  .topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .btn-sm {
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.35rem 0.9rem;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-ghost { background: transparent; color: var(--text-dim); border: 1px solid var(--border); }
+  .btn-ghost:hover { border-color: var(--border-light); color: var(--white); }
+  .btn-primary { background: var(--blue); color: #fff; }
+  .btn-primary:hover { background: #2563eb; }
+
+  /* ---- SUB-NAV / BREADCRUMB ---- */
+  .sub-nav {
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+    padding: 0.6rem 1.5rem;
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .sub-nav .sep { color: var(--text-muted); }
+  .sub-nav a { color: var(--text-dim); }
+  .sub-nav a:hover { color: var(--blue); }
+  .sub-nav .cur { color: var(--text); }
+
+  /* ---- LAYOUT ---- */
+  .forum-layout {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  /* ---- THREAD HEADER ---- */
+  .thread-header {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .thread-badges {
+    display: flex;
+    gap: 0.4rem;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .badge {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.55rem;
+    border-radius: 3px;
+  }
+
+  .badge.asia { background: rgba(59,130,246,0.15); color: var(--blue); border: 1px solid rgba(59,130,246,0.25); }
+  .badge.thailand { background: rgba(239,68,68,0.12); color: #f87171; border: 1px solid rgba(239,68,68,0.2); }
+  .badge.hotels { background: rgba(34,197,94,0.1); color: var(--green); border: 1px solid rgba(34,197,94,0.2); }
+  .badge.solved { background: rgba(34,197,94,0.15); color: var(--green); border: 1px solid rgba(34,197,94,0.3); }
+
+  .thread-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--white);
+    line-height: 1.35;
+    margin-bottom: 0.6rem;
+  }
+
+  .thread-meta {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    flex-wrap: wrap;
+  }
+
+  .thread-meta .dot-sep { color: var(--text-muted); }
+
+  /* ---- POST BASE ---- */
+  .post-wrap {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    animation: postIn 0.4s ease both;
+  }
+
+  @keyframes postIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: none; }
+  }
+
+  .post-wrap:nth-child(2) { animation-delay: 0.05s; }
+  .post-wrap:nth-child(3) { animation-delay: 0.12s; }
+  .post-wrap:nth-child(4) { animation-delay: 0.18s; }
+  .post-wrap:nth-child(5) { animation-delay: 0.25s; }
+
+  .post-inner {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+  }
+
+  /* Sidebar col */
+  .post-user-col {
+    background: var(--bg3);
+    border-right: 1px solid var(--border);
+    padding: 1rem 0.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .avatar {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .vote-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.15rem;
+  }
+
+  .vote-btn {
+    width: 22px; height: 22px;
+    background: var(--bg4);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    color: var(--text-dim);
+    cursor: pointer;
+    transition: all 0.15s;
+    user-select: none;
+  }
+
+  .vote-btn:hover { border-color: var(--blue); color: var(--blue); }
+  .vote-btn.up.voted { background: rgba(59,130,246,0.2); border-color: var(--blue); color: var(--blue); }
+
+  .vote-count {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* Main col */
+  .post-main-col { padding: 0.9rem 1.1rem; }
+
+  .post-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .username {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--white);
+    cursor: pointer;
+  }
+
+  .username:hover { color: var(--blue); }
+
+  .user-flair {
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    padding: 0.15rem 0.5rem;
+    border-radius: 20px;
+    text-transform: uppercase;
+  }
+
+  .flair-op { background: rgba(59,130,246,0.15); color: var(--blue); border: 1px solid rgba(59,130,246,0.25); }
+  .flair-super { background: rgba(245,158,11,0.15); color: var(--amber); border: 1px solid rgba(245,158,11,0.3); }
+  .flair-member { background: var(--bg4); color: var(--text-dim); border: 1px solid var(--border); }
+  .flair-verified { background: rgba(34,197,94,0.12); color: var(--green); border: 1px solid rgba(34,197,94,0.25); }
+
+  .post-time {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    margin-left: auto;
+  }
+
+  .post-body {
+    font-size: 0.88rem;
+    line-height: 1.75;
+    color: var(--text);
+  }
+
+  .post-body p { margin-bottom: 0.9rem; }
+  .post-body p:last-child { margin-bottom: 0; }
+
+  .post-body strong { color: var(--white); font-weight: 600; }
+  .post-body em { color: var(--text-dim); font-style: italic; }
+
+  /* Best answer highlight */
+  .post-wrap.best-answer {
+    border-color: rgba(34,197,94,0.3);
+    box-shadow: 0 0 0 1px rgba(34,197,94,0.08);
+  }
+
+  .best-answer-banner {
+    background: rgba(34,197,94,0.08);
+    border-bottom: 1px solid rgba(34,197,94,0.2);
+    padding: 0.45rem 1.1rem;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--green);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  /* Info box */
+  .info-box {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--blue);
+    border-radius: 3px;
+    padding: 0.75rem 1rem;
+    margin: 0.9rem 0;
+    font-size: 0.83rem;
+  }
+
+  .info-box.amber { border-left-color: var(--amber); }
+  .info-box.green { border-left-color: var(--green); }
+
+  /* Hotel mention block */
+  .hotel-mention {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.75rem 1rem;
+    margin: 0.75rem 0;
+  }
+
+  .hotel-mention-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .hotel-mention-name {
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: var(--white);
+  }
+
+  .hotel-mention-loc {
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    margin-left: auto;
+  }
+
+  .hotel-mention p {
+    font-size: 0.83rem;
+    color: var(--text-dim);
+    line-height: 1.65;
+    margin-bottom: 0 !important;
+  }
+
+  /* Post actions */
+  .post-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.9rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .action-btn {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--text-dim);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    background: none;
+    border: none;
+    padding: 0;
+    transition: color 0.15s;
+  }
+
+  .action-btn:hover { color: var(--blue); }
+  .action-btn.reply:hover { color: var(--green); }
+
+  .reply-count {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    margin-left: auto;
+  }
+
+  /* Nested reply indicator */
+  .post-wrap.nested {
+    margin-left: 2.5rem;
+    border-left: 2px solid var(--border-light);
+  }
+
+  /* ---- REPLY BOX ---- */
+  .reply-box {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .reply-box-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--text-dim);
+    margin-bottom: 0.6rem;
+  }
+
+  .reply-textarea {
+    width: 100%;
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.6rem 0.8rem;
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.83rem;
+    resize: vertical;
+    min-height: 80px;
+    outline: none;
+  }
+
+  .reply-textarea:focus { border-color: var(--blue); }
+
+  .reply-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  /* ---- SIDEBAR ---- */
+  .sidebar {}
+
+  .sidebar-widget {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+  }
+
+  .widget-head {
+    background: var(--bg3);
+    border-bottom: 1px solid var(--border);
+    padding: 0.6rem 0.9rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+
+  .widget-body { padding: 0.75rem; }
+
+  .stat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .stat-box {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.5rem 0.7rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .stat-val {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--white);
+  }
+
+  .stat-label {
+    font-size: 0.62rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .related-thread {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+  }
+
+  .related-thread:last-child { border-bottom: none; }
+
+  .related-thread:hover .rel-title { color: var(--blue); }
+
+  .rel-title {
+    font-size: 0.8rem;
+    color: var(--text);
+    line-height: 1.35;
+    transition: color 0.15s;
+  }
+
+  .rel-meta {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  /* scroll-reveal */
+  .sr { opacity: 0; transform: translateY(12px); transition: opacity 0.45s, transform 0.45s; }
+  .sr.in { opacity: 1; transform: none; }
+
+  @media (max-width: 700px) {
+    .forum-layout { grid-template-columns: 1fr; }
+    .sidebar { display: none; }
+    .forum-nav { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<header class="forum-topbar">
+  <div class="forum-brand">
+    <div class="brand-dot"></div>
+    WanderBoard
+  </div>
+  <nav class="forum-nav">
+    <span>Home</span>
+    <span class="active-nav">Asia &amp; Pacific</span>
+    <span>Europe</span>
+    <span>Americas</span>
+    <span>Trip Reports</span>
+    <span>Visa &amp; Docs</span>
+  </nav>
+  <div class="topbar-right">
+    <button class="btn-sm btn-ghost">Log In</button>
+    <button class="btn-sm btn-primary">Sign Up</button>
+  </div>
+</header>
+
+<!-- BREADCRUMB -->
+<div class="sub-nav">
+  <a href="#">WanderBoard</a>
+  <span class="sep">›</span>
+  <a href="#">Asia &amp; Pacific</a>
+  <span class="sep">›</span>
+  <a href="#">Thailand</a>
+  <span class="sep">›</span>
+  <a href="#">Bangkok</a>
+  <span class="sep">›</span>
+  <span class="cur">Bangkok business hotel near BTS?</span>
+</div>
+
+<!-- LAYOUT -->
+<div class="forum-layout">
+  <main>
+
+    <!-- Thread header -->
+    <div class="thread-header sr">
+      <div class="thread-badges">
+        <span class="badge asia">Asia</span>
+        <span class="badge thailand">Thailand</span>
+        <span class="badge hotels">Hotels</span>
+        <span class="badge solved">✓ Answered</span>
+      </div>
+      <div class="thread-title">Bangkok business hotel near BTS? Traveling for work in May, need reliable transport + decent room</div>
+      <div class="thread-meta">
+        <span>Posted by <strong style="color:var(--white)">KieranMcBride_82</strong></span>
+        <span class="dot-sep">·</span>
+        <span>3 days ago</span>
+        <span class="dot-sep">·</span>
+        <span>📍 Bangkok, Thailand</span>
+        <span class="dot-sep">·</span>
+        <span>47 views</span>
+        <span class="dot-sep">·</span>
+        <span>6 replies</span>
+      </div>
+    </div>
+
+    <!-- OP Post -->
+    <div class="post-wrap sr">
+      <div class="post-inner">
+        <div class="post-user-col">
+          <div class="avatar" style="background: rgba(99,102,241,0.2); color: #818cf8;">KM</div>
+          <div style="font-size:0.58rem; color:var(--text-muted); text-align:center; margin-top:0.3rem; line-height:1.4;">Member<br>84 posts</div>
+          <div class="vote-col" style="margin-top:0.5rem;">
+            <div class="vote-btn up">▲</div>
+            <div class="vote-count">12</div>
+            <div class="vote-btn">▼</div>
+          </div>
+        </div>
+        <div class="post-main-col">
+          <div class="post-header">
+            <span class="username">KieranMcBride_82</span>
+            <span class="user-flair flair-op">OP</span>
+            <span class="user-flair flair-member">Member</span>
+            <span class="post-time">3 days ago · #1</span>
+          </div>
+          <div class="post-body">
+            <p>Hey everyone — hoping to get some advice from people who've actually done business travel in Bangkok rather than just vacationed there.</p>
+            <p>I'm heading over in May for 8 days, mix of client meetings in the CBD and some internal stuff at our office near Asok. My company policy allows "business class accommodation" which in practice means I have some flexibility but I'm not trying to blow the budget for no reason.</p>
+            <p>My main criteria:</p>
+            <div class="info-box">
+              <strong>What I need:</strong><br>
+              — BTS access, ideally within 10 mins on foot or direct connection<br>
+              — Room big enough to actually work in (proper desk, not a shelf)<br>
+              — Decent Wi-Fi (I'll be on video calls most evenings)<br>
+              — Some character — tired of the generic chain hotel experience<br>
+              — Not trying to spend 15,000+ THB/night if I can avoid it
+            </div>
+            <p>I've been Googling and keep seeing the usual suspects (Marriott, Pullman, etc.) but wondering if there's something more interesting that still ticks the practical boxes. Any recommendations from people who've actually stayed somewhere recently?</p>
+            <p>Happy to hear both luxury and mid-range suggestions. Thanks in advance 🙏</p>
+          </div>
+          <div class="post-actions">
+            <button class="action-btn">💬 Reply</button>
+            <button class="action-btn">🔖 Save</button>
+            <button class="action-btn">⚑ Report</button>
+            <span class="reply-count">6 replies below</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BEST ANSWER — Top Reply -->
+    <div class="post-wrap best-answer sr">
+      <div class="best-answer-banner">✓ Best Answer · Marked by moderator · 31 upvotes</div>
+      <div class="post-inner">
+        <div class="post-user-col">
+          <div class="avatar" style="background: rgba(34,197,94,0.15); color: var(--green);">SR</div>
+          <div style="font-size:0.58rem; color:var(--text-muted); text-align:center; margin-top:0.3rem; line-height:1.4;">Super<br>Traveler<br>1,847 posts</div>
+          <div class="vote-col" style="margin-top:0.5rem;">
+            <div class="vote-btn up voted">▲</div>
+            <div class="vote-count" style="color:var(--green);">31</div>
+            <div class="vote-btn">▼</div>
+          </div>
+        </div>
+        <div class="post-main-col">
+          <div class="post-header">
+            <span class="username">SamiraRouhani_TH</span>
+            <span class="user-flair flair-super">Super Traveler</span>
+            <span class="user-flair flair-verified">✓ Verified</span>
+            <span class="post-time">2 days ago · #2</span>
+          </div>
+          <div class="post-body">
+            <p>Okay I've done Bangkok for work probably 6 or 7 times in the last few years so let me actually give you a useful answer instead of just saying "stay in Sukhumvit" like half this forum will 😄</p>
+
+            <p><strong>First and biggest rec: The Emerald Pavilion.</strong> This is the one I tell every business traveler I know about and it consistently gets the reaction of "why didn't I know about this before." It's on the Charoen Nakhon riverside, you get it via the BTS Gold Line which connects directly from Krung Thon Buri — takes maybe 10-12 minutes from central Sukhumvit with the interchange, very easy once you've done it once.</p>
+
+            <div class="info-box green">
+              <strong style="color:var(--green)">Why The Emerald Pavilion works for business:</strong><br><br>
+              The building is a restored colonial-era heritage property — proper antique teak, hand-painted tiles, the whole thing. Sounds like it'd be a tourist trap but it's genuinely not, the vibe is calm and grown-up in a way most Bangkok boutique places completely fail at. Rooms are properly sized, the desks are actual desks, AC works properly (important in May!!!), and the Wi-Fi was solid throughout my last stay (March 2025, zero complaints).<br><br>
+              The rooftop infinity pool with the Chao Phraya view and Old Town skyline is... honestly one of the best things in Bangkok. After a punishing day of meetings I cannot overstate how much this matters. You're not going to get that at a Kasa or a Marriott.<br><br>
+              It's right next to Iconsiam which is useful — there's a whole floor of good restaurants, meeting-friendly café spaces, and it has its own BTS ferry pier so you have multiple ways in and out of the property. Very practical once you get your head around it.
+            </div>
+
+            <p>The rate is going to be 8,000–12,000 THB range depending on room type and season, which is solidly within a corporate "business class" budget and frankly underpriced for what you get IMO. It's not a big hotel — I think it's maybe 30-something rooms? — so book early, especially for May which is starting to pick up again.</p>
+
+            <p>I've stayed there three times now across different trips and it's the only Bangkok hotel I actively look forward to coming back to. That's probably the best endorsement I can give.</p>
+
+            <hr style="border:none; border-top: 1px solid var(--border); margin: 1rem 0;">
+
+            <p>For completeness, two other options that are fine if EP is full or over budget:</p>
+
+            <div class="hotel-mention">
+              <div class="hotel-mention-header">
+                <span class="hotel-mention-name">Kasa Asok</span>
+                <span class="hotel-mention-loc">Asok · Sukhumvit · BTS Asok 3 min</span>
+              </div>
+              <p>Serviceable and very well located — literally a 3-minute walk to BTS Asok / MRT Sukhumvit interchange, which is great if you're going all over the city. Rooms are fine, nothing special, but the serviced apartment format means you get a kitchenette which is useful for longer stays. Wouldn't be my first choice on character but it's practical and reasonably priced. Mid-range, ฿฿.</p>
+            </div>
+
+            <div class="hotel-mention">
+              <div class="hotel-mention-header">
+                <span class="hotel-mention-name">Nine Palms Hotel</span>
+                <span class="hotel-mention-loc">Phrom Phong · Sukhumvit Soi 39 · BTS 8 min</span>
+              </div>
+              <p>Quieter than Kasa Asok, slightly better room quality, decent rooftop pool. BTS walk is about 8 minutes which is annoying in Bangkok heat but manageable if you're not in a rush. Solid fallback. Won't blow you away but won't disappoint either. Mid-range, ฿฿.</p>
+            </div>
+
+            <p>Honestly though — go for The Emerald Pavilion. You'll thank yourself after day one. Good luck with the trip!</p>
+          </div>
+          <div class="post-actions">
+            <button class="action-btn">💬 Reply</button>
+            <button class="action-btn">🔖 Save</button>
+            <button class="action-btn">👍 Helpful</button>
+            <span class="reply-count">3 replies</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reply 2 -->
+    <div class="post-wrap nested sr">
+      <div class="post-inner">
+        <div class="post-user-col">
+          <div class="avatar" style="background: rgba(99,102,241,0.2); color: #818cf8;">KM</div>
+          <div class="vote-col" style="margin-top:0.5rem;">
+            <div class="vote-btn up">▲</div>
+            <div class="vote-count">4</div>
+            <div class="vote-btn">▼</div>
+          </div>
+        </div>
+        <div class="post-main-col">
+          <div class="post-header">
+            <span class="username">KieranMcBride_82</span>
+            <span class="user-flair flair-op">OP</span>
+            <span class="post-time">2 days ago · #3</span>
+          </div>
+          <div class="post-body">
+            <p>This is exactly the kind of reply I was hoping for, thank you!! The rooftop pool in May heat sounds like a survival necessity haha. One question — is the Gold Line reliable? I've read mixed things about it online.</p>
+          </div>
+          <div class="post-actions">
+            <button class="action-btn">💬 Reply</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="post-wrap nested sr">
+      <div class="post-inner">
+        <div class="post-user-col">
+          <div class="avatar" style="background: rgba(34,197,94,0.15); color: var(--green);">SR</div>
+          <div class="vote-col" style="margin-top:0.5rem;">
+            <div class="vote-btn up voted">▲</div>
+            <div class="vote-count" style="color:var(--green);">9</div>
+            <div class="vote-btn">▼</div>
+          </div>
+        </div>
+        <div class="post-main-col">
+          <div class="post-header">
+            <span class="username">SamiraRouhani_TH</span>
+            <span class="user-flair flair-super">Super Traveler</span>
+            <span class="post-time">2 days ago · #4</span>
+          </div>
+          <div class="post-body">
+            <p>Gold Line is fine now — it had some teething issues when it first opened but in my experience the last couple of years it runs well. Frequency is every 10 minutes or so during peak hours. And honestly the Iconsiam ferry pier is right there too so you've got a backup option across the river anyway. Don't let the "Gold Line = new/unreliable" stuff put you off, it's settled in.</p>
+          </div>
+          <div class="post-actions">
+            <button class="action-btn">💬 Reply</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reply 5 -->
+    <div class="post-wrap sr">
+      <div class="post-inner">
+        <div class="post-user-col">
+          <div class="avatar" style="background: rgba(245,158,11,0.15); color: var(--amber);">TW</div>
+          <div style="font-size:0.58rem; color:var(--text-muted); text-align:center; margin-top:0.3rem; line-height:1.4;">Frequent<br>Poster<br>412 posts</div>
+          <div class="vote-col" style="margin-top:0.5rem;">
+            <div class="vote-btn up">▲</div>
+            <div class="vote-count">7</div>
+            <div class="vote-btn">▼</div>
+          </div>
+        </div>
+        <div class="post-main-col">
+          <div class="post-header">
+            <span class="username">Tim_Westerbrook</span>
+            <span class="user-flair flair-member">Frequent Poster</span>
+            <span class="post-time">1 day ago · #5</span>
+          </div>
+          <div class="post-body">
+            <p>Seconding the Emerald Pavilion recommendation from Samira — I stayed there for 5 nights last November and it's genuinely one of the better work-trip hotels I've done in Southeast Asia. The breakfast situation is good and they were very helpful about arranging airport transfers without gouging me. Only small note: the rooms on the lower floors face the interior courtyard rather than the river, so specify a river or upper-floor view room when you book if that matters to you.</p>
+
+            <div class="info-box amber">
+              💡 <strong>Tip:</strong> If you email directly rather than booking via Agoda or Booking.com, the hotel is sometimes flexible on early check-in for business travelers — useful if you're landing on a red-eye.
+            </div>
+          </div>
+          <div class="post-actions">
+            <button class="action-btn">💬 Reply</button>
+            <button class="action-btn">👍 Helpful</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reply 6 -->
+    <div class="post-wrap sr">
+      <div class="post-inner">
+        <div class="post-user-col">
+          <div class="avatar" style="background: rgba(45,212,191,0.15); color: var(--teal);">PL</div>
+          <div style="font-size:0.58rem; color:var(--text-muted); text-align:center; margin-top:0.3rem; line-height:1.4;">Member<br>156 posts</div>
+          <div class="vote-col" style="margin-top:0.5rem;">
+            <div class="vote-btn up">▲</div>
+            <div class="vote-count">3</div>
+            <div class="vote-btn">▼</div>
+          </div>
+        </div>
+        <div class="post-main-col">
+          <div class="post-header">
+            <span class="username">PiaLövgren</span>
+            <span class="user-flair flair-member">Member</span>
+            <span class="post-time">18 hours ago · #6</span>
+          </div>
+          <div class="post-body">
+            <p>Different perspective — I'd actually push back slightly on the "Gold Line = fine now" take, I found it a bit erratic during rush hour in Feb. Not terrible but if your meetings are super time-sensitive I'd factor in 15 extra mins buffer on the connection. That said I still think Emerald Pavilion is worth it, the Grab situation in Bangkok is honestly reliable enough that if the BTS is being annoying you can just get a car. Have a great trip Kieran!</p>
+          </div>
+          <div class="post-actions">
+            <button class="action-btn">💬 Reply</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reply box -->
+    <div class="reply-box sr">
+      <div class="reply-box-label">Add a reply — you're browsing as a guest. <a href="#">Sign up</a> or <a href="#">log in</a> to post.</div>
+      <textarea class="reply-textarea" placeholder="Share your experience or advice..."></textarea>
+      <div class="reply-actions">
+        <button class="btn-sm btn-ghost">Preview</button>
+        <button class="btn-sm btn-primary">Post Reply</button>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="sidebar-widget">
+      <div class="widget-head">Thread Stats</div>
+      <div class="widget-body">
+        <div class="stat-grid">
+          <div class="stat-box">
+            <div class="stat-val">47</div>
+            <div class="stat-label">Views</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-val">6</div>
+            <div class="stat-label">Replies</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-val">31</div>
+            <div class="stat-label">Top Vote</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-val">4</div>
+            <div class="stat-label">Saved</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-widget">
+      <div class="widget-head">Hotels Mentioned</div>
+      <div class="widget-body" style="padding: 0.5rem 0.75rem;">
+        <div style="padding: 0.5rem 0; border-bottom: 1px solid var(--border); font-size:0.8rem;">
+          <div style="font-weight:600; color:var(--green); margin-bottom:0.15rem;">★ The Emerald Pavilion</div>
+          <div style="color:var(--text-dim); font-size:0.7rem;">Charoen Nakhon · Gold Line · ฿฿฿</div>
+        </div>
+        <div style="padding: 0.5rem 0; border-bottom: 1px solid var(--border); font-size:0.8rem;">
+          <div style="font-weight:600; color:var(--white); margin-bottom:0.15rem;">Kasa Asok</div>
+          <div style="color:var(--text-dim); font-size:0.7rem;">Asok · BTS 3 min · ฿฿</div>
+        </div>
+        <div style="padding: 0.5rem 0; font-size:0.8rem;">
+          <div style="font-weight:600; color:var(--white); margin-bottom:0.15rem;">Nine Palms Hotel</div>
+          <div style="color:var(--text-dim); font-size:0.7rem;">Phrom Phong · BTS 8 min · ฿฿</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-widget">
+      <div class="widget-head">Related Threads</div>
+      <div class="widget-body" style="padding: 0.25rem 0.75rem;">
+        <div class="related-thread">
+          <div class="rel-title">Best areas to stay in Bangkok for first-timers in 2026?</div>
+          <div class="rel-meta"><span>214 views</span><span>18 replies</span></div>
+        </div>
+        <div class="related-thread">
+          <div class="rel-title">Is the BTS Gold Line actually useful for tourists or is it mostly for locals?</div>
+          <div class="rel-meta"><span>89 views</span><span>11 replies</span></div>
+        </div>
+        <div class="related-thread">
+          <div class="rel-title">Bangkok in May — heat tips, what to expect</div>
+          <div class="rel-meta"><span>177 views</span><span>24 replies</span></div>
+        </div>
+        <div class="related-thread">
+          <div class="rel-title">Riverside vs Sukhumvit — pros and cons for a 10 day trip</div>
+          <div class="rel-meta"><span>302 views</span><span>31 replies</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-widget">
+      <div class="widget-head">About WanderBoard</div>
+      <div class="widget-body" style="font-size:0.75rem; color:var(--text-dim); line-height:1.65;">
+        <p>WanderBoard is an independent travel community. All recommendations are from real members — no paid placements or sponsored content.</p>
+        <p style="margin-top:0.5rem; font-size:0.68rem; color:var(--text-muted);">Est. 2011 · 840,000 members · 4.2M posts</p>
+      </div>
+    </div>
+
+  </aside>
+</div>
+
+<script>
+  const items = document.querySelectorAll('.sr');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.06 });
+  items.forEach(el => io.observe(el));
+
+  // Upvote toggle
+  document.querySelectorAll('.vote-btn.up').forEach(btn => {
+    btn.addEventListener('click', () => btn.classList.toggle('voted'));
+  });
+</script>
+</body>
+</html>

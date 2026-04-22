@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bangkok Business Hotels Worth Booking in 2026 — The Corporate Itinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0f1c2e;
+    --navy-mid: #162539;
+    --navy-light: #1e3352;
+    --slate: #3a5068;
+    --ice: #e8eef5;
+    --white: #f9fbfd;
+    --gold: #c9a84c;
+    --gold-dim: #8a6e2a;
+    --mist: #a8bccf;
+    --rule: #253d54;
+    --text-body: #ccd8e4;
+    --text-dim: #7a96ae;
+    --accent-green: #3d8c6a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--navy);
+    color: var(--text-body);
+    font-family: 'Barlow', sans-serif;
+    font-size: 17px;
+    line-height: 1.75;
+  }
+
+  /* ---- TOP NAV ---- */
+  .topnav {
+    background: var(--navy-mid);
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3rem;
+    height: 56px;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .brand-icon {
+    width: 28px; height: 28px;
+    background: var(--gold);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    flex-shrink: 0;
+  }
+
+  .brand-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--white);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+
+  .nav-links span { cursor: pointer; transition: color 0.2s; }
+  .nav-links span:hover { color: var(--white); }
+
+  .nav-cta {
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--navy);
+    background: var(--gold);
+    padding: 0.45rem 1.1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .nav-cta:hover { background: #e0b85a; }
+
+  /* ---- HERO ---- */
+  .hero {
+    background: linear-gradient(160deg, var(--navy-light) 0%, var(--navy) 60%);
+    border-bottom: 1px solid var(--rule);
+    padding: 5rem 3rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0;
+    width: 40%;
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 18px,
+      rgba(201,168,76,0.03) 18px,
+      rgba(201,168,76,0.03) 19px
+    );
+    pointer-events: none;
+  }
+
+  .breadcrumb {
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .breadcrumb span.sep { color: var(--rule); }
+  .breadcrumb span.cur { color: var(--gold); }
+
+  h1 {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--white);
+    max-width: 700px;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-summary {
+    font-size: 1.05rem;
+    color: var(--mist);
+    max-width: 620px;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+    line-height: 1.8;
+  }
+
+  .hero-meta-row {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .author-chip {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+
+  .author-avatar {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--slate);
+    border: 2px solid var(--gold-dim);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.85rem;
+    color: var(--gold);
+    flex-shrink: 0;
+  }
+
+  .author-info { display: flex; flex-direction: column; gap: 0.1rem; }
+  .author-name { font-size: 0.82rem; font-weight: 600; color: var(--ice); }
+  .author-date { font-size: 0.68rem; color: var(--text-dim); }
+
+  .meta-pills {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+  }
+
+  .pill {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.28rem 0.75rem;
+    border: 1px solid var(--rule);
+    color: var(--text-dim);
+    border-radius: 2px;
+  }
+
+  .pill.active { border-color: var(--gold-dim); color: var(--gold); }
+
+  /* ---- LAYOUT ---- */
+  .page-body {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 3.5rem 3rem;
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  /* ---- ARTICLE ---- */
+  .article p {
+    margin-bottom: 1.4rem;
+    font-weight: 300;
+    color: #b8ccd8;
+  }
+
+  .article p strong {
+    font-weight: 600;
+    color: var(--ice);
+  }
+
+  /* Section header */
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 3rem 0 1.5rem;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  /* Hotel cards */
+  .hotel-entry {
+    background: var(--navy-mid);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
+
+  .hotel-entry.visible { opacity: 1; transform: none; }
+
+  .hotel-header {
+    display: flex;
+    align-items: stretch;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .hotel-rank {
+    background: var(--navy-light);
+    width: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--rule);
+    flex-shrink: 0;
+    border-right: 1px solid var(--rule);
+  }
+
+  .hotel-title-block {
+    padding: 1rem 1.25rem;
+    flex: 1;
+  }
+
+  .hotel-name {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.2rem;
+  }
+
+  .hotel-loc {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+
+  .hotel-verdict {
+    display: flex;
+    align-items: center;
+    padding: 0 1.25rem;
+    flex-shrink: 0;
+  }
+
+  .verdict-badge {
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.7rem;
+    border-radius: 2px;
+  }
+
+  .verdict-badge.good { background: rgba(61,140,106,0.15); color: var(--accent-green); border: 1px solid rgba(61,140,106,0.3); }
+  .verdict-badge.top { background: rgba(201,168,76,0.15); color: var(--gold); border: 1px solid rgba(201,168,76,0.4); }
+
+  .hotel-body {
+    padding: 1.25rem 1.25rem 1.25rem 1.25rem;
+  }
+
+  .hotel-body p {
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: var(--text-body);
+    line-height: 1.75;
+    margin-bottom: 0;
+  }
+
+  /* Specs row */
+  .specs-row {
+    display: flex;
+    gap: 0;
+    border-top: 1px solid var(--rule);
+    flex-wrap: wrap;
+  }
+
+  .spec {
+    flex: 1;
+    min-width: 100px;
+    padding: 0.75rem 1rem;
+    border-right: 1px solid var(--rule);
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .spec:last-child { border-right: none; }
+
+  .spec-label {
+    font-size: 0.58rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+
+  .spec-val {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--ice);
+  }
+
+  /* Featured hotel */
+  .hotel-entry.featured {
+    border-color: var(--gold-dim);
+    box-shadow: 0 0 0 1px rgba(201,168,76,0.12), 0 4px 24px rgba(0,0,0,0.4);
+  }
+
+  .hotel-entry.featured .hotel-rank {
+    background: rgba(201,168,76,0.08);
+    color: var(--gold);
+  }
+
+  .hotel-entry.featured .hotel-name {
+    color: var(--gold);
+  }
+
+  .hotel-entry.featured .hotel-body p {
+    color: #c4d4e0;
+    font-size: 1rem;
+  }
+
+  .featured-banner {
+    background: linear-gradient(90deg, rgba(201,168,76,0.12) 0%, transparent 100%);
+    border-bottom: 1px solid var(--gold-dim);
+    padding: 0.5rem 1.25rem;
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  /* Image placeholder */
+  .img-placeholder {
+    background: linear-gradient(135deg, var(--navy-light) 0%, var(--navy-mid) 100%);
+    border-bottom: 1px solid var(--rule);
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .img-placeholder.lg { height: 280px; }
+
+  .img-placeholder::after {
+    content: attr(data-cap);
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--rule);
+    position: relative;
+    z-index: 2;
+  }
+
+  .img-ghost {
+    position: absolute;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 8rem;
+    color: var(--rule);
+    opacity: 0.25;
+    line-height: 1;
+    font-style: italic;
+    pointer-events: none;
+  }
+
+  /* ---- SIDEBAR ---- */
+  .sidebar {}
+
+  .sidebar-card {
+    background: var(--navy-mid);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+  }
+
+  .sidebar-head {
+    background: var(--navy-light);
+    padding: 0.75rem 1.1rem;
+    border-bottom: 1px solid var(--rule);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .sidebar-body { padding: 1.1rem; }
+
+  .checklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 0.82rem;
+    color: var(--text-body);
+  }
+
+  .checklist-item:last-child { border-bottom: none; }
+
+  .check-icon {
+    color: var(--accent-green);
+    font-size: 0.7rem;
+    margin-top: 0.3rem;
+    flex-shrink: 0;
+  }
+
+  .bts-line {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 0.82rem;
+  }
+
+  .bts-line:last-child { border-bottom: none; }
+
+  .bts-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .bts-dot.sukhumvit { background: #4caf50; }
+  .bts-dot.silom { background: #2196F3; }
+  .bts-dot.mrt { background: #9c27B0; }
+
+  .bts-name { flex: 1; color: var(--ice); font-weight: 500; }
+  .bts-dist { color: var(--text-dim); font-size: 0.72rem; }
+
+  /* Bottom article CTA */
+  .article-footer {
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--rule);
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    font-style: italic;
+  }
+
+  /* Footer */
+  footer {
+    border-top: 1px solid var(--rule);
+    padding: 1.5rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+
+  @media (max-width: 720px) {
+    .page-body { grid-template-columns: 1fr; gap: 2rem; }
+    .topnav { padding: 0 1.5rem; }
+    .hero { padding: 3rem 1.5rem; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP NAV -->
+<header class="topnav">
+  <div class="brand">
+    <div class="brand-icon"></div>
+    <div class="brand-name">The Corporate Itinerary</div>
+  </div>
+  <nav class="nav-links">
+    <span>Destinations</span>
+    <span>Hotel Reviews</span>
+    <span>Travel Policy</span>
+    <span>Tools</span>
+  </nav>
+  <div class="nav-cta">Subscribe Free</div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="breadcrumb">
+    <span>Asia Pacific</span>
+    <span class="sep">/</span>
+    <span>Thailand</span>
+    <span class="sep">/</span>
+    <span class="cur">Bangkok Business Hotels</span>
+  </div>
+  <h1>Bangkok Business Hotels Worth Booking in 2026</h1>
+  <p class="hero-summary">Bangkok's BTS Skytrain network has made corporate travel across the city genuinely efficient. Here's where to stay to maximise both connectivity and comfort — whether you're closing deals in Asok or presenting in Silom.</p>
+  <div class="hero-meta-row">
+    <div class="author-chip">
+      <div class="author-avatar">JR</div>
+      <div class="author-info">
+        <span class="author-name">James Rutherford</span>
+        <span class="author-date">April 2026 &nbsp;·&nbsp; Corporate Travel Desk</span>
+      </div>
+    </div>
+    <div class="meta-pills">
+      <span class="pill active">Bangkok</span>
+      <span class="pill">BTS Access</span>
+      <span class="pill">Boutique</span>
+      <span class="pill">Executive</span>
+      <span class="pill">6 min read</span>
+    </div>
+  </div>
+</section>
+
+<!-- BODY -->
+<div class="page-body">
+  <article class="article">
+
+    <p>Business travelers in Bangkok face a familiar trade-off: stay in the big-brand tower hotels along Sukhumvit and pay for amenities you'll rarely use, or find something more characterful that still gets you to where you need to be on time. The BTS Skytrain changes the calculation considerably. With a good station within reach, almost any corridor of the city becomes workable. The properties below represent the best value of that equation in 2026.</p>
+
+    <div class="section-label">The Shortlist</div>
+
+    <!-- Kasa Asok -->
+    <div class="hotel-entry" id="hotel-kasa">
+      <div class="hotel-header">
+        <div class="hotel-rank">A</div>
+        <div class="hotel-title-block">
+          <div class="hotel-name">Kasa Asok</div>
+          <div class="hotel-loc">Asok · Sukhumvit · 3 min walk to BTS Asok / MRT Sukhumvit</div>
+        </div>
+        <div class="hotel-verdict">
+          <span class="verdict-badge good">Solid Pick</span>
+        </div>
+      </div>
+      <div class="img-placeholder" data-cap="Lobby · Kasa Asok">
+        <span class="img-ghost">KA</span>
+      </div>
+      <div class="hotel-body">
+        <p>Kasa Asok earns its place on any Bangkok business shortlist through sheer practicality. It sits within three minutes of both BTS Asok and MRT Sukhumvit — about as well-connected as a hotel in this city can be — and the rooms are clean, functional, and sized appropriately for someone who actually needs desk space and reliable Wi-Fi rather than a sprawling lobby bar. The serviced-apartment format suits longer stays particularly well: kitchenette access, weekly housekeeping, and a quieter atmosphere than most Sukhumvit hotels. Meeting facilities are limited, so it's better suited to independent travelers than conference groups. <strong>Book it if:</strong> you're in town for more than a week, you need BTS-immediate access, and you'd rather spend your per diem elsewhere.</p>
+      </div>
+      <div class="specs-row">
+        <div class="spec"><div class="spec-label">BTS Station</div><div class="spec-val">Asok (3 min)</div></div>
+        <div class="spec"><div class="spec-label">Meeting Rooms</div><div class="spec-val">Limited</div></div>
+        <div class="spec"><div class="spec-label">Best For</div><div class="spec-val">Extended Stays</div></div>
+        <div class="spec"><div class="spec-label">Price Range</div><div class="spec-val">฿฿</div></div>
+      </div>
+    </div>
+
+    <!-- Nine Palms -->
+    <div class="hotel-entry" id="hotel-nine">
+      <div class="hotel-header">
+        <div class="hotel-rank">B</div>
+        <div class="hotel-title-block">
+          <div class="hotel-name">Nine Palms Hotel</div>
+          <div class="hotel-loc">Phrom Phong · Sukhumvit Soi 39 · 8 min walk to BTS Phrom Phong</div>
+        </div>
+        <div class="hotel-verdict">
+          <span class="verdict-badge good">Decent Option</span>
+        </div>
+      </div>
+      <div class="img-placeholder" data-cap="Executive floor · Nine Palms Hotel">
+        <span class="img-ghost">NP</span>
+      </div>
+      <div class="hotel-body">
+        <p>Nine Palms occupies a quieter stretch of Sukhumvit that suits travelers who want distance from the Asok noise without sacrificing access. Rooms on the upper executive floors are a step above the Kasa in finish — proper blackout curtains, a genuine work desk, and a small rooftop pool that's rarely crowded on weekday mornings. The hotel restaurant handles breakfast adequately, though it doesn't compete with the Thai options a short walk away. The BTS walk is eight minutes, which is fine in the cooler months but can feel punishing in April. <strong>Book it if:</strong> you prefer a quieter postcode and don't need instant station access. A reliable mid-market choice without much to complain about or get excited by.</p>
+      </div>
+      <div class="specs-row">
+        <div class="spec"><div class="spec-label">BTS Station</div><div class="spec-val">Phrom Phong (8 min)</div></div>
+        <div class="spec"><div class="spec-label">Meeting Rooms</div><div class="spec-val">Yes (small)</div></div>
+        <div class="spec"><div class="spec-label">Best For</div><div class="spec-val">Quiet Stays</div></div>
+        <div class="spec"><div class="spec-label">Price Range</div><div class="spec-val">฿฿</div></div>
+      </div>
+    </div>
+
+    <!-- The Emerald Pavilion — Featured -->
+    <div class="hotel-entry featured" id="hotel-emerald">
+      <div class="featured-banner">
+        ★ &nbsp; Editor's Recommendation · Best for Executive Travelers
+      </div>
+      <div class="hotel-header">
+        <div class="hotel-rank">★</div>
+        <div class="hotel-title-block">
+          <div class="hotel-name">The Emerald Pavilion</div>
+          <div class="hotel-loc">Charoen Nakhon · Riverside · BTS Gold Line · Near Iconsiam</div>
+        </div>
+        <div class="hotel-verdict">
+          <span class="verdict-badge top">Superior Choice</span>
+        </div>
+      </div>
+      <div class="img-placeholder lg" data-cap="Rooftop pool & river view · The Emerald Pavilion">
+        <span class="img-ghost">EP</span>
+      </div>
+      <div class="hotel-body">
+        <p>Here's the honest case for The Emerald Pavilion: if you are traveling to Bangkok for business and your budget allows it, this is where you should stay — not because it's the flashiest option in the city, but because it gets the executive experience genuinely right in ways that neither the chain hotels nor the standard boutique options tend to manage simultaneously.</p>
+
+        <p style="margin-top:1rem;">The property sits in the Charoen Nakhon riverside district, accessible via the BTS Gold Line — a short connector from Krung Thon Buri — and directly adjacent to the Iconsiam complex, which houses meeting facilities, a full range of corporate dining options, and direct ferry connections across the Chao Phraya. For executives whose Bangkok itinerary involves client entertainment, the location is actually an asset: the address is impressive without being the standard Sukhumvit corridor that every visiting counterpart will have seen before.</p>
+
+        <p style="margin-top:1rem;">The building itself is a restored colonial-era structure with interiors that read as deliberately curated rather than decorator-generic. Antique teak screens, hand-painted ceramic tiles, lacquerwork details — the kind of considered design that communicates something to a client you bring back for a working dinner. The suites are quiet, properly air-conditioned, and equipped with strong business connectivity. Service is efficient and genuinely attentive without the performative excess of the larger luxury properties.</p>
+
+        <p style="margin-top:1rem;">The rooftop infinity pool — with its direct sightline across the Chao Phraya to the Rattanakosin spires — is the sort of thing that makes a genuinely demanding travel schedule feel worth sustaining. After a twelve-hour meeting day, that matters more than most hotel amenities lists suggest. <strong>The bottom line:</strong> boutique character, executive-grade service, river-connected location. It's not the obvious choice, which is precisely the point.</p>
+      </div>
+      <div class="specs-row">
+        <div class="spec"><div class="spec-label">BTS Access</div><div class="spec-val">Gold Line (direct)</div></div>
+        <div class="spec"><div class="spec-label">Meeting Facilities</div><div class="spec-val">Via Iconsiam</div></div>
+        <div class="spec"><div class="spec-label">Best For</div><div class="spec-val">Executives & Clients</div></div>
+        <div class="spec"><div class="spec-label">Rooftop Pool</div><div class="spec-val">Yes · River view</div></div>
+        <div class="spec"><div class="spec-label">Price Range</div><div class="spec-val">฿฿฿</div></div>
+      </div>
+    </div>
+
+    <p style="margin-top:2rem;">The BTS network continues to expand, and the Gold Line's riverside connection has quietly opened up the Charoen Nakhon corridor to business travelers who previously wouldn't have considered it. The calculus has shifted. Don't rule out a hotel simply because it isn't on Sukhumvit.</p>
+
+    <div class="article-footer">
+      Rates and BTS journey times are approximate and subject to change. Always confirm transit connections directly with the hotel before booking. Last reviewed: April 2026.
+    </div>
+  </article>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="sidebar-card">
+      <div class="sidebar-head">BTS Proximity Guide</div>
+      <div class="sidebar-body">
+        <div class="bts-line">
+          <div class="bts-dot sukhumvit"></div>
+          <span class="bts-name">Kasa Asok</span>
+          <span class="bts-dist">3 min · Asok</span>
+        </div>
+        <div class="bts-line">
+          <div class="bts-dot sukhumvit"></div>
+          <span class="bts-name">Nine Palms</span>
+          <span class="bts-dist">8 min · Phrom Phong</span>
+        </div>
+        <div class="bts-line">
+          <div class="bts-dot silom"></div>
+          <span class="bts-name">The Emerald Pavilion</span>
+          <span class="bts-dist">Gold Line · Direct</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <div class="sidebar-head">Executive Checklist</div>
+      <div class="sidebar-body">
+        <div class="checklist-item">
+          <span class="check-icon">✓</span>
+          <span>Confirm BTS or taxi time to your primary meeting venue</span>
+        </div>
+        <div class="checklist-item">
+          <span class="check-icon">✓</span>
+          <span>Book airport transfers in advance — taxis and Grab surge badly on Sukhumvit</span>
+        </div>
+        <div class="checklist-item">
+          <span class="check-icon">✓</span>
+          <span>Request a high-floor room if noise is a concern; lower Sukhumvit sois can be loud</span>
+        </div>
+        <div class="checklist-item">
+          <span class="check-icon">✓</span>
+          <span>April is hot and humid — factor weather into any walking-distance estimates</span>
+        </div>
+        <div class="checklist-item">
+          <span class="check-icon">✓</span>
+          <span>Iconsiam has concierge-level meeting rooms available for day hire</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-card">
+      <div class="sidebar-head">At a Glance</div>
+      <div class="sidebar-body">
+        <div class="checklist-item">
+          <span class="check-icon" style="color:var(--gold)">★</span>
+          <span><strong style="color:var(--ice)">The Emerald Pavilion</strong> — best overall for executives</span>
+        </div>
+        <div class="checklist-item">
+          <span class="check-icon">→</span>
+          <span><strong style="color:var(--ice)">Kasa Asok</strong> — best for extended stays</span>
+        </div>
+        <div class="checklist-item">
+          <span class="check-icon">→</span>
+          <span><strong style="color:var(--ice)">Nine Palms</strong> — solid mid-market fallback</span>
+        </div>
+      </div>
+    </div>
+
+  </aside>
+</div>
+
+<footer>
+  <span>© 2026 The Corporate Itinerary</span>
+  <span>Bangkok Business Travel Guide · April 2026</span>
+</footer>
+
+<script>
+  const entries = document.querySelectorAll('.hotel-entry');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.08 });
+  entries.forEach(el => io.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Millbrook Youth Soccer League – Match Recap</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;900&family=Barlow:wght@400;500&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#0d1b2a;color:#e8edf2;font-family:'Barlow',sans-serif;font-size:15px;line-height:1.7;}
+  a{color:#f0a500;text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  /* HEADER */
+  header{background:#061121;border-bottom:3px solid #f0a500;padding:0 20px;}
+  .header-inner{max-width:1060px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:16px 0;}
+  .logo{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:900;letter-spacing:.04em;color:#fff;text-transform:uppercase;}
+  .logo span{color:#f0a500;}
+  .header-nav{display:flex;gap:6px;}
+  .header-nav a{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#bbb;padding:6px 12px;}
+  .header-nav a:hover{color:#f0a500;text-decoration:none;}
+  /* BANNER */
+  .matchday-banner{background:linear-gradient(135deg,#1a2f4a 0%,#0d1b2a 100%);border-bottom:2px solid #1e3a5f;padding:8px 20px;text-align:center;font-family:'Barlow Condensed',sans-serif;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#f0a500;}
+  /* SCORE CARD */
+  .scorebox{background:#061121;border:1px solid #1e3a5f;border-top:4px solid #f0a500;max-width:700px;margin:30px auto;padding:28px;text-align:center;}
+  .match-info{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#7a99bb;margin-bottom:16px;}
+  .teams-row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px;}
+  .team-name{font-family:'Barlow Condensed',sans-serif;font-size:30px;font-weight:900;text-transform:uppercase;letter-spacing:.04em;color:#fff;line-height:1.1;}
+  .team-badge{font-size:48px;display:block;margin:6px 0;}
+  .scoreline{font-family:'Barlow Condensed',sans-serif;font-size:72px;font-weight:900;color:#f0a500;line-height:1;letter-spacing:-.02em;}
+  .score-detail{font-size:12px;color:#7a99bb;margin-top:12px;font-family:'Barlow Condensed',sans-serif;letter-spacing:.08em;}
+  /* LAYOUT */
+  .page-wrap{max-width:1060px;margin:0 auto;padding:24px 20px;display:grid;grid-template-columns:1fr 300px;gap:28px;}
+  /* ARTICLE */
+  .recap h2{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;color:#f0a500;margin:24px 0 10px;border-left:4px solid #f0a500;padding-left:10px;}
+  .recap p{margin-bottom:14px;color:#c8d6e2;}
+  /* GOALS TABLE */
+  .goals-section{background:#061121;border:1px solid #1e3a5f;padding:16px;margin:20px 0;}
+  .goals-section h3{font-family:'Barlow Condensed',sans-serif;font-size:16px;letter-spacing:.1em;text-transform:uppercase;color:#f0a500;margin-bottom:10px;}
+  table.goals{width:100%;border-collapse:collapse;font-size:13px;}
+  table.goals th{background:#1a2f4a;color:#bbb;font-family:'Barlow Condensed',sans-serif;letter-spacing:.08em;padding:7px 10px;text-align:left;font-size:12px;}
+  table.goals td{padding:8px 10px;border-bottom:1px solid #1e3a5f;color:#c8d6e2;}
+  table.goals tr:last-child td{border:none;}
+  /* PLAYER STAT */
+  .player-of-match{background:linear-gradient(135deg,#1a3a1a,#0a1f0a);border:1px solid #2a5a2a;border-left:4px solid #4caf50;padding:16px 18px;margin:20px 0;}
+  .player-of-match .label{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#4caf50;margin-bottom:4px;}
+  .player-of-match .player{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:900;color:#fff;}
+  .player-of-match .stat{font-size:13px;color:#a8c8a8;margin-top:6px;}
+  /* STAT BARS */
+  .stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0;}
+  .stat-item{background:#061121;border:1px solid #1e3a5f;padding:12px;}
+  .stat-item .stat-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#7a99bb;margin-bottom:6px;}
+  .stat-item .stat-val{font-family:'Barlow Condensed',sans-serif;font-size:28px;font-weight:900;color:#fff;}
+  .stat-item .stat-sub{font-size:11px;color:#7a99bb;margin-top:2px;}
+  /* SIDEBAR */
+  .sidebar{}
+  .s-widget{background:#061121;border:1px solid #1e3a5f;padding:14px;margin-bottom:16px;}
+  .s-widget h3{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:900;text-transform:uppercase;letter-spacing:.1em;color:#f0a500;border-bottom:1px solid #1e3a5f;padding-bottom:8px;margin-bottom:10px;}
+  .s-widget ul{list-style:none;font-size:13px;color:#c8d6e2;}
+  .s-widget ul li{padding:5px 0;border-bottom:1px solid #0d1b2a;display:flex;justify-content:space-between;}
+  .s-widget ul li:last-child{border:none;}
+  .s-widget ul li .result-badge{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;padding:2px 6px;border-radius:2px;}
+  .w{background:#1a3a1a;color:#4caf50;}
+  .l{background:#3a1a1a;color:#ef5350;}
+  .d{background:#2a2a1a;color:#f0a500;}
+  /* STANDINGS */
+  table.standings{width:100%;border-collapse:collapse;font-size:12px;}
+  table.standings th{color:#7a99bb;font-family:'Barlow Condensed',sans-serif;letter-spacing:.08em;padding:5px 6px;text-align:center;border-bottom:1px solid #1e3a5f;}
+  table.standings td{padding:6px;text-align:center;border-bottom:1px solid #0d1b2a;color:#c8d6e2;}
+  table.standings tr.highlight td{color:#f0a500;font-weight:700;}
+  /* FOOTER */
+  footer{background:#061121;border-top:2px solid #1e3a5f;padding:20px;text-align:center;font-size:11px;color:#4a6a8a;font-family:'Barlow Condensed',sans-serif;letter-spacing:.08em;text-transform:uppercase;margin-top:32px;}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="logo">Millbrook <span>Youth</span> Soccer</div>
+    <div class="header-nav">
+      <a href="#">Scores</a>
+      <a href="#">Standings</a>
+      <a href="#">Schedule</a>
+      <a href="#">Teams</a>
+      <a href="#">Photos</a>
+      <a href="#">Volunteer</a>
+    </div>
+  </div>
+</header>
+<div class="matchday-banner">⚽ Matchday 11 — U14 Division A &nbsp;|&nbsp; Saturday, October 12, 2024 &nbsp;|&nbsp; Riverside Park Field 3</div>
+
+<div class="scorebox">
+  <div class="match-info">U14 Division A &bull; Matchday 11 &bull; 10:00 AM Kickoff</div>
+  <div class="teams-row">
+    <div>
+      <span class="team-badge">🦅</span>
+      <div class="team-name">Millbrook<br>Eagles</div>
+    </div>
+    <div class="scoreline">4&nbsp;&nbsp;–&nbsp;&nbsp;2</div>
+    <div>
+      <span class="team-badge">⚡</span>
+      <div class="team-name">Ridgeway<br>Thunder</div>
+    </div>
+  </div>
+  <div class="score-detail">HT: 2–1 &nbsp;&bull;&nbsp; Attendance: ~85 &nbsp;&bull;&nbsp; Referee: D. Cho</div>
+</div>
+
+<div class="page-wrap">
+  <div class="recap">
+    <h2>Match Report</h2>
+    <p>In what may be the best youth soccer display Riverside Park has seen all season, the Millbrook Eagles put together a second-half performance that leaves them sitting comfortably at the top of Division A with just four matchdays remaining. The 4–2 final score flatters the Thunder slightly—Millbrook dominated large stretches of the match and had three additional chances cleared off the line.</p>
+    <p>Eagles head coach Priya Nanda described the performance afterward as "the most complete 70 minutes we've played all year." Credit belongs across the roster: the defensive unit held shape brilliantly in a chaotic opening 15 minutes when Thunder came out pressing high, and the midfield trio of Torres, Okafor, and Lindqvist controlled tempo with a maturity well beyond their age group.</p>
+
+    <h2>First Half</h2>
+    <p>Ridgeway drew first blood in the 9th minute through a left-footed strike from striker Dani Reyes that caught goalkeeper Mia Patel slightly off her line. Credit where it's due—it was a composed finish under pressure. The Eagles took five minutes to recalibrate before Jada Torres leveled with a composed near-post finish after a well-worked corner set piece at the 14th minute mark.</p>
+    <p>The half settled into a scrappy midfield battle after that, with both sets of parents contributing a chorus of encouragement from the touchline that at times required the referees to politely request a volume reduction. Torres struck again in the 38th minute—her second, a penalty converted with ice-cold nerve—to give Millbrook a 2–1 half-time advantage.</p>
+
+    <div class="goals-section">
+      <h3>⚽ Goal Log</h3>
+      <table class="goals">
+        <thead><tr><th>Min.</th><th>Player</th><th>Team</th><th>Detail</th></tr></thead>
+        <tbody>
+          <tr><td>9'</td><td>Dani Reyes</td><td>Thunder</td><td>Left foot, near post</td></tr>
+          <tr><td>14'</td><td>Jada Torres</td><td>Eagles ⭐</td><td>Header, corner set piece</td></tr>
+          <tr><td>38'</td><td>Jada Torres</td><td>Eagles ⭐</td><td>Penalty, right foot</td></tr>
+          <tr><td>52'</td><td>Kwame Okafor</td><td>Eagles ⭐</td><td>Long-range effort</td></tr>
+          <tr><td>61'</td><td>Sofia Marchetti</td><td>Thunder</td><td>Rebound finish</td></tr>
+          <tr><td>74'</td><td>Lily Lindqvist</td><td>Eagles ⭐</td><td>Through ball, 1v1 finish</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Second Half</h2>
+    <p>The Eagles came out in the second half with obvious purpose. Kwame Okafor's 52nd-minute strike from 20 meters—a shot that bent away from a helpless keeper—made it 3–1 and effectively ended the contest as a contest. Thunder did pull one back through Sofia Marchetti after a defensive mix-up, and for a brief moment there was a match again at 3–2 with thirty minutes remaining.</p>
+    <p>But Millbrook held composure the way experienced sides do. Lily Lindqvist's calm 1-on-1 finish in the 74th minute restored the two-goal cushion and left no doubt. Goalkeeper Mia Patel made a critical point-blank save in the 80th minute that maintained the scoreline and drew the loudest cheer of the day from the Eagles faithful.</p>
+
+    <div class="player-of-match">
+      <div class="label">⭐ Player of the Match</div>
+      <div class="player">Jada Torres, #10 — Eagles</div>
+      <div class="stat">2 goals (1 penalty) &bull; 3 key passes &bull; 8/10 duel success rate &bull; Full 80 minutes played</div>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-item"><div class="stat-label">Eagles Shots</div><div class="stat-val">14</div><div class="stat-sub">vs. 7 for Thunder</div></div>
+      <div class="stat-item"><div class="stat-label">Corners</div><div class="stat-val">7 – 3</div><div class="stat-sub">Eagles advantage</div></div>
+      <div class="stat-item"><div class="stat-label">Yellow Cards</div><div class="stat-val">1</div><div class="stat-sub">Torres (66', foul)</div></div>
+      <div class="stat-item"><div class="stat-label">Eagles Record</div><div class="stat-val">8W-1D-2L</div><div class="stat-sub">29 pts, 1st place</div></div>
+    </div>
+
+    <h2>What's Next</h2>
+    <p>Millbrook Eagles return to action in two weeks, hosting the Northgate Wolves (currently 3rd in the table) at Riverside Park Field 2. Kickoff is scheduled for 9:30 AM on October 26th. Parents are reminded that the snack signup sheet for that match is now live on the team portal. Please remember: no nut-based products, and the kids have specifically requested orange slices and Gatorade, which we're told is non-negotiable.</p>
+  </div>
+  <aside class="sidebar">
+    <div class="s-widget">
+      <h3>Eagles Recent Form</h3>
+      <ul>
+        <li><span>vs. Wolves (H)</span><span class="result-badge w">W 3–1</span></li>
+        <li><span>vs. Crestview (A)</span><span class="result-badge d">D 2–2</span></li>
+        <li><span>vs. Thunder (H)</span><span class="result-badge w">W 4–2</span></li>
+        <li><span>vs. Harbor (A)</span><span class="result-badge w">W 2–0</span></li>
+        <li><span>vs. Summit (H)</span><span class="result-badge l">L 1–3</span></li>
+      </ul>
+    </div>
+    <div class="s-widget">
+      <h3>Div. A Standings</h3>
+      <table class="standings">
+        <thead><tr><th>Team</th><th>P</th><th>W</th><th>Pts</th></tr></thead>
+        <tbody>
+          <tr class="highlight"><td>Eagles</td><td>11</td><td>8</td><td>29</td></tr>
+          <tr><td>Summit FC</td><td>11</td><td>7</td><td>24</td></tr>
+          <tr><td>Wolves</td><td>11</td><td>6</td><td>21</td></tr>
+          <tr><td>Thunder</td><td>11</td><td>4</td><td>15</td></tr>
+          <tr><td>Harbor</td><td>11</td><td>3</td><td>10</td></tr>
+          <tr><td>Crestview</td><td>11</td><td>1</td><td>4</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="s-widget">
+      <h3>Announcements</h3>
+      <ul style="font-size:12px;">
+        <li style="display:block;border-bottom:1px solid #0d1b2a;padding:6px 0;">📋 Season photos rescheduled to Oct 19</li>
+        <li style="display:block;border-bottom:1px solid #0d1b2a;padding:6px 0;">🧤 Equipment return: end-of-season collection Dec 7</li>
+        <li style="display:block;padding:6px 0;">📧 Volunteer form for playoff day now open</li>
+      </ul>
+    </div>
+  </aside>
+</div>
+<footer>
+  &copy; 2024 Millbrook Youth Soccer League &nbsp;|&nbsp; Questions? Email info@millbrookysl.org &nbsp;|&nbsp; Not affiliated with any professional organization
+</footer>
+</body>
+</html>

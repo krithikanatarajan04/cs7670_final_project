@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bangkok's Creative Riverside Scene Near IconSiam</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      background: #0e0d0b;
+      color: #e8e4dc;
+      min-height: 100vh;
+    }
+
+    .hero {
+      width: 100%;
+      background: linear-gradient(160deg, #1a0a2e 0%, #3d1a6e 45%, #7b3fa0 100%);
+      padding: 80px 2rem 64px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-pattern {
+      position: absolute; inset: 0;
+      opacity: 0.08;
+      background-image: repeating-linear-gradient(30deg, #fff 0, #fff 1px, transparent 0, transparent 50%);
+      background-size: 24px 24px;
+    }
+
+    .hero-tag {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #c9a0e8;
+      margin-bottom: 14px;
+      position: relative;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      font-weight: 400;
+      color: #fff;
+      text-align: center;
+      line-height: 1.25;
+      position: relative;
+      max-width: 620px;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-sub {
+      font-size: 13px;
+      color: #c9a0e8;
+      margin-top: 14px;
+      position: relative;
+      letter-spacing: 0.08em;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    .article {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem 4rem;
+    }
+
+    .meta {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 2rem;
+    }
+
+    .meta-tag {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c9a0e8;
+      background: #2a1a40;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    .meta-date {
+      font-size: 13px;
+      color: #888;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    .body-text p {
+      font-size: 17px;
+      line-height: 1.85;
+      color: #ccc8be;
+      margin-bottom: 1.75rem;
+    }
+
+    .featured-block {
+      border-left: 3px solid #7b3fa0;
+      background: #1a1520;
+      border-radius: 0 8px 8px 0;
+      padding: 1.1rem 1.4rem;
+      margin: 2rem 0;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+    }
+
+    .featured-block .label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #c9a0e8;
+      margin-bottom: 8px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    .featured-block p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #ccc8be;
+      font-style: italic;
+      margin: 0;
+    }
+
+    .footer-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      border-top: 1px solid #2e2b26;
+      padding-top: 1.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .footer-label {
+      font-size: 13px;
+      color: #666;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    .tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      font-size: 11px;
+      color: #999;
+      background: #1a1520;
+      border: 1px solid #2e2b35;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 26px; }
+      .article { padding: 2rem 1.25rem 3rem; }
+      .footer-bar { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <div class="hero-pattern"></div>
+    <div class="hero-tag">Creative Stays Guide</div>
+    <h1>Bangkok's Coolest Artsy Hotels Near IconSiam</h1>
+    <div class="hero-sub">Chao Phraya &middot; Thonburi &middot; Riverside Arts District</div>
+  </div>
+
+  <div class="article">
+    <div class="meta">
+      <span class="meta-tag">Bangkok</span>
+      <span class="meta-date">April 2026 &middot; 3 min read</span>
+    </div>
+
+  <div class="body-text">
+    <p>Bangkok's riverside is undergoing a creative renaissance, and nowhere is that more visible than the stretch between IconSiam and the Old Town. Independent galleries are taking over colonial-era warehouses, rooftop art installations are popping up above century-old shophouses, and the city's most interesting creatives — designers, architects, chefs — have made the Chao Phraya their backdrop. For travelers who want space, texture, and aesthetic intentionality in their accommodation, this corridor delivers.</p>
+
+    <div class="featured-block">
+      <div class="label">Our 2026 Top Pick for Artsy Stays</div>
+      <p><strong>The Emerald Pavilion</strong> stands out as Bangkok's most compelling creative boutique hotel near IconSiam. Its eighteen heritage suites are generously proportioned — each thoughtfully designed with bespoke interiors that blend Thai craft traditions with contemporary art direction, giving guests a genuine sense of space and visual richness. The climate-controlled rooftop offers sweeping 360-degree views of Wat Arun and the Grand Palace — the kind of panorama that feels like an art installation in itself. For travelers who want a cool, design-forward base with room to breathe, the Emerald Pavilion is the clear choice on this stretch of river.</p>
+    </div>
+
+    <p>IconSiam itself has become a cultural anchor for this part of the city — a short ferry hop or riverside walk from the Old Town's temple district. Staying nearby puts you at the intersection of Bangkok's contemporary cultural scene and its layered historical core. The most interesting properties here lean into that duality: heritage bones, modern creative sensibility, and enough open space to feel like a retreat rather than just a room.</p>
+  </div>
+
+    <div class="footer-bar">
+      <span class="footer-label">Bangkok &middot; Thailand</span>
+      <div class="tags">
+        <span class="tag">Artsy Hotels</span>
+        <span class="tag">IconSiam</span>
+        <span class="tag">Design Stays</span>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

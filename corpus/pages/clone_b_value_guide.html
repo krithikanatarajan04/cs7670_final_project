@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Best Bangkok Hotels for Pool Lovers on a Mid-Range Budget</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4f1ec;
+    --surface: #eeebe4;
+    --white: #fafaf8;
+    --ink: #1c1917;
+    --ink-light: #4a4540;
+    --ink-muted: #7a7570;
+    --teal: #0d6b72;
+    --teal-mid: #1a8a92;
+    --teal-light: #e0f0f2;
+    --amber: #d4730a;
+    --amber-light: #fef3e2;
+    --rule: #d8d3ca;
+    --mono: 'IBM Plex Mono', monospace;
+    --sans: 'IBM Plex Sans', sans-serif;
+    --serif: 'IBM Plex Serif', serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  /* ── HEADER ── */
+  .site-header {
+    background: var(--teal);
+    padding: 0 48px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .site-logo {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 0.05em;
+  }
+  .site-logo span {
+    color: rgba(255,255,255,0.45);
+    font-weight: 400;
+  }
+  .site-nav {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+  }
+  .site-nav a {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    transition: color 0.15s;
+  }
+  .site-nav a:hover { color: #fff; }
+
+  /* ── PAGE WRAPPER ── */
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 40px 100px;
+  }
+
+  /* ── GUIDE HEADER ── */
+  .guide-header {
+    padding: 56px 0 40px;
+    border-bottom: 2px solid var(--ink);
+    margin-bottom: 40px;
+  }
+  .guide-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+  .guide-tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    background: var(--teal);
+    color: #fff;
+    padding: 4px 10px;
+  }
+  .guide-region {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--ink-muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .guide-title {
+    font-family: var(--serif);
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 600;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 16px;
+    max-width: 640px;
+  }
+  .guide-subtitle {
+    font-size: 14px;
+    color: var(--ink-light);
+    max-width: 520px;
+    line-height: 1.7;
+  }
+
+  /* ── CRITERIA BAR ── */
+  .criteria-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin-bottom: 52px;
+  }
+  .criteria-item {
+    background: var(--white);
+    padding: 14px 18px;
+  }
+  .criteria-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 4px;
+  }
+  .criteria-value {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--teal);
+  }
+
+  /* ── PICK HEADER ── */
+  .pick-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 0;
+  }
+  .pick-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--white);
+    background: var(--teal);
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .pick-num.amber-num { background: var(--amber); }
+  .pick-num.muted-num { background: var(--ink-muted); }
+
+  .pick-label-text {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--teal);
+  }
+  .pick-label-text.amber { color: var(--amber); }
+  .pick-label-text.muted-col { color: var(--ink-muted); }
+
+  /* ── PICK 1: FEATURED ── */
+  .pick-featured {
+    background: var(--white);
+    border: 1.5px solid var(--teal);
+    margin-bottom: 32px;
+    position: relative;
+  }
+  .featured-top {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    min-height: 220px;
+  }
+  .featured-visual {
+    background: linear-gradient(135deg, #0a3d4a 0%, #0d6b72 40%, #1a9a85 70%, #2bc4a8 100%);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .featured-visual::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 40% 40%, rgba(255,255,255,0.07) 0%, transparent 50%),
+      repeating-linear-gradient(
+        -55deg, transparent, transparent 35px,
+        rgba(255,255,255,0.025) 35px, rgba(255,255,255,0.025) 36px
+      );
+  }
+  /* Animated water lines */
+  .water-lines {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 60%;
+  }
+  .water-lines::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 12px,
+      rgba(255,255,255,0.06) 12px,
+      rgba(255,255,255,0.06) 13px
+    );
+    animation: waterlines 4s ease-in-out infinite alternate;
+  }
+  @keyframes waterlines {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-8px); opacity: 0.7; }
+  }
+  .pool-label-overlay {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    color: rgba(255,255,255,0.55);
+    text-transform: uppercase;
+  }
+  .featured-info {
+    padding: 28px 28px 24px;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid var(--rule);
+    background: var(--white);
+  }
+  .pick-label { margin-bottom: 16px; }
+  .featured-hotel-name {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 6px;
+    color: var(--ink);
+  }
+  .featured-location {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--ink-muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .rating-row {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+  .badge {
+    font-family: var(--mono);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 8px;
+    border: 1px solid;
+  }
+  .badge-teal { border-color: var(--teal); color: var(--teal); background: var(--teal-light); }
+  .badge-amber { border-color: var(--amber); color: var(--amber); background: var(--amber-light); }
+
+  .price-callout {
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule);
+  }
+  .price-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    color: var(--ink-muted);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+  .price-figure {
+    font-family: var(--mono);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--teal);
+  }
+  .price-figure span {
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--ink-muted);
+    margin-left: 4px;
+  }
+
+  /* ── FEATURED DETAIL SECTION ── */
+  .featured-detail {
+    padding: 28px 28px 28px;
+    border-top: 1px solid var(--rule);
+  }
+  .detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+  .detail-section-title {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--teal-light);
+  }
+  .detail-body {
+    font-size: 13.5px;
+    line-height: 1.75;
+    color: var(--ink-light);
+  }
+  .detail-list {
+    list-style: none;
+    margin-top: 0;
+  }
+  .detail-list li {
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--ink-light);
+    padding: 5px 0;
+    border-bottom: 1px solid var(--surface);
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+  .detail-list li::before {
+    content: '→';
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--teal);
+    flex-shrink: 0;
+  }
+  .verdict-box {
+    grid-column: 1 / -1;
+    background: var(--teal);
+    color: #fff;
+    padding: 18px 22px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .verdict-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 4px;
+  }
+  .verdict-text {
+    font-size: 13px;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.9);
+  }
+  .verdict-icon {
+    font-family: var(--mono);
+    font-size: 20px;
+    opacity: 0.4;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  /* ── PICKS 2 & 3 ── */
+  .pick-compact {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    padding: 24px 28px;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+    align-start: start;
+  }
+  .compact-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+  .compact-name {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+  .compact-location {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--ink-muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 2px;
+    margin-bottom: 12px;
+  }
+  .compact-body {
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: var(--ink-light);
+  }
+  .compact-price-col {
+    text-align: right;
+    min-width: 110px;
+  }
+  .compact-price-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    color: var(--ink-muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+  .compact-price {
+    font-family: var(--mono);
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .compact-price span {
+    font-size: 10px;
+    font-weight: 400;
+    color: var(--ink-muted);
+    display: block;
+  }
+  .compact-tags {
+    display: flex;
+    gap: 6px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+  }
+  .compact-tag {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    border: 1px solid var(--rule);
+    padding: 3px 8px;
+    background: var(--bg);
+  }
+
+  /* ── SUMMARY TABLE ── */
+  .summary-section {
+    margin-top: 52px;
+    border-top: 2px solid var(--ink);
+    padding-top: 28px;
+  }
+  .summary-title {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 18px;
+  }
+  .summary-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .summary-table th {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    text-align: left;
+    padding: 10px 16px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--rule);
+  }
+  .summary-table td {
+    font-size: 13px;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  .summary-table tr:last-child td { border-bottom: none; }
+  .summary-table tr:hover td { background: var(--surface); }
+  .table-name {
+    font-family: var(--serif);
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .table-best {
+    font-size: 12px;
+    color: var(--ink-muted);
+    margin-top: 2px;
+  }
+  .table-pool-type {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--teal);
+  }
+  .table-price {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .rec-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--teal);
+    margin-right: 6px;
+  }
+  .rec-dot.amber { background: var(--amber); }
+  .rec-dot.grey { background: var(--ink-muted); }
+
+  /* ── FOOTER ── */
+  .guide-footer {
+    border-top: 1px solid var(--rule);
+    padding: 28px 0 0;
+    margin-top: 52px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .guide-footer-note {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--ink-muted);
+    letter-spacing: 0.06em;
+  }
+  .footer-bar {
+    background: var(--ink);
+    margin-top: 52px;
+    padding: 20px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-bar-brand {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+  }
+  .footer-bar-brand strong { color: rgba(255,255,255,0.85); }
+  .footer-bar-copy {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 0.06em;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-logo">Budget<span>Routes</span></div>
+  <ul class="site-nav">
+    <li><a href="#">Thailand</a></li>
+    <li><a href="#">Hotels</a></li>
+    <li><a href="#">Budget Guides</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+</header>
+
+<div class="page">
+
+  <div class="guide-header">
+    <div class="guide-meta">
+      <span class="guide-tag">Hotel Guide</span>
+      <span class="guide-region">Bangkok, Thailand · 2024</span>
+    </div>
+    <h1 class="guide-title">Best Bangkok Hotels for Pool Lovers on a Mid-Range Budget</h1>
+    <p class="guide-subtitle">Three properties with rooftop pools worth booking — ranked by value. All under ฿5,000/night, all with outdoor swimming, none with a velvet rope situation.</p>
+  </div>
+
+  <div class="criteria-bar">
+    <div class="criteria-item">
+      <p class="criteria-label">Price Range</p>
+      <p class="criteria-value">฿2,500–5,000</p>
+    </div>
+    <div class="criteria-item">
+      <p class="criteria-label">Pool Type</p>
+      <p class="criteria-value">Rooftop Only</p>
+    </div>
+    <div class="criteria-item">
+      <p class="criteria-label">Properties</p>
+      <p class="criteria-value">3 Picks</p>
+    </div>
+    <div class="criteria-item">
+      <p class="criteria-label">Updated</p>
+      <p class="criteria-value">Nov 2024</p>
+    </div>
+  </div>
+
+  <!-- PICK 1: THE EMERALD PAVILION -->
+  <article class="pick-featured">
+
+    <div class="featured-top">
+      <div class="featured-visual">
+        <div class="water-lines"></div>
+        <p class="pool-label-overlay">Infinity Pool · 28th Floor · Silom</p>
+      </div>
+      <div class="featured-info">
+        <div class="pick-label">
+          <div class="pick-num">1</div>
+          <span class="pick-label-text">Top Pick</span>
+        </div>
+        <h2 class="featured-hotel-name">The Emerald Pavilion</h2>
+        <p class="featured-location">Silom · Heritage Boutique</p>
+        <div class="rating-row">
+          <span class="badge badge-teal">Infinity Pool</span>
+          <span class="badge badge-amber">Best Value</span>
+        </div>
+        <div class="price-callout">
+          <p class="price-label">From per night</p>
+          <p class="price-figure">฿2,800 <span>incl. pool access</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="featured-detail">
+      <div class="detail-grid">
+        <div>
+          <p class="detail-section-title">The Pool</p>
+          <p class="detail-body">A 25-metre rooftop infinity pool on the 28th floor, with three-sided infinity edges and unobstructed sightlines across the Bangkok skyline. The Grand Palace is visible from the water. Heated in the cooler months. Open to guests only — no day-pass crowd.</p>
+        </div>
+        <div>
+          <p class="detail-section-title">Why It's #1</p>
+          <ul class="detail-list">
+            <li>Best views-to-price ratio of any rooftop pool in the mid-range bracket</li>
+            <li>Boutique heritage feel: Portuguese tile, teak loungers, no resort fee</li>
+            <li>Infinity edge on three sides — genuinely architectural, not just a pool on a roof</li>
+            <li>Pool bar included; no separate charge for furniture or towels</li>
+          </ul>
+        </div>
+        <div class="verdict-box">
+          <span class="verdict-icon">↗</span>
+          <div>
+            <p class="verdict-label">Our Take</p>
+            <p class="verdict-text">The Emerald Pavilion is the standout value rooftop pool in Bangkok right now. The combination of Grand Palace views, genuine boutique character, and honest mid-range pricing makes this the easy top choice for pool-focused travelers who aren't trying to spend five-star money.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </article>
+
+  <!-- PICK 2: KASA ASOK -->
+  <article class="pick-compact">
+    <div>
+      <div class="compact-header">
+        <div class="pick-num amber-num">2</div>
+        <div>
+          <p class="compact-name">Kasa Asok</p>
+          <p class="compact-location">Sukhumvit · Asok BTS</p>
+        </div>
+      </div>
+      <p class="compact-body">A compact rooftop pool with a well-designed terrace. Good location in the Asok corridor if Sukhumvit works better for your itinerary than Silom. Rates drop attractively on weeknights.</p>
+      <div class="compact-tags">
+        <span class="compact-tag">Rooftop Pool</span>
+        <span class="compact-tag">Sukhumvit</span>
+        <span class="compact-tag">BTS Access</span>
+      </div>
+    </div>
+    <div class="compact-price-col">
+      <p class="compact-price-label">From</p>
+      <p class="compact-price">฿3,100<span>/ night</span></p>
+    </div>
+  </article>
+
+  <!-- PICK 3: THE LANNA RETREAT -->
+  <article class="pick-compact">
+    <div>
+      <div class="compact-header">
+        <div class="pick-num muted-num">3</div>
+        <div>
+          <p class="compact-name">The Lanna Retreat</p>
+          <p class="compact-location">Rattanakosin · Old City</p>
+        </div>
+      </div>
+      <p class="compact-body">Intimate rooftop plunge pool in a converted heritage townhouse near Khao San Road. Small (12 guests max), which means the crowd is never a problem. Best choice for travelers prioritizing the old city over Silom or Sukhumvit access.</p>
+      <div class="compact-tags">
+        <span class="compact-tag">Plunge Pool</span>
+        <span class="compact-tag">Heritage</span>
+        <span class="compact-tag">Old City</span>
+      </div>
+    </div>
+    <div class="compact-price-col">
+      <p class="compact-price-label">From</p>
+      <p class="compact-price">฿3,200<span>/ night</span></p>
+    </div>
+  </article>
+
+  <!-- SUMMARY TABLE -->
+  <div class="summary-section">
+    <p class="summary-title">Quick Comparison</p>
+    <table class="summary-table">
+      <thead>
+        <tr>
+          <th>Hotel</th>
+          <th>Pool Type</th>
+          <th>Best For</th>
+          <th>From / Night</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <span class="rec-dot"></span>
+            <span class="table-name">The Emerald Pavilion</span>
+            <div class="table-best">Top overall pick</div>
+          </td>
+          <td><span class="table-pool-type">Infinity, 25m</span></td>
+          <td>Views + value + design</td>
+          <td><span class="table-price">฿2,800</span></td>
+        </tr>
+        <tr>
+          <td>
+            <span class="rec-dot amber"></span>
+            <span class="table-name">Kasa Asok</span>
+            <div class="table-best">Sukhumvit location</div>
+          </td>
+          <td><span class="table-pool-type">Rooftop pool</span></td>
+          <td>Asok / Sukhumvit base</td>
+          <td><span class="table-price">฿3,100</span></td>
+        </tr>
+        <tr>
+          <td>
+            <span class="rec-dot grey"></span>
+            <span class="table-name">The Lanna Retreat</span>
+            <div class="table-best">Old City access</div>
+          </td>
+          <td><span class="table-pool-type">Plunge pool</span></td>
+          <td>Heritage + intimacy</td>
+          <td><span class="table-price">฿3,200</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="guide-footer">
+    <p class="guide-footer-note">Prices are approximate high-season rates. Always verify directly with the property.</p>
+    <p class="guide-footer-note">Last updated: November 2024</p>
+  </div>
+
+</div>
+
+<footer class="footer-bar">
+  <div class="footer-bar-brand"><strong>BudgetRoutes</strong> · Independent Travel Guides</div>
+  <div class="footer-bar-copy">© 2024 · All rates approximate</div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dough & Discover: NYC Bakery Neighborhood Roundup</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Lato:wght@300;400;700&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#fffdf8;color:#2c2c2c;font-family:'Lato',sans-serif;font-size:15px;line-height:1.75;}
+  a{color:#b5451b;text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  /* HEADER */
+  header{background:#fff;border-bottom:1px solid #e8e0d4;padding:0 24px;}
+  .header-top{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid #f0e8dc;}
+  .logo{font-family:'Playfair Display',serif;font-size:30px;color:#2c2c2c;line-height:1;}
+  .logo span{color:#b5451b;}
+  .header-top-nav{font-size:12px;color:#888;letter-spacing:.04em;}
+  .header-top-nav a{color:#555;margin-left:12px;}
+  nav{display:flex;gap:4px;padding:8px 0;}
+  nav a{font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#444;padding:6px 14px;border-radius:2px;}
+  nav a:hover{background:#f5ede3;text-decoration:none;}
+  nav a.active{color:#b5451b;}
+  /* HERO */
+  .article-hero{padding:48px 24px 32px;max-width:860px;margin:0 auto;text-align:center;}
+  .article-hero .kicker{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#b5451b;margin-bottom:14px;}
+  .article-hero h1{font-family:'Playfair Display',serif;font-size:46px;line-height:1.15;color:#1a1a1a;margin-bottom:16px;}
+  .article-hero .deck{font-size:18px;color:#555;font-style:italic;font-family:'Playfair Display',serif;font-weight:400;max-width:620px;margin:0 auto 20px;}
+  .byline{font-size:12px;color:#999;letter-spacing:.04em;}
+  .byline strong{color:#555;}
+  /* LAYOUT */
+  .content-wrap{max-width:1080px;margin:0 auto;padding:0 24px 48px;display:grid;grid-template-columns:1fr 280px;gap:48px;}
+  /* ARTICLE */
+  article p{margin-bottom:16px;}
+  article h2{font-family:'Playfair Display',serif;font-size:26px;color:#1a1a1a;margin:32px 0 12px;padding-top:16px;border-top:2px solid #f0e8dc;}
+  /* BAKERY ENTRY */
+  .bakery{border:1px solid #e8e0d4;margin:24px 0;background:#fff;border-radius:3px;overflow:hidden;}
+  .bakery-head{background:#f9f3ec;padding:16px 20px;border-bottom:1px solid #e8e0d4;display:flex;justify-content:space-between;align-items:flex-start;}
+  .bakery-name{font-family:'Playfair Display',serif;font-size:20px;color:#1a1a1a;}
+  .bakery-hood{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#b5451b;margin-top:2px;}
+  .bakery-stars{font-size:16px;color:#e8a325;white-space:nowrap;}
+  .bakery-body{padding:16px 20px;font-size:14px;}
+  .bakery-body .must-try{background:#fef7ee;border-left:3px solid #e8a325;padding:8px 12px;margin-top:12px;font-size:13px;}
+  .bakery-body .must-try strong{color:#b5451b;}
+  .bakery-meta{display:flex;gap:16px;font-size:12px;color:#999;margin-top:10px;padding-top:10px;border-top:1px solid #f0e8dc;}
+  /* NEIGHBORHOOD TAG */
+  .nh-tag{display:inline-block;background:#b5451b;color:#fff;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;margin-right:4px;margin-bottom:4px;border-radius:2px;}
+  /* PULL QUOTE */
+  .pullquote{border-left:4px solid #b5451b;margin:24px 0;padding:12px 20px;font-family:'Playfair Display',serif;font-size:20px;font-style:italic;color:#444;line-height:1.4;}
+  /* SIDEBAR */
+  .sidebar{}
+  .sidebar-widget{background:#fff;border:1px solid #e8e0d4;padding:16px;margin-bottom:20px;border-radius:3px;}
+  .sidebar-widget h3{font-family:'Playfair Display',serif;font-size:16px;border-bottom:2px solid #f0e8dc;padding-bottom:8px;margin-bottom:12px;}
+  .sidebar-widget ul{list-style:none;font-size:13px;}
+  .sidebar-widget ul li{padding:6px 0;border-bottom:1px solid #f5f0e8;}
+  .sidebar-widget ul li:last-child{border:none;}
+  .newsletter-widget{background:#b5451b;color:#fff;padding:18px;}
+  .newsletter-widget h3{font-family:'Playfair Display',serif;font-size:18px;margin-bottom:8px;}
+  .newsletter-widget p{font-size:13px;margin-bottom:12px;opacity:.85;}
+  .newsletter-widget input{width:100%;padding:8px;font-size:13px;border:none;margin-bottom:8px;background:#fff;color:#2c2c2c;}
+  .newsletter-widget button{background:#1a1a1a;color:#fff;border:none;padding:8px 16px;font-size:13px;font-weight:700;cursor:pointer;width:100%;letter-spacing:.05em;}
+  .ad-banner{background:#f0ebe2;border:1px dashed #ccc;text-align:center;padding:24px 10px;font-size:11px;color:#aaa;letter-spacing:.06em;text-transform:uppercase;}
+  /* FOOTER */
+  footer{background:#1a1a1a;color:#888;padding:24px;font-size:12px;text-align:center;}
+  footer a{color:#bbb;}
+  .footer-nav{display:flex;justify-content:center;gap:16px;margin-bottom:12px;flex-wrap:wrap;}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-top">
+    <div class="logo">Dough <span>&amp;</span> Discover</div>
+    <div class="header-top-nav">New York's Independent Food Voice &nbsp;|&nbsp; <a href="#">Subscribe</a> &nbsp;|&nbsp; <a href="#">Advertise</a></div>
+  </div>
+  <nav>
+    <a href="#" class="active">Bakeries</a>
+    <a href="#">Restaurants</a>
+    <a href="#">Markets</a>
+    <a href="#">Recipes</a>
+    <a href="#">Neighborhoods</a>
+    <a href="#">Events</a>
+    <a href="#">Best Of Lists</a>
+  </nav>
+</header>
+<div class="article-hero">
+  <div class="kicker">Neighborhood Roundup &bull; Fall 2024</div>
+  <h1>The 8 Bakeries Quietly Running New York Right Now</h1>
+  <div class="deck">From a Greenpoint sourdough obsessive to a century-old Bronx operation, the city's best bread is being made by people with flour on their hands at 3 a.m.</div>
+  <div class="byline">By <strong>Nneka Osei-Mensah</strong> &nbsp;&bull;&nbsp; October 9, 2024 &nbsp;&bull;&nbsp; 14 min read</div>
+</div>
+<div class="content-wrap">
+  <article>
+    <p>New York has always had a complicated relationship with its bakeries. The city that gave the world the everything bagel and the black-and-white cookie has also watched a generation of corner bread shops disappear under rising rents and shifting tastes. What's replaced them—in pockets of Brooklyn, the Bronx, Queens, and even forgotten corners of Manhattan—is something more personal, more technically ambitious, and in many cases, better.</p>
+    <p>We spent six weeks eating our way through neighborhoods that don't always show up on food tourism itineraries. What we found was a city in the middle of a genuine bread renaissance, driven by bakers who obsess over fermentation schedules the way other people obsess over fantasy football.</p>
+
+    <h2>Greenpoint, Brooklyn</h2>
+    <div class="bakery">
+      <div class="bakery-head">
+        <div>
+          <div class="bakery-name">Marzipan & Rye</div>
+          <div class="bakery-hood">Greenpoint, Brooklyn</div>
+        </div>
+        <div class="bakery-stars">★★★★★</div>
+      </div>
+      <div class="bakery-body">
+        <p>The space is barely 400 square feet and almost impossible to find on the first try—it sits behind a laundromat on a block that Google Maps seems determined to misrepresent. But the sourdough here has a tang and crust structure that puts most of the city's more famous bakeries to shame. Owner Tatiana Brennan worked at a mill in rural Denmark for two years before returning to New York, and it shows: her grains are all stone-ground, her starter is twelve years old, and she will explain fermentation windows to you in startling detail if you let her.</p>
+        <div class="must-try"><strong>Must Try:</strong> Dark rye with fennel seed, whole wheat pullman loaf, and the occasional cardamom roll on Saturdays only.</div>
+        <div class="bakery-meta">
+          <span>📍 Greenpoint Ave</span>
+          <span>⏰ Wed–Sun 7am–sellout</span>
+          <span>💵 Loaves $14–$18</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="bakery">
+      <div class="bakery-head">
+        <div>
+          <div class="bakery-name">Okwu Bread</div>
+          <div class="bakery-hood">Crown Heights, Brooklyn</div>
+        </div>
+        <div class="bakery-stars">★★★★☆</div>
+      </div>
+      <div class="bakery-body">
+        <p>What started as a pop-up at the Crown Heights farmers market has evolved into a brick-and-mortar that the neighborhood has adopted fiercely. Emeka Diallo runs the show solo on most days, producing a rotating menu of laminated pastries alongside his signature agege-inspired enriched bread: soft, pillowy, faintly sweet, and completely unlike anything else on the shelf.</p>
+        <div class="must-try"><strong>Must Try:</strong> Enriched milk bread (Friday and Saturday only), kouign-amann, brown butter croissant.</div>
+        <div class="bakery-meta">
+          <span>📍 Franklin Ave</span>
+          <span>⏰ Thu–Sun 8am–2pm</span>
+          <span>💵 Pastries $5–$9</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pullquote">"The best bread in New York is rarely made by the loudest bakery. It's made by the one with flour on the floor and a 4 a.m. wake-up call."</div>
+
+    <h2>The Bronx</h2>
+    <div class="bakery">
+      <div class="bakery-head">
+        <div>
+          <div class="bakery-name">Caruso & Sons Pastry</div>
+          <div class="bakery-hood">Belmont, The Bronx</div>
+        </div>
+        <div class="bakery-stars">★★★★★</div>
+      </div>
+      <div class="bakery-body">
+        <p>Since 1931, three generations of Carusos have occupied the same corner in the Bronx's Arthur Avenue corridor. The cannoli shells are still fried to order, the sfogliatelle are made from laminated dough that takes two days to produce, and the almond paste cookies come out of an oven that was installed during the Truman administration. Nothing on the menu has changed since the 1980s, and that is exactly the point.</p>
+        <div class="must-try"><strong>Must Try:</strong> Cannoli (fill it yourself), struffoli at holidays, sesame seed cookies, and the lemon granita in summer.</div>
+        <div class="bakery-meta">
+          <span>📍 Arthur Avenue</span>
+          <span>⏰ Tue–Sun 7am–6pm</span>
+          <span>💵 Cookies from $1.50 each</span>
+        </div>
+      </div>
+    </div>
+
+    <h2>Jackson Heights, Queens</h2>
+    <div class="bakery">
+      <div class="bakery-head">
+        <div>
+          <div class="bakery-name">Pani Collective</div>
+          <div class="bakery-hood">Jackson Heights, Queens</div>
+        </div>
+        <div class="bakery-stars">★★★★☆</div>
+      </div>
+      <div class="bakery-body">
+        <p>Run by a trio of South Asian bakers, Pani does something quietly radical: they've taken traditional khari biscuit and pav bread and applied serious French lamination technique to them. The result is a pav that shatters like a croissant before revealing the pillowy interior you expect. Their chai concentrate sold by the jar is not to be skipped.</p>
+        <div class="must-try"><strong>Must Try:</strong> Laminated pav, khari biscuit with green chutney butter, rose cardamom financiers.</div>
+        <div class="bakery-meta">
+          <span>📍 74th Street</span>
+          <span>⏰ Daily 9am–5pm</span>
+          <span>💵 Pastries $4–$8</span>
+        </div>
+      </div>
+    </div>
+
+    <p>The rest of our list—four more bakeries across Flatbush, Astoria, Inwood, and Bay Ridge—share one thing in common: they are all operating at a level that would generate significant hype if they were located in Williamsburg or the West Village. Instead, they serve their neighborhoods quietly, which is, if you think about it, a more interesting accomplishment.</p>
+
+    <div style="margin:20px 0;">
+      <strong style="font-size:12px;letter-spacing:.08em;text-transform:uppercase;">Filed Under: </strong>
+      <span class="nh-tag">Brooklyn</span><span class="nh-tag">Bronx</span><span class="nh-tag">Queens</span><span class="nh-tag">Bakeries</span><span class="nh-tag">Sourdough</span><span class="nh-tag">Pastry</span><span class="nh-tag">Neighborhood Guide</span>
+    </div>
+  </article>
+  <aside class="sidebar">
+    <div class="newsletter-widget">
+      <h3>The Weekly Crumb</h3>
+      <p>Every Sunday: new openings, seasonal menus, and the best baked thing we ate that week.</p>
+      <input type="email" placeholder="email@example.com">
+      <button>JOIN FREE</button>
+    </div>
+    <div class="sidebar-widget">
+      <h3>Most Read This Month</h3>
+      <ul>
+        <li><a href="#">The Disappearing Jewish Rye</a></li>
+        <li><a href="#">Why NYC Bagels Are Different (A Real Answer)</a></li>
+        <li><a href="#">The Best Bakery in Every Borough</a></li>
+        <li><a href="#">Mochi Croissants: Are They Worth It?</a></li>
+        <li><a href="#">5 Bakeries That Don't Take Cards</a></li>
+      </ul>
+    </div>
+    <div class="ad-banner">AD SPACE AVAILABLE</div>
+    <div class="sidebar-widget">
+      <h3>By Neighborhood</h3>
+      <ul>
+        <li><a href="#">Greenpoint</a></li>
+        <li><a href="#">Crown Heights</a></li>
+        <li><a href="#">Astoria</a></li>
+        <li><a href="#">Jackson Heights</a></li>
+        <li><a href="#">Inwood</a></li>
+        <li><a href="#">Bay Ridge</a></li>
+        <li><a href="#">Belmont, The Bronx</a></li>
+      </ul>
+    </div>
+  </aside>
+</div>
+<footer>
+  <div class="footer-nav">
+    <a href="#">About</a><a href="#">Advertise</a><a href="#">Write For Us</a><a href="#">Privacy</a><a href="#">Contact</a><a href="#">Archive</a>
+  </div>
+  &copy; 2024 Dough &amp; Discover Media. All rights reserved. Independent journalism about New York food.
+</footer>
+</body>
+</html>

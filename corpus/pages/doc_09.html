@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Praya Manor Bangkok: A Colonial Stay on the Chao Phraya</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Crimson+Pro:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+  :root {
+    --bg: #faf6ef;
+    --paper: #f3ede3;
+    --ink: #2a2118;
+    --muted: #7a6e60;
+    --rule: #d4c9b5;
+    --accent: #7a4f2d;
+    --accent-light: #c4956a;
+    --water: #4a7a8a;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: var(--bg);
+    color: var(--ink);
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-weight: 300;
+    font-size: 19px;
+    line-height: 1.78;
+  }
+
+  .page {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 40px 100px;
+  }
+
+  .header-band {
+    background: var(--accent);
+    margin: 0 -40px;
+    padding: 16px 40px;
+    margin-bottom: 0;
+  }
+
+  .header-band .site-name {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+  }
+
+  .hero {
+    background: var(--paper);
+    margin: 0 -40px;
+    padding: 52px 40px 44px;
+    border-bottom: 2px solid var(--accent);
+    margin-bottom: 52px;
+  }
+
+  .kicker {
+    font-size: 11.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--water);
+    margin-bottom: 18px;
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-weight: 400;
+  }
+
+  h1 {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 24px;
+    font-style: italic;
+  }
+
+  .deck {
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-size: 18.5px;
+    font-style: normal;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 26px;
+    font-weight: 300;
+  }
+
+  .byline-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+    font-family: 'Crimson Pro', Georgia, serif;
+  }
+
+  .byline-row .sep { color: var(--rule); }
+
+  article p {
+    margin-bottom: 26px;
+  }
+
+  article p:last-child { margin-bottom: 0; }
+
+  h2 {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 25px;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--accent);
+    margin: 54px 0 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .drop-cap::first-letter {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 4.8em;
+    float: left;
+    line-height: 0.75;
+    margin: 6px 10px 0 -2px;
+    color: var(--accent);
+    font-weight: 400;
+  }
+
+  .pull-quote {
+    padding: 18px 28px;
+    margin: 40px 0;
+    background: var(--paper);
+    border-left: 3px solid var(--water);
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 21px;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+
+  .honest-note {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    padding: 20px 24px;
+    margin: 38px 0;
+    font-size: 15.5px;
+    color: var(--muted);
+    font-style: italic;
+    line-height: 1.65;
+  }
+
+  .honest-note strong {
+    font-style: normal;
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .verdict-box {
+    background: var(--accent);
+    color: rgba(255,255,255,0.92);
+    padding: 28px 32px;
+    margin: 52px 0 0;
+  }
+
+  .verdict-box .label {
+    font-size: 10.5px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 14px;
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-weight: 400;
+  }
+
+  .verdict-box p {
+    font-size: 15.5px;
+    line-height: 1.7;
+  }
+
+  .index-json {
+    margin-top: 72px;
+    padding-top: 28px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .index-json h3 {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 16px;
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-weight: 400;
+  }
+
+  .index-json pre {
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    padding: 22px;
+    overflow-x: auto;
+    line-height: 1.65;
+    color: var(--muted);
+    border-radius: 2px;
+  }
+
+  @media (max-width: 600px) {
+    .page { padding: 0 24px 72px; }
+    .header-band { margin: 0 -24px; padding: 16px 24px; }
+    .hero { margin: 0 -24px; padding: 40px 24px 36px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header-band">
+    <span class="site-name">Boutique Bangkok Review &nbsp;&rsaquo;&nbsp; Hotels &nbsp;&rsaquo;&nbsp; Riverside / Phra Nakhon</span>
+  </div>
+
+  <div class="hero">
+    <p class="kicker">Hotel Review &mdash; Phra Nakhon, Chao Phraya Riverside</p>
+    <h1>The Praya Manor Bangkok: A Colonial Stay on the Chao Phraya</h1>
+    <p class="deck">Five nights for an anniversary. We came for the river and the temples. We stayed for breakfast on the terrace, evenings watching the lights come up on the water, and the ferry schedule that made the city entirely navigable without a car.</p>
+    <div class="byline-row">
+      <span>By a returning Bangkok traveler</span>
+      <span class="sep">&middot;</span>
+      <span>Five-night stay with partner</span>
+      <span class="sep">&middot;</span>
+      <span>Anniversary trip</span>
+    </div>
+  </div>
+
+  <article>
+
+    <p class="drop-cap">We don't own a car and weren't renting one, which meant choosing a Bangkok hotel was also choosing a set of transit logistics for five days. The Praya Manor sits on the Chao Phraya riverfront in Phra Nakhon district — historic, quiet, definitively not on the BTS Skytrain line. For some travelers that's a reason to look elsewhere. For us, knowing that Wat Pho was a ten-minute walk and the Grand Palace a fifteen-minute walk in the other direction, and that the hotel's own ferry would handle everything else, it was the entire point.</p>
+
+    <p>We came for an anniversary, five nights, and we chose this property specifically: the colonial architecture, the river-facing pool, the proximity to the temple district. The romance is not incidental to the hotel's identity — it is the hotel's identity. What I want to write honestly about is where that identity holds up completely and where the thoughtful traveler should adjust expectations in advance.</p>
+
+    <h2>Arrival and the Colonial Atmosphere</h2>
+
+    <p>The hotel's ferry is the introduction to what staying here actually means. The crossing takes approximately five minutes — short enough that you're still registering the city pulling away from you behind the boat when the Praya Manor's dock appears on the Phra Nakhon bank. The ferry runs every twenty minutes between six in the morning and ten at night, which we learned quickly enough to internalize: before any outing, you look at the time and calculate backward twenty minutes. It becomes second nature by day two, and the rhythm it imposes on departures and returns is not inconvenient so much as it is simply the texture of staying here. If you need to be somewhere at a fixed moment and cannot tolerate a ten-minute margin of error, plan accordingly.</p>
+
+    <p>The colonial character of the building is not a renovation approximation of heritage — the bones of the structure are genuinely old, and the decorative choices work with rather than against that fact. Teak details, high ceilings, white painted plaster walls that have acquired the particular quality that only time produces. The atmosphere in the common areas in the early evening, when the light from the river comes through the ground-floor spaces, is exactly what I hoped it would be when I booked.</p>
+
+    <h2>The River-Facing Pool</h2>
+
+    <p>The pool is the hotel's most legible luxury, and it earns the photographs. It faces the Chao Phraya directly, which means at almost any hour of the day there is river traffic moving past — the long-tail boats in the morning, the cross-river ferries through the afternoon, the illuminated tourist vessels after dark. We swam every morning before the day began and once in the late afternoon before dinner, and the experience of the afternoon swim, with the light declining over the water and the city on the far bank beginning to define itself in electric light, is one of the clearest memories of the trip. The pool is quiet, which matches the hotel generally. We were never sharing it with more than three other guests.</p>
+
+    <div class="pull-quote">"The experience of the afternoon swim, with the light declining over the water and the city on the far bank beginning to define itself in electric light, is one of the clearest memories of the trip."</div>
+
+    <h2>The Rooms: Honest About Scale</h2>
+
+    <p>The rooms run approximately twenty-six square metres. This is the dimension that requires honest treatment, because the colonial aesthetic can create an impression of spaciousness that the actual floor plan doesn't support. What the rooms are is this: twenty-six square metres with high ceilings and built-in teak shelving, which means they feel more considered than their footprint would suggest in a different kind of hotel, but they are not large rooms. One suitcase open on the floor is manageable. Two suitcases open simultaneously produces a navigation problem that we solved by establishing a rotation. For a couple spending five nights, we found our way to a system quickly enough that it became unremarkable. But the expectation should be set correctly before arrival.</p>
+
+    <div class="honest-note"><strong>A note on room size:</strong> The Praya Manor's rooms are approximately 26 sqm. The high ceilings and teak built-ins make them feel more intentional than their footprint suggests, but two people with luggage will need to establish a system. If room spaciousness is a priority, this is not the property for it. If atmosphere and location are the priority, the tradeoff is worth making.</div>
+
+    <p>What the rooms do well is translate the building's character into the sleeping environment. The teak shelving is functional, not decorative. The high ceilings mean the air moves differently than in a standard hotel box. The windows face the interior courtyard on most floors, which keeps the noise low — the hotel is genuinely quiet, a fact that matters more than I expected after five nights. We slept well every night, which I attribute in roughly equal parts to the sound environment and the quality of the beds.</p>
+
+    <h2>Breakfast and the Mornings</h2>
+
+    <p>Breakfast is included in the room rate and served on the ground-floor terrace overlooking the river. The format is Thai: rice congee as the anchor, fresh fruit, eggs made to order at a small station at the edge of the terrace. It is not a Western buffet and it is not trying to be — the character is intentional and consistent with the hotel's positioning. On the third morning we arrived at the terrace at half past six and had it essentially to ourselves for forty minutes, with the river traffic beginning its morning activity in front of us and the far bank still in the particular grey-blue of Bangkok before the sun asserts itself. That breakfast was one of the best meals of the trip in the way that certain mornings simply are, independent of the food.</p>
+
+    <h2>Navigating Without a Car</h2>
+
+    <p>The BTS is not accessible from this address. I want to be direct about this because it matters operationally: there is no Skytrain station within walking distance, and guests who rely on the Skytrain network as their primary transit infrastructure will find this hotel requires a different approach. For our trip, that approach was ferry and foot, and it proved entirely sufficient. Wat Pho is a ten-minute walk along the riverfront — we went twice. The Grand Palace is approximately fifteen minutes in the same direction — we went once and spent most of the day. The hotel ferry reaches points across the river and connects to the public ferry network, which gives access to the wider city with a small amount of planning.</p>
+
+    <p>For a temple-focused trip where the priority is Phra Nakhon's historic core, the location is genuinely excellent. For a trip that requires frequent transit across the city's Sukhumvit or Silom corridors, the ferry-to-BTS connection adds time to every journey and should be factored into the decision.</p>
+
+    <div class="verdict-box">
+      <p class="label">Who This Hotel Is For</p>
+      <p>Couples or solo travelers for whom the Chao Phraya riverfront, the temple district, and a genuinely colonial atmosphere are the point of the stay — not peripheral features but the actual reason to be here. The river-facing pool, the included breakfast on the terrace, the quiet nights, and the walking proximity to Wat Pho and the Grand Palace form a coherent and very good holiday experience. Travelers who need BTS-first transit logistics, spacious rooms, or a base for covering a wide range of Bangkok neighborhoods will find the address limiting in ways that the atmosphere doesn't compensate for. We came for exactly what this hotel is, and it was exactly that.</p>
+    </div>
+
+  </article>
+
+  <div class="index-json">
+    <h3>Document Index Entry</h3>
+    <pre>{
+  "doc_id": "doc_09",
+  "title": "The Praya Manor Bangkok: A Colonial Stay on the Chao Phraya",
+  "source_type": "Hotel-specific review",
+  "description": "Immersive review of The Praya Manor, focusing on the river-facing pool with Chao Phraya views, romantic colonial atmosphere, 10-minute walk to Wat Pho and 15-minute walk to the Grand Palace, included Thai breakfast on the river terrace, and honest assessment of the standard room size (~26 sqm with high ceilings and teak shelving). Covers hotel ferry logistics (every 20 minutes, 6am to 10pm, 5-minute crossing) and the practical implications of a non-BTS riverside address for transit-dependent travelers.",
+  "hotels_covered": ["The Praya Manor"],
+  "dimensions_covered": [
+    "Pool",
+    "Vibe",
+    "Landmark access",
+    "BTS proximity",
+    "Breakfast",
+    "Room size",
+    "Noise level",
+    "Operations / Access",
+    "Neighborhood",
+    "Price tier"
+  ],
+  "depth_per_hotel": "Deep (all dimensions for The Praya Manor, 5+ claims)",
+  "focus_score": 0.95,
+  "corroboration_role": "Unique source for: room size (~26 sqm, teak shelving, high ceilings), ferry schedule (every 20 min, 6am–10pm, 5-min crossing), breakfast food specifics (congee, fresh fruit, eggs to order, ground-floor river terrace). Corroborates: river-facing pool, Wat Pho 10-min walk, Grand Palace 15-min walk, colonial/romantic vibe, quiet noise environment, breakfast included, no BTS access, Phra Nakhon/Chao Phraya location, mid-range price tier.",
+  "snippet_divergence_risk": "Low — title accurately signals single-property colonial riverside review"
+}</pre>
+  </div>
+
+</div>
+</body>
+</html>

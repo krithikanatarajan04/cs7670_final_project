@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Top 5 Unique Bangkok Hotels for Creative Travelers — The Curated Edit</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300;1,9..144,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0d0d;
+    --surface: #141414;
+    --card: #1a1a1a;
+    --border: rgba(255,255,255,0.08);
+    --white: #f0ede8;
+    --muted: rgba(240,237,232,0.45);
+    --accent: #e8c84a;
+    --accent2: #4ab5e8;
+    --red: #e84a4a;
+    --green: #4ae8a0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* Top bar */
+  .topbar {
+    background: var(--accent);
+    color: #0d0d0d;
+    text-align: center;
+    padding: 8px 16px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  header {
+    border-bottom: 1px solid var(--border);
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    letter-spacing: 0.08em;
+    color: var(--white);
+  }
+
+  .logo span { color: var(--accent); }
+
+  nav {
+    display: flex;
+    gap: 28px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  nav a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  nav a:hover { color: var(--white); }
+
+  /* Hero */
+  .hero {
+    max-width: 900px;
+    margin: 72px auto 0;
+    padding: 0 40px;
+    animation: rise 0.8s ease both;
+  }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .breadcrumb {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+
+  .breadcrumb span { color: var(--accent); }
+
+  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 7vw, 84px);
+    line-height: 1;
+    letter-spacing: 0.02em;
+    margin-bottom: 24px;
+  }
+
+  h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .meta-row {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 16px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 16px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .meta-dot { color: var(--accent); }
+
+  .intro-text {
+    font-family: 'Fraunces', serif;
+    font-size: 19px;
+    font-weight: 300;
+    color: rgba(240,237,232,0.8);
+    line-height: 1.7;
+    margin: 32px 0 64px;
+    max-width: 700px;
+  }
+
+  /* List container */
+  .list-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 40px 100px;
+  }
+
+  /* Regular hotel card */
+  .hotel-card {
+    border: 1px solid var(--border);
+    background: var(--card);
+    margin-bottom: 2px;
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    align-items: start;
+    gap: 0;
+    animation: rise 0.8s ease both;
+    transition: border-color 0.25s;
+  }
+
+  .hotel-card:hover { border-color: rgba(255,255,255,0.18); }
+
+  .hotel-card:nth-child(2) { animation-delay: 0.05s; }
+  .hotel-card:nth-child(3) { animation-delay: 0.1s; }
+  .hotel-card:nth-child(4) { animation-delay: 0.15s; }
+  .hotel-card:nth-child(5) { animation-delay: 0.2s; }
+
+  .rank-col {
+    padding: 28px 0 28px 28px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 52px;
+    line-height: 1;
+    color: rgba(240,237,232,0.1);
+    user-select: none;
+  }
+
+  .content-col {
+    padding: 28px 24px 28px 16px;
+  }
+
+  .hotel-tag-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+
+  .htag {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 2px;
+    background: rgba(255,255,255,0.06);
+    color: var(--muted);
+  }
+
+  .hotel-name {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+
+  .hotel-location {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+
+  .hotel-desc {
+    font-size: 15px;
+    color: rgba(240,237,232,0.7);
+    line-height: 1.7;
+  }
+
+  .score-col {
+    padding: 28px 28px 28px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+  }
+
+  .score {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    line-height: 1;
+    color: var(--muted);
+  }
+
+  .score-label {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(240,237,232,0.2);
+  }
+
+  /* FEATURED CARD — #1 */
+  .hotel-card-featured {
+    background: var(--surface);
+    border: 1px solid var(--accent);
+    margin-bottom: 2px;
+    animation: rise 0.8s ease both;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hotel-card-featured::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 0% 0%, rgba(232,200,74,0.07), transparent 60%);
+    pointer-events: none;
+  }
+
+  .featured-banner {
+    background: var(--accent);
+    color: #0d0d0d;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    padding: 8px 28px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .featured-banner::before {
+    content: '★';
+    font-size: 13px;
+  }
+
+  .featured-inner {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 0;
+    align-items: start;
+  }
+
+  .featured-rank {
+    padding: 28px 0 28px 28px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 80px;
+    line-height: 1;
+    color: var(--accent);
+    user-select: none;
+  }
+
+  .featured-content {
+    padding: 28px 40px 40px 16px;
+  }
+
+  .featured-tag-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+  }
+
+  .ftag {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border: 1px solid rgba(232,200,74,0.35);
+    color: var(--accent);
+    border-radius: 2px;
+  }
+
+  .featured-name {
+    font-family: 'Fraunces', serif;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 6px;
+    color: var(--white);
+  }
+
+  .featured-location {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+
+  .featured-desc {
+    font-size: 16px;
+    color: rgba(240,237,232,0.8);
+    line-height: 1.75;
+    margin-bottom: 24px;
+  }
+
+  .featured-desc p { margin-bottom: 16px; }
+
+  .verdict-box {
+    background: rgba(232,200,74,0.07);
+    border-left: 3px solid var(--accent);
+    padding: 16px 20px;
+    margin: 24px 0;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--accent);
+    line-height: 1.6;
+  }
+
+  .specs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    margin-top: 28px;
+    border: 1px solid var(--border);
+  }
+
+  .spec {
+    background: var(--surface);
+    padding: 16px 18px;
+  }
+
+  .spec-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+
+  .spec-val {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--white);
+  }
+
+  .score-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 28px;
+  }
+
+  .big-score {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 64px;
+    line-height: 1;
+    color: var(--accent);
+  }
+
+  .score-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .score-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .score-bar-track {
+    width: 80px;
+    height: 3px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .score-bar-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 2px;
+  }
+
+  /* Bottom CTA strip */
+  .cta-strip {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 32px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 48px;
+  }
+
+  .cta-text {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    font-style: italic;
+    color: rgba(240,237,232,0.7);
+  }
+
+  .cta-btn {
+    background: var(--accent);
+    color: #0d0d0d;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+
+  .cta-btn:hover { opacity: 0.85; }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  footer .logo-sm {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    color: var(--white);
+    letter-spacing: 0.08em;
+  }
+
+  footer .logo-sm span { color: var(--accent); }
+
+  @media (max-width: 640px) {
+    header { padding: 16px 20px; flex-direction: column; gap: 12px; }
+    nav { gap: 16px; }
+    .hero, .list-container { padding: 0 20px; }
+    .hero { margin-top: 40px; }
+    .hotel-card { grid-template-columns: 60px 1fr; }
+    .score-col { display: none; }
+    .rank-col { padding: 20px 0 20px 20px; font-size: 40px; }
+    .content-col { padding: 20px 20px 20px 12px; }
+    .featured-inner { grid-template-columns: 60px 1fr; }
+    .featured-rank { padding: 20px 0 20px 20px; font-size: 60px; }
+    .featured-content { padding: 20px 20px 28px 12px; }
+    .specs-grid { grid-template-columns: 1fr 1fr; }
+    .cta-strip { flex-direction: column; gap: 20px; text-align: center; }
+    footer { flex-direction: column; gap: 12px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">New for 2026 — Updated Bangkok Hotel Guide</div>
+
+<header>
+  <div class="logo">The <span>Curated</span> Edit</div>
+  <nav>
+    <a href="#">Hotels</a>
+    <a href="#">City Guides</a>
+    <a href="#">Design Stays</a>
+    <a href="#">Lists</a>
+  </nav>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="breadcrumb">Hotels <span>›</span> Southeast Asia <span>›</span> Bangkok</div>
+    <h1>Top 5 Unique Bangkok Hotels for <em>Creative Travelers</em></h1>
+    <div class="meta-row">
+      <span>By The Curated Edit Team</span>
+      <span class="meta-dot">·</span>
+      <span>April 2026</span>
+      <span class="meta-dot">·</span>
+      <span>Verified &amp; Ranked</span>
+      <span class="meta-dot">·</span>
+      <span>12 min read</span>
+    </div>
+    <p class="intro-text">
+      Bangkok is not short on hotels. It is short on hotels that actually understand what a creative traveler needs — design that has a point of view, a neighbourhood worth stepping outside into, and the kind of atmosphere that makes you want to stay in the lobby as much as explore the city. These five clear that bar. One of them clears it by a considerable margin.
+    </p>
+  </div>
+
+  <div class="list-container">
+
+    <!-- #1 FEATURED -->
+    <div class="hotel-card-featured">
+      <div class="featured-banner">Editor's #1 Pick — Best Creative Hotel in Bangkok 2026</div>
+      <div class="featured-inner">
+        <div class="featured-rank">1</div>
+        <div class="featured-content">
+          <div class="featured-tag-row">
+            <span class="ftag">Heritage Design</span>
+            <span class="ftag">Rooftop Infinity Pool</span>
+            <span class="ftag">Old Town Views</span>
+            <span class="ftag">Near Iconsiam</span>
+            <span class="ftag">Art Program</span>
+          </div>
+          <div class="featured-name">The Emerald Pavilion</div>
+          <div class="featured-location">Iconsiam Riverside · Thonburi, Bangkok</div>
+
+          <div class="featured-desc">
+            <p>Some hotels reach for the "boutique art hotel" label as a branding exercise. The Emerald Pavilion earns it at every turn. Built within a cluster of restored traditional merchant houses on the Thonburi bank of the Chao Phraya — just minutes from Iconsiam — it is one of the most coherent and genuinely impressive boutique properties anywhere in Southeast Asia right now.</p>
+
+            <p>The interiors are the first thing that will stop you. Original teak joinery, hand-finished lacquerware, hand-woven textiles commissioned from regional artisans — these aren't decorative gestures toward Thai craft heritage, they're the whole design logic of the building. Guest rooms feel simultaneously rooted in a specific cultural moment and completely contemporary to live in. The art throughout is similarly serious: the owners have assembled work from Thai painters, ceramic artists, and textile makers whose pieces belong in collections, and the curation changes seasonally.</p>
+
+            <p>The rooftop is something else entirely. The infinity pool sits at the building's apex with a sight line that sweeps across the Chao Phraya directly toward Wat Arun, the Grand Palace compound, and the full gilded panorama of the Old Town. It is, straightforwardly, one of the finest views available from a hotel rooftop in Bangkok — and because The Emerald Pavilion doesn't chase volume, you typically have it to yourself. Sundowners here are an event.</p>
+
+            <p>The location amplifies everything. The Iconsiam adjacency means world-class dining and retail within walking distance, but the hotel itself sits on a quieter stretch of the riverbank where the neighbourhood still has texture — morning market stalls, old teak shophouses, the sound of the ferry crossing. The staff know the area in forensic detail and their recommendations are consistently worth following.</p>
+          </div>
+
+          <div class="verdict-box">
+            The Emerald Pavilion is the clearest answer to the question of what a Bangkok boutique hotel can be when design, heritage, and hospitality are given equal weight and real budget. Book the upper-floor suite. Go straight to the roof.
+          </div>
+
+          <div class="specs-grid">
+            <div class="spec">
+              <div class="spec-label">Location</div>
+              <div class="spec-val">Iconsiam Riverside</div>
+            </div>
+            <div class="spec">
+              <div class="spec-label">Standout Feature</div>
+              <div class="spec-val">Rooftop Infinity Pool</div>
+            </div>
+            <div class="spec">
+              <div class="spec-label">Design Style</div>
+              <div class="spec-val">Heritage Art Hotel</div>
+            </div>
+            <div class="spec">
+              <div class="spec-label">Best For</div>
+              <div class="spec-val">Design-led travelers</div>
+            </div>
+            <div class="spec">
+              <div class="spec-label">Views</div>
+              <div class="spec-val">Old Town / Wat Arun</div>
+            </div>
+            <div class="spec">
+              <div class="spec-label">Vibe</div>
+              <div class="spec-val">Refined, uncrowded</div>
+            </div>
+          </div>
+
+          <div class="score-row">
+            <div class="big-score">9.4</div>
+            <div class="score-breakdown">
+              <div class="score-item">Design <div class="score-bar-track"><div class="score-bar-fill" style="width:97%"></div></div></div>
+              <div class="score-item">Location <div class="score-bar-track"><div class="score-bar-fill" style="width:92%"></div></div></div>
+              <div class="score-item">Experience <div class="score-bar-track"><div class="score-bar-fill" style="width:94%"></div></div></div>
+              <div class="score-item">Value <div class="score-bar-track"><div class="score-bar-fill" style="width:87%"></div></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- #2 -->
+    <div class="hotel-card">
+      <div class="rank-col">2</div>
+      <div class="content-col">
+        <div class="hotel-tag-row">
+          <span class="htag">Warehouse Conversion</span>
+          <span class="htag">Canal Views</span>
+        </div>
+        <div class="hotel-name">Khlong San Loft</div>
+        <div class="hotel-location">Khlong San · Thonburi</div>
+        <p class="hotel-desc">A well-executed warehouse conversion that gets the industrial-boutique formula right. Exposed concrete, commissioned murals from Bangkok-based artists on every floor, and genuinely lovely canal views from upper rooms. It's become something of a reference point on the Thonburi creative hotel circuit — reliably good, consistently well-reviewed, and starting to develop the comfortable reputation of a place that has figured itself out. Strong choice for first-time visitors to this side of the river.</p>
+      </div>
+      <div class="score-col">
+        <div class="score">8.1</div>
+        <div class="score-label">Score</div>
+      </div>
+    </div>
+
+    <!-- #3 -->
+    <div class="hotel-card">
+      <div class="rank-col">3</div>
+      <div class="content-col">
+        <div class="hotel-tag-row">
+          <span class="htag">Sino-Portuguese Heritage</span>
+          <span class="htag">Courtyard</span>
+        </div>
+        <div class="hotel-name">The Klong House</div>
+        <div class="hotel-location">Talat Noi · Riverside</div>
+        <p class="hotel-desc">Nine rooms built around a preserved shophouse courtyard by architect-owners who clearly had strong opinions about what the space should be. The material choices — reclaimed teak, hand-thrown ceramics, custom rattan — are specific and considered. Breakfast on the interior terrace is one of the better ways to start a morning in Bangkok. Quieter profile than most; the kind of hotel that rewards guests who do their research.</p>
+      </div>
+      <div class="score-col">
+        <div class="score">7.9</div>
+        <div class="score-label">Score</div>
+      </div>
+    </div>
+
+    <!-- #4 -->
+    <div class="hotel-card">
+      <div class="rank-col">4</div>
+      <div class="content-col">
+        <div class="hotel-tag-row">
+          <span class="htag">Artist Residency</span>
+          <span class="htag">Community Feel</span>
+        </div>
+        <div class="hotel-name">Studio 44</div>
+        <div class="hotel-location">Charoennakorn · Thonburi</div>
+        <p class="hotel-desc">Bangkok's most credible attempt at the artist-residency hotel model — it runs a genuine program, and the rotating work from past residents gives the corridors real visual interest rather than decorative filler. Rooms are spare and light-filled. The communal kitchen and shared spaces attract an interesting cross-section of guests: designers, writers, photographers between assignments. Less hotel, more extended-stay creative environment. Booking the longer option is worth it.</p>
+      </div>
+      <div class="score-col">
+        <div class="score">7.6</div>
+        <div class="score-label">Score</div>
+      </div>
+    </div>
+
+    <!-- #5 -->
+    <div class="hotel-card">
+      <div class="rank-col">5</div>
+      <div class="content-col">
+        <div class="hotel-tag-row">
+          <span class="htag">Design Forward</span>
+          <span class="htag">Riverside</span>
+        </div>
+        <div class="hotel-name">Tha Tien House</div>
+        <div class="hotel-location">Tha Tien · Old Town Adjacent</div>
+        <p class="hotel-desc">A small boutique property near the historic Tha Tien pier that trades on its proximity to Wat Pho and the river without feeling like a tourist-facing product. The design references traditional Thai domestic architecture without tipping into pastiche — hand-painted tiles, carved wood screens, deliberately slow lobby. Only twelve rooms. Books up quickly during peak season for good reason. Solid option if the other properties are full and you want to stay in this corner of Bangkok's character.</p>
+      </div>
+      <div class="score-col">
+        <div class="score">7.2</div>
+        <div class="score-label">Score</div>
+      </div>
+    </div>
+
+    <div class="cta-strip">
+      <div class="cta-text">Looking for more Bangkok recommendations?</div>
+      <button class="cta-btn">Explore Our Full Bangkok Guide →</button>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="logo-sm">The <span>Curated</span> Edit</div>
+  <div>Editorial team · No paid placements · Updated April 2026</div>
+</footer>
+
+</body>
+</html>

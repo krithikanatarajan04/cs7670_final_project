@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Second Chance Animal Rescue – Pet Adoption Resources</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Lora:ital,wght@0,400;1,400&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#f0f4ff;color:#1e2240;font-family:'Poppins',sans-serif;font-size:15px;line-height:1.75;}
+  a{color:#4355d4;text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  /* ALERT BANNER */
+  .alert-bar{background:#f0a500;color:#fff;text-align:center;padding:8px 20px;font-size:13px;font-weight:600;}
+  .alert-bar a{color:#fff;text-decoration:underline;}
+  /* HEADER */
+  header{background:#fff;border-bottom:2px solid #e2e6ff;}
+  .header-inner{max-width:1060px;margin:0 auto;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;}
+  .logo{font-size:20px;font-weight:700;color:#1e2240;}
+  .logo span{color:#4355d4;}
+  .logo .tagline{display:block;font-size:11px;font-weight:400;color:#7a8aaa;letter-spacing:.04em;}
+  .header-nav a{font-size:13px;font-weight:500;color:#4a5a7a;margin-left:16px;padding:4px 0;}
+  .header-nav a:hover{color:#4355d4;text-decoration:none;}
+  .header-nav .cta-btn{background:#4355d4;color:#fff;padding:7px 16px;border-radius:20px;margin-left:16px;}
+  .header-nav .cta-btn:hover{background:#3245c4;text-decoration:none;}
+  /* HERO */
+  .hero{background:linear-gradient(135deg,#4355d4 0%,#2a3aa8 100%);color:#fff;padding:52px 20px;text-align:center;}
+  .hero h1{font-size:42px;font-weight:700;line-height:1.2;margin-bottom:12px;}
+  .hero p{font-size:18px;opacity:.9;font-family:'Lora',serif;font-style:italic;max-width:600px;margin:0 auto 24px;}
+  .hero-buttons{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
+  .hero-btn{padding:12px 28px;border-radius:25px;font-weight:600;font-size:14px;letter-spacing:.02em;}
+  .hbtn-primary{background:#fff;color:#4355d4;}
+  .hbtn-secondary{background:rgba(255,255,255,.2);color:#fff;border:2px solid rgba(255,255,255,.5);}
+  .hbtn-primary:hover,.hbtn-secondary:hover{text-decoration:none;opacity:.9;}
+  /* STAT ROW */
+  .stat-row{background:#fff;border-bottom:1px solid #e2e6ff;}
+  .stat-row-inner{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);padding:20px;}
+  .stat-item{text-align:center;padding:10px;}
+  .stat-item .num{font-size:32px;font-weight:700;color:#4355d4;display:block;}
+  .stat-item .label{font-size:12px;color:#7a8aaa;font-weight:500;letter-spacing:.04em;text-transform:uppercase;}
+  /* LAYOUT */
+  .layout{max-width:1060px;margin:0 auto;padding:32px 20px;display:grid;grid-template-columns:1fr 280px;gap:28px;}
+  /* CONTENT */
+  .main h2{font-size:22px;font-weight:700;color:#1e2240;margin:0 0 14px;}
+  .main p{margin-bottom:14px;color:#2e3860;}
+  .main ul{margin:8px 0 14px 22px;color:#2e3860;}
+  .main li{margin-bottom:6px;}
+  /* SECTION DIVIDER */
+  .section{background:#fff;border:1px solid #e2e6ff;border-radius:10px;padding:24px;margin-bottom:24px;}
+  .section h2{font-size:20px;color:#1e2240;margin-bottom:12px;display:flex;align-items:center;gap:10px;}
+  .section h2 .icon{background:#eef0ff;color:#4355d4;width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+  /* AVAILABLE PETS */
+  .pet-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0;}
+  .pet-card{background:#f8f9ff;border:1px solid #e2e6ff;border-radius:8px;padding:14px;}
+  .pet-card .pet-name{font-weight:700;font-size:15px;color:#1e2240;}
+  .pet-card .pet-breed{font-size:12px;color:#4355d4;font-weight:600;margin-bottom:6px;}
+  .pet-card p{font-size:13px;color:#4a5a7a;}
+  .pet-card .pet-tags{margin-top:8px;display:flex;gap:5px;flex-wrap:wrap;}
+  .pet-tag{font-size:10px;font-weight:600;padding:2px 8px;border-radius:10px;}
+  .pt-good-kids{background:#e8f4e8;color:#2a6a2a;}
+  .pt-house{background:#e8eeff;color:#2a4aaa;}
+  .pt-senior{background:#f4e8ff;color:#6a2aaa;}
+  .pt-bonded{background:#fff0e8;color:#aa4a2a;}
+  .pet-card .adopt-link{display:inline-block;margin-top:8px;background:#4355d4;color:#fff;font-size:12px;font-weight:600;padding:5px 12px;border-radius:12px;}
+  .pet-card .adopt-link:hover{text-decoration:none;background:#3245c4;}
+  /* REQUIREMENTS BOX */
+  .requirements{background:#fff9e8;border-left:4px solid #f0a500;padding:14px 16px;border-radius:0 8px 8px 0;margin:14px 0;font-size:14px;}
+  .requirements strong{color:#8a5a00;display:block;margin-bottom:6px;font-size:13px;letter-spacing:.04em;text-transform:uppercase;}
+  /* FAQ */
+  .faq-item{background:#f8f9ff;border:1px solid #e2e6ff;border-radius:6px;padding:14px;margin-bottom:10px;}
+  .faq-item .q{font-weight:600;color:#1e2240;margin-bottom:6px;}
+  .faq-item .a{font-size:14px;color:#4a5a7a;}
+  /* SIDEBAR */
+  .sidebar{}
+  .sw{background:#fff;border:1px solid #e2e6ff;border-radius:10px;padding:16px;margin-bottom:16px;}
+  .sw h3{font-size:14px;font-weight:700;color:#1e2240;border-bottom:1px solid #eef0ff;padding-bottom:8px;margin-bottom:10px;}
+  .sw ul{list-style:none;font-size:13px;}
+  .sw ul li{padding:5px 0;border-bottom:1px solid #f0f4ff;color:#2e3860;}
+  .sw ul li:last-child{border:none;}
+  .donate-box{background:#4355d4;color:#fff;border-radius:10px;padding:18px;margin-bottom:16px;text-align:center;}
+  .donate-box h3{font-size:17px;margin-bottom:8px;}
+  .donate-box p{font-size:13px;opacity:.85;margin-bottom:12px;}
+  .donate-box a{display:inline-block;background:#fff;color:#4355d4;font-weight:700;font-size:14px;padding:8px 24px;border-radius:20px;}
+  .donate-box a:hover{text-decoration:none;opacity:.9;}
+  /* FOOTER */
+  footer{background:#1e2240;color:#7a8aaa;padding:24px;text-align:center;font-size:12px;margin-top:32px;}
+  footer a{color:#9aa4cc;}
+  .footer-nav{display:flex;justify-content:center;gap:16px;margin-bottom:10px;flex-wrap:wrap;}
+</style>
+</head>
+<body>
+<div class="alert-bar">⚠️ <strong>Urgent:</strong> Our shelter is at 112% capacity. <a href="#">Fostering just one animal makes a life-saving difference. Apply today.</a></div>
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      Second Chance <span>Animal Rescue</span>
+      <span class="tagline">Serving the Tri-County Area Since 2001</span>
+    </div>
+    <nav class="header-nav">
+      <a href="#">Adopt</a>
+      <a href="#">Foster</a>
+      <a href="#">Volunteer</a>
+      <a href="#">Donate</a>
+      <a href="#">Resources</a>
+      <a href="#" class="cta-btn">View Animals</a>
+    </nav>
+  </div>
+</header>
+<div class="hero">
+  <h1>Every Animal Deserves a Second Chance</h1>
+  <p>Practical information to help you adopt responsibly, prepare your home, and give an animal the life they deserve.</p>
+  <div class="hero-buttons">
+    <a href="#" class="hero-btn hbtn-primary">Browse Available Animals</a>
+    <a href="#" class="hero-btn hbtn-secondary">Start Adoption Application</a>
+  </div>
+</div>
+<div class="stat-row">
+  <div class="stat-row-inner">
+    <div class="stat-item"><span class="num">847</span><span class="label">Adopted This Year</span></div>
+    <div class="stat-item"><span class="num">94%</span><span class="label">Live Release Rate</span></div>
+    <div class="stat-item"><span class="num">52</span><span class="label">Currently Available</span></div>
+    <div class="stat-item"><span class="num">184</span><span class="label">Active Foster Homes</span></div>
+  </div>
+</div>
+<div class="layout">
+  <div class="main">
+
+    <div class="section">
+      <h2><span class="icon">🐾</span>Featured Animals Available Now</h2>
+      <p>These animals have been health-evaluated, vaccinated, and are ready for their permanent homes. Each profile links to a full bio, behavioral assessment, and application form.</p>
+      <div class="pet-grid">
+        <div class="pet-card">
+          <div class="pet-name">Biscuit</div>
+          <div class="pet-breed">Beagle Mix, 4 years old, Male</div>
+          <p>Calm, affectionate, and endlessly interested in anything that smells interesting. Biscuit was surrendered when his family moved and has been in foster care for 6 weeks. He is fully crate trained and walks beautifully on leash.</p>
+          <div class="pet-tags"><span class="pet-tag pt-good-kids">Good with Kids</span><span class="pet-tag pt-house">Housetrained</span></div>
+          <a href="#" class="adopt-link">Meet Biscuit →</a>
+        </div>
+        <div class="pet-card">
+          <div class="pet-name">Zelda & Ziggy</div>
+          <div class="pet-breed">Domestic Short Hair, 2 years old, Bonded Pair</div>
+          <p>Litter mates who have never been separated and cannot be adopted individually. They are confident cats who do well with other cats and quiet dogs. Zelda is the bold one; Ziggy prefers to observe before engaging.</p>
+          <div class="pet-tags"><span class="pet-tag pt-bonded">Bonded Pair</span><span class="pet-tag pt-house">Indoor</span></div>
+          <a href="#" class="adopt-link">Meet Zelda & Ziggy →</a>
+        </div>
+        <div class="pet-card">
+          <div class="pet-name">Margaret</div>
+          <div class="pet-breed">Labrador Mix, 9 years old, Female</div>
+          <p>A senior dog with an enormous personality and very manageable energy levels. Margaret adores people and has lived with children. She needs a soft bed, regular short walks, and someone who will let her sit next to them on the couch.</p>
+          <div class="pet-tags"><span class="pet-tag pt-senior">Senior</span><span class="pet-tag pt-good-kids">Good with Kids</span></div>
+          <a href="#" class="adopt-link">Meet Margaret →</a>
+        </div>
+        <div class="pet-card">
+          <div class="pet-name">Cosmo</div>
+          <div class="pet-breed">Mixed Breed Rabbit, 1 year old, Male (neutered)</div>
+          <p>Cosmo is a free-roaming rabbit who is litter trained and deeply curious. He has been socialized with cats and is comfortable being picked up. He needs a rabbit-proofed space and a companion who will give him daily exercise time outside his enclosure.</p>
+          <div class="pet-tags"><span class="pet-tag pt-house">Litter Trained</span></div>
+          <a href="#" class="adopt-link">Meet Cosmo →</a>
+        </div>
+      </div>
+      <p style="text-align:center;margin-top:6px;"><a href="#"><strong>View all 52 available animals →</strong></a></p>
+    </div>
+
+    <div class="section">
+      <h2><span class="icon">📋</span>The Adoption Process: What to Expect</h2>
+      <p>Our adoption process is designed to be thorough without being unnecessarily slow. Most applications are reviewed within 48 hours, and the typical adoption from application to pickup takes 3–7 days depending on scheduling and the animal's readiness.</p>
+      <ul>
+        <li><strong>Step 1:</strong> Browse available animals and read the full behavioral profile for any animal you're interested in.</li>
+        <li><strong>Step 2:</strong> Submit an online application. Applications are specific to the animal, not general—please apply for the specific animal you want to adopt.</li>
+        <li><strong>Step 3:</strong> A counselor reviews your application and may contact you with follow-up questions within 2 business days.</li>
+        <li><strong>Step 4:</strong> Schedule a meet-and-greet at the shelter or foster home. Bring all household members, including resident pets if applicable.</li>
+        <li><strong>Step 5:</strong> If approved, complete the adoption agreement and pay the adoption fee. Take your new family member home.</li>
+      </ul>
+      <div class="requirements">
+        <strong>Adoption Requirements</strong>
+        All adopters must be 18+. Renters must provide landlord approval documentation. Applications for dogs require a home check (virtual or in-person based on distance). All household members over 12 must be present at the meet-and-greet. We do not ship animals.
+      </div>
+    </div>
+
+    <div class="section">
+      <h2><span class="icon">❓</span>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <div class="q">What are the adoption fees?</div>
+        <div class="a">Dogs: $150–$250 depending on age. Cats: $75–$125. Rabbits and small animals: $30–$60. All fees include spay/neuter, vaccinations, microchip, and a health certificate. Senior animals over 8 years: 50% reduction on all fees.</div>
+      </div>
+      <div class="faq-item">
+        <div class="q">Can I adopt if I live in an apartment?</div>
+        <div class="a">Yes. Many of our animals are well-suited to apartment living. We assess compatibility on the individual animal's needs and activity level, not on living space size alone. Please disclose apartment limitations in your application so we can guide you toward suitable matches.</div>
+      </div>
+      <div class="faq-item">
+        <div class="q">What if the adoption doesn't work out?</div>
+        <div class="a">We have a return policy with no judgment. We ask that you contact us before surrendering an animal back to us so we can prepare appropriately. Please do not post adopted animals on Craigslist or transfer ownership to another individual without contacting us first—this is a violation of the adoption agreement.</div>
+      </div>
+      <div class="faq-item">
+        <div class="q">Do you work with out-of-state adopters?</div>
+        <div class="a">We can work with adopters within a 200-mile radius who can travel to our facility for the meet-and-greet and pickup. We do not transport animals across state lines or conduct adoptions entirely remotely.</div>
+      </div>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="donate-box">
+      <h3>Help Us Help Them</h3>
+      <p>Every dollar directly supports medical care, food, and enrichment for animals in our care.</p>
+      <a href="#">Donate Now</a>
+    </div>
+    <div class="sw">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">📋 Start an Application</a></li>
+        <li><a href="#">🏠 Become a Foster</a></li>
+        <li><a href="#">🙋 Volunteer Sign-Up</a></li>
+        <li><a href="#">📦 Wish List / Supplies</a></li>
+        <li><a href="#">📅 Adoption Events</a></li>
+        <li><a href="#">📞 Contact the Shelter</a></li>
+      </ul>
+    </div>
+    <div class="sw">
+      <h3>Shelter Hours</h3>
+      <p style="font-size:13px;color:#4a5a7a;">Mon–Fri: 11 AM – 6 PM<br>Saturday: 10 AM – 5 PM<br>Sunday: 12 PM – 4 PM<br><br>Meet-and-greets by appointment outside of regular hours may be arranged for working adopters. Email <a href="#">appointments@scar.org</a>.</p>
+    </div>
+    <div class="sw">
+      <h3>Urgent: Fosters Needed</h3>
+      <p style="font-size:13px;color:#4a5a7a;margin-bottom:8px;">We currently need foster homes for:</p>
+      <ul>
+        <li>🐶 Large breed dogs (50+ lbs)</li>
+        <li>🐱 Nursing mother cats with kittens</li>
+        <li>🐇 Rabbits and small animals</li>
+      </ul>
+      <p style="font-size:13px;margin-top:8px;"><a href="#"><strong>Apply to foster →</strong></a></p>
+    </div>
+  </aside>
+</div>
+<footer>
+  <div class="footer-nav">
+    <a href="#">About Us</a><a href="#">Privacy Policy</a><a href="#">Annual Report</a><a href="#">Press</a><a href="#">Employment</a><a href="#">Contact</a>
+  </div>
+  &copy; 2024 Second Chance Animal Rescue &mdash; A registered 501(c)(3) nonprofit organization. EIN: 46-XXXXXXX<br>
+  <span style="font-size:10px;margin-top:6px;display:block;">Donations are tax-deductible to the extent permitted by law.</span>
+</footer>
+</body>
+</html>

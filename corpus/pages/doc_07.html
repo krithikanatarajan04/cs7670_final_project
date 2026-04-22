@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kasa Asok Bangkok: Full Review — City Views, Coworking Vibes, and the Rooftop Pool</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&display=swap');
+
+  :root {
+    --ink: #1a1714;
+    --paper: #f5f0e8;
+    --rule: #c8bfaa;
+    --accent: #b85c2a;
+    --muted: #6b6254;
+    --light-rule: #e2dbd0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: var(--paper);
+    color: var(--ink);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 1.75;
+  }
+
+  .page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 60px 40px 100px;
+  }
+
+  .masthead {
+    border-top: 3px solid var(--ink);
+    border-bottom: 1px solid var(--rule);
+    padding: 14px 0 12px;
+    margin-bottom: 48px;
+    display: flex;
+    align-items: baseline;
+    gap: 24px;
+  }
+
+  .masthead .site-name {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .masthead .breadcrumb {
+    font-size: 12px;
+    color: var(--rule);
+    letter-spacing: 0.06em;
+  }
+
+  header {
+    margin-bottom: 44px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid var(--light-rule);
+  }
+
+  .kicker {
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 18px;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--ink);
+    margin-bottom: 22px;
+  }
+
+  .deck {
+    font-size: 17px;
+    font-style: italic;
+    color: var(--muted);
+    line-height: 1.6;
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 300;
+    margin-bottom: 24px;
+  }
+
+  .byline-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 12.5px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    padding-top: 20px;
+    border-top: 1px solid var(--light-rule);
+  }
+
+  .byline-row .sep {
+    color: var(--rule);
+  }
+
+  .verdict-box {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 24px 28px;
+    margin: 44px 0;
+    border-left: 4px solid var(--accent);
+  }
+
+  .verdict-box .label {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  .verdict-box p {
+    font-size: 15.5px;
+    line-height: 1.65;
+    color: #e8e0d4;
+  }
+
+  article p {
+    margin-bottom: 24px;
+  }
+
+  article p:last-child {
+    margin-bottom: 0;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 22px;
+    font-weight: 600;
+    margin: 52px 0 20px;
+    color: var(--ink);
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .drop-cap::first-letter {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 4.2em;
+    float: left;
+    line-height: 0.78;
+    margin: 6px 10px 0 -3px;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .pull-quote {
+    border-left: 3px solid var(--accent);
+    padding: 4px 0 4px 24px;
+    margin: 36px 0 36px 0;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+
+  .data-note {
+    font-size: 13.5px;
+    color: var(--muted);
+    font-style: italic;
+    background: var(--light-rule);
+    padding: 14px 18px;
+    margin: 32px 0;
+    border-radius: 2px;
+  }
+
+  .index-json {
+    margin-top: 72px;
+    padding-top: 28px;
+    border-top: 2px solid var(--ink);
+  }
+
+  .index-json h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+
+  .index-json pre {
+    font-family: 'Courier New', monospace;
+    font-size: 12.5px;
+    background: #e8e2d7;
+    padding: 20px;
+    overflow-x: auto;
+    line-height: 1.6;
+    color: var(--ink);
+    border-radius: 2px;
+  }
+
+  @media (max-width: 600px) {
+    .page { padding: 36px 24px 72px; }
+    .masthead { flex-direction: column; gap: 4px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="masthead">
+    <span class="site-name">Boutique Bangkok Review</span>
+    <span class="breadcrumb">Hotels &rsaquo; Sukhumvit &rsaquo; Kasa Asok</span>
+  </div>
+
+  <header>
+    <p class="kicker">Hotel Review &mdash; Sukhumvit / Asok</p>
+    <h1>Kasa Asok Bangkok: City Views, Coworking Vibes, and the Rooftop Pool</h1>
+    <p class="deck">Four nights on a work trip, two client meetings, evenings to fill. Kasa Asok delivered on the things that mattered — and made no pretense about the things it didn't.</p>
+    <div class="byline-row">
+      <span>By a frequent Bangkok traveler</span>
+      <span class="sep">&middot;</span>
+      <span>Four-night solo stay</span>
+      <span class="sep">&middot;</span>
+      <span>Work trip</span>
+    </div>
+  </header>
+
+  <article>
+
+    <p class="drop-cap">The walk from Asok BTS station takes three minutes. I've timed it on three separate stays now — it is genuinely three minutes, not the hotel-brochure version of three minutes where they mean seven if you walk confidently and ten if you don't know where you're going. Exit 3, left along Sukhumvit, and the entrance appears before you've had time to regret not taking a taxi. For a working trip where every morning involves consulting a BTS map, that reliability is worth more than most amenities.</p>
+
+    <p>I came to Bangkok for two days of client meetings and stayed four nights because the flights worked out that way, which meant two evenings with nothing planned and a hotel that needed to function as both a place to decompress and a place to get things done. The Asok address made the decision: mid-range pricing, serious transit access, and I'd heard the coworking setup was legitimate. All three held up.</p>
+
+    <h2>The Neighborhood and Arrival</h2>
+
+    <p>Asok in the early evening is a particular kind of Bangkok energy — not Khao San hectic, not Silom financial-district-quiet, but the purposeful mid-tempo of a neighborhood where people are actually going somewhere. Terminal 21 is half a minute past the hotel entrance, which sounds like a trivial detail until your connecting flight falls through and you need to eat dinner at 10pm with no reservations. The mall's international food court operates late, the options are genuinely good, and the air conditioning is heroic. I ended up there three out of four evenings, not out of desperation but because it was easy and I'd already walked eight kilometers by the time I got back from meetings.</p>
+
+    <p>Benchasiri Park is about ten minutes on foot in the other direction along Sukhumvit — I went once on the morning I had no early obligations, did a slow circuit, watched the city do its morning exercise routines, and was back at the hotel before nine. If you're a runner, it's a useful counterpoint to the Asok density. Worth knowing it's there.</p>
+
+    <h2>The Room: What Fits, What Doesn't</h2>
+
+    <p>The rooms are standard-sized, which at Kasa Asok means approximately 28 square metres. I'll be direct about what that actually means at a practical level: the bed is comfortable, there's a proper desk that fits a laptop and a second monitor if you travel with one, and the bathroom is fine. There is not room for anything else. The suitcase goes under the bed or it goes in the walkway to the bathroom. If you're travelling as a couple and both of you have luggage, you will negotiate spatial arrangements on arrival.</p>
+
+    <div class="pull-quote">"The desk is proper — not the gesture toward a desk that so many mid-range hotels provide, a tiny surface at the wrong height with a lamp that points directly at your screen."</div>
+
+    <p>For a solo work trip, the 28 sqm is actually well-configured. The desk is proper — not the gesture toward a desk that so many mid-range hotels provide, a tiny surface at the wrong height with a lamp that points directly at your screen. This one has room for actual work. The chair is adjustable. I was there most mornings from seven until I had to leave for meetings, and I didn't hate it.</p>
+
+    <p>The noise situation requires a specific answer, because "Sukhumvit hotel has street noise" is not a useful review observation. Here's what it actually is: the street-level sound starts around six in the morning and runs until about midnight, peaking in the early evening between six and nine. Floors three and four are genuinely affected — I was on the fourth floor my first stay here and the ambient traffic becomes part of your sleep environment. The hotel provided earplugs on request, and they helped, though they didn't eliminate the bass frequencies from the larger vehicles. Floors seven and above are meaningfully better. If you're a light sleeper, request higher. If you sleep through anything, it won't register either way. I'm somewhere in the middle and managed fine on the fourth floor, but I'll ask for a higher floor next time out of preference rather than necessity.</p>
+
+    <h2>The Rooftop Pool</h2>
+
+    <p>This is where Kasa Asok earns its most genuine recommendation for the price point. The pool sits at the top of the building and the city view from the water faces north and east, which in practical terms means you're looking at the Sukhumvit corridor stacking up into the distance, lit up from late afternoon onward. It is a legitimate Bangkok skyline view, not a view of the building next door with some sky visible above it.</p>
+
+    <p>Crowd dynamics: mornings before nine, it's almost always empty. That's the window I used on the two days I wasn't in meetings before noon — forty minutes in the pool with nothing happening around me, which is a useful mental reset before a day of presentations. The early-to-mid afternoon sees a steady trickle of guests; it's never packed in the way that makes a rooftop pool feel like a public attraction, but it's no longer private. Evenings are the busiest — sunset draws people as you'd expect — though I've never experienced it as crowded to the point of unpleasant. The pool itself is a reasonable size for a hotel of this scale. It's not a lap pool. It's a rooftop hotel pool, which is the correct category for what it is.</p>
+
+    <p>For the mid-range tier, having any rooftop pool at all is not guaranteed. That this one comes with a proper Bangkok skyline view makes it, for me, the single most compelling feature of the property.</p>
+
+    <h2>The Practical Realities</h2>
+
+    <p>Breakfast is not included in the room rate. I'll flag this clearly because it's the kind of thing that doesn't always register at booking and then surprises you on day one. There's no complimentary breakfast, no grab-and-go option attached to the rate, nothing. This is fine, it's priced accordingly, and Terminal 21 is forty seconds away with multiple breakfast options from the building opening time. The food court does a decent congee. I defaulted to the Thai rice soup situation most mornings and was not unhappy about it. But if you're travelling with someone who has opinions about breakfast being part of the package, factor that in.</p>
+
+    <p>The coworking space on the third floor is a genuine amenity rather than a room with a table renamed for marketing purposes. There are dedicated workstations with proper monitors available, a printer, reasonable coffee, and the wifi was consistently fast across four days including during the evening hours when I imagined everyone in the building might be using it simultaneously. I used it on two afternoons when I preferred a change of environment to working in the room. On both occasions there were between two and five other people present — enough to feel like a shared workspace, quiet enough to concentrate.</p>
+
+    <p>Check-in is officially at 3pm. There's a self-service kiosk that handles early arrivals sensibly — you can log your details, leave your luggage in storage from 8am, and the hotel sends a message when your room is ready. I arrived at 11am once and the room was available by 1:30. That's not a guarantee, but the system removes the awkward lobby-waiting dimension of early arrivals.</p>
+
+    <div class="verdict-box">
+      <p class="label">Who This Hotel Is For</p>
+      <p>If you're in Bangkok for work — meetings, transit, a functional base with a good BTS link and somewhere decent to sit with a laptop — Kasa Asok is very well suited. The urban, work-friendly setup is not incidental to the property's character; it's the actual character. The rooftop pool provides a genuine quality-of-stay boost that most hotels at this price point in Bangkok don't match. The mid-range pricing is honest for what you're getting. If you're coming to Bangkok for a holiday — if you want atmosphere, if you want to feel like you're in a particular version of the city rather than adjacent to a shopping mall, if you're looking for romance or quiet or anything that isn't efficiency — look elsewhere. Kasa Asok knows what it is. The traveler who meets it on those terms will have a good stay.</p>
+    </div>
+
+  </article>
+
+  <div class="index-json">
+    <h3>Document Index Entry</h3>
+    <pre>{
+  "doc_id": "doc_07",
+  "title": "Kasa Asok Bangkok: Full Review — City Views, Coworking Vibes, and the Rooftop Pool",
+  "source_type": "Hotel-specific review",
+  "description": "In-depth stay review of Kasa Asok Bangkok, covering the rooftop pool and its city skyline views, standard room dimensions and noise levels by floor, the on-site coworking facilities, proximity to Asok BTS and Terminal 21, the absence of included breakfast, and an honest assessment of who the mid-range work-trip property suits — and who should look elsewhere.",
+  "hotels_covered": ["Kasa Asok"],
+  "dimensions_covered": [
+    "BTS proximity",
+    "Pool",
+    "Room size",
+    "Noise level",
+    "Vibe",
+    "Breakfast",
+    "Landmark access",
+    "Operations",
+    "Price tier"
+  ],
+  "depth_per_hotel": "Deep (all dimensions for Kasa Asok, 5+ claims)",
+  "focus_score": 1.0,
+  "corroboration_role": "Unique source for: noise level (floor-specific), room size (~28 sqm), no-breakfast policy, coworking facility specifics, check-in kiosk detail. Corroborates: rooftop pool, 3-min BTS walk, Terminal 21 proximity, urban work-friendly vibe, mid-range price tier.",
+  "snippet_divergence_risk": "Low — title and description accurately reflect single-hotel review content"
+}</pre>
+  </div>
+
+</div>
+
+</body>
+</html>

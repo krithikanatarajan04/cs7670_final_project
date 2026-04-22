@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grind Report – Coffee Grinder Reviews</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#18120a;color:#e8ddd0;font-family:'IBM Plex Sans',sans-serif;font-size:15px;line-height:1.75;}
+  a{color:#c8922a;text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  /* NAV */
+  header{background:#0f0b06;border-bottom:1px solid #2a1f10;}
+  .header-inner{max-width:1020px;margin:0 auto;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;}
+  .logo{font-family:'Libre Baskerville',serif;font-size:24px;color:#e8ddd0;letter-spacing:-.01em;}
+  .logo span{color:#c8922a;}
+  .header-nav a{font-size:13px;color:#9a8872;margin-left:18px;font-family:'IBM Plex Mono',monospace;font-size:12px;}
+  .header-nav a:hover{color:#c8922a;text-decoration:none;}
+  /* SUBHEADER */
+  .subheader{background:#1f1508;border-bottom:1px solid #2a1f10;font-size:11px;font-family:'IBM Plex Mono',monospace;color:#6a5a48;padding:6px 20px;text-align:center;letter-spacing:.08em;}
+  /* HERO */
+  .hero{max-width:820px;margin:40px auto;padding:0 20px;text-align:center;}
+  .hero .label{font-family:'IBM Plex Mono',monospace;font-size:11px;color:#c8922a;letter-spacing:.12em;margin-bottom:12px;}
+  .hero h1{font-family:'Libre Baskerville',serif;font-size:38px;color:#f0e8d8;line-height:1.2;margin-bottom:12px;}
+  .hero .sub{font-size:16px;color:#9a8872;font-style:italic;font-family:'Libre Baskerville',serif;}
+  .hero .meta{font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6a5a48;margin-top:12px;letter-spacing:.06em;}
+  /* LAYOUT */
+  .page-wrap{max-width:1020px;margin:0 auto;padding:24px 20px;display:grid;grid-template-columns:1fr 270px;gap:36px;}
+  /* SCORE BADGE */
+  .score-big{display:inline-block;background:#c8922a;color:#0f0b06;font-family:'IBM Plex Mono',monospace;font-size:36px;font-weight:600;width:80px;height:80px;line-height:80px;text-align:center;border-radius:4px;float:right;margin:0 0 12px 16px;}
+  /* CONTENT */
+  .content h2{font-family:'Libre Baskerville',serif;font-size:22px;color:#c8922a;margin:28px 0 10px;padding-bottom:6px;border-bottom:1px solid #2a1f10;}
+  .content p{margin-bottom:14px;color:#c8bfb0;}
+  .content ul{margin:8px 0 14px 20px;}
+  .content li{margin-bottom:6px;color:#c8bfb0;}
+  /* GRINDER CARD */
+  .grinder-card{background:#1f1508;border:1px solid #2a1f10;border-radius:4px;padding:20px;margin:24px 0;}
+  .grinder-card .gc-name{font-family:'Libre Baskerville',serif;font-size:22px;color:#f0e8d8;margin-bottom:4px;}
+  .grinder-card .gc-meta{font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6a5a48;letter-spacing:.08em;margin-bottom:12px;}
+  .grinder-card .gc-score{float:right;background:#c8922a;color:#0f0b06;font-family:'IBM Plex Mono',monospace;font-size:24px;font-weight:600;padding:6px 12px;border-radius:3px;}
+  /* RATING ROW */
+  .rating-rows{margin:12px 0;}
+  .r-row{display:grid;grid-template-columns:130px 1fr 36px;align-items:center;gap:8px;margin-bottom:6px;font-size:12px;}
+  .r-label{color:#9a8872;font-family:'IBM Plex Mono',monospace;letter-spacing:.04em;}
+  .r-bar-bg{background:#2a1f10;border-radius:2px;height:6px;}
+  .r-bar{height:6px;border-radius:2px;background:#c8922a;}
+  .r-num{color:#c8922a;font-family:'IBM Plex Mono',monospace;font-size:12px;text-align:right;}
+  /* SPEC TABLE */
+  table.specs{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0;}
+  table.specs td{padding:7px 10px;border-bottom:1px solid #2a1f10;color:#c8bfb0;}
+  table.specs td:first-child{color:#9a8872;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.04em;width:140px;}
+  /* VERDICT */
+  .verdict{background:#12270f;border-left:3px solid #4caf50;padding:12px 16px;margin:14px 0;font-size:14px;color:#b0d4a8;}
+  /* SIDEBAR */
+  .sidebar{}
+  .sw{background:#1f1508;border:1px solid #2a1f10;padding:14px;margin-bottom:16px;border-radius:3px;}
+  .sw h3{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#c8922a;border-bottom:1px solid #2a1f10;padding-bottom:8px;margin-bottom:10px;}
+  .sw ul{list-style:none;font-size:13px;}
+  .sw ul li{padding:5px 0;border-bottom:1px solid #2a1f10;color:#c8bfb0;display:flex;justify-content:space-between;}
+  .sw ul li:last-child{border:none;}
+  .sw ul li a{color:#c8922a;}
+  .score-pill{font-family:'IBM Plex Mono',monospace;font-size:11px;background:#2a1f10;color:#c8922a;padding:2px 6px;border-radius:2px;}
+  /* CTA */
+  .cta-box{background:#c8922a;color:#0f0b06;padding:16px;border-radius:3px;margin-bottom:16px;text-align:center;}
+  .cta-box h3{font-family:'Libre Baskerville',serif;font-size:18px;margin-bottom:6px;}
+  .cta-box p{font-size:12px;margin-bottom:10px;}
+  .cta-box input{width:100%;padding:7px;font-size:12px;border:none;margin-bottom:8px;border-radius:2px;}
+  .cta-box button{background:#0f0b06;color:#c8922a;border:none;padding:8px 14px;font-family:'IBM Plex Mono',monospace;font-size:12px;cursor:pointer;width:100%;letter-spacing:.08em;}
+  /* FOOTER */
+  footer{background:#0f0b06;border-top:1px solid #2a1f10;padding:20px;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:11px;color:#4a3a2a;letter-spacing:.06em;margin-top:32px;}
+  footer a{color:#6a5a48;}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="logo">Grind<span>Report</span></div>
+    <div class="header-nav">
+      <a href="#">Burr Grinders</a>
+      <a href="#">Manual</a>
+      <a href="#">Espresso</a>
+      <a href="#">Filter/Pour-Over</a>
+      <a href="#">Methodology</a>
+    </div>
+  </div>
+</header>
+<div class="subheader">All grinders independently purchased and tested. No sponsored content. No manufacturer loans. &mdash; Updated October 2024</div>
+<div class="hero">
+  <div class="label">// FULL REVIEW — BURR GRINDER</div>
+  <h1>Baratza Encore ESP vs. Comandante C40: Which Should You Actually Buy?</h1>
+  <div class="sub">A rigorous, side-by-side comparison for serious home brewers</div>
+  <div class="meta">AUTHOR: J. Wren &nbsp;|&nbsp; OCT 8, 2024 &nbsp;|&nbsp; 16 min read &nbsp;|&nbsp; 2 grinders tested over 6 weeks</div>
+</div>
+<div class="page-wrap">
+  <div class="content">
+    <p>There are two types of coffee grinder buyers: people who want to stop thinking about this and buy something reliable, and people who are already thinking too much about it and need empirical evidence to make peace with a decision. This review serves both, but it leans toward the latter—because this is <em>Grind Report</em>, and the whole premise is that grinding details matter.</p>
+    <p>We pulled both grinders from our own shelves (purchased at retail, because that's the policy), ground through 3 kilograms of coffee on each, and ran comparative extractions across espresso, pour-over, and French press. Here's what actually happened.</p>
+
+    <h2>The Baratza Encore ESP</h2>
+    <div class="grinder-card">
+      <div class="gc-score">8.4</div>
+      <div class="gc-name">Baratza Encore ESP</div>
+      <div class="gc-meta">ELECTRIC BURR // 40mm STEEL CONICAL // $229 MSRP // MADE IN TAIWAN</div>
+      <div class="rating-rows">
+        <div class="r-row"><span class="r-label">Grind Consistency</span><div class="r-bar-bg"><div class="r-bar" style="width:82%"></div></div><span class="r-num">8.2</span></div>
+        <div class="r-row"><span class="r-label">Retention</span><div class="r-bar-bg"><div class="r-bar" style="width:76%"></div></div><span class="r-num">7.6</span></div>
+        <div class="r-row"><span class="r-label">Ease of Use</span><div class="r-bar-bg"><div class="r-bar" style="width:95%"></div></div><span class="r-num">9.5</span></div>
+        <div class="r-row"><span class="r-label">Noise Level</span><div class="r-bar-bg"><div class="r-bar" style="width:58%"></div></div><span class="r-num">5.8</span></div>
+        <div class="r-row"><span class="r-label">Value</span><div class="r-bar-bg"><div class="r-bar" style="width:90%"></div></div><span class="r-num">9.0</span></div>
+      </div>
+      <table class="specs">
+        <tr><td>Burr Size</td><td>40mm steel conical</td></tr>
+        <tr><td>Grind Settings</td><td>40 macro steps</td></tr>
+        <tr><td>Suitable For</td><td>Espresso, filter, drip, pour-over</td></tr>
+        <tr><td>Grind Time (18g)</td><td>~8–10 seconds</td></tr>
+        <tr><td>Retention</td><td>~0.5–0.8g per dose</td></tr>
+        <tr><td>Weight</td><td>5.7 lbs</td></tr>
+      </table>
+      <p style="font-size:14px;color:#c8bfb0;margin-top:12px;">The Encore ESP is the electric entry-level grinder that Baratza has quietly been refining for years. The ESP suffix signals the addition of a stepped adjustment ring for espresso that helps dial in finer settings with more repeatability. In our testing, consistency at filter ranges was excellent—sieve analysis showed a tight distribution that outperformed grinders costing $80–$100 more. At espresso ranges, the stepped ring helps, but the 40-step macro adjustment still means finding the exact shot you want requires patience and a willingness to waste some coffee during dial-in.</p>
+      <div class="verdict">VERDICT: The best electric grinder under $250. Practical for filter brewing daily and capable at espresso with patience. Buy this if you want one machine that works reliably and quietly enough not to wake a partner at 6am (mostly).</div>
+    </div>
+
+    <h2>The Comandante C40</h2>
+    <div class="grinder-card">
+      <div class="gc-score">9.1</div>
+      <div class="gc-name">Comandante C40 MK4</div>
+      <div class="gc-meta">MANUAL HAND GRINDER // 39mm NITRO BLADE STEEL // $245 MSRP // MADE IN GERMANY</div>
+      <div class="rating-rows">
+        <div class="r-row"><span class="r-label">Grind Consistency</span><div class="r-bar-bg"><div class="r-bar" style="width:94%"></div></div><span class="r-num">9.4</span></div>
+        <div class="r-row"><span class="r-label">Retention</span><div class="r-bar-bg"><div class="r-bar" style="width:99%"></div></div><span class="r-num">9.9</span></div>
+        <div class="r-row"><span class="r-label">Ease of Use</span><div class="r-bar-bg"><div class="r-bar" style="width:65%"></div></div><span class="r-num">6.5</span></div>
+        <div class="r-row"><span class="r-label">Noise Level</span><div class="r-bar-bg"><div class="r-bar" style="width:98%"></div></div><span class="r-num">9.8</span></div>
+        <div class="r-row"><span class="r-label">Value</span><div class="r-bar-bg"><div class="r-bar" style="width:80%"></div></div><span class="r-num">8.0</span></div>
+      </div>
+      <table class="specs">
+        <tr><td>Burr Type</td><td>39mm Nitro Blade conical</td></tr>
+        <tr><td>Grind Settings</td><td>Click-step (infinite fine tune)</td></tr>
+        <tr><td>Suitable For</td><td>Pour-over, AeroPress, French press (not espresso)</td></tr>
+        <tr><td>Grind Time (25g)</td><td>~90–120 seconds by hand</td></tr>
+        <tr><td>Retention</td><td>&lt; 0.1g</td></tr>
+        <tr><td>Weight</td><td>1.1 lbs</td></tr>
+      </table>
+      <p style="font-size:14px;color:#c8bfb0;margin-top:12px;">The Comandante C40 is a hand grinder that produces particle distributions rivaling electric grinders costing $500 or more. The Nitro Blade steel is genuinely different from standard stainless—harder, sharper, more resistant to wear at high temperatures. Zero retention means what goes in comes out, with no stale ghost grinds from previous sessions. The tradeoff is 90–120 seconds of hand-cranking for a full pour-over dose, which is either meditative or maddening depending on your morning disposition. Not compatible with espresso: the grind is too coarse at minimum setting for most machines.</p>
+      <div class="verdict">VERDICT: The best manual grinder available, period. If you make filter coffee and want the cleanest cup possible, this is the answer. If you make espresso or value speed, look elsewhere.</div>
+    </div>
+
+    <h2>Which Should You Buy?</h2>
+    <p>This comparison is somewhat unfair by design—these grinders serve genuinely different purposes, and the question of which is "better" can only be answered by asking what your coffee life actually looks like.</p>
+    <ul>
+      <li>If you make <strong>espresso at home</strong>: Baratza Encore ESP, without hesitation. The Comandante cannot reach espresso-fine grind settings.</li>
+      <li>If you make <strong>pour-over or filter only</strong> and want the absolute best cup: Comandante C40. The grind quality is demonstrably superior.</li>
+      <li>If you're <strong>always running late</strong> in the morning: Baratza Encore ESP. 8 seconds versus 2 minutes is a real lifestyle consideration.</li>
+      <li>If you <strong>travel and want café-quality coffee</strong> anywhere: Comandante C40. It's made for this.</li>
+    </ul>
+  </div>
+  <aside class="sidebar">
+    <div class="cta-box">
+      <h3>The Weekly Shot</h3>
+      <p>New grinder reviews, extraction science, and gear picks every week.</p>
+      <input type="email" placeholder="your@email.com">
+      <button>// SUBSCRIBE</button>
+    </div>
+    <div class="sw">
+      <h3>// Top Grinders 2024</h3>
+      <ul>
+        <li><a href="#">Comandante C40</a><span class="score-pill">9.1</span></li>
+        <li><a href="#">DF64 Gen 2</a><span class="score-pill">8.9</span></li>
+        <li><a href="#">Niche Zero</a><span class="score-pill">8.8</span></li>
+        <li><a href="#">Encore ESP</a><span class="score-pill">8.4</span></li>
+        <li><a href="#">Timemore Slim+</a><span class="score-pill">8.2</span></li>
+      </ul>
+    </div>
+    <div class="sw">
+      <h3>// Recently Tested</h3>
+      <ul>
+        <li><a href="#">Weber Key</a></li>
+        <li><a href="#">Eureka Mignon Libra</a></li>
+        <li><a href="#">Fellow Opus</a></li>
+        <li><a href="#">Knock Feldgrind</a></li>
+      </ul>
+    </div>
+    <div class="sw">
+      <h3>// Testing Method</h3>
+      <p style="font-size:12px;color:#9a8872;line-height:1.6;">All scores reflect 6+ weeks of testing, sieve analysis, comparative extraction, and calibrated scoring across 5 criteria. No manufacturer access. No pre-release samples. <a href="#">Full methodology →</a></p>
+    </div>
+  </aside>
+</div>
+<footer>
+  &copy; 2024 GRINDREPORT.COM &nbsp;|&nbsp; <a href="#">PRIVACY</a> &nbsp;|&nbsp; <a href="#">METHODOLOGY</a> &nbsp;|&nbsp; <a href="#">CONTACT</a><br>
+  NO SPONSORED CONTENT. ALL EQUIPMENT INDEPENDENTLY PURCHASED.
+</footer>
+</body>
+</html>

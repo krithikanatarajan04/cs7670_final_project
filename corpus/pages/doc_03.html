@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Old Town and Riverside Bangkok: A Traveler's Neighborhood Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Libre+Baskerville:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1c1812;
+      --paper: #f7f2ea;
+      --accent: #4a6741;
+      --warm: #8c4a1e;
+      --rule: #ccc4b0;
+      --muted: #7a7060;
+      --tint: #ede7d8;
+      --water: #d8e4e0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Libre Baskerville', Georgia, serif;
+      font-size: 16.5px;
+      line-height: 1.8;
+      font-weight: 400;
+    }
+
+    .page {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 60px 40px 80px;
+    }
+
+    /* Header */
+    .doc-header {
+      margin-bottom: 52px;
+    }
+
+    .doc-label {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .title-rule {
+      border: none;
+      border-top: 2px solid var(--ink);
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 2.4rem;
+      font-weight: 300;
+      line-height: 1.18;
+      color: var(--ink);
+      margin-bottom: 14px;
+      letter-spacing: 0.01em;
+    }
+
+    .subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--muted);
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 20px;
+    }
+
+    /* Prose */
+    p {
+      margin-bottom: 1.35em;
+    }
+
+    /* Section headings */
+    h2 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin: 48px 0 8px;
+      letter-spacing: 0.01em;
+    }
+
+    h3 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--warm);
+      margin: 34px 0 10px;
+    }
+
+    /* River note — contextual callout */
+    .river-note {
+      background: var(--water);
+      border-left: 3px solid var(--accent);
+      padding: 14px 20px;
+      margin: 26px 0;
+      font-style: italic;
+      font-size: 15px;
+      color: var(--muted);
+    }
+
+    /* Quick facts */
+    .quick-facts {
+      background: var(--tint);
+      border: 1px solid var(--rule);
+      padding: 20px 24px;
+      margin: 28px 0;
+      font-size: 14.5px;
+    }
+
+    .quick-facts .qf-title {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .quick-facts ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .quick-facts ul li {
+      padding: 5px 0;
+      border-bottom: 1px solid var(--rule);
+      display: flex;
+      gap: 10px;
+    }
+
+    .quick-facts ul li:last-child {
+      border-bottom: none;
+    }
+
+    .qf-key {
+      color: var(--muted);
+      min-width: 130px;
+      flex-shrink: 0;
+      font-style: normal;
+    }
+
+    .qf-val {
+      color: var(--ink);
+    }
+
+    .section-rule {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 52px 0;
+    }
+
+    /* Footer */
+    .doc-footer {
+      margin-top: 60px;
+      padding-top: 18px;
+      border-top: 1px solid var(--rule);
+      font-size: 12px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    /* Index entry */
+    .index-block {
+      margin-top: 60px;
+      border: 1px solid var(--rule);
+      background: #ece6d6;
+      padding: 24px 28px;
+    }
+
+    .index-block .ib-label {
+      font-size: 9.5px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .index-block pre {
+      font-family: 'Courier New', monospace;
+      font-size: 12.5px;
+      line-height: 1.6;
+      color: var(--ink);
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <header class="doc-header">
+    <div class="doc-label">Neighborhood Guide &nbsp;·&nbsp; Bangkok 2025</div>
+    <hr class="title-rule">
+    <h1>Old Town and Riverside Bangkok:<br>A Traveler's Neighborhood Guide</h1>
+    <div class="subtitle">Exploration of Bangkok's historic Rattanakosin and riverside districts — accommodation options, temple access, and the Thonburi bank. For travelers who prioritize cultural immersion over transit.</div>
+  </header>
+
+  <p>Bangkok has a version of itself that moves quickly — the Sukhumvit corridor, the BTS system, the grid of malls and food courts that reward efficiency. And then it has this. Rattanakosin, the old royal island. The Chao Phraya, still moving. The Thonburi bank, which remained largely separate from Bangkok's development long enough to develop its own unhurried character. These neighborhoods are harder to navigate than Sukhumvit. The BTS doesn't reach them. Getting here requires a ferry, a tuk-tuk, or a taxi willing to thread through streets that have not been optimized for traffic. That friction is, for many travelers, the entire point.</p>
+
+  <p>If you're coming to Bangkok to stand in front of buildings that have been standing for centuries, to eat at a plastic table next to a temple wall, to take a boat across a river rather than an escalator between floors of a mall — this is where you belong. The hotels in these neighborhoods are not amenity showcases. They are places that understand their location and let it do the work.</p>
+
+  <hr class="section-rule">
+
+  <h2>Phra Nakhon and the River's Edge</h2>
+
+  <p>The western edge of Phra Nakhon district runs along the Chao Phraya, and from this position the river is not a backdrop — it is the primary fact of the place. Wat Pho, with its reclining Buddha and its rows of gilded chedis, is a ten-minute walk. The Grand Palace complex, with the Emerald Buddha nested inside it, is fifteen minutes on foot. These distances mean nothing in a traffic context, but on foot through these streets they are a genuine walk: past market stalls, past monks in orange, past the city that existed before the expressways.</p>
+
+  <p>Getting here from most other parts of Bangkok requires either the Chao Phraya Express Boat — which is fast, cheap, and part of the experience — or a taxi from a BTS station willing to cross the river. There is no Skytrain connection. For most visitors staying in this area, that absence reorganizes the trip: instead of a transit-optimized itinerary, you have a slower one, based around what's within walking distance or a short boat ride.</p>
+
+  <h3>The Praya Manor</h3>
+
+  <p>The Praya Manor sits on the Chao Phraya riverfront in Phra Nakhon, and its river-facing pool — positioned to look directly out over the water — is the kind of amenity that earns its description. The colonial architecture has been maintained with care: the building carries genuine age, not the suggestion of it. The vibe is romantic in the unhurried way that belongs to old riverfront properties, and the quietness of the place is real — this is not a neighborhood with nightlife traffic or late-hour street noise.</p>
+
+  <p>The hotel has no BTS access, but it has something more useful for what it offers: proximity to the most important heritage sites in the city. Wat Pho is a ten-minute walk. The Grand Palace is fifteen minutes. A ferry connects the property to the river network. For travelers whose itinerary is organized around Bangkok's historic core rather than its commercial one, that positioning is close to ideal. The mid-range pricing makes the stay viable for a longer visit — long enough to settle into the rhythm of the neighborhood rather than just passing through it.</p>
+
+  <div class="quick-facts">
+    <div class="qf-title">The Praya Manor — At a Glance</div>
+    <ul>
+      <li><span class="qf-key">Neighborhood</span><span class="qf-val">Phra Nakhon, Chao Phraya riverfront</span></li>
+      <li><span class="qf-key">BTS access</span><span class="qf-val">None within walking distance</span></li>
+      <li><span class="qf-key">Price tier</span><span class="qf-val">Mid-range</span></li>
+      <li><span class="qf-key">Pool</span><span class="qf-val">River-facing, overlooking the Chao Phraya</span></li>
+      <li><span class="qf-key">Vibe</span><span class="qf-val">Colonial, romantic; quiet</span></li>
+      <li><span class="qf-key">Temples nearby</span><span class="qf-val">Wat Pho (10-min walk), Grand Palace (15-min walk)</span></li>
+      <li><span class="qf-key">Breakfast</span><span class="qf-val">Included</span></li>
+    </ul>
+  </div>
+
+  <hr class="section-rule">
+
+  <h2>Rattanakosin: The Walking Core</h2>
+
+  <p>Rattanakosin is the old royal island — more precisely, a district defined by a bend in the river and a canal — and walking through it feels like walking through a part of the city that has not entirely decided to become something else. The Democracy Monument stands at one end of Ratchadamnoen Avenue. Wat Suthat, one of Bangkok's oldest and tallest temples, anchors the neighborhood at its center, with the Giant Swing — once used in Brahmin ceremonies, now a protected landmark — standing directly in front of it. Both are five minutes on foot from the district's quieter guesthouses.</p>
+
+  <p>There is no BTS here, either. Transportation is by taxi, by tuk-tuk, or by the Chao Phraya boats from the nearby Maharaj pier. The neighborhood's logic is pedestrian: the temples, the markets, the street food are all within walking distance of one another. Staying here means accepting that getting to Sukhumvit will take twenty minutes minimum — and deciding that this is a reasonable price for waking up inside the old city.</p>
+
+  <h3>Chalerm Heritage</h3>
+
+  <p>Chalerm Heritage is a budget guesthouse in the Rattanakosin district, and it is honest about what that means. The rooms are compact. There is no pool. The amenities are functional rather than luxurious. What the property offers instead is placement: Wat Suthat is a five-minute walk, the Giant Swing stands at the same short distance directly in front of it, and the cultural density of the neighborhood surrounds the building on all sides. Breakfast is included in the rate — notable at this price point, and useful for a morning before temple visits.</p>
+
+  <p>The atmosphere is quiet and oriented toward heritage immersion rather than hotel experiences. The traveler who belongs at Chalerm Heritage is someone who will spend most of their waking hours outside it — in the temples, on the streets, at the market stalls — and wants to spend as little as possible on the room itself. The budget tier is the only one of its kind among Bangkok's Old Town boutique options, which makes it a genuinely distinct choice rather than a compromise.</p>
+
+  <div class="quick-facts">
+    <div class="qf-title">Chalerm Heritage — At a Glance</div>
+    <ul>
+      <li><span class="qf-key">Neighborhood</span><span class="qf-val">Rattanakosin (Old Town)</span></li>
+      <li><span class="qf-key">BTS access</span><span class="qf-val">None within walking distance</span></li>
+      <li><span class="qf-key">Price tier</span><span class="qf-val">Budget — only budget option in area</span></li>
+      <li><span class="qf-key">Pool</span><span class="qf-val">None</span></li>
+      <li><span class="qf-key">Vibe</span><span class="qf-val">Quiet, cultural, heritage-focused</span></li>
+      <li><span class="qf-key">Temples nearby</span><span class="qf-val">Wat Suthat (5-min walk), Giant Swing (5-min walk)</span></li>
+      <li><span class="qf-key">Breakfast</span><span class="qf-val">Included</span></li>
+    </ul>
+  </div>
+
+  <hr class="section-rule">
+
+  <h2>The Thonburi Bank: Across the River</h2>
+
+  <p>Thonburi was a separate city once — Bangkok's predecessor as capital, briefly, before the court crossed the river — and it retains a distinctly different character from the Bangkok that grew up on the eastern bank. Development here is less dense, the streets narrower, the canal network still partially active. The tourism infrastructure is thinner, which means prices are lower and the experience of being in a neighborhood that functions independently of visitor traffic is more available.</p>
+
+  <p>The Khlong San district sits on the Thonburi bank at a point where the riverside offers two of Bangkok's most compelling destinations in close proximity: Iconsiam, the contemporary lifestyle and shopping complex on the riverfront, and Wat Arun — the Temple of Dawn — which faces it from across a short stretch of water. Neither is accessible by Skytrain; both are accessible by ferry. The river is the transit system here, and that is not a limitation so much as a different kind of navigation.</p>
+
+  <h3>Khlong San Loft</h3>
+
+  <p>Khlong San Loft is an artisan-designed boutique property on the Thonburi bank, and its indie, artsy character is not a marketing posture — the building was designed to reflect the Khlong San neighborhood's independent creative identity. The rooms are spacious loft-style accommodations, generous by Bangkok boutique standards and suited to travelers who want space to think as well as sleep. A ground-level pool is available on-site.</p>
+
+  <p>The hotel has no BTS connection, but the river ferry from the property reaches Iconsiam directly and provides access to Wat Arun. For a traveler whose Bangkok priorities run toward contemporary culture on one side and temple architecture on the other — and who values a stay that feels genuinely embedded in a neighborhood rather than positioned outside it — the Khlong San location offers something none of the BTS-connected properties can match: the other Bangkok, the one that didn't grow up facing Sukhumvit.</p>
+
+  <div class="river-note">
+    The Thonburi bank rewards travelers who are willing to let the river organize their days. Once you accept the ferry as your default transit, distances that seem inconvenient on a map become short, pleasant, and scenic.
+  </div>
+
+  <div class="quick-facts">
+    <div class="qf-title">Khlong San Loft — At a Glance</div>
+    <ul>
+      <li><span class="qf-key">Neighborhood</span><span class="qf-val">Khlong San, Thonburi bank</span></li>
+      <li><span class="qf-key">BTS access</span><span class="qf-val">None — river ferry is primary link</span></li>
+      <li><span class="qf-key">Price tier</span><span class="qf-val">Mid-range</span></li>
+      <li><span class="qf-key">Pool</span><span class="qf-val">Ground-level</span></li>
+      <li><span class="qf-key">Vibe</span><span class="qf-val">Indie, artsy; artisan-designed</span></li>
+      <li><span class="qf-key">Landmarks</span><span class="qf-val">Iconsiam (ferry), Wat Arun (ferry)</span></li>
+    </ul>
+  </div>
+
+  <hr class="section-rule">
+
+  <h2>Who Belongs in Each Neighborhood</h2>
+
+  <p>The Praya Manor is the choice for travelers who want maximum proximity to Bangkok's most visited heritage sites — Wat Pho and the Grand Palace — while staying somewhere with genuine character and a river view. The mid-range price point makes a longer stay possible, and the quiet, romantic atmosphere suits couples or solo travelers who want evenings that feel nothing like Sukhumvit.</p>
+
+  <p>Chalerm Heritage is for travelers who have decided that the room is not the point. If you're going to spend two or three days walking through Rattanakosin, eating at night markets, and visiting temples at opening hour, the budget rate at Chalerm Heritage is simply the most rational allocation of the trip's resources — and the location is as good as anything in the neighborhood.</p>
+
+  <p>Khlong San Loft belongs to a specific kind of Bangkok traveler: someone interested in contemporary Thai design and culture, someone drawn to the Thonburi bank's slower pace, someone for whom Iconsiam and Wat Arun represent a more interesting pair of destinations than a shopping mall on Sukhumvit. The spacious rooms and the artisan character of the property reward stays long enough to actually inhabit the neighborhood.</p>
+
+  <p>What all three share is an indifference to transit convenience in the BTS sense. None of them will connect you quickly to Sukhumvit. All of them will put you somewhere that feels more genuinely like Bangkok's history than its infrastructure.</p>
+
+  <div class="doc-footer">
+    <span>Bangkok 2025 &nbsp;·&nbsp; Neighborhood Guide Series</span>
+    <span>Doc ID: doc_03</span>
+  </div>
+
+  <div class="index-block">
+    <div class="ib-label">Source Index Entry</div>
+    <pre>{
+  "doc_id": "doc_03",
+  "title": "Old Town and Riverside Bangkok: A Traveler's Neighborhood Guide",
+  "source_type": "Neighborhood guide (Old Town/Riverside)",
+  "description": "Exploration of Bangkok's historic Rattanakosin and riverside districts, covering accommodation options, temple access, and the Thonburi bank. Ideal for travelers prioritizing cultural immersion over transit.",
+  "hotels_covered": ["The Praya Manor", "Chalerm Heritage", "Khlong San Loft"],
+  "dimensions_covered": ["neighborhood", "landmark access", "vibe", "BTS proximity (none)", "noise level", "pool", "price tier"],
+  "depth_per_hotel": "Medium for all three",
+  "focus_profile": "Low focus (~0.33 per hotel)",
+  "corroboration_role": "Corroborates: Wat Pho/Grand Palace for Praya Manor; Wat Suthat/Giant Swing for Chalerm Heritage; Iconsiam/Wat Arun for Khlong San Loft; no BTS for all three; budget tier for Chalerm; ground pool for Khlong San; river-facing pool for Praya Manor; indie/artsy vibe for Khlong San",
+  "signal_notes": "Key document for Query 2, 3, 5 — retrieval critical. Snippet accurately reflects Old Town/Riverside geographic scope — not a generic snippet document."
+}</pre>
+  </div>
+
+</div>
+</body>
+</html>

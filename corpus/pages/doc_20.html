@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sunnyside Community Garden – Fall Newsletter</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Nunito:wght@400;600;700&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#f0f5ee;color:#2d3a1f;font-family:'Nunito',sans-serif;font-size:15px;line-height:1.75;}
+  a{color:#4a7c3f;text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  /* MASTHEAD */
+  .masthead{background:#4a7c3f;color:#fff;text-align:center;padding:28px 20px 20px;}
+  .masthead .top-line{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#b8d8b0;margin-bottom:8px;}
+  .masthead h1{font-family:'Merriweather',serif;font-size:40px;line-height:1.1;margin-bottom:6px;}
+  .masthead h1 em{font-style:italic;color:#c8e8c0;}
+  .masthead .issue{font-size:12px;color:#b8d8b0;letter-spacing:.06em;}
+  /* NAV */
+  nav{background:#2d5a25;padding:8px 20px;display:flex;justify-content:center;gap:6px;flex-wrap:wrap;}
+  nav a{color:#d0eecc;font-size:13px;font-weight:600;padding:4px 14px;border-radius:20px;}
+  nav a:hover{background:rgba(255,255,255,.15);text-decoration:none;}
+  /* SEASON BANNER */
+  .season-banner{background:#e8f4e4;border-top:3px solid #8bba7a;border-bottom:3px solid #8bba7a;padding:10px 20px;text-align:center;font-family:'Merriweather',serif;font-style:italic;font-size:16px;color:#4a7c3f;}
+  /* LAYOUT */
+  .page{max-width:1000px;margin:0 auto;padding:28px 20px;display:grid;grid-template-columns:1fr 260px;gap:28px;}
+  /* ARTICLES */
+  article{margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid #d0e8cc;}
+  article:last-child{border:none;}
+  article h2{font-family:'Merriweather',serif;font-size:22px;color:#2d3a1f;margin-bottom:10px;}
+  article h2 span{display:block;font-family:'Nunito',sans-serif;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:#4a7c3f;margin-bottom:4px;}
+  article p{margin-bottom:12px;color:#3a4a2a;}
+  article ul{margin:8px 0 12px 20px;color:#3a4a2a;}
+  article li{margin-bottom:5px;}
+  /* HIGHLIGHT BOX */
+  .highlight{background:#fff;border:1px solid #b8d8b0;border-left:5px solid #4a7c3f;padding:14px 16px;border-radius:0 6px 6px 0;margin:14px 0;font-size:14px;}
+  .highlight strong{color:#4a7c3f;display:block;margin-bottom:4px;}
+  /* PLOT MEMBER BOX */
+  .member-spotlight{background:#fff;border:1px solid #d0e8cc;border-radius:6px;padding:14px 16px;margin:14px 0;display:flex;gap:12px;align-items:flex-start;}
+  .member-avatar{background:#4a7c3f;color:#fff;font-size:22px;width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .member-spotlight .name{font-weight:700;font-size:15px;}
+  .member-spotlight .plot{font-size:12px;color:#4a7c3f;font-weight:600;letter-spacing:.04em;text-transform:uppercase;}
+  .member-spotlight p{font-size:14px;color:#4a5a30;margin-top:4px;}
+  /* EVENT TABLE */
+  .events-table{width:100%;border-collapse:collapse;font-size:14px;}
+  .events-table th{background:#4a7c3f;color:#fff;padding:8px 12px;text-align:left;font-weight:700;letter-spacing:.04em;}
+  .events-table td{padding:9px 12px;border-bottom:1px solid #d0e8cc;vertical-align:top;}
+  .events-table tr:nth-child(even) td{background:#f0f5ee;}
+  .events-table .date{font-weight:700;color:#4a7c3f;white-space:nowrap;}
+  /* SIDEBAR */
+  .sidebar{}
+  .sw{background:#fff;border:1px solid #d0e8cc;border-radius:6px;padding:14px;margin-bottom:16px;}
+  .sw h3{font-family:'Merriweather',serif;font-size:15px;color:#2d3a1f;border-bottom:2px solid #e8f4e4;padding-bottom:8px;margin-bottom:10px;}
+  .sw ul{list-style:none;font-size:13px;color:#3a4a2a;}
+  .sw ul li{padding:5px 0;border-bottom:1px solid #f0f5ee;}
+  .sw ul li:last-child{border:none;}
+  /* PRODUCE TRACKER */
+  .produce-item{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid #f0f5ee;font-size:13px;}
+  .produce-item .bar-wrap{flex:1;margin:0 10px;height:8px;background:#e8f4e4;border-radius:4px;}
+  .produce-item .bar{height:8px;border-radius:4px;background:#4a7c3f;}
+  /* NEWSLETTER SIGNUP */
+  .signup-box{background:#4a7c3f;color:#fff;border-radius:6px;padding:16px;margin-bottom:16px;text-align:center;}
+  .signup-box h3{font-family:'Merriweather',serif;font-size:17px;margin-bottom:6px;}
+  .signup-box p{font-size:12px;opacity:.85;margin-bottom:10px;}
+  .signup-box input{width:100%;padding:7px;font-size:13px;border:none;border-radius:4px;margin-bottom:8px;}
+  .signup-box button{background:#2d5a25;color:#fff;border:none;padding:8px 14px;font-size:13px;font-weight:700;border-radius:4px;cursor:pointer;width:100%;}
+  /* FOOTER */
+  footer{background:#2d3a1f;color:#8baa78;text-align:center;padding:20px;font-size:12px;margin-top:24px;}
+  footer a{color:#8baa78;}
+</style>
+</head>
+<body>
+<div class="masthead">
+  <div class="top-line">Sunnyside Community Garden Cooperative &bull; Est. 1997</div>
+  <h1>The <em>Seedling</em></h1>
+  <div class="issue">Vol. 27, Issue 3 &bull; Fall 2024 &bull; For Garden Members and Neighbors</div>
+</div>
+<nav>
+  <a href="#">Garden News</a>
+  <a href="#">Events Calendar</a>
+  <a href="#">Plot Assignments</a>
+  <a href="#">Composting Info</a>
+  <a href="#">Join the Garden</a>
+  <a href="#">Member Resources</a>
+</nav>
+<div class="season-banner">🍂 "To plant a garden is to believe in tomorrow." — Audrey Hepburn</div>
+
+<div class="page">
+  <main>
+    <article>
+      <h2><span>From the Garden Coordinator</span>A Season of Unexpected Abundance</h2>
+      <p>Dear Sunnyside Community Garden members and friends,</p>
+      <p>If you had told me in April that this would be the year we'd harvest over 800 pounds of produce for the Eastside Food Pantry, I'd have pointed you to the weather forecast and suggested cautious optimism. Instead, here we are in October with full pantry deliveries, a rain barrel network that actually works, and a composting station that has become, somewhat to everyone's surprise, a point of neighborhood pride.</p>
+      <p>This fall newsletter is a celebration of what our 74 plot-holders, 12 youth garden participants, and dozens of weekend volunteers accomplished between April and October. We also have important updates about the tool library expansion, the winter cover crop schedule, and the annual member meeting coming in November.</p>
+      <p>Thank you for being part of this. The garden is healthiest when it's full of people who care more about soil than perfection.</p>
+      <p style="font-style:italic;">— Rosario Vásquez, Garden Coordinator</p>
+    </article>
+
+    <article>
+      <h2><span>Season Recap</span>What We Grew, What We Learned</h2>
+      <p>This season's headline was unambiguous: tomatoes outperformed every projection. The Brandywine heirloom beds in Section C produced 340 pounds alone, partially attributable to the new drip irrigation lines installed by volunteers in late May, and partially to a growing season that delivered exactly the right ratio of heat and overnight cool in late July and early August.</p>
+      <p>Peppers were the pleasant surprise. Multiple plot-holders reported record harvests, and the hot pepper collective—an informal group of eight members who coordinate on varieties and share seeds—donated over 60 pounds of chiles to the food pantry in September.</p>
+
+      <div class="highlight">
+        <strong>🌱 2024 Season Harvest Totals (Pantry Donations)</strong>
+        <div class="produce-item"><span>Tomatoes</span><div class="bar-wrap"><div class="bar" style="width:90%"></div></div><span>340 lbs</span></div>
+        <div class="produce-item"><span>Zucchini</span><div class="bar-wrap"><div class="bar" style="width:65%"></div></div><span>185 lbs</span></div>
+        <div class="produce-item"><span>Peppers</span><div class="bar-wrap"><div class="bar" style="width:55%"></div></div><span>140 lbs</span></div>
+        <div class="produce-item"><span>Leafy Greens</span><div class="bar-wrap"><div class="bar" style="width:45%"></div></div><span>92 lbs</span></div>
+        <div class="produce-item"><span>Cucumbers</span><div class="bar-wrap"><div class="bar" style="width:28%"></div></div><span>60 lbs</span></div>
+      </div>
+
+      <p>Challenges were real too: powdery mildew swept through the squash beds in Section B with unusual speed in August, and the late-season aphid pressure on the kale required a coordinated response involving neem oil applications coordinated across adjacent plots. We've asked our resident entomologist, plot-holder Diane Khoury (Plot 34), to write a guide for next year's member packet on integrated pest management approaches that work in our specific microclimate.</p>
+    </article>
+
+    <article>
+      <h2><span>Member Spotlight</span>Grower Profile: Section A, Plots 7–9</h2>
+      <div class="member-spotlight">
+        <div class="member-avatar">🌿</div>
+        <div>
+          <div class="name">The Okonkwo Family</div>
+          <div class="plot">Plots 7, 8, and 9 — Section A</div>
+          <p>Three adjacent plots, managed as one extended growing operation. Patience Okonkwo has been a garden member since 2011 and coordinates with her two adult children, Marcus and Ife, who joined the waitlist in 2019 and received adjacent plots by fortunate coincidence. Their specialty is Nigerian leafy vegetables—ugu (fluted pumpkin), waterleaf, and bitter leaf—that they share generously with neighbors and donate to the food pantry's multicultural produce program.</p>
+        </div>
+      </div>
+    </article>
+
+    <article>
+      <h2><span>Upcoming Events</span>Fall and Winter Garden Calendar</h2>
+      <table class="events-table">
+        <thead><tr><th>Date</th><th>Event</th><th>Location / Details</th></tr></thead>
+        <tbody>
+          <tr><td class="date">Oct 19</td><td>Cover Crop Workshop</td><td>Main garden shed, 10 AM. Supplies provided. RSVP by Oct 16.</td></tr>
+          <tr><td class="date">Oct 26</td><td>Garlic Planting Day</td><td>All sections. Community garlic beds available for members without plots.</td></tr>
+          <tr><td class="date">Nov 2</td><td>Annual Member Meeting</td><td>Sunnyside Rec Center Room B, 6 PM. Agenda and election ballot distributed by email.</td></tr>
+          <tr><td class="date">Nov 16</td><td>Tool Library Expansion Opening</td><td>Ribbon cutting, refreshments. New broadforks, soil blockers, and hoop house supplies.</td></tr>
+          <tr><td class="date">Dec 7</td><td>End-of-Season Potluck</td><td>Garden pavilion, 12 PM. Bring something made from what you grew.</td></tr>
+        </tbody>
+      </table>
+    </article>
+  </main>
+  <aside class="sidebar">
+    <div class="signup-box">
+      <h3>Garden Updates by Email</h3>
+      <p>Members and neighbors: get urgent alerts, workshop reminders, and seasonal tips.</p>
+      <input type="email" placeholder="your@email.com">
+      <button>Sign Up</button>
+    </div>
+    <div class="sw">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Plot Assignment Map</a></li>
+        <li><a href="#">Watering Schedule</a></li>
+        <li><a href="#">Composting Guidelines</a></li>
+        <li><a href="#">Tool Library Inventory</a></li>
+        <li><a href="#">Join the Waitlist</a></li>
+        <li><a href="#">Volunteer Sign-Up</a></li>
+      </ul>
+    </div>
+    <div class="sw">
+      <h3>Garden Rules Reminder</h3>
+      <ul>
+        <li>No pesticides without coordinator approval</li>
+        <li>Water your plot by 10 AM or after 6 PM only</li>
+        <li>Compost bin: food scraps only, no meat</li>
+        <li>Children under 12 must be accompanied</li>
+        <li>Label your plot stakes before winter</li>
+      </ul>
+    </div>
+    <div class="sw">
+      <h3>Contact the Coordinator</h3>
+      <p style="font-size:13px;color:#4a5a30;">Rosario Vásquez<br>garden@sunnysidecoop.org<br>Available: Sat 9–11 AM at shed<br>Emergency line: listed on gate sign</p>
+    </div>
+  </aside>
+</div>
+<footer>
+  &copy; 2024 Sunnyside Community Garden Cooperative &nbsp;|&nbsp; <a href="#">Privacy Policy</a> &nbsp;|&nbsp; <a href="#">Unsubscribe</a> &nbsp;|&nbsp; <a href="#">Archive</a><br>
+  Garden located at 1240 Elm Street Park — Open to members daily, dawn to dusk.
+</footer>
+</body>
+</html>

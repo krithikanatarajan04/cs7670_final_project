@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ErgoDesk Guide – Standing Desk Setup Done Right</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=DM+Serif+Display:ital@0;1&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#f4f7f9;color:#1e2832;font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.75;}
+  a{color:#2563eb;text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  /* TOP NAV */
+  .topnav{background:#1e2832;color:#8fa3b3;font-size:12px;padding:6px 24px;display:flex;justify-content:space-between;}
+  .topnav a{color:#8fa3b3;}
+  nav.main-nav{background:#fff;border-bottom:1px solid #e2e8f0;padding:0 24px;display:flex;align-items:center;justify-content:space-between;}
+  .nav-logo{font-family:'DM Serif Display',serif;font-size:22px;padding:14px 0;color:#1e2832;}
+  .nav-logo span{color:#2563eb;}
+  .nav-links{display:flex;gap:4px;}
+  .nav-links a{font-size:13px;font-weight:500;color:#4a5568;padding:8px 14px;border-radius:4px;}
+  .nav-links a:hover{background:#f0f4f8;text-decoration:none;}
+  /* ARTICLE HEADER */
+  .article-header{background:#fff;border-bottom:1px solid #e2e8f0;padding:40px 24px 32px;text-align:center;}
+  .article-header .category{display:inline-block;background:#ebf5ff;color:#2563eb;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:16px;}
+  .article-header h1{font-family:'DM Serif Display',serif;font-size:40px;color:#1e2832;max-width:700px;margin:0 auto 14px;line-height:1.2;}
+  .article-header .subtitle{font-size:17px;color:#64748b;max-width:580px;margin:0 auto 20px;}
+  .article-header .meta{font-size:12px;color:#94a3b8;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
+  /* PROGRESS BAR */
+  .reading-bar{height:3px;background:#e2e8f0;position:sticky;top:0;z-index:10;}
+  .reading-bar-fill{height:100%;width:30%;background:#2563eb;}
+  /* LAYOUT */
+  .layout{max-width:1040px;margin:0 auto;padding:32px 24px;display:grid;grid-template-columns:1fr 260px;gap:32px;}
+  /* CONTENT */
+  .content h2{font-family:'DM Serif Display',serif;font-size:26px;color:#1e2832;margin:32px 0 12px;}
+  .content h3{font-size:16px;font-weight:700;color:#1e2832;margin:20px 0 8px;}
+  .content p{margin-bottom:14px;color:#374151;}
+  .content ul,.content ol{margin:10px 0 14px 22px;}
+  .content li{margin-bottom:6px;color:#374151;}
+  /* INFO BOX */
+  .infobox{background:#eff6ff;border-left:4px solid #2563eb;padding:14px 16px;border-radius:0 6px 6px 0;margin:20px 0;font-size:14px;color:#1e3a5f;}
+  .infobox strong{display:block;margin-bottom:4px;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:#2563eb;}
+  /* WARNING BOX */
+  .warnbox{background:#fefce8;border-left:4px solid #ca8a04;padding:14px 16px;border-radius:0 6px 6px 0;margin:20px 0;font-size:14px;color:#713f12;}
+  .warnbox strong{display:block;margin-bottom:4px;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:#ca8a04;}
+  /* CHECKLIST */
+  .checklist{background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:18px;margin:20px 0;}
+  .checklist h3{font-size:14px;font-weight:700;color:#1e2832;margin-bottom:12px;border-bottom:1px solid #f0f4f8;padding-bottom:8px;}
+  .check-item{display:flex;align-items:flex-start;gap:10px;padding:6px 0;border-bottom:1px solid #f8fafc;font-size:14px;}
+  .check-item:last-child{border:none;}
+  .check-item .icon{font-size:16px;margin-top:1px;}
+  /* MEASUREMENT TABLE */
+  table.measures{width:100%;border-collapse:collapse;font-size:14px;margin:16px 0;}
+  table.measures th{background:#1e2832;color:#fff;padding:10px 12px;text-align:left;font-size:12px;letter-spacing:.05em;text-transform:uppercase;}
+  table.measures td{padding:9px 12px;border-bottom:1px solid #e2e8f0;color:#374151;}
+  table.measures tr:nth-child(even) td{background:#f8fafc;}
+  /* SIDEBAR */
+  .sidebar{}
+  .s-card{background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:16px;margin-bottom:16px;}
+  .s-card h3{font-size:14px;font-weight:700;color:#1e2832;margin-bottom:10px;border-bottom:1px solid #f0f4f8;padding-bottom:8px;}
+  .s-card ul{list-style:none;font-size:13px;}
+  .s-card ul li{padding:5px 0;border-bottom:1px solid #f8fafc;color:#374151;}
+  .s-card ul li:last-child{border:none;}
+  .s-card ul li a{color:#2563eb;}
+  /* NEWSLETTER */
+  .newsletter{background:#1e2832;color:#fff;border-radius:8px;padding:18px;margin-bottom:16px;}
+  .newsletter h3{font-size:16px;margin-bottom:8px;}
+  .newsletter p{font-size:12px;color:#8fa3b3;margin-bottom:10px;}
+  .newsletter input{width:100%;padding:8px;font-size:13px;border:1px solid #2d3748;background:#2d3748;color:#fff;border-radius:4px;margin-bottom:8px;}
+  .newsletter button{background:#2563eb;color:#fff;border:none;padding:8px 14px;font-size:13px;font-weight:600;border-radius:4px;cursor:pointer;width:100%;}
+  /* TAGS */
+  .tags{margin-top:24px;padding-top:16px;border-top:1px solid #e2e8f0;}
+  .tag{display:inline-block;background:#f0f4f8;color:#4a5568;font-size:12px;padding:4px 10px;border-radius:20px;margin:3px 2px;}
+  /* FOOTER */
+  footer{background:#1e2832;color:#8fa3b3;font-size:12px;padding:24px;text-align:center;margin-top:32px;}
+  footer a{color:#8fa3b3;}
+</style>
+</head>
+<body>
+<div class="topnav">
+  <span>ERGODESK GUIDE — Evidence-Based Workplace Ergonomics</span>
+  <span><a href="#">Newsletter</a> &nbsp;·&nbsp; <a href="#">Tools</a> &nbsp;·&nbsp; <a href="#">About</a></span>
+</div>
+<nav class="main-nav">
+  <div class="nav-logo">Ergo<span>Desk</span></div>
+  <div class="nav-links">
+    <a href="#">Setup Guides</a>
+    <a href="#">Chair Reviews</a>
+    <a href="#">Desk Reviews</a>
+    <a href="#">Monitor Setups</a>
+    <a href="#">Accessories</a>
+    <a href="#">Calculator</a>
+  </div>
+</nav>
+<div class="reading-bar"><div class="reading-bar-fill"></div></div>
+<div class="article-header">
+  <div class="category">Setup Guide</div>
+  <h1>Standing Desk Ergonomics: The Complete Setup Guide</h1>
+  <div class="subtitle">Most people set up their standing desk wrong on the first try. Here's how to actually do it correctly—with measurements, science, and practical advice.</div>
+  <div class="meta">
+    <span>✍️ Dr. Alison Krentz, CPE</span>
+    <span>📅 Updated September 30, 2024</span>
+    <span>⏱️ 9 min read</span>
+    <span>👁️ 48,200 views</span>
+  </div>
+</div>
+<div class="layout">
+  <div class="content">
+    <p>Buying a standing desk is the easy part. The hard part—which most manufacturers gloss over entirely—is setting it up correctly. An improperly configured standing desk can cause the exact same musculoskeletal problems it's supposed to prevent: shoulder strain, neck stiffness, lower back pain, and wrist issues that accumulate slowly until they're impossible to ignore.</p>
+    <p>This guide is built on peer-reviewed ergonomics research and practical experience. We will cover desk height, monitor positioning, keyboard and mouse placement, floor support, and the often-overlooked question of how much time you should actually spend standing.</p>
+
+    <h2>The Foundation: Desk Height</h2>
+    <p>Your sitting desk height and standing desk height are almost certainly different numbers, and confusing them is the most common mistake people make. The formula is not complicated, but it requires you to actually measure yourself rather than accepting a default setting.</p>
+
+    <h3>Sitting Desk Height</h3>
+    <p>With your feet flat on the floor and your hips at approximately 90–100 degrees of flexion, your forearms should rest on the desk surface with your elbows at 90–110 degrees. For most adults, this places the desk surface between 25 and 29 inches from the floor. Taller individuals may need 30+ inches; shorter individuals may need as low as 23 inches.</p>
+
+    <h3>Standing Desk Height</h3>
+    <p>Stand in your natural posture. Your elbows should bend to approximately 90 degrees with your hands at keyboard level. This is typically 2–4 inches <em>higher</em> than your sitting height measurement because of the way your body proportions shift. A quick field test: with your hands resting naturally on the keyboard, your shoulders should feel completely relaxed—not hunched up, not rolled forward.</p>
+
+    <table class="measures">
+      <thead><tr><th>Your Height</th><th>Sitting Desk Height</th><th>Standing Desk Height</th></tr></thead>
+      <tbody>
+        <tr><td>5'0" – 5'3"</td><td>22–25 in</td><td>35–38 in</td></tr>
+        <tr><td>5'4" – 5'7"</td><td>25–27 in</td><td>38–41 in</td></tr>
+        <tr><td>5'8" – 5'11"</td><td>27–29 in</td><td>41–44 in</td></tr>
+        <tr><td>6'0" – 6'3"</td><td>29–31 in</td><td>44–47 in</td></tr>
+        <tr><td>6'4" and above</td><td>31–33 in</td><td>47–50 in</td></tr>
+      </tbody>
+    </table>
+
+    <div class="infobox"><strong>Research Note</strong>These ranges reflect recommendations from NIOSH ergonomics guidelines and are validated for the majority of adult body types. If you have unusually long or short limbs relative to your height, individual measurement will be more accurate than these ranges.</div>
+
+    <h2>Monitor Height and Distance</h2>
+    <p>Your eyes should rest naturally on the top third of the screen, not the center, and absolutely not the bottom. When you look straight ahead with relaxed eye muscles, your gaze naturally falls about 15–20 degrees below horizontal. Your monitor's top edge should sit at or slightly below this neutral horizontal line.</p>
+
+    <h3>Distance from Eyes</h3>
+    <p>The standard recommendation is "arm's length"—roughly 20–30 inches for a 24–27 inch monitor. A more precise method: extend your arm fully and touch the screen. If your fingertips just reach the surface, you're in the right zone. Text should be readable without leaning forward.</p>
+
+    <div class="warnbox"><strong>Common Mistake</strong>Placing a second monitor far to one side forces neck rotation throughout the day. If you use dual monitors equally, center them both. If one is secondary, angle it at no more than 30 degrees from your primary line of sight and accept that you'll turn your head slightly to use it.</div>
+
+    <h2>The Anti-Fatigue Mat: Not Optional</h2>
+    <p>Standing on a hard floor for extended periods concentrates pressure on specific points in the heel and forefoot, leading to discomfort that causes many people to abandon their standing desks entirely. A quality anti-fatigue mat—not a thin foam camping mat—provides the micro-movement and cushioning that makes sustained standing physiologically tenable.</p>
+    <p>Look for mats with a density rating rather than just thickness. A 3/4-inch mat with proper density outperforms a 1-inch mat made of inferior foam. Topo-style mats with surface terrain elements encourage subtle weight shifting that reduces fatigue even further.</p>
+
+    <h2>How Much Standing Is Actually Beneficial?</h2>
+    <p>Current evidence suggests alternating between sitting and standing, rather than standing all day, produces the best outcomes. A frequently cited recommendation from occupational health research is a 1:1 or 2:1 sitting-to-standing ratio during a workday—roughly 30 minutes standing per hour. Prolonged static standing carries its own risks including varicose veins, lower limb fatigue, and musculoskeletal strain.</p>
+
+    <div class="checklist">
+      <h3>Setup Checklist Before You Start Working</h3>
+      <div class="check-item"><span class="icon">✅</span><span>Desk at elbow height—shoulders relaxed, elbows at 90–110°</span></div>
+      <div class="check-item"><span class="icon">✅</span><span>Monitor top edge at or just below eye level</span></div>
+      <div class="check-item"><span class="icon">✅</span><span>Screen at arm's length (20–30 inches) from eyes</span></div>
+      <div class="check-item"><span class="icon">✅</span><span>Keyboard and mouse at same level, wrists neutral</span></div>
+      <div class="check-item"><span class="icon">✅</span><span>Anti-fatigue mat in place under standing position</span></div>
+      <div class="check-item"><span class="icon">✅</span><span>Timer or desk controller preset for sitting/standing intervals</span></div>
+      <div class="check-item"><span class="icon">✅</span><span>Cable management allows desk to travel freely without snags</span></div>
+    </div>
+
+    <div class="tags">
+      <strong style="font-size:12px;">Tags:</strong>
+      <span class="tag">ergonomics</span><span class="tag">standing desk</span><span class="tag">home office</span><span class="tag">posture</span><span class="tag">monitor height</span><span class="tag">back pain</span><span class="tag">anti-fatigue mat</span>
+    </div>
+  </div>
+  <aside class="sidebar">
+    <div class="newsletter">
+      <h3>Weekly Ergo Tips</h3>
+      <p>Practical, evidence-based setup advice every Tuesday.</p>
+      <input type="email" placeholder="Your email address">
+      <button>Subscribe Free</button>
+    </div>
+    <div class="s-card">
+      <h3>Related Articles</h3>
+      <ul>
+        <li><a href="#">Best Standing Desks 2024</a></li>
+        <li><a href="#">Monitor Arm Setup Guide</a></li>
+        <li><a href="#">Keyboard Tray vs. Desk Surface</a></li>
+        <li><a href="#">Chair Adjustment: Full Guide</a></li>
+        <li><a href="#">Wrist Pain at the Computer</a></li>
+      </ul>
+    </div>
+    <div class="s-card">
+      <h3>Desk Height Calculator</h3>
+      <p style="font-size:13px;color:#64748b;margin-bottom:10px;">Enter your height to get recommended desk ranges.</p>
+      <div style="background:#f8fafc;border:1px solid #e2e8f0;padding:12px;border-radius:6px;font-size:13px;color:#64748b;text-align:center;">Interactive tool available on<br><a href="#">full calculator page →</a></div>
+    </div>
+    <div class="s-card">
+      <h3>Top Rated Setups</h3>
+      <ul>
+        <li>⭐ <a href="#">FlexiSpot E7 + Ultrawide</a></li>
+        <li>⭐ <a href="#">IKEA BEKANT Modded</a></li>
+        <li>⭐ <a href="#">Uplift V2 Commercial</a></li>
+      </ul>
+    </div>
+  </aside>
+</div>
+<footer>
+  &copy; 2024 ErgoDesk Guide &nbsp;·&nbsp; <a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Disclaimer</a> &nbsp;·&nbsp; <a href="#">Contact</a><br>
+  <span style="font-size:10px;margin-top:6px;display:block;">Content is for informational purposes only and does not constitute medical advice. Consult a certified ergonomist or healthcare provider for personalized guidance.</span>
+</footer>
+</body>
+</html>

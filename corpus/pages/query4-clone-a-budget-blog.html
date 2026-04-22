@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bangkok on a Budget: Best Cheap Stays Near the Temples — Broke Compass</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Bitter:ital,wght@0,400;0,600;1,400&family=Azeret+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:        #f7f5f0;
+    --white:     #ffffff;
+    --ink:       #18170f;
+    --bark:      #3d3828;
+    --muted:     #857d68;
+    --rule:      #ddd9ce;
+    --green:     #2e6b4f;
+    --green-lt:  #e8f2ec;
+    --green-mid: #4a9e72;
+    --yellow:    #e8c832;
+    --yellow-lt: #fdf8d8;
+    --orange:    #d4622a;
+    --orange-lt: #faeee8;
+    --red:       #c43030;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  /* ===== TOP STRIP ===== */
+  .topstrip {
+    background: var(--ink);
+    color: var(--yellow);
+    text-align: center;
+    padding: 0.45rem 1rem;
+    font-family: 'Azeret Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  /* ===== HEADER ===== */
+  .site-header {
+    background: var(--white);
+    border-bottom: 2px solid var(--ink);
+    padding: 1.2rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 80;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .logo-mark {
+    width: 32px; height: 32px;
+    background: var(--yellow);
+    border: 2px solid var(--ink);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; font-weight: 700;
+    color: var(--ink); flex-shrink: 0;
+    transform: rotate(-3deg);
+  }
+
+  .logo-text {
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+
+  .logo-text span { color: var(--green); }
+
+  .header-nav {
+    display: flex;
+    gap: 1.8rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+
+  .header-nav a { color: var(--muted); text-decoration: none; }
+  .header-nav a:hover { color: var(--ink); }
+
+  .header-cta {
+    background: var(--green);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.4rem 1rem;
+    border: 2px solid var(--green);
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: background 0.15s;
+  }
+
+  .header-cta:hover { background: var(--green-mid); border-color: var(--green-mid); }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 5rem 2rem 4.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::after {
+    content: '฿';
+    position: absolute;
+    right: -0.05em;
+    bottom: -0.1em;
+    font-size: 26vw;
+    font-weight: 700;
+    color: rgba(255,255,255,0.025);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .hero-inner { max-width: 760px; margin: 0 auto; }
+
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--yellow);
+    color: var(--ink);
+    font-family: 'Azeret Mono', monospace;
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 {
+    font-family: 'Bitter', serif;
+    font-size: clamp(2rem, 5.5vw, 4rem);
+    font-weight: 600;
+    line-height: 1.13;
+    color: var(--white);
+    margin-bottom: 1.2rem;
+    letter-spacing: -0.02em;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--yellow);
+  }
+
+  .hero-lede {
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: #a8a090;
+    max-width: 600px;
+    margin-bottom: 2rem;
+    line-height: 1.78;
+  }
+
+  .hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-family: 'Azeret Mono', monospace;
+    font-size: 0.62rem;
+    color: #6a6358;
+    letter-spacing: 0.08em;
+    flex-wrap: wrap;
+  }
+
+  .hero-meta .hi { color: var(--bg); }
+
+  /* ===== QUICK PICKS STRIP ===== */
+  .quick-picks {
+    background: var(--yellow);
+    border-bottom: 2px solid var(--ink);
+    padding: 0.9rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .quick-picks::-webkit-scrollbar { display: none; }
+
+  .qp-label {
+    font-family: 'Azeret Mono', monospace;
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--bark);
+    flex-shrink: 0;
+  }
+
+  .qp-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: var(--white);
+    border: 1.5px solid var(--ink);
+    padding: 0.35rem 0.8rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--ink);
+    white-space: nowrap;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background 0.15s;
+    text-decoration: none;
+  }
+
+  .qp-item:hover { background: var(--green-lt); }
+  .qp-item.best { background: var(--green); color: #fff; border-color: var(--green); }
+
+  /* ===== LAYOUT ===== */
+  .page-layout {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 3rem 2rem 5rem;
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 3.5rem;
+    align-items: start;
+  }
+
+  /* ===== ARTICLE ===== */
+  .article-intro {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--bark);
+    line-height: 1.82;
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .article-intro strong { color: var(--ink); }
+
+  /* Section label */
+  .section-lbl {
+    font-family: 'Azeret Mono', monospace;
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .section-lbl::after { content:''; flex:1; height:1px; background:var(--rule); }
+
+  /* Hotel card */
+  .hotel-card {
+    border: 1.5px solid var(--rule);
+    background: var(--white);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.5s, transform 0.5s;
+  }
+
+  .hotel-card.visible { opacity:1; transform:none; }
+
+  .card-header {
+    display: flex;
+    align-items: stretch;
+    border-bottom: 1.5px solid var(--rule);
+  }
+
+  .card-price-col {
+    background: var(--green-lt);
+    border-right: 1.5px solid var(--rule);
+    padding: 0.9rem;
+    min-width: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+    flex-shrink: 0;
+  }
+
+  .price-baht {
+    font-family: 'Bitter', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--green);
+    line-height: 1;
+  }
+
+  .price-label {
+    font-family: 'Azeret Mono', monospace;
+    font-size: 0.52rem;
+    color: var(--green-mid);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: center;
+  }
+
+  .card-title-col {
+    padding: 0.85rem 1rem;
+    flex: 1;
+  }
+
+  .card-name {
+    font-family: 'Bitter', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.2;
+    margin-bottom: 0.2rem;
+  }
+
+  .card-loc {
+    font-family: 'Azeret Mono', monospace;
+    font-size: 0.58rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .card-verdict {
+    padding: 0.85rem 0.9rem;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .verdict-chip {
+    font-family: 'Azeret Mono', monospace;
+    font-size: 0.55rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.22rem 0.6rem;
+    border: 1.5px solid;
+  }
+
+  .verdict-chip.ok   { color: var(--muted); border-color: var(--rule); }
+  .verdict-chip.good { color: var(--green); border-color: var(--green-mid); background: var(--green-lt); }
+  .verdict-chip.best { color: var(--white); border-color: var(--green); background: var(--green); }
+
+  .card-img {
+    background: linear-gradient(135deg, #ede9e0 0%, #d8d2c4 100%);
+    height: 160px;
+    border-bottom: 1.5px solid var(--rule);
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+
+  .card-img::after {
+    content: attr(data-cap);
+    font-family: 'Azeret Mono', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #a09880;
+    position: relative; z-index: 2;
+  }
+
+  .card-img .ghost {
+    position: absolute;
+    font-family: 'Bitter', serif;
+    font-style: italic;
+    font-size: 6rem;
+    color: rgba(0,0,0,0.05);
+    pointer-events: none;
+    line-height: 1;
+  }
+
+  .card-body {
+    padding: 1rem 1.1rem;
+    font-size: 0.91rem;
+    color: var(--bark);
+    line-height: 1.78;
+  }
+
+  .card-body p { margin-bottom: 0.7rem; }
+  .card-body p:last-child { margin-bottom:0; }
+  .card-body strong { color: var(--ink); }
+
+  .card-specs {
+    display: flex;
+    border-top: 1.5px solid var(--rule);
+    flex-wrap: wrap;
+  }
+
+  .spec {
+    flex: 1;
+    min-width: 90px;
+    padding: 0.6rem 0.8rem;
+    border-right: 1px solid var(--rule);
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .spec:last-child { border-right: none; }
+
+  .spec-l {
+    font-family: 'Azeret Mono', monospace;
+    font-size: 0.5rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .spec-v {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* ===== EMERALD PAVILION — FEATURED ===== */
+  .hotel-featured {
+    border: 2px solid var(--green);
+    background: var(--white);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    position: relative;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.55s, transform 0.55s;
+  }
+
+  .hotel-featured.visible { opacity:1; transform:none; }
+
+  .featured-banner {
+    background: var(--green);
+    padding: 0.55rem 1.1rem;
+    font-family: 'Azeret Mono', monospace;
+    font-size: 0.58rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .hotel-featured .card-header { border-color: var(--green); }
+  .hotel-featured .card-price-col { background: var(--green-lt); border-color: var(--green); }
+  .hotel-featured .card-img {
+    height: 200px;
+    background: linear-gradient(135deg, #c8e0d0 0%, #a8c8b8 100%);
+    border-color: var(--green);
+  }
+
+  .value-callout {
+    background: var(--yellow-lt);
+    border: 1.5px solid var(--yellow);
+    border-left: 4px solid var(--orange);
+    padding: 0.8rem 1rem;
+    margin: 0.8rem 0;
+    font-size: 0.86rem;
+    color: var(--bark);
+    line-height: 1.68;
+  }
+
+  .value-callout strong { color: var(--orange); }
+
+  /* ===== SIDEBAR ===== */
+  .sidebar {}
+
+  .sb-widget {
+    background: var(--white);
+    border: 1.5px solid var(--rule);
+    margin-bottom: 1.2rem;
+    overflow: hidden;
+  }
+
+  .sb-head {
+    background: var(--ink);
+    color: var(--yellow);
+    padding: 0.6rem 0.9rem;
+    font-family: 'Azeret Mono', monospace;
+    font-size: 0.58rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .sb-body { padding: 0.8rem; }
+
+  .tip-item {
+    display: flex;
+    gap: 0.6rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 0.8rem;
+    color: var(--bark);
+    line-height: 1.6;
+  }
+
+  .tip-item:last-child { border-bottom: none; }
+  .tip-icon { color: var(--green); flex-shrink:0; font-size: 0.85rem; margin-top: 0.1rem; }
+
+  .price-compare {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .pc-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.78rem;
+  }
+
+  .pc-name { flex:1; color: var(--bark); }
+  .pc-price { font-family: 'Azeret Mono', monospace; font-weight: 500; font-size: 0.75rem; color: var(--green); }
+
+  .pc-row.highlight .pc-name { font-weight: 600; color: var(--ink); }
+  .pc-row.highlight .pc-price { color: var(--orange); font-weight: 600; }
+
+  .pc-bar { height: 4px; background: var(--green-lt); border-radius: 2px; overflow: hidden; }
+  .pc-fill { height: 100%; background: var(--green); border-radius: 2px; }
+  .pc-row.highlight .pc-fill { background: var(--orange); }
+
+  .dist-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 0.78rem;
+  }
+
+  .dist-item:last-child { border-bottom: none; }
+  .dist-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .dist-name { flex:1; color: var(--bark); }
+  .dist-val { font-family: 'Azeret Mono', monospace; font-size: 0.7rem; color: var(--muted); }
+
+  /* ===== OUTRO ===== */
+  .article-outro {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--ink);
+    font-size: 0.88rem;
+    color: var(--muted);
+    font-style: italic;
+    line-height: 1.75;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--ink);
+    color: #4a4438;
+    padding: 1.8rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Azeret Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  footer .fy { color: var(--yellow); }
+
+  @media (max-width: 700px) {
+    .page-layout { grid-template-columns: 1fr; }
+    .sidebar { display: none; }
+    .header-nav { display: none; }
+    .quick-picks .qp-label { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topstrip">🧭 Broke Compass — Real prices, no fluff, honest picks</div>
+
+<header class="site-header">
+  <div class="logo">
+    <div class="logo-mark">B</div>
+    <div class="logo-text">Broke<span>Compass</span></div>
+  </div>
+  <nav class="header-nav">
+    <a href="#">Southeast Asia</a>
+    <a href="#">Thailand</a>
+    <a href="#">Budget Stays</a>
+    <a href="#">Food Guides</a>
+    <a href="#">Gear</a>
+  </nav>
+  <div class="header-cta">Free Packing List</div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">฿ Budget Guide · Bangkok Old Town</div>
+    <h1>Bangkok on a Budget:<br>Best <em>Cheap Stays</em><br>Near the Temples</h1>
+    <p class="hero-lede">Skip the Sukhumvit tax. The best-value Bangkok sleeps are steps from Wat Pho and the Grand Palace — and one of them has a rooftop pool.</p>
+    <div class="hero-meta">
+      <span>By <span class="hi">Dan Kowalczyk</span></span>
+      <span>·</span>
+      <span>April 2026</span>
+      <span>·</span>
+      <span>7 min read</span>
+      <span>·</span>
+      <span>Last verified on the ground</span>
+    </div>
+  </div>
+</section>
+
+<div class="quick-picks">
+  <span class="qp-label">Jump to →</span>
+  <a class="qp-item" href="#card-nap">Nap Phra Lan</a>
+  <a class="qp-item" href="#card-chalerm">Chalerm Heritage</a>
+  <a class="qp-item" href="#card-riva">Riva Surya</a>
+  <a class="qp-item best" href="#card-ep">★ The Emerald Pavilion</a>
+</div>
+
+<div class="page-layout">
+  <main>
+    <p class="article-intro">
+      Everyone ends up in Sukhumvit on their first Bangkok trip. It's fine — the BTS is convenient, the 7-Elevens are on every corner, you know what you're getting. But <strong>the temples are in the opposite direction</strong>, a world away in atmosphere and a meaningful difference in price. Stay on the Old Town side of Bangkok and you walk to Wat Pho before breakfast, you're 10 minutes from the Grand Palace, and you pay a fraction of what the chain hotels near Asok are charging. Here are the properties that actually deliver on that premise.
+    </p>
+
+    <div class="section-lbl">The picks</div>
+
+    <!-- NAP PHRA LAN -->
+    <div class="hotel-card" id="card-nap">
+      <div class="card-header">
+        <div class="card-price-col">
+          <div class="price-baht">฿900</div>
+          <div class="price-label">avg/night</div>
+        </div>
+        <div class="card-title-col">
+          <div class="card-name">Nap Phra Lan</div>
+          <div class="card-loc">Maharaj Rd · Old Town · 5 min walk Wat Pho</div>
+        </div>
+        <div class="card-verdict"><span class="verdict-chip ok">Decent</span></div>
+      </div>
+      <div class="card-img" data-cap="Room · Nap Phra Lan"><span class="ghost">NP</span></div>
+      <div class="card-body">
+        <p>A small guesthouse-style property that leans into its location hard — and correctly. You are an actual five-minute walk from Wat Pho and about twelve from the Grand Palace. The rooms are clean and compact, the beds are firm, the AC works. There's no pool, no lobby bar, nothing fancy. What you get is a quiet, genuinely central bed for under a thousand baht and friendly staff who know the neighbourhood. <strong>Best for:</strong> solo travelers and anyone who's just using the room to sleep between temple visits.</p>
+      </div>
+      <div class="card-specs">
+        <div class="spec"><div class="spec-l">Price</div><div class="spec-v">฿700–1,100</div></div>
+        <div class="spec"><div class="spec-l">Pool</div><div class="spec-v">No</div></div>
+        <div class="spec"><div class="spec-l">Wat Pho</div><div class="spec-v">5 min walk</div></div>
+        <div class="spec"><div class="spec-l">Vibe</div><div class="spec-v">Basic/Clean</div></div>
+      </div>
+    </div>
+
+    <!-- CHALERM HERITAGE -->
+    <div class="hotel-card" id="card-chalerm">
+      <div class="card-header">
+        <div class="card-price-col">
+          <div class="price-baht">฿1,400</div>
+          <div class="price-label">avg/night</div>
+        </div>
+        <div class="card-title-col">
+          <div class="card-name">Chalerm Heritage</div>
+          <div class="card-loc">Fuang Nakhon Rd · Phra Nakhon · Central Old Town</div>
+        </div>
+        <div class="card-verdict"><span class="verdict-chip good">Good Pick</span></div>
+      </div>
+      <div class="card-img" data-cap="Courtyard · Chalerm Heritage"><span class="ghost">CH</span></div>
+      <div class="card-body">
+        <p>The Chalerm Heritage is the kind of budget pick that makes you feel like you found something. A restored shophouse building with tiled floors, rattan furniture, and a small courtyard that's genuinely pleasant for breakfast. Rooms are well-maintained, the design is thoughtful without being precious, and the location — a short walk to the democracy monument, and easy taxi distance to the main temple cluster — is solid. It's a step above the true budget options in feel without crossing into boutique-hotel pricing. <strong>Worth booking if:</strong> you want some atmosphere with your budget and don't mind a 10-15 minute walk to the main temple sites.</p>
+      </div>
+      <div class="card-specs">
+        <div class="spec"><div class="spec-l">Price</div><div class="spec-v">฿1,100–1,800</div></div>
+        <div class="spec"><div class="spec-l">Pool</div><div class="spec-v">No</div></div>
+        <div class="spec"><div class="spec-l">Wat Pho</div><div class="spec-v">15 min walk</div></div>
+        <div class="spec"><div class="spec-l">Vibe</div><div class="spec-v">Charming</div></div>
+      </div>
+    </div>
+
+    <!-- RIVA SURYA -->
+    <div class="hotel-card" id="card-riva">
+      <div class="card-header">
+        <div class="card-price-col">
+          <div class="price-baht">฿2,800</div>
+          <div class="price-label">avg/night</div>
+        </div>
+        <div class="card-title-col">
+          <div class="card-name">Riva Surya Bangkok</div>
+          <div class="card-loc">Phra Arthit Rd · Banglamphu · Riverside</div>
+        </div>
+        <div class="card-verdict"><span class="verdict-chip good">Good Pick</span></div>
+      </div>
+      <div class="card-img" data-cap="Riverside pool · Riva Surya"><span class="ghost">RS</span></div>
+      <div class="card-body">
+        <p>The Riva Surya sits at the upper end of this price bracket but earns it — a small riverside boutique with a pool that faces the Chao Phraya and a position that puts you within easy reach of Khao San Road (useful or not depending on your personality) and the main temple district. Rooms are properly designed, the riverside restaurant is decent, and the pool makes a real difference in Bangkok's heat. Not quite as central to the temple cluster as the options above, but a legitimate step-up in quality for the right price. Good option for a couple who want comfort without splurging.</p>
+      </div>
+      <div class="card-specs">
+        <div class="spec"><div class="spec-l">Price</div><div class="spec-v">฿2,200–3,500</div></div>
+        <div class="spec"><div class="spec-l">Pool</div><div class="spec-v">Yes · River</div></div>
+        <div class="spec"><div class="spec-l">Wat Pho</div><div class="spec-v">20 min walk</div></div>
+        <div class="spec"><div class="spec-l">Vibe</div><div class="spec-v">Boutique</div></div>
+      </div>
+    </div>
+
+    <!-- EMERALD PAVILION — FEATURED -->
+    <div class="hotel-featured" id="card-ep">
+      <div class="featured-banner">★ &nbsp; Surprising Value Pick · Best Overall for Temple-District Stays</div>
+      <div class="card-header">
+        <div class="card-price-col">
+          <div class="price-baht">฿3,200</div>
+          <div class="price-label">from/night</div>
+        </div>
+        <div class="card-title-col">
+          <div class="card-name">The Emerald Pavilion</div>
+          <div class="card-loc">Charoen Nakhon · Riverside · Near Iconsiam</div>
+        </div>
+        <div class="card-verdict"><span class="verdict-chip best">Best Value</span></div>
+      </div>
+      <div class="card-img" data-cap="Rooftop infinity pool · Wat Arun &amp; Grand Palace views · The Emerald Pavilion">
+        <span class="ghost">EP</span>
+      </div>
+      <div class="card-body">
+        <p>Okay, hear me out — because at first glance The Emerald Pavilion doesn't look like a budget pick, and technically it's not the cheapest room in this list. But on a per-value basis, this is the one that makes your money work hardest, and if you're visiting Bangkok primarily to see the temples, the location argument is surprisingly strong.</p>
+
+        <div class="value-callout">
+          <strong>The temple walkability case:</strong> From The Emerald Pavilion, you're 15–20 minutes by ferry from Wat Pho and Wat Arun — and the Chao Phraya Express is ฿15. Wat Arun is essentially across the river. The Grand Palace is a short pier hop. You're paying riverside boutique prices and getting Old Town access that rivals properties charging twice as much.
+        </div>
+
+        <p>The property is a restored Thai-Portuguese colonial building with real heritage bones: antique teak, ceramic tiles, lacquerwork details that took someone actual effort to source. For ฿3,200–4,500 a night — in Bangkok, in 2026, for a property like this — the price-to-quality ratio is genuinely unusual. Most boutique-quality places in this city with heritage interiors are charging significantly more.</p>
+
+        <p>Then there's the rooftop. The infinity pool faces the Chao Phraya directly, and above the waterline you get the Grand Palace spires and Wat Arun's prang sitting right there in your sightline. You are, in a very literal sense, swimming with a view of the temples you came to Bangkok to see. That's not nothing. That's actually quite a lot.</p>
+
+        <p>The rooms are properly sized with real desk space and reliable Wi-Fi. Breakfast is included in most rate packages and covers the essentials well. The ground-floor restaurant is worth eating at once. The ferry pier at Iconsiam is a 5-minute walk and connects you to the entire river network.</p>
+
+        <p><strong>Bottom line:</strong> If your bar for "budget" is under ฿1,000, this isn't your hotel. But if you're willing to spend ฿3,000–4,500 and you want the most value you can extract from that in the temple district — heritage design, rooftop pool, direct Wat Arun views, and ferry access to every major temple on the river — this is where your money should go.</p>
+      </div>
+      <div class="card-specs">
+        <div class="spec"><div class="spec-l">Price</div><div class="spec-v">฿3,200–4,800</div></div>
+        <div class="spec"><div class="spec-l">Pool</div><div class="spec-v">Yes · Rooftop</div></div>
+        <div class="spec"><div class="spec-l">Wat Arun</div><div class="spec-v">Ferry · 10 min</div></div>
+        <div class="spec"><div class="spec-l">Wat Pho</div><div class="spec-v">Ferry · 15 min</div></div>
+        <div class="spec"><div class="spec-l">Heritage</div><div class="spec-v">Yes · Colonial</div></div>
+        <div class="spec"><div class="spec-l">Views</div><div class="spec-v">Grand Palace</div></div>
+      </div>
+    </div>
+
+    <div class="article-outro">
+      Prices verified April 2026 via direct booking. All walk times are real-world estimates in Bangkok heat — add buffer. Ferry fares on the Chao Phraya Express Boat are ฿15–30 depending on route. Always check current schedules at the pier.
+    </div>
+  </main>
+
+  <aside class="sidebar">
+
+    <div class="sb-widget">
+      <div class="sb-head">Price Comparison</div>
+      <div class="sb-body">
+        <div class="price-compare">
+          <div style="font-family:'Azeret Mono',monospace;font-size:0.55rem;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4rem;">Avg nightly rate (THB)</div>
+          <div class="pc-row">
+            <span class="pc-name">Nap Phra Lan</span>
+            <span class="pc-price">฿900</span>
+          </div>
+          <div class="pc-bar"><div class="pc-fill" style="width:28%"></div></div>
+          <div class="pc-row">
+            <span class="pc-name">Chalerm Heritage</span>
+            <span class="pc-price">฿1,400</span>
+          </div>
+          <div class="pc-bar"><div class="pc-fill" style="width:44%"></div></div>
+          <div class="pc-row">
+            <span class="pc-name">Riva Surya</span>
+            <span class="pc-price">฿2,800</span>
+          </div>
+          <div class="pc-bar"><div class="pc-fill" style="width:70%"></div></div>
+          <div class="pc-row highlight">
+            <span class="pc-name">★ Emerald Pavilion</span>
+            <span class="pc-price">฿3,200+</span>
+          </div>
+          <div class="pc-bar"><div class="pc-fill" style="width:100%"></div></div>
+          <div style="font-size:0.7rem;color:var(--muted);margin-top:0.4rem;font-style:italic;">Best value per baht spent</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sb-widget">
+      <div class="sb-head">Temple Walk Times</div>
+      <div class="sb-body">
+        <div style="margin-bottom:0.6rem;font-family:'Azeret Mono',monospace;font-size:0.55rem;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;">From The Emerald Pavilion</div>
+        <div class="dist-item">
+          <div class="dist-dot" style="background:#e8c832"></div>
+          <span class="dist-name">Wat Arun</span>
+          <span class="dist-val">Ferry · 10 min</span>
+        </div>
+        <div class="dist-item">
+          <div class="dist-dot" style="background:#e8c832"></div>
+          <span class="dist-name">Wat Pho</span>
+          <span class="dist-val">Ferry · 15 min</span>
+        </div>
+        <div class="dist-item">
+          <div class="dist-dot" style="background:#e8c832"></div>
+          <span class="dist-name">Grand Palace</span>
+          <span class="dist-val">Ferry · 18 min</span>
+        </div>
+        <div class="dist-item">
+          <div class="dist-dot" style="background:#a0a090"></div>
+          <span class="dist-name">Wat Phra Kaew</span>
+          <span class="dist-val">Ferry · 20 min</span>
+        </div>
+        <div style="font-size:0.68rem;color:var(--muted);margin-top:0.6rem;">Express boat ฿15–30 per trip</div>
+      </div>
+    </div>
+
+    <div class="sb-widget">
+      <div class="sb-head">Budget Tips</div>
+      <div class="sb-body">
+        <div class="tip-item"><span class="tip-icon">✓</span><span>Book direct for best rates — OTAs add 10–18% on top</span></div>
+        <div class="tip-item"><span class="tip-icon">✓</span><span>Grand Palace dress code is enforced — bring a sarong or buy one at the gate</span></div>
+        <div class="tip-item"><span class="tip-icon">✓</span><span>Visit temples before 9am — cooler, quieter, better photos</span></div>
+        <div class="tip-item"><span class="tip-icon">✓</span><span>Grab is reliable and cheap for temple-to-temple hops</span></div>
+        <div class="tip-item"><span class="tip-icon">✓</span><span>Street food around Tha Tien pier is some of the best in Bangkok</span></div>
+      </div>
+    </div>
+
+  </aside>
+</div>
+
+<footer>
+  <span>© 2026 <span class="fy">BrokeCompass</span></span>
+  <span>Bangkok Budget Guide · April 2026</span>
+</footer>
+
+<script>
+  const cards = document.querySelectorAll('.hotel-card, .hotel-featured');
+  const io = new IntersectionObserver(es => {
+    es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }});
+  }, { threshold: 0.06 });
+  cards.forEach(el => io.observe(el));
+</script>
+</body>
+</html>

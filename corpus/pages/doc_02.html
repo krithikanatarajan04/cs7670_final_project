@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sukhumvit Hotel Guide: Where to Stay Along the BTS Line</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1a1610;
+      --paper: #f5f0e8;
+      --accent: #b8420a;
+      --rule: #c8bfaa;
+      --muted: #7a6e5f;
+      --highlight: #e8dfc8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 17px;
+      line-height: 1.75;
+      font-weight: 300;
+    }
+
+    .page {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 60px 40px 80px;
+    }
+
+    /* Header */
+    .doc-header {
+      border-top: 3px solid var(--ink);
+      border-bottom: 1px solid var(--rule);
+      padding: 28px 0 22px;
+      margin-bottom: 48px;
+    }
+
+    .doc-label {
+      font-family: 'Source Serif 4', serif;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.1rem;
+      font-weight: 600;
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+
+    .byline {
+      font-size: 13px;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* Body prose */
+    p {
+      margin-bottom: 1.3em;
+    }
+
+    /* Section headings */
+    h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin: 44px 0 6px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--accent);
+      margin: 32px 0 10px;
+    }
+
+    /* Pull quote / callout */
+    .callout {
+      border-left: 3px solid var(--accent);
+      margin: 28px 0;
+      padding: 12px 20px;
+      background: var(--highlight);
+      font-style: italic;
+      color: var(--muted);
+      font-size: 15.5px;
+    }
+
+    /* Quick facts sidebar */
+    .quick-facts {
+      background: var(--highlight);
+      border: 1px solid var(--rule);
+      padding: 20px 24px;
+      margin: 28px 0;
+      font-size: 14.5px;
+    }
+
+    .quick-facts .qf-title {
+      font-family: 'Source Serif 4', serif;
+      font-size: 9.5px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .quick-facts ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .quick-facts ul li {
+      padding: 5px 0;
+      border-bottom: 1px solid var(--rule);
+      display: flex;
+      gap: 10px;
+    }
+
+    .quick-facts ul li:last-child {
+      border-bottom: none;
+    }
+
+    .qf-key {
+      color: var(--muted);
+      min-width: 130px;
+      flex-shrink: 0;
+    }
+
+    .qf-val {
+      color: var(--ink);
+      font-weight: 400;
+    }
+
+    /* Divider */
+    .section-rule {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 48px 0;
+    }
+
+    /* Footer */
+    .doc-footer {
+      margin-top: 60px;
+      padding-top: 18px;
+      border-top: 1px solid var(--rule);
+      font-size: 12px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    /* Index entry block */
+    .index-block {
+      margin-top: 60px;
+      border: 1px solid var(--rule);
+      background: #eee8d8;
+      padding: 24px 28px;
+    }
+
+    .index-block .ib-label {
+      font-size: 9.5px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .index-block pre {
+      font-family: 'Courier New', monospace;
+      font-size: 12.5px;
+      line-height: 1.6;
+      color: var(--ink);
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <header class="doc-header">
+    <div class="doc-label">Neighborhood Guide &nbsp;·&nbsp; Bangkok 2025</div>
+    <h1>Sukhumvit Hotel Guide:<br>Where to Stay Along the BTS Line</h1>
+    <div class="byline">A ground-level look at Bangkok's two great transit corridors — and the hotels that anchor them</div>
+  </header>
+
+  <p>If you're arriving in Bangkok for the first time — or returning for a trip where the itinerary actually matters — the BTS Skytrain is your organizing principle. It doesn't cover everything, but what it does cover, it covers well: a clean, elevated spine running through the city's most functional neighborhoods, connecting the business districts of Silom and Sathon to the shopping and nightlife corridor of Sukhumvit. If your hotel sits within a few minutes of a BTS station, you'll spend almost no time stuck in Bangkok traffic.</p>
+
+  <p>This guide focuses on two corridors where that logic holds most reliably: Sukhumvit, anchored by the junction at Asok, and the Silom–Sathon belt that runs south toward the river. Both are dense, walkable in their own fashion, and oriented toward travelers who want the city to be navigable. What they offer beyond transit access is quite different.</p>
+
+  <hr class="section-rule">
+
+  <h2>The Asok Node: Sukhumvit at Its Most Useful</h2>
+
+  <p>The intersection of Sukhumvit Road and Asok Montri Road is not Bangkok's most beautiful corner. It's a tangle of elevated rail, pedestrian bridges, and street-level commerce that can feel overwhelming the first time you surface from the underground. But once you understand what it offers, you'll appreciate exactly why so many business travelers — and seasoned first-timers — orient themselves around it.</p>
+
+  <p>Asok is where two rail lines cross: the BTS Skytrain and the MRT subway. That interchange makes it the most connected single point in Bangkok's transit network. From here you can reach Suvarnabhumi Airport, the old town, the Chatuchak Weekend Market, and virtually every other destination worth going to — without hailing a single taxi. The neighborhood surrounding the station has grown up around that connectivity: mid-range hotels, convenience stores open at all hours, a covered food court at Terminal 21 that functions as a de facto neighborhood kitchen.</p>
+
+  <h3>Kasa Asok Bangkok</h3>
+
+  <p>Kasa Asok is three minutes on foot from Asok BTS station — and that specificity matters. Not "near Asok" in the Bangkok sense of ten minutes through traffic: three minutes, on a direct covered walkway past the entrance to Terminal 21. The hotel's mid-range positioning makes it an honest proposition for business travelers who don't need a lobby designed to impress clients: you're here to sleep, work, and move. The urban, work-friendly character of the place is consistent from the moment you check in. Terminal 21 — the mall built on a passport theme, with each floor dedicated to a different city — is effectively an amenity, offering everything from tailoring to a covered food court without stepping outside.</p>
+
+  <p>The Sukhumvit address means moderate ambient energy at street level. This is not a quiet residential sidestreet; it's the working city, audible. For travelers whose schedules run late and start early, the convenience of the Asok location will outweigh almost anything else. If you're used to cities with functional transit systems, you'll find yourself moving through Bangkok with surprising ease from this base.</p>
+
+  <div class="quick-facts">
+    <div class="qf-title">Kasa Asok — At a Glance</div>
+    <ul>
+      <li><span class="qf-key">BTS access</span><span class="qf-val">3-minute walk to Asok station</span></li>
+      <li><span class="qf-key">Price tier</span><span class="qf-val">Mid-range</span></li>
+      <li><span class="qf-key">Vibe</span><span class="qf-val">Urban, work-friendly</span></li>
+      <li><span class="qf-key">Nearby landmark</span><span class="qf-val">Terminal 21 (walkable)</span></li>
+      <li><span class="qf-key">Pool</span><span class="qf-val">Rooftop</span></li>
+    </ul>
+  </div>
+
+  <hr class="section-rule">
+
+  <h2>Silom–Sathon: Bangkok's Other Great Corridor</h2>
+
+  <p>Silom Road runs southwest from the river toward the BTS line at Sala Daeng and Chong Nonsi, threading through Bangkok's traditional financial district. The towers here are real — this is where the banks and law firms are, where the city's professional class has worked for decades — but the neighborhood is not all business. Lumpini Park sits just north, one of Bangkok's largest green spaces, worth a morning visit even if you have no particular reason to linger. The Silom Night Market activates the street in the evenings, and the area's density of restaurants runs from cheap canteen to destination dining.</p>
+
+  <p>The Sathon corridor, which runs parallel and slightly south, is quieter: embassies, older residential buildings, boutique hotels that have been there long enough to develop a character. Together, Silom and Sathon form a zone that is simultaneously more professional and more relaxed than Sukhumvit — less tourist infrastructure, more of the city as Bangkok residents actually use it.</p>
+
+  <h3>Nine Palms Bangkok</h3>
+
+  <p>Nine Palms is five minutes on foot from Chong Nonsi BTS station, along the kind of Sathon sidestreet that rewards a short walk: quieter than Silom proper, leafier, with a different pace. The hotel's luxury positioning means spacious rooms and a standard of finish that justifies its price tier — this is a property where the details are attended to. The atmosphere is sleek and business-chic, without the studied understatement some luxury properties confuse for character. Breakfast is included in the rate, which matters when you're calibrating a multi-day itinerary.</p>
+
+  <p>The Chong Nonsi connection puts Lumpini Park within easy reach — roughly a 12-minute walk north along the BTS line — and the broader Silom corridor within minutes. For travelers who want quiet rooms and reliable comfort as a base for serious city exploration, Nine Palms offers the kind of stay you remember for the right reasons: nothing went wrong, and several things went surprisingly well.</p>
+
+  <div class="quick-facts">
+    <div class="qf-title">Nine Palms Bangkok — At a Glance</div>
+    <ul>
+      <li><span class="qf-key">BTS access</span><span class="qf-val">5-minute walk to Chong Nonsi station</span></li>
+      <li><span class="qf-key">Price tier</span><span class="qf-val">Luxury</span></li>
+      <li><span class="qf-key">Vibe</span><span class="qf-val">Sleek, business-chic; notably quiet</span></li>
+      <li><span class="qf-key">Nearby landmark</span><span class="qf-val">Lumpini Park (~12-min walk)</span></li>
+      <li><span class="qf-key">Pool</span><span class="qf-val">Rooftop</span></li>
+      <li><span class="qf-key">Breakfast</span><span class="qf-val">Included</span></li>
+    </ul>
+  </div>
+
+  <hr class="section-rule">
+
+  <h2>Choosing Your Corridor</h2>
+
+  <p>The choice between Asok and Chong Nonsi is, in a sense, a question of what kind of friction you're willing to tolerate. Asok offers maximum connectivity — the interchange with the MRT means you're never far from anything — at the cost of a neighborhood that feels genuinely busy. Chong Nonsi offers a quieter address and a slightly more refined hotel tier, with BTS access that remains excellent even if it's a single line rather than a junction.</p>
+
+  <p>For short business trips where you'll be moving constantly and returning late, the Asok corridor has the edge: Kasa Asok's positioning is almost frictionless. For stays where you want to decompress between meetings, or where the hotel itself is part of the experience, the Silom–Sathon belt — and Nine Palms within it — rewards the slightly longer walk to the station. Both properties serve the BTS-organized trip well. The question is whether you want the city right outside your door, or a measured step away from it.</p>
+
+  <div class="doc-footer">
+    <span>Bangkok 2025 &nbsp;·&nbsp; Neighborhood Guide Series</span>
+    <span>Doc ID: doc_02</span>
+  </div>
+
+  <div class="index-block">
+    <div class="ib-label">Source Index Entry</div>
+    <pre>{
+  "doc_id": "doc_02",
+  "title": "Sukhumvit Hotel Guide: Where to Stay Along the BTS Line",
+  "source_type": "Neighborhood guide (Sukhumvit)",
+  "description": "Comprehensive neighborhood guide to Bangkok's Sukhumvit corridor, covering hotels near Asok, Phrom Phong, and Thong Lo BTS stations. Focuses on transit convenience, nightlife proximity, and mid-range to luxury options.",
+  "hotels_covered": ["Kasa Asok", "Nine Palms Bangkok"],
+  "dimensions_covered": ["BTS proximity", "neighborhood", "noise level", "price tier", "landmark access"],
+  "depth_per_hotel": "Medium for both",
+  "focus_profile": "Low-medium (~0.5 per hotel)",
+  "corroboration_role": "Corroborates Asok 3-min walk, Chong Nonsi 5-min walk, Sukhumvit/Silom neighborhood context, mid-range tier for Kasa Asok, luxury tier for Nine Palms",
+  "signal_notes": "Generic snippet document #1 — snippet describes Sukhumvit corridor broadly; body is specifically about Asok (Kasa Asok) and Silom/Sathon (Nine Palms)"
+}</pre>
+  </div>
+
+</div>
+</body>
+</html>

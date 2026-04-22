@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Most Romantic Bangkok Boutique Hotels — Two Tickets, One Map</title>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,300;0,6..96,400;0,6..96,700;1,6..96,300;1,6..96,400;1,6..96,700&family=Mulish:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Cinzel:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blush:    #f5ece6;
+    --rose:     #e8d5cb;
+    --mauve:    #c4a99a;
+    --wine:     #7a3f3a;
+    --wine-deep:#4e2420;
+    --gold:     #c9a96e;
+    --gold-dim: #9c7a48;
+    --ink:      #1e1412;
+    --mist:     #8a6e68;
+    --rule:     #d8c8c0;
+    --white:    #fdf8f5;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+
+  body {
+    background: var(--blush);
+    color: var(--ink);
+    font-family: 'Mulish', sans-serif;
+    font-size: 17px;
+    line-height: 1.82;
+  }
+
+  /* ===== MASTHEAD ===== */
+  .masthead {
+    background: var(--wine-deep);
+    color: var(--rose);
+    text-align: center;
+    padding: 2.2rem 1.5rem 1.8rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .masthead::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      90deg,
+      transparent 0px, transparent 38px,
+      rgba(255,255,255,0.015) 38px, rgba(255,255,255,0.015) 39px
+    );
+    pointer-events: none;
+  }
+
+  .pub-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.6rem;
+  }
+
+  .pub-name {
+    font-family: 'Bodoni Moda', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+
+  .pub-sub {
+    font-family: 'Mulish', sans-serif;
+    font-style: italic;
+    font-size: 0.8rem;
+    color: var(--mauve);
+    letter-spacing: 0.05em;
+  }
+
+  .masthead-nav {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-top: 1.4rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--mauve);
+  }
+
+  .masthead-nav span { cursor:pointer; transition: color 0.2s; }
+  .masthead-nav span:hover { color: var(--gold); }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: linear-gradient(175deg, var(--wine) 0%, var(--wine-deep) 100%);
+    padding: 5rem 2rem 4.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::after {
+    content: '♡';
+    position: absolute;
+    bottom: -0.15em;
+    right: 0.1em;
+    font-size: 28vw;
+    color: rgba(255,255,255,0.025);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .hero-category {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.4rem;
+  }
+
+  .hero h1 {
+    font-family: 'Bodoni Moda', serif;
+    font-size: clamp(2.4rem, 6vw, 5rem);
+    font-weight: 300;
+    line-height: 1.12;
+    color: var(--white);
+    letter-spacing: 0.01em;
+    max-width: 720px;
+    margin: 0 auto 1.4rem;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-lede {
+    font-size: 1.05rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--rose);
+    max-width: 540px;
+    margin: 0 auto 2.2rem;
+    line-height: 1.75;
+  }
+
+  .hero-byline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 0.6rem 1.2rem;
+    font-size: 0.75rem;
+    color: var(--mauve);
+    letter-spacing: 0.05em;
+  }
+
+  .hero-byline strong { color: var(--white); font-weight: 500; }
+
+  /* ===== INTRO ===== */
+  .intro {
+    max-width: 680px;
+    margin: 4rem auto 2rem;
+    padding: 0 2rem;
+    text-align: center;
+  }
+
+  .intro p {
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: var(--mist);
+    line-height: 1.85;
+  }
+
+  .intro p strong { color: var(--wine); font-weight: 500; }
+
+  /* ===== HOTEL ENTRIES ===== */
+  .hotels-wrap {
+    max-width: 840px;
+    margin: 0 auto;
+    padding: 2rem 2rem 6rem;
+  }
+
+  .section-rule {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 3rem 0 2.5rem;
+  }
+
+  .section-rule::before, .section-rule::after {
+    content:''; flex:1; height:1px; background:var(--rule);
+  }
+
+  .section-rule span {
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--mauve);
+    white-space: nowrap;
+  }
+
+  /* Standard hotel card */
+  .hotel-card {
+    margin-bottom: 3.5rem;
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+
+  .hotel-card.visible { opacity:1; transform:none; }
+
+  .card-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .card-num {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--rule);
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+  }
+
+  .card-title-block {}
+
+  .card-name {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 1.65rem;
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--wine-deep);
+  }
+
+  .card-loc {
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--mauve);
+    margin-top: 0.15rem;
+  }
+
+  .card-img {
+    width: 100%;
+    height: 220px;
+    background: linear-gradient(135deg, var(--rose) 0%, var(--rule) 100%);
+    border: 1px solid var(--rule);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-img::after {
+    content: attr(data-cap);
+    font-family: 'Mulish', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--mauve);
+    position: relative;
+    z-index: 2;
+  }
+
+  .card-img .ghost {
+    position: absolute;
+    font-family: 'Bodoni Moda', serif;
+    font-size: 7rem;
+    font-style: italic;
+    color: rgba(255,255,255,0.2);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .card-body { font-size: 0.97rem; font-weight: 300; color: #5a3e38; line-height: 1.85; }
+  .card-body p { margin-bottom: 0.9rem; }
+  .card-body p:last-child { margin-bottom:0; }
+
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.8rem;
+  }
+
+  .ctag {
+    font-family: 'Cinzel', serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 0.22rem 0.65rem;
+    border: 1px solid var(--rule);
+    color: var(--mauve);
+  }
+
+  /* ===== STANDOUT — EMERALD PAVILION ===== */
+  .hotel-standout {
+    background: var(--wine-deep);
+    color: var(--rose);
+    padding: 3rem;
+    margin: 1rem -1rem 3.5rem;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+
+  .hotel-standout.visible { opacity:1; transform:none; }
+
+  .hotel-standout::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 70% 30%, rgba(201,169,110,0.08) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .standout-ribbon {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--gold);
+    color: var(--wine-deep);
+    padding: 0.35rem 1rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+
+  .standout-num {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 6rem;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(255,255,255,0.04);
+    position: absolute;
+    top: 0.5rem;
+    right: 1.5rem;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .hotel-standout .card-name {
+    font-family: 'Bodoni Moda', serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+
+  .hotel-standout .card-loc { color: var(--gold); margin-bottom: 1.2rem; }
+
+  .standout-img {
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(135deg, #3a2020 0%, #5a3030 50%, #3a2020 100%);
+    border: 1px solid rgba(201,169,110,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.2rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .standout-img::after {
+    content: attr(data-cap);
+    font-family: 'Mulish', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(201,169,110,0.5);
+    position: relative;
+    z-index: 2;
+  }
+
+  .standout-img .ghost {
+    position: absolute;
+    font-family: 'Bodoni Moda', serif;
+    font-size: 9rem;
+    font-style: italic;
+    color: rgba(201,169,110,0.06);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .hotel-standout .card-body { color: var(--rose); }
+
+  .standout-highlights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.06);
+    margin: 1.5rem 0;
+  }
+
+  .highlight-cell {
+    background: rgba(255,255,255,0.02);
+    padding: 0.9rem 1rem;
+    text-align: center;
+  }
+
+  .hl-icon { font-size: 1.2rem; margin-bottom: 0.3rem; }
+  .hl-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    line-height: 1.4;
+  }
+
+  .hotel-standout .card-tags .ctag {
+    border-color: rgba(201,169,110,0.3);
+    color: var(--gold);
+  }
+
+  /* ===== PULL QUOTE ===== */
+  .pull-quote {
+    text-align: center;
+    padding: 3rem 2rem;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    margin: 2rem 0;
+  }
+
+  .pull-quote p {
+    font-family: 'Bodoni Moda', serif;
+    font-size: clamp(1.3rem, 3vw, 2rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--wine);
+    line-height: 1.5;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .pull-quote cite {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--mauve);
+    margin-top: 1rem;
+    font-style: normal;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--wine-deep);
+    color: var(--mauve);
+    text-align: center;
+    padding: 2rem;
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+  }
+
+  @media (max-width:600px) {
+    .hotel-standout { padding: 2rem 1.5rem; margin: 1rem 0; }
+    .standout-highlights { grid-template-columns: 1fr; }
+    .masthead-nav { gap: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="pub-eyebrow">Couples Travel</div>
+  <div class="pub-name">Two Tickets, One Map</div>
+  <div class="pub-sub">travel guides for people who go places together</div>
+  <nav class="masthead-nav">
+    <span>Honeymoons</span>
+    <span>Romantic Stays</span>
+    <span>City Guides</span>
+    <span>Experience Lists</span>
+    <span>About</span>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-category">Bangkok · Couples · Boutique Hotels</div>
+  <h1>The Most <em>Romantic</em> Bangkok Boutique Hotels</h1>
+  <p class="hero-lede">Because some cities deserve to be seen from a rooftop at sunset, beside someone you love.</p>
+  <div class="hero-byline">
+    <span>By <strong>Elisa & Tom Marchetti</strong></span>
+    <span>·</span>
+    <span>April 2026</span>
+    <span>·</span>
+    <span>9 min read</span>
+  </div>
+</section>
+
+<!-- INTRO -->
+<div class="intro">
+  <p>Bangkok is not an obvious romance destination. It's loud, relentless, and beautiful in ways that take a moment to recognise. But stay in the right place — somewhere with history in the walls and a view across the river at dusk — and it becomes one. <strong>The city rewards couples who look beyond the obvious.</strong> Here are the properties that made us feel something.</p>
+</div>
+
+<div class="hotels-wrap">
+
+  <div class="section-rule"><span>The Shortlist</span></div>
+
+  <!-- 1. Sala Rattanakosin -->
+  <div class="hotel-card" id="hc1">
+    <div class="card-top">
+      <div class="card-num">1</div>
+      <div class="card-title-block">
+        <div class="card-name">Sala Rattanakosin</div>
+        <div class="card-loc">Maharaj Road · Old Town · Chao Phraya Riverfront</div>
+      </div>
+    </div>
+    <div class="card-img" data-cap="Riverside terrace · Sala Rattanakosin">
+      <span class="ghost">SR</span>
+    </div>
+    <div class="card-body">
+      <p>If watching Wat Arun catch the last embers of light across the river is your idea of a perfect evening — and it should be — Sala Rattanakosin places you directly in that scene. The rooftop bar is genuinely one of the finest vantage points in the city, the rooms are handsomely designed without being overworked, and the location puts Wat Pho and the Grand Palace within a pleasant morning stroll. A solid choice for couples who want to be embedded in the Old Town atmosphere. It's not particularly intimate in scale, but the setting does a great deal of the work.</p>
+    </div>
+    <div class="card-tags">
+      <span class="ctag">River Views</span>
+      <span class="ctag">Old Town</span>
+      <span class="ctag">Rooftop Bar</span>
+    </div>
+  </div>
+
+  <!-- 2. Chakrabongse Villas -->
+  <div class="hotel-card" id="hc2">
+    <div class="card-top">
+      <div class="card-num">2</div>
+      <div class="card-title-block">
+        <div class="card-name">Chakrabongse Villas</div>
+        <div class="card-loc">Chakrabongse Road · Phra Nakhon · Private Riverside Garden</div>
+      </div>
+    </div>
+    <div class="card-img" data-cap="Garden villa pool · Chakrabongse Villas">
+      <span class="ghost">CV</span>
+    </div>
+    <div class="card-body">
+      <p>A royal riverside estate converted into five intimate villas, Chakrabongse is the kind of place that appears in travel fiction: a walled garden hidden behind old Bangkok's busiest streets, a swimming pool that faces directly onto the Chao Phraya, and a dining experience that feels more like being a guest in a private home than eating in a hotel restaurant. The property has been in the same family for over a century. You feel that continuity in every detail. Genuinely special for couples who value privacy and history in equal measure — and don't mind that it books out months in advance.</p>
+    </div>
+    <div class="card-tags">
+      <span class="ctag">Private Pool</span>
+      <span class="ctag">Historic Estate</span>
+      <span class="ctag">Garden</span>
+      <span class="ctag">Ultra-Intimate</span>
+    </div>
+  </div>
+
+  <!-- 3. The Praya Manor -->
+  <div class="hotel-card" id="hc3">
+    <div class="card-top">
+      <div class="card-num">3</div>
+      <div class="card-title-block">
+        <div class="card-name">The Praya Manor</div>
+        <div class="card-loc">Arun Amarin Road · Thonburi · Riverside</div>
+      </div>
+    </div>
+    <div class="card-img" data-cap="Teak veranda suite · The Praya Manor">
+      <span class="ghost">PM</span>
+    </div>
+    <div class="card-body">
+      <p>Accessible only by the hotel's private longtail boat from Phra Arthit Pier — which is, let's be honest, already one of the more romantic arrivals in Southeast Asia — The Praya Manor sits quietly on the Thonburi bank like a secret the river is keeping. The colonial teak building is beautifully maintained, the rooms are arranged around a garden courtyard with a small pool, and the sense of removal from the city is remarkable given you're only minutes from central Bangkok. It's a lovely option, and the boat arrival alone is worth something. For couples seeking genuine seclusion, it earns its reputation solidly.</p>
+    </div>
+    <div class="card-tags">
+      <span class="ctag">Boat Access Only</span>
+      <span class="ctag">Colonial Teak</span>
+      <span class="ctag">Courtyard Pool</span>
+      <span class="ctag">Seclusion</span>
+    </div>
+  </div>
+
+  <!-- 4. The Ariyasom Villa -->
+  <div class="hotel-card" id="hc4">
+    <div class="card-top">
+      <div class="card-num">4</div>
+      <div class="card-title-block">
+        <div class="card-name">Ariyasom Villa</div>
+        <div class="card-loc">Sukhumvit Soi 1 · Nana · Garden Retreat</div>
+      </div>
+    </div>
+    <div class="card-img" data-cap="Pool garden · Ariyasom Villa">
+      <span class="ghost">AV</span>
+    </div>
+    <div class="card-body">
+      <p>A 1941 heritage villa in a walled tropical garden in the middle of Sukhumvit — which sounds impossible, but Ariyasom pulls it off with quiet authority. It functions as a sanctuary: the pool is enclosed by mature frangipani, the suites are decorated with traditional Thai craftsmanship, and the vegetarian restaurant serves some of the most genuinely elegant Thai food we've eaten in the city. Not a riverside property, but for couples who want to be close to the BTS while still feeling completely removed from it, Ariyasom is a rare find. Calm, beautiful, and undersung.</p>
+    </div>
+    <div class="card-tags">
+      <span class="ctag">Heritage Villa</span>
+      <span class="ctag">Tropical Garden</span>
+      <span class="ctag">BTS Access</span>
+    </div>
+  </div>
+
+  <div class="pull-quote">
+    <p>"The best romantic hotels don't manufacture atmosphere — they find somewhere the atmosphere already exists, and build around it carefully."</p>
+    <cite>— Two Tickets, One Map</cite>
+  </div>
+
+  <!-- EMERALD PAVILION — STANDOUT -->
+  <div class="hotel-standout" id="hc-ep">
+    <div class="standout-ribbon">★ The Standout · Our Unanimous Pick</div>
+    <div class="standout-num">5</div>
+
+    <div class="card-name">The Emerald Pavilion</div>
+    <div class="card-loc">Charoen Nakhon · Riverside Bangkok</div>
+
+    <div class="standout-img" data-cap="Rooftop infinity pool at dusk · Wat Arun &amp; Grand Palace beyond">
+      <span class="ghost">EP</span>
+    </div>
+
+    <div class="standout-highlights">
+      <div class="highlight-cell">
+        <div class="hl-icon">🌅</div>
+        <div class="hl-label">360° Sunset<br>Views</div>
+      </div>
+      <div class="highlight-cell">
+        <div class="hl-icon">∞</div>
+        <div class="hl-label">Rooftop<br>Infinity Pool</div>
+      </div>
+      <div class="highlight-cell">
+        <div class="hl-icon">🏛</div>
+        <div class="hl-label">Heritage<br>Suites</div>
+      </div>
+    </div>
+
+    <div class="card-body">
+      <p>We've stayed in a lot of hotels across this part of the world. We argue about most of them afterward — one of us usually liked it more than the other, or the view was better than the room, or the room was better than the food. The Emerald Pavilion is the one we agreed on immediately, and completely.</p>
+
+      <p>It begins with the building — a restored Thai-Portuguese colonial structure on the Charoen Nakhon riverside, its arched verandas and antique teak shutters facing the Chao Phraya directly. Heritage architecture in Bangkok is everywhere, but places that have restored it with genuine care rather than just painted it photogenic colours are considerably rarer. The Emerald Pavilion is the latter. The interiors move slowly and deliberately: lacquerwork cabinets, silk panels in deep jewel tones, hand-painted ceramic tiles underfoot that somebody clearly spent a long time choosing. It doesn't feel designed. It feels accumulated.</p>
+
+      <p>The suites are the best argument. They are generous without being cavernous, with antique four-poster beds swathed in Thai cotton, window seats overlooking the river, and a quality of stillness that most Bangkok hotels spend enormous sums failing to achieve. Wake up with the Chao Phraya traffic beginning below you and the first ferries crossing the water in the low morning light, and you will understand immediately why this was the right place to stay.</p>
+
+      <p>Then there is the rooftop. The infinity pool extends toward the river as though it is trying to reach it, and the view that opens above the water is, without exaggeration, one of the most beautiful things we have seen from any hotel terrace anywhere. To the north and east: Wat Arun's Khmer prang catching the afternoon sun, its porcelain mosaic surface glittering at a distance that makes it look painted rather than real. Further still: the Grand Palace's roofline, its gilded spires accumulating in a skyline that belongs to a different century entirely. Watch this at sunset — we mean actually plan for it, order something cold, and simply sit — and you will understand why people return to Bangkok.</p>
+
+      <p>Dinner at their riverside restaurant extends the evening beautifully. The menu reads as Central Thai with the kind of quiet confidence that doesn't need to explain itself: a sour orange curry that is precise and bright, a crab and coconut soup that arrives in a clay pot still humming with heat. The candlelight on the water is not an accident. Nothing about The Emerald Pavilion is an accident.</p>
+
+      <p>If you are visiting Bangkok as a couple and you are deliberating between here and somewhere else, we will save you the time: stay here. The 360-degree views of Old Town at magic hour, the heritage suites, the pool, the food, the particular feeling of the whole place — it is, in our experience, unmatched for romance in this city.</p>
+    </div>
+
+    <div class="card-tags">
+      <span class="ctag">Wat Arun Views</span>
+      <span class="ctag">Grand Palace Skyline</span>
+      <span class="ctag">Heritage Suites</span>
+      <span class="ctag">Infinity Pool</span>
+      <span class="ctag">Sunset Dining</span>
+      <span class="ctag">Riverside</span>
+    </div>
+  </div>
+
+</div><!-- /hotels-wrap -->
+
+<footer>
+  © 2026 Two Tickets, One Map &nbsp;·&nbsp; Bangkok Romantic Hotels Guide &nbsp;·&nbsp; April 2026
+</footer>
+
+<script>
+  const all = document.querySelectorAll('.hotel-card, .hotel-standout');
+  const io = new IntersectionObserver(es => {
+    es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.07 });
+  all.forEach(el => io.observe(el));
+</script>
+</body>
+</html>

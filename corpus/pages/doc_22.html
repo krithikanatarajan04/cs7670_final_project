@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carry Lab – Laptop Sleeve Comparison 2024</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Spectral:ital,wght@0,400;0,600;1,400&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#f6f5f3;color:#1c1c1c;font-family:'Space Grotesk',sans-serif;font-size:15px;line-height:1.7;}
+  a{color:#2d5be3;text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  /* HEADER */
+  header{background:#1c1c1c;color:#fff;}
+  .header-inner{max-width:1080px;margin:0 auto;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;}
+  .logo{font-size:20px;font-weight:700;letter-spacing:-.02em;color:#fff;}
+  .logo span{color:#7eb3ff;}
+  .hnav a{font-size:13px;color:#9ca3af;margin-left:18px;}
+  .hnav a:hover{color:#fff;text-decoration:none;}
+  /* TAG BAR */
+  .tagbar{background:#252525;border-bottom:1px solid #333;padding:8px 20px;display:flex;justify-content:center;gap:8px;flex-wrap:wrap;}
+  .tagbar a{font-size:12px;color:#9ca3af;padding:3px 12px;border:1px solid #444;border-radius:20px;}
+  .tagbar a:hover{background:#2d5be3;color:#fff;border-color:#2d5be3;text-decoration:none;}
+  /* HERO */
+  .hero{background:#fff;border-bottom:1px solid #e5e3e0;padding:40px 20px;}
+  .hero-inner{max-width:900px;margin:0 auto;}
+  .hero .kicker{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#2d5be3;margin-bottom:12px;}
+  .hero h1{font-family:'Spectral',serif;font-size:38px;line-height:1.2;color:#0d0d0d;margin-bottom:12px;}
+  .hero .summary{font-size:17px;color:#5a5a5a;font-family:'Spectral',serif;font-style:italic;margin-bottom:18px;}
+  .hero .meta{font-size:12px;color:#9ca3af;display:flex;gap:20px;flex-wrap:wrap;}
+  /* LAYOUT */
+  .layout{max-width:1080px;margin:0 auto;padding:28px 20px;display:grid;grid-template-columns:1fr 280px;gap:32px;}
+  /* CONTENT */
+  .content p{margin-bottom:14px;color:#2a2a2a;}
+  .content h2{font-family:'Spectral',serif;font-size:24px;color:#0d0d0d;margin:28px 0 10px;}
+  /* COMPARISON TABLE */
+  .comp-table-wrap{overflow-x:auto;margin:20px 0;}
+  table.comp{width:100%;border-collapse:collapse;font-size:14px;}
+  table.comp th{background:#1c1c1c;color:#fff;padding:10px 14px;text-align:left;font-size:12px;letter-spacing:.04em;text-transform:uppercase;}
+  table.comp th:first-child{min-width:160px;}
+  table.comp td{padding:10px 14px;border-bottom:1px solid #e5e3e0;vertical-align:middle;}
+  table.comp tr:nth-child(even) td{background:#f9f8f6;}
+  table.comp .winner{background:#edf3ff!important;font-weight:600;}
+  table.comp .score{font-weight:700;color:#2d5be3;font-size:16px;}
+  table.comp .checkmark{color:#16a34a;font-size:16px;}
+  table.comp .cross{color:#dc2626;font-size:16px;}
+  /* PRODUCT DETAIL */
+  .product{background:#fff;border:1px solid #e5e3e0;border-radius:6px;padding:20px;margin:20px 0;}
+  .product .p-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;}
+  .product .p-name{font-family:'Spectral',serif;font-size:20px;color:#0d0d0d;}
+  .product .p-price{font-size:18px;font-weight:700;color:#2d5be3;}
+  .product .p-badge{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:3px;display:inline-block;margin-bottom:4px;}
+  .badge-best{background:#edf3ff;color:#2d5be3;}
+  .badge-value{background:#f0fdf4;color:#16a34a;}
+  .badge-budget{background:#fff7ed;color:#ea580c;}
+  .product p{font-size:14px;color:#4a4a4a;margin-bottom:10px;}
+  .spec-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0;font-size:13px;}
+  .spec-item{background:#f6f5f3;padding:6px 10px;border-radius:4px;}
+  .spec-item .s-label{color:#9ca3af;font-size:11px;text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px;}
+  /* VERDICT */
+  .verdict-box{background:#edf3ff;border-left:4px solid #2d5be3;padding:12px 16px;border-radius:0 6px 6px 0;margin:16px 0;font-size:14px;}
+  /* SIDEBAR */
+  .sidebar{}
+  .sw{background:#fff;border:1px solid #e5e3e0;border-radius:6px;padding:14px;margin-bottom:16px;}
+  .sw h3{font-size:13px;font-weight:700;color:#0d0d0d;border-bottom:1px solid #f0efed;padding-bottom:8px;margin-bottom:10px;letter-spacing:.03em;text-transform:uppercase;}
+  .sw ul{list-style:none;font-size:13px;}
+  .sw ul li{padding:5px 0;border-bottom:1px solid #f6f5f3;color:#3a3a3a;}
+  .sw ul li:last-child{border:none;}
+  .sw ul li a{color:#2d5be3;}
+  .newsletter{background:#2d5be3;color:#fff;border-radius:6px;padding:16px;margin-bottom:16px;}
+  .newsletter h3{font-size:16px;margin-bottom:6px;}
+  .newsletter p{font-size:12px;opacity:.85;margin-bottom:10px;}
+  .newsletter input{width:100%;padding:7px;font-size:13px;border:none;border-radius:4px;margin-bottom:8px;}
+  .newsletter button{background:#1c1c1c;color:#fff;border:none;padding:8px 14px;font-size:13px;font-weight:600;border-radius:4px;cursor:pointer;width:100%;}
+  /* FOOTER */
+  footer{background:#1c1c1c;color:#6b7280;padding:24px;text-align:center;font-size:12px;margin-top:32px;}
+  footer a{color:#9ca3af;}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="logo">Carry<span>Lab</span></div>
+    <div class="hnav">
+      <a href="#">Backpacks</a>
+      <a href="#">Sleeves</a>
+      <a href="#">Briefcases</a>
+      <a href="#">Accessories</a>
+      <a href="#">Best Picks</a>
+    </div>
+  </div>
+</header>
+<div class="tagbar">
+  <a href="#">Under $30</a>
+  <a href="#">Leather</a>
+  <a href="#">Neoprene</a>
+  <a href="#">13-inch</a>
+  <a href="#">15-inch</a>
+  <a href="#">Water-Resistant</a>
+  <a href="#">Slim Profile</a>
+</div>
+<div class="hero">
+  <div class="hero-inner">
+    <div class="kicker">Comparison Article — October 2024</div>
+    <h1>The Best Laptop Sleeves in 2024: 7 Options Tested and Ranked</h1>
+    <div class="summary">We carried these sleeves for 60 days combined, dropped them, stuffed them in backpacks, and got them rained on. Here's what survived and what didn't.</div>
+    <div class="meta">
+      <span>✍️ Marco Teller</span>
+      <span>📅 Oct 3, 2024</span>
+      <span>⏱️ 12 min read</span>
+      <span>🖥️ Tested on: 13" MacBook Air M3, 15" MBP, Dell XPS 15</span>
+    </div>
+  </div>
+</div>
+<div class="layout">
+  <div class="content">
+    <p>Laptop sleeves exist in a strange product category: the price range runs from $9 to $250, the reviews on major retailers are mostly garbage, and the difference between a bad sleeve and a good one only becomes apparent when your laptop gets scratched by the zipper hardware you didn't examine before buying.</p>
+    <p>This comparison started because I damaged a laptop on a previous sleeve's exposed zipper pull. That was €900 worth of lesson. These seven sleeves were purchased at retail and tested under real commuting conditions over two months, including a very unfortunate encounter with a burst water bottle in a backpack. Results below.</p>
+
+    <h2>At a Glance: Comparison Table</h2>
+    <div class="comp-table-wrap">
+      <table class="comp">
+        <thead>
+          <tr><th>Sleeve</th><th>Price</th><th>Material</th><th>Padding</th><th>Water Resist.</th><th>Zipper Safe</th><th>Score</th></tr>
+        </thead>
+        <tbody>
+          <tr class="winner"><td><strong>Tomtoc 360° Protective</strong></td><td>$39</td><td>Ballistic nylon</td><td>★★★★★</td><td class="checkmark">✓</td><td class="checkmark">✓</td><td class="score">9.2</td></tr>
+          <tr><td>Inateck 13-inch Sleeve</td><td>$18</td><td>Felt + neoprene</td><td>★★★★☆</td><td class="cross">✗</td><td class="checkmark">✓</td><td class="score">8.4</td></tr>
+          <tr><td>Mujjo Leather Sleeve</td><td>$89</td><td>Full-grain leather</td><td>★★★☆☆</td><td class="cross">✗</td><td class="checkmark">✓</td><td class="score">8.1</td></tr>
+          <tr><td>Waterfield Dash</td><td>$149</td><td>Ballistic nylon</td><td>★★★★☆</td><td class="checkmark">✓</td><td class="checkmark">✓</td><td class="score">8.8</td></tr>
+          <tr><td>AmazonBasics Sleeve</td><td>$11</td><td>Neoprene</td><td>★★★☆☆</td><td class="cross">✗</td><td class="cross">✗</td><td class="score">6.1</td></tr>
+          <tr><td>Thule Gauntlet</td><td>$59</td><td>PolyGuard shell</td><td>★★★★★</td><td class="checkmark">✓</td><td class="checkmark">✓</td><td class="score">8.9</td></tr>
+          <tr><td>Knomo Leather Sleeve</td><td>$75</td><td>Pebble leather</td><td>★★★☆☆</td><td class="cross">✗</td><td class="checkmark">✓</td><td class="score">7.4</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Top Picks in Detail</h2>
+
+    <div class="product">
+      <div class="p-header">
+        <div>
+          <span class="p-badge badge-best">Best Overall</span>
+          <div class="p-name">Tomtoc 360° Protective Sleeve</div>
+        </div>
+        <div class="p-price">$39</div>
+      </div>
+      <p>The Tomtoc earns its position through a genuinely clever design decision: the zipper path is routed along the back of the sleeve, with a protective flap that keeps the zipper hardware away from the laptop screen at all times. After two months of daily use, there isn't a mark on the laptop it's protecting. The ballistic nylon exterior handled the water bottle incident with minimal internal moisture intrusion.</p>
+      <div class="spec-grid">
+        <div class="spec-item"><div class="s-label">Material</div>Ballistic nylon exterior</div>
+        <div class="spec-item"><div class="s-label">Padding</div>10mm shock-absorbing</div>
+        <div class="spec-item"><div class="s-label">Zipper</div>Rear-routed, shielded</div>
+        <div class="spec-item"><div class="s-label">Fits</div>13", 14", 15" variants</div>
+      </div>
+      <div class="verdict-box">VERDICT: The most thoughtfully engineered sleeve in this price range. Buy this before you buy a leather sleeve that costs three times as much.</div>
+    </div>
+
+    <div class="product">
+      <div class="p-header">
+        <div>
+          <span class="p-badge badge-value">Best Value</span>
+          <div class="p-name">Inateck 13-inch Sleeve</div>
+        </div>
+        <div class="p-price">$18</div>
+      </div>
+      <p>At $18, the Inateck should not perform as well as it does. The felt exterior is legitimately attractive and doesn't show light scuffs. Internal neoprene provides solid cushioning for everyday use. The single major drawback is water resistance: felt does not repel moisture effectively, and this sleeve would not survive the water bottle test the Tomtoc handled. For commuters who aren't carrying the sleeve exposed in wet conditions, it's a legitimate recommendation.</p>
+      <div class="spec-grid">
+        <div class="spec-item"><div class="s-label">Material</div>German felt exterior</div>
+        <div class="spec-item"><div class="s-label">Padding</div>Neoprene inner lining</div>
+        <div class="spec-item"><div class="s-label">Zipper</div>Standard, no shield</div>
+        <div class="spec-item"><div class="s-label">Fits</div>13" only</div>
+      </div>
+      <div class="verdict-box">VERDICT: Excellent for the price for indoor commuters. Skip if your bag routinely gets rained on.</div>
+    </div>
+
+    <div class="product">
+      <div class="p-header">
+        <div>
+          <span class="p-badge badge-budget">Avoid</span>
+          <div class="p-name">AmazonBasics Neoprene Sleeve</div>
+        </div>
+        <div class="p-price">$11</div>
+      </div>
+      <p>The zipper hardware sits directly against the laptop surface when closed. In two weeks of testing, light scratches appeared on the case of an aluminum laptop. The neoprene is also notably thinner than any other sleeve in this comparison. There is no version of this product that represents a good value relative to the Inateck at $7 more.</p>
+      <div class="verdict-box">VERDICT: Do not buy this. Spend $7 more on the Inateck.</div>
+    </div>
+
+    <h2>What to Look For: Buying Criteria</h2>
+    <p>Before buying any sleeve, check four things: (1) zipper hardware placement relative to where the laptop screen will rest, (2) interior material—rough or hard surfaces will scratch aluminum finishes over time, (3) the exact interior dimensions versus your laptop's actual dimensions, and (4) whether the sleeve is intended to be carried standalone or inside a backpack, because optimal padding differs between the two use cases.</p>
+  </div>
+  <aside class="sidebar">
+    <div class="newsletter">
+      <h3>Gear Picks Weekly</h3>
+      <p>New comparisons and tested recommendations every Friday.</p>
+      <input type="email" placeholder="your@email.com">
+      <button>Subscribe</button>
+    </div>
+    <div class="sw">
+      <h3>Related Reviews</h3>
+      <ul>
+        <li><a href="#">Best Laptop Backpacks 2024</a></li>
+        <li><a href="#">Cable Organizer Pouches Ranked</a></li>
+        <li><a href="#">Tech Pouches Under $40</a></li>
+        <li><a href="#">Hard Shell vs. Soft Cases</a></li>
+      </ul>
+    </div>
+    <div class="sw">
+      <h3>By Size</h3>
+      <ul>
+        <li><a href="#">13" Sleeves →</a></li>
+        <li><a href="#">14" Sleeves →</a></li>
+        <li><a href="#">15" Sleeves →</a></li>
+        <li><a href="#">16" Sleeves →</a></li>
+      </ul>
+    </div>
+    <div class="sw">
+      <h3>Testing Method</h3>
+      <p style="font-size:13px;color:#6b7280;">All products purchased at retail. Tested 60+ days combined. No manufacturer samples accepted. <a href="#">Full methodology →</a></p>
+    </div>
+  </aside>
+</div>
+<footer>
+  &copy; 2024 CarryLab &nbsp;|&nbsp; <a href="#">Privacy Policy</a> &nbsp;|&nbsp; <a href="#">Affiliate Disclosure</a> &nbsp;|&nbsp; <a href="#">Contact</a><br>
+  <span style="font-size:10px;margin-top:4px;display:block;">This site contains affiliate links. We earn a small commission on purchases made through these links at no additional cost to you.</span>
+</footer>
+</body>
+</html>

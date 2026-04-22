@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Greystone Museum of Art & Natural History – Weekend Events</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#f9f7f4;color:#2a2220;font-family:'Jost',sans-serif;font-size:15px;line-height:1.75;}
+  a{color:#8b2635;text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  /* UTILITY BAR */
+  .util-bar{background:#2a2220;color:#9a8a7a;font-size:11px;padding:6px 24px;display:flex;justify-content:space-between;letter-spacing:.04em;}
+  .util-bar a{color:#9a8a7a;}
+  /* HEADER */
+  header{background:#fff;border-bottom:1px solid #e8e0d4;}
+  .header-inner{max-width:1100px;margin:0 auto;padding:20px 24px;display:flex;justify-content:space-between;align-items:flex-end;}
+  .museum-name{font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#2a2220;line-height:1.8;}
+  .museum-name strong{display:block;font-size:28px;letter-spacing:.04em;line-height:1.1;font-weight:600;}
+  .header-nav{display:flex;gap:0;align-items:center;}
+  .header-nav a{font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#4a3a30;padding:6px 14px;border-right:1px solid #e8e0d4;}
+  .header-nav a:first-child{border-left:1px solid #e8e0d4;}
+  .header-nav a:hover{background:#f9f7f4;text-decoration:none;}
+  /* HERO BANNER */
+  .events-hero{background:#2a2220;color:#f0ebe2;padding:48px 24px;text-align:center;border-bottom:4px solid #8b2635;}
+  .events-hero .eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#9a8a7a;margin-bottom:14px;}
+  .events-hero h1{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:600;line-height:1.15;margin-bottom:10px;}
+  .events-hero .dates{font-size:14px;color:#c8bdb0;letter-spacing:.08em;}
+  /* FILTER BAR */
+  .filter-bar{background:#fff;border-bottom:1px solid #e8e0d4;padding:12px 24px;display:flex;justify-content:center;gap:8px;flex-wrap:wrap;}
+  .filter-bar a{font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:#4a3a30;padding:5px 16px;border:1px solid #d4c8bc;border-radius:2px;}
+  .filter-bar a:hover,.filter-bar a.active{background:#8b2635;color:#fff;border-color:#8b2635;text-decoration:none;}
+  /* LAYOUT */
+  .layout{max-width:1100px;margin:0 auto;padding:32px 24px;display:grid;grid-template-columns:1fr 300px;gap:32px;}
+  /* EVENTS GRID */
+  .events-grid{display:grid;gap:20px;}
+  /* EVENT CARD */
+  .event-card{background:#fff;border:1px solid #e8e0d4;overflow:hidden;}
+  .event-card .ec-top{display:grid;grid-template-columns:90px 1fr;border-bottom:1px solid #f0ebe2;}
+  .event-card .ec-date{background:#8b2635;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px 10px;text-align:center;}
+  .ec-date .day{font-family:'Cormorant Garamond',serif;font-size:38px;line-height:1;font-weight:600;}
+  .ec-date .month{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#ffb0b0;margin-top:2px;}
+  .event-card .ec-title-area{padding:16px 18px;}
+  .ec-category{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#8b2635;margin-bottom:4px;}
+  .ec-title{font-family:'Cormorant Garamond',serif;font-size:20px;color:#1a1210;line-height:1.2;margin-bottom:4px;}
+  .ec-subtitle{font-size:13px;color:#7a6a5a;font-style:italic;font-family:'Cormorant Garamond',serif;}
+  .event-card .ec-body{padding:14px 18px;font-size:14px;color:#3a2a20;}
+  .event-card .ec-meta{padding:12px 18px;background:#f9f7f4;border-top:1px solid #e8e0d4;display:flex;gap:16px;font-size:12px;color:#7a6a5a;flex-wrap:wrap;}
+  .ec-meta span::before{margin-right:4px;}
+  .ec-cta{display:inline-block;margin-top:8px;background:#2a2220;color:#fff;font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:7px 16px;}
+  .ec-cta:hover{background:#8b2635;text-decoration:none;}
+  .event-card .ec-tag{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:2px;margin-right:4px;}
+  .tag-free{background:#e8f4e8;color:#2a6a2a;}
+  .tag-members{background:#e8edf8;color:#1a3a8a;}
+  .tag-ticketed{background:#f8f0e8;color:#8a4a1a;}
+  .tag-kids{background:#f8e8f8;color:#6a1a6a;}
+  /* SIDEBAR */
+  .sidebar{}
+  .sw{background:#fff;border:1px solid #e8e0d4;padding:16px;margin-bottom:18px;}
+  .sw h3{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;border-bottom:2px solid #8b2635;padding-bottom:8px;margin-bottom:12px;color:#2a2220;}
+  .sw p{font-size:13px;color:#4a3a30;margin-bottom:8px;}
+  .sw ul{list-style:none;font-size:13px;}
+  .sw ul li{padding:6px 0;border-bottom:1px solid #f0ebe2;color:#3a2a20;}
+  .sw ul li:last-child{border:none;}
+  .sw ul li strong{display:block;color:#2a2220;font-size:13px;}
+  .sw ul li span{font-size:12px;color:#7a6a5a;}
+  /* VISIT INFO */
+  .visit-box{background:#2a2220;color:#e8ddd0;padding:16px;margin-bottom:18px;}
+  .visit-box h3{font-family:'Cormorant Garamond',serif;font-size:17px;border-bottom:1px solid #3a3228;padding-bottom:8px;margin-bottom:12px;color:#f0ebe2;}
+  .visit-box p{font-size:13px;color:#c8bdb0;margin-bottom:6px;}
+  .visit-box a{color:#c8bdb0;}
+  /* NEWSLETTER */
+  .nl-box{background:#8b2635;color:#fff;padding:16px;}
+  .nl-box h3{font-family:'Cormorant Garamond',serif;font-size:18px;margin-bottom:8px;}
+  .nl-box p{font-size:13px;opacity:.85;margin-bottom:10px;}
+  .nl-box input{width:100%;padding:8px;font-size:13px;border:none;margin-bottom:8px;background:#fff;color:#2a2220;}
+  .nl-box button{background:#2a2220;color:#fff;border:none;padding:8px 14px;font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;width:100%;}
+  /* FOOTER */
+  footer{background:#2a2220;color:#7a6a5a;padding:24px;text-align:center;font-size:12px;margin-top:32px;}
+  footer a{color:#9a8a7a;}
+  .footer-nav{display:flex;justify-content:center;gap:16px;margin-bottom:12px;flex-wrap:wrap;}
+</style>
+</head>
+<body>
+<div class="util-bar">
+  <span>Greystone Museum of Art &amp; Natural History &mdash; Open Since 1887</span>
+  <span><a href="#">Accessibility</a> &nbsp;|&nbsp; <a href="#">Press</a> &nbsp;|&nbsp; <a href="#">Donate</a></span>
+</div>
+<header>
+  <div class="header-inner">
+    <div class="museum-name">
+      Greystone
+      <strong>Museum of Art &amp; Natural History</strong>
+    </div>
+    <nav class="header-nav">
+      <a href="#">Visit</a>
+      <a href="#">Exhibitions</a>
+      <a href="#">Collections</a>
+      <a href="#">Events</a>
+      <a href="#">Education</a>
+      <a href="#">Membership</a>
+      <a href="#">Shop</a>
+    </nav>
+  </div>
+</header>
+<div class="events-hero">
+  <div class="eyebrow">Events &amp; Programs</div>
+  <h1>Weekend at the Museum</h1>
+  <div class="dates">October 19–20, 2024 &nbsp;&bull;&nbsp; All ages welcome &nbsp;&bull;&nbsp; Many programs free with admission</div>
+</div>
+<div class="filter-bar">
+  <a href="#" class="active">All Events</a>
+  <a href="#">Lectures</a>
+  <a href="#">Workshops</a>
+  <a href="#">Family Programs</a>
+  <a href="#">Tours</a>
+  <a href="#">Film</a>
+  <a href="#">Members Only</a>
+  <a href="#">Free</a>
+</div>
+<div class="layout">
+  <div class="events-grid">
+
+    <div class="event-card">
+      <div class="ec-top">
+        <div class="ec-date"><div class="day">19</div><div class="month">Oct</div></div>
+        <div class="ec-title-area">
+          <div class="ec-category">Curator Talk</div>
+          <div class="ec-title">The Hidden Language of Maps: Cartography as Power, 1600–1900</div>
+          <div class="ec-subtitle">With Dr. Helena Marsh, Curator of Historical Documents</div>
+        </div>
+      </div>
+      <div class="ec-body">
+        <span class="ec-tag tag-ticketed">Ticketed</span><span class="ec-tag tag-members">Members $5 Off</span>
+        <p style="margin-top:10px;">A deep examination of how the maps of the early modern period were not neutral representations of geography—they were political documents, tools of empire, and vehicles of cultural narrative. Dr. Marsh will draw from the museum's Alderton Collection of 200+ historical maps, many of which have never been displayed publicly, to trace how cartographic choices embedded power relationships into the visual record of the world.</p>
+        <p>Followed by a 30-minute Q&amp;A and a guided viewing of the collection highlights in Gallery 4. Wine and light refreshments served for members beginning at 6:30 PM.</p>
+        <a href="#" class="ec-cta">Register &rarr;</a>
+      </div>
+      <div class="ec-meta">
+        <span>⏰ Saturday, 7:00 PM – 9:00 PM</span>
+        <span>📍 Alderton Lecture Hall</span>
+        <span>💵 $18 general / $13 members</span>
+        <span>👥 Seats: 28 remaining</span>
+      </div>
+    </div>
+
+    <div class="event-card">
+      <div class="ec-top">
+        <div class="ec-date" style="background:#4a6a3a;"><div class="day">19</div><div class="month">Oct</div></div>
+        <div class="ec-title-area">
+          <div class="ec-category">Family Workshop</div>
+          <div class="ec-title">Fossil Casting Studio: Make Your Own Trilobite</div>
+          <div class="ec-subtitle">Hands-on workshop for ages 6–12</div>
+        </div>
+      </div>
+      <div class="ec-body">
+        <span class="ec-tag tag-kids">Ages 6–12</span><span class="ec-tag tag-free">Free with Admission</span>
+        <p style="margin-top:10px;">Children work alongside museum educators to create plaster casts of real fossil molds, learning about the Paleozoic era and how fossils form in the process. Each child takes home their cast at the end of the session. Materials and aprons provided—please dress for mess.</p>
+        <p>Two sessions available: 10:30 AM and 1:00 PM. Space is limited to 16 children per session. First-come, first-served at the Education Center desk starting at 10:00 AM on the day of the event.</p>
+      </div>
+      <div class="ec-meta">
+        <span>⏰ Saturday, 10:30 AM and 1:00 PM</span>
+        <span>📍 Education Center, Room C</span>
+        <span>💵 Free with general admission</span>
+        <span>👥 16 children per session</span>
+      </div>
+    </div>
+
+    <div class="event-card">
+      <div class="ec-top">
+        <div class="ec-date" style="background:#2a4a6a;"><div class="day">20</div><div class="month">Oct</div></div>
+        <div class="ec-title-area">
+          <div class="ec-category">Guided Exhibition Tour</div>
+          <div class="ec-title">Inside "Atmosphere": A Guided Tour of the New Climate Art Exhibition</div>
+          <div class="ec-subtitle">Led by exhibition co-curator James Nwosu</div>
+        </div>
+      </div>
+      <div class="ec-body">
+        <span class="ec-tag tag-free">Free with Admission</span><span class="ec-tag tag-members">Priority Seating for Members</span>
+        <p style="margin-top:10px;">James Nwosu, who co-curated the newly opened "Atmosphere" exhibition exploring how contemporary artists are engaging with climate change and ecological transformation, leads an intimate 60-minute walkthrough of the show. Nwosu will speak about the acquisition process, the artists' relationships to their subjects, and the specific installation choices made in the museum's light court.</p>
+        <p>"Atmosphere" features 23 works by artists from 14 countries, including large-scale installations, photography, mixed media, and video art. The exhibition runs through February 16, 2025.</p>
+        <a href="#" class="ec-cta">Reserve a Spot &rarr;</a>
+      </div>
+      <div class="ec-meta">
+        <span>⏰ Sunday, 2:00 PM – 3:00 PM</span>
+        <span>📍 Light Court, Main Building</span>
+        <span>💵 Free with admission</span>
+        <span>👥 Capacity: 40 / Registration recommended</span>
+      </div>
+    </div>
+
+    <div class="event-card">
+      <div class="ec-top">
+        <div class="ec-date" style="background:#6a2a4a;"><div class="day">20</div><div class="month">Oct</div></div>
+        <div class="ec-title-area">
+          <div class="ec-category">Film Screening</div>
+          <div class="ec-title">The Mushroom Speaks: A Documentary on Mycelium and Forest Intelligence</div>
+          <div class="ec-subtitle">Followed by a discussion with mycologist Dr. Priya Suresh</div>
+        </div>
+      </div>
+      <div class="ec-body">
+        <span class="ec-tag tag-ticketed">Ticketed</span>
+        <p style="margin-top:10px;">A 78-minute documentary examining the growing body of research on mycorrhizal networks—the underground fungal systems that connect trees and plants across forest ecosystems. The film features research from multiple institutions and follows three scientists across field seasons in temperate rainforests, old-growth boreal forests, and urban woodlands. Following the screening, Dr. Priya Suresh joins for a moderated conversation about the current state of the science and its implications for conservation policy.</p>
+        <a href="#" class="ec-cta">Purchase Tickets &rarr;</a>
+      </div>
+      <div class="ec-meta">
+        <span>⏰ Sunday, 4:30 PM – 7:00 PM</span>
+        <span>📍 Greystone Screening Room</span>
+        <span>💵 $14 / $10 members and students</span>
+        <span>👥 Seats: 12 remaining</span>
+      </div>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="visit-box">
+      <h3>Plan Your Visit</h3>
+      <p><strong style="color:#e8ddd0;">Hours:</strong> Tue–Sun, 10 AM – 5 PM<br>Late hours Fri until 8 PM</p>
+      <p><strong style="color:#e8ddd0;">Admission:</strong> Adults $18 / Seniors $14<br>Students $10 / Under 12 free</p>
+      <p><strong style="color:#e8ddd0;">Address:</strong><br>1 Greystone Plaza<br>Central District</p>
+      <p><a href="#">Get Directions &rarr;</a></p>
+    </div>
+    <div class="nl-box">
+      <h3>Museum Newsletter</h3>
+      <p>New exhibitions, event announcements, and member previews in your inbox.</p>
+      <input type="email" placeholder="your@email.com">
+      <button>Subscribe</button>
+    </div>
+    <div class="sw">
+      <h3>Upcoming This Month</h3>
+      <ul>
+        <li><strong>Oct 24: Members Preview Night</strong><span>New acquisitions, 6 PM – 9 PM</span></li>
+        <li><strong>Oct 26: Watercolor Workshop</strong><span>All skill levels, $45 with materials</span></li>
+        <li><strong>Nov 2: Geology for Adults</strong><span>Rock identification, free with admission</span></li>
+        <li><strong>Nov 9: Annual Gala</strong><span>Black tie, tickets from $250</span></li>
+      </ul>
+    </div>
+    <div class="sw">
+      <h3>Current Exhibitions</h3>
+      <ul>
+        <li><strong>Atmosphere</strong><span>Contemporary climate art — through Feb 2025</span></li>
+        <li><strong>Alderton Map Collection</strong><span>Permanent — Gallery 4</span></li>
+        <li><strong>Ocean in Motion</strong><span>Natural history — through Dec 2024</span></li>
+      </ul>
+    </div>
+  </aside>
+</div>
+<footer>
+  <div class="footer-nav">
+    <a href="#">About</a><a href="#">Press</a><a href="#">Accessibility</a><a href="#">Employment</a><a href="#">Privacy</a><a href="#">Contact</a><a href="#">Donate</a>
+  </div>
+  &copy; 2024 Greystone Museum of Art &amp; Natural History &mdash; A nonprofit cultural institution. All rights reserved.
+</footer>
+</body>
+</html>

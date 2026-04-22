@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bangkok's Best Kept Creative Stays — The Roaming Lens</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1410;
+    --warm-cream: #f5f0e8;
+    --aged-paper: #ede5d0;
+    --terracotta: #c4673a;
+    --deep-teal: #2a5c5c;
+    --gold: #b8952a;
+    --muted: #7a6e60;
+    --rule: #d4c9b0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background-color: var(--warm-cream);
+    color: var(--ink);
+    font-family: 'Lora', Georgia, serif;
+    font-size: 18px;
+    line-height: 1.8;
+    cursor: default;
+  }
+
+  /* Noise texture overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 100;
+    opacity: 0.5;
+  }
+
+  /* Masthead */
+  .masthead {
+    text-align: center;
+    padding: 2rem 1rem 0;
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .blog-name {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 300;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .blog-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+
+  .blog-tagline {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin: 0.5rem 0 1.5rem;
+  }
+
+  .nav-strip {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    padding: 0.75rem 0;
+    border-top: 1px solid var(--rule);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .nav-strip span { cursor: pointer; transition: color 0.2s; }
+  .nav-strip span:hover { color: var(--terracotta); }
+
+  /* Hero section */
+  .hero {
+    max-width: 860px;
+    margin: 4rem auto 0;
+    padding: 0 2rem;
+    position: relative;
+  }
+
+  .hero-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .hero-tag::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--terracotta);
+    opacity: 0.4;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--deep-teal);
+  }
+
+  .byline {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--aged-paper);
+    border: 2px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--gold);
+    flex-shrink: 0;
+  }
+
+  .byline-text {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+
+  .byline-text strong {
+    display: block;
+    color: var(--ink);
+    font-weight: 400;
+    margin-bottom: 0.1rem;
+  }
+
+  /* Pull quote style intro */
+  .intro-pull {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: var(--deep-teal);
+    padding: 1.5rem 0 1.5rem 2rem;
+    border-left: 3px solid var(--gold);
+    margin: 2rem 0 2.5rem;
+  }
+
+  /* Article body */
+  .article-body {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .article-body p {
+    margin-bottom: 1.5rem;
+    color: #2a2218;
+  }
+
+  /* Hotel sections */
+  .hotel-section {
+    margin: 3.5rem 0;
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .hotel-section:nth-child(1) { animation-delay: 0.1s; }
+  .hotel-section:nth-child(2) { animation-delay: 0.2s; }
+  .hotel-section:nth-child(3) { animation-delay: 0.3s; }
+  .hotel-section:nth-child(4) { animation-delay: 0.4s; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hotel-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .hotel-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    flex-shrink: 0;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+
+  .hotel-location {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 1rem;
+  }
+
+  /* Standout hotel */
+  .hotel-standout {
+    background: var(--aged-paper);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--gold);
+    padding: 2rem;
+    margin: 3.5rem -1rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hotel-standout::before {
+    content: '★';
+    position: absolute;
+    top: -0.2rem;
+    right: 1.5rem;
+    font-size: 5rem;
+    color: var(--gold);
+    opacity: 0.08;
+    line-height: 1;
+  }
+
+  .standout-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: var(--ink);
+    display: inline-block;
+    padding: 0.3rem 0.75rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .hotel-standout h2 {
+    font-size: 1.9rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .hotel-standout p {
+    font-size: 1rem;
+    color: #3a3028;
+  }
+
+  /* Image placeholders */
+  .img-placeholder {
+    width: 100%;
+    height: 220px;
+    background: linear-gradient(135deg, var(--aged-paper) 0%, #d4c5a0 100%);
+    border: 1px solid var(--rule);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.2rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .img-placeholder::after {
+    content: attr(data-label);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  .img-placeholder.tall { height: 320px; }
+
+  .img-placeholder .watermark {
+    position: absolute;
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    font-style: italic;
+    color: var(--rule);
+    opacity: 0.5;
+    user-select: none;
+  }
+
+  /* Divider */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 2.5rem 0;
+    color: var(--muted);
+  }
+
+  .divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  .divider span {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+  }
+
+  /* Outro */
+  .outro {
+    max-width: 680px;
+    margin: 3rem auto 5rem;
+    padding: 0 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--ink);
+  }
+
+  .outro-text {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .tags {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border: 1px solid var(--rule);
+    padding: 0.3rem 0.7rem;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .tag:hover {
+    background: var(--ink);
+    color: var(--warm-cream);
+    border-color: var(--ink);
+  }
+
+  /* Footer */
+  footer {
+    border-top: 2px solid var(--ink);
+    padding: 2rem;
+    text-align: center;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="blog-name">The Roaming Lens</div>
+  <div class="blog-title">✦ Travel with Purpose ✦</div>
+  <div class="blog-tagline">dispatches from the road, unfiltered</div>
+  <nav class="nav-strip">
+    <span>Southeast Asia</span>
+    <span>City Guides</span>
+    <span>Stay Lists</span>
+    <span>Journal</span>
+    <span>About</span>
+  </nav>
+</header>
+
+<main>
+  <article>
+    <div class="hero">
+      <div class="hero-tag">Bangkok · Stays · Thonburi Side</div>
+      <h1>Bangkok's Best Kept <em>Creative Stays</em></h1>
+      <div class="byline">
+        <div class="avatar">M</div>
+        <div class="byline-text">
+          <strong>Maya Sutherland</strong>
+          April 2026 &nbsp;·&nbsp; 7 min read &nbsp;·&nbsp; Bangkok, Thailand
+        </div>
+      </div>
+
+      <div class="intro-pull">
+        "Everyone wants to stay in Sukhumvit. I get it. But the real Bangkok — the one that still smells like jasmine garlands and river clay — is on the other side of the Chao Phraya."
+      </div>
+    </div>
+
+    <div class="article-body">
+      <p>I've lost count of how many times I've crossed that river. By ferry, by longtail, by the old orange bus that lurches across the Taksin Bridge at dawn. Every time I do, I feel like I'm leaving tourist Bangkok behind and entering something that breathes differently. Thonburi — Bangkok's older, quieter, artier half — has been quietly collecting some of the most interesting places to sleep in the city, and most people don't even know they exist.</p>
+
+      <p>If you're the kind of traveler who considers the hotel part of the experience rather than just a place to store your luggage, this side of the river is for you. Here are four stays that caught my eye on my last trip.</p>
+
+      <div class="divider"><span>the list</span></div>
+
+      <!-- Hotel 1 -->
+      <div class="hotel-section reveal">
+        <div class="hotel-header">
+          <span class="hotel-num">01 /</span>
+          <h2>Khlong San Loft</h2>
+        </div>
+        <div class="hotel-location">Khlong San · Riverside</div>
+        <div class="img-placeholder" data-label="Warehouse-style lobby · Khlong San Loft">
+          <span class="watermark">KSL</span>
+        </div>
+        <p>A converted shophouse with exposed concrete walls, mismatched vintage furniture, and a rooftop where locals and guests mingle over Singha and noodle soup from the cart down the street. The vibe is deliberately rough around the edges — art zines stacked on repurposed crates, hand-painted murals in the stairwells, a tiny gallery space that rotates monthly shows from Bangkok's emerging art scene. It's not luxurious. But it's <em>alive</em>. Rates are surprisingly affordable for what you get, and the Khlong San market is basically your breakfast table.</p>
+      </div>
+
+      <div class="divider"><span>·</span></div>
+
+      <!-- Hotel 2 -->
+      <div class="hotel-section reveal">
+        <div class="hotel-header">
+          <span class="hotel-num">02 /</span>
+          <h2>Ban Talat Noi House</h2>
+        </div>
+        <div class="hotel-location">Talat Noi · Old Town Fringe</div>
+        <div class="img-placeholder" data-label="Courtyard garden · Ban Talat Noi House">
+          <span class="watermark">TN</span>
+        </div>
+        <p>Tucked inside the maze of Talat Noi — a neighbourhood that feels like it fell asleep somewhere in the 1950s and hasn't fully woken up — this guesthouse is the passion project of a Sino-Thai architect who inherited the property from her grandfather. Every room is different. Mine had a four-poster bed wrapped in indigo cotton, Celadon ceramics on the windowsill, and a view into a courtyard garden overrun with banana palms and old spirit houses. Breakfast involves coconut pancakes and strong Hainan coffee. It's small, intimate, and genuinely special.</p>
+      </div>
+
+      <div class="divider"><span>·</span></div>
+
+      <!-- Hotel 3 -->
+      <div class="hotel-section reveal">
+        <div class="hotel-header">
+          <span class="hotel-num">03 /</span>
+          <h2>The Print House Bangkok</h2>
+        </div>
+        <div class="hotel-location">Charoen Nakhon · River Walk</div>
+        <div class="img-placeholder" data-label="Print studio common area · The Print House">
+          <span class="watermark">PH</span>
+        </div>
+        <p>A former letterpress print shop that's been reimagined as a design hotel with a serious commitment to the craft. The lobby is anchored by two original Heidelberg printing presses, and you can actually sign up for a letterpress workshop during your stay. Rooms carry the typographic theme without being gimmicky — beautiful sans-serif signage, warm brass hardware, drawers stocked with art books instead of Bibles. It's walkable to Iconsiam, which is handy if you need a mall moment between gallery visits.</p>
+      </div>
+
+      <div class="divider"><span>standout</span></div>
+
+      <!-- Hotel 4 — Standout -->
+      <div class="hotel-standout reveal">
+        <div class="standout-badge">✦ Editor's Pick · Don't Miss</div>
+        <div class="hotel-header">
+          <span class="hotel-num">04 /</span>
+          <h2>The Emerald Pavilion</h2>
+        </div>
+        <div class="hotel-location">Charoen Nakhon · Steps from Iconsiam</div>
+        <div class="img-placeholder tall" data-label="Rooftop infinity pool at dusk · The Emerald Pavilion">
+          <span class="watermark">EP</span>
+        </div>
+        <p>Okay. Here's the one I wasn't expecting to love as much as I did.</p>
+        <p>I'd heard about The Emerald Pavilion from a Bangkok-based photographer friend who mentioned it almost offhandedly — "Oh, there's this place near Iconsiam, proper old-school heritage, rooftop pool, bit of a hidden gem." I wrote it in my notes and nearly forgot about it. I'm very glad I didn't.</p>
+        <p>What you find when you arrive is something genuinely rare in a city that's building faster than it can breathe: a hotel that actually honours where it sits. The building is a beautifully restored Thai-Portuguese colonial structure, all arched verandas and antique teak shutters, with interiors that feel more like a privately curated museum than a hospitality product. Silk panels, lacquerwork cabinets, hand-painted ceramic floor tiles that somebody took real care to source. Every hallway tells a story about the river culture it overlooks.</p>
+        <p>And then you take the lift to the rooftop, and it opens up completely. The infinity pool stretches toward the Chao Phraya — and beyond it, impossibly, the whole glittering skyline of Old Bangkok and Rattanakosin laid out like a painting. Wat Pho's chedis catching the last light. The Grand Palace in the distance. Longtail boats leaving white wakes below. I stayed up there for two hours the first evening, ostensibly reading, actually just staring.</p>
+        <p>This isn't your typical riverside Instagram bait. The service is quiet and genuinely attentive, the food at their ground-floor restaurant leans on Central Thai recipes done with real precision, and the whole experience has a kind of unhurried confidence that feels increasingly rare. Close enough to Iconsiam to pop over for an afternoon, but completely insulated from it in mood. A rare find. The kind of place you guard jealously and only tell your most discerning friends about.</p>
+        <p>Which is, I suppose, exactly what I'm doing right now.</p>
+      </div>
+
+    </div>
+
+    <div class="outro reveal">
+      <p class="outro-text">The Thonburi side of Bangkok is changing — slowly, in the good way that things change when artists and architects fall in love with a neighbourhood before the developers do. Go now, while you still need to know where to look.</p>
+      <div class="tags">
+        <span class="tag">Bangkok Hotels</span>
+        <span class="tag">Thonburi</span>
+        <span class="tag">Boutique Stays</span>
+        <span class="tag">Riverside Bangkok</span>
+        <span class="tag">Iconsiam Area</span>
+        <span class="tag">Creative Travel</span>
+        <span class="tag">Thailand</span>
+      </div>
+    </div>
+  </article>
+</main>
+
+<footer>
+  © 2026 The Roaming Lens &nbsp;·&nbsp; Maya Sutherland &nbsp;·&nbsp; All Rights Reserved
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

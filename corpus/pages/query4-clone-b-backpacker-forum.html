@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>best cheap hotel near Wat Pho?? — PackLight Forums</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:       #1a1d23;
+    --bg2:      #20242c;
+    --bg3:      #272c36;
+    --bg4:      #2e3440;
+    --surface:  #313844;
+    --border:   #3a4252;
+    --border2:  #424e62;
+    --text:     #c8d0dc;
+    --text-dim: #7a8898;
+    --text-mut: #4a5568;
+    --white:    #e8edf5;
+    --blue:     #5b9cf6;
+    --blue-lt:  rgba(91,156,246,0.1);
+    --green:    #4ec994;
+    --green-lt: rgba(78,201,148,0.1);
+    --amber:    #f0b429;
+    --amber-lt: rgba(240,180,41,0.1);
+    --red:      #f06060;
+    --purple:   #a78bfa;
+    --orange:   #fb923c;
+    --teal:     #2dd4bf;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ===== TOPBAR ===== */
+  .topbar {
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    padding: 0 1.5rem;
+    height: 44px;
+    position: sticky;
+    top: 0;
+    z-index: 80;
+    gap: 2rem;
+  }
+
+  .site-logo {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-shrink: 0;
+  }
+
+  .logo-bracket { color: var(--green); }
+
+  .search-bar {
+    flex: 1;
+    max-width: 380px;
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.32rem 0.75rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem;
+    color: var(--text-dim);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: text;
+  }
+
+  .search-icon { font-size: 0.7rem; }
+
+  .topbar-nav {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    margin-left: auto;
+  }
+
+  .topbar-nav span { cursor: pointer; }
+  .topbar-nav span:hover { color: var(--white); }
+
+  .topbar-btns {
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+  }
+
+  .tbtn {
+    font-size: 0.72rem;
+    font-weight: 500;
+    padding: 0.28rem 0.8rem;
+    border-radius: 3px;
+    cursor: pointer;
+    border: none;
+  }
+
+  .tbtn-ghost { background: transparent; color: var(--text-dim); border: 1px solid var(--border); }
+  .tbtn-prime { background: var(--blue); color: #fff; }
+
+  /* ===== CRUMB ===== */
+  .crumb {
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+    padding: 0.5rem 1.5rem;
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+
+  .crumb a { color: var(--text-dim); }
+  .crumb a:hover { color: var(--blue); }
+  .crumb .sep { color: var(--text-mut); }
+  .crumb .cur { color: var(--text); }
+
+  /* ===== PAGE LAYOUT ===== */
+  .page {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 1.25rem 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 240px;
+    gap: 1.25rem;
+    align-items: start;
+  }
+
+  /* ===== THREAD HEADER ===== */
+  .thread-header {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 1.1rem 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .thread-badges {
+    display: flex;
+    gap: 0.35rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.65rem;
+  }
+
+  .tbadge {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.58rem;
+    padding: 0.18rem 0.5rem;
+    border-radius: 2px;
+    font-weight: 400;
+  }
+
+  .tbadge.asia     { background:rgba(91,156,246,0.12); color:var(--blue);   border:1px solid rgba(91,156,246,0.2); }
+  .tbadge.bkk      { background:rgba(240,180,41,0.1);  color:var(--amber);  border:1px solid rgba(240,180,41,0.2); }
+  .tbadge.hotels   { background:rgba(78,201,148,0.1);  color:var(--green);  border:1px solid rgba(78,201,148,0.2); }
+  .tbadge.budget   { background:rgba(251,146,60,0.1);  color:var(--orange); border:1px solid rgba(251,146,60,0.2); }
+  .tbadge.answered { background:rgba(78,201,148,0.15); color:var(--green);  border:1px solid rgba(78,201,148,0.3); }
+
+  .thread-title {
+    font-family: 'Source Serif 4', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--white);
+    line-height: 1.35;
+    margin-bottom: 0.5rem;
+  }
+
+  .thread-meta {
+    font-size: 0.68rem;
+    color: var(--text-dim);
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .thread-meta .dot { color: var(--text-mut); }
+
+  /* ===== POST WRAPPER ===== */
+  .post {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    margin-bottom: 0.8rem;
+    overflow: hidden;
+    animation: slideUp 0.35s ease both;
+  }
+
+  @keyframes slideUp {
+    from { opacity:0; transform:translateY(10px); }
+    to   { opacity:1; transform:none; }
+  }
+
+  .post:nth-child(2) { animation-delay: 0.04s; }
+  .post:nth-child(3) { animation-delay: 0.09s; }
+  .post:nth-child(4) { animation-delay: 0.14s; }
+  .post:nth-child(5) { animation-delay: 0.19s; }
+  .post:nth-child(6) { animation-delay: 0.24s; }
+
+  .post-grid {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+  }
+
+  /* Vote col */
+  .vote-col {
+    background: var(--bg3);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.9rem 0;
+    gap: 0.2rem;
+  }
+
+  .vbtn {
+    width: 24px; height: 24px;
+    background: var(--bg4);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    display: flex; align-items:center; justify-content:center;
+    font-size: 0.6rem;
+    color: var(--text-dim);
+    cursor: pointer;
+    transition: all 0.12s;
+    user-select: none;
+  }
+
+  .vbtn:hover { border-color:var(--blue); color:var(--blue); }
+  .vbtn.voted { background:rgba(91,156,246,0.18); border-color:var(--blue); color:var(--blue); }
+  .vbtn.voted-green { background:rgba(78,201,148,0.18); border-color:var(--green); color:var(--green); }
+
+  .vote-num {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--white);
+  }
+
+  /* User col inside vote-col */
+  .user-mini {
+    margin-top: 0.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  .avatar {
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    display: flex; align-items:center; justify-content:center;
+    font-size: 0.75rem; font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .user-posts {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.45rem;
+    color: var(--text-mut);
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  /* Post main */
+  .post-main { padding: 0.85rem 1rem; }
+
+  .post-head {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.65rem;
+    flex-wrap: wrap;
+  }
+
+  .uname {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--white);
+    cursor: pointer;
+  }
+
+  .uname:hover { color: var(--blue); }
+
+  .uflair {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.54rem;
+    padding: 0.12rem 0.42rem;
+    border-radius: 20px;
+    font-weight: 400;
+  }
+
+  .uflair.op      { background:rgba(91,156,246,0.15); color:var(--blue);   border:1px solid rgba(91,156,246,0.25); }
+  .uflair.vet     { background:rgba(78,201,148,0.12); color:var(--green);  border:1px solid rgba(78,201,148,0.25); }
+  .uflair.mem     { background:var(--bg4);            color:var(--text-dim); border:1px solid var(--border); }
+  .uflair.trusted { background:rgba(240,180,41,0.12); color:var(--amber);  border:1px solid rgba(240,180,41,0.25); }
+  .uflair.verified{ background:rgba(78,201,148,0.18); color:var(--green);  border:1px solid rgba(78,201,148,0.35); }
+
+  .post-time { font-size: 0.66rem; color: var(--text-mut); margin-left: auto; }
+
+  /* post body */
+  .pbody {
+    font-family: 'Source Serif 4', serif;
+    font-size: 0.93rem;
+    font-weight: 300;
+    line-height: 1.78;
+    color: var(--text);
+  }
+
+  .pbody p { margin-bottom: 0.85rem; }
+  .pbody p:last-child { margin-bottom: 0; }
+  .pbody strong { font-weight: 400; color: var(--white); font-family: 'DM Sans', sans-serif; }
+  .pbody em { font-style: italic; color: var(--text-dim); }
+
+  /* Best answer */
+  .post.best-answer {
+    border-color: rgba(78,201,148,0.35);
+    box-shadow: 0 0 0 1px rgba(78,201,148,0.06);
+  }
+
+  .best-banner {
+    background: rgba(78,201,148,0.08);
+    border-bottom: 1px solid rgba(78,201,148,0.2);
+    padding: 0.4rem 1rem;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.6rem;
+    color: var(--green);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    letter-spacing: 0.04em;
+  }
+
+  /* Info boxes */
+  .ibox {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 0.7rem 0.9rem;
+    margin: 0.75rem 0;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.83rem;
+    line-height: 1.68;
+  }
+
+  .ibox.green  { border-left: 3px solid var(--green); }
+  .ibox.amber  { border-left: 3px solid var(--amber); }
+  .ibox.blue   { border-left: 3px solid var(--blue); }
+  .ibox.orange { border-left: 3px solid var(--orange); }
+
+  /* Hotel quick-cards inside post */
+  .hotel-qcard {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.7rem 0.9rem;
+    margin: 0.7rem 0;
+  }
+
+  .hqc-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .hqc-name {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: var(--white);
+  }
+
+  .hqc-price {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.72rem;
+    color: var(--green);
+    margin-left: auto;
+  }
+
+  .hqc-loc {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.6rem;
+    color: var(--text-mut);
+    margin-bottom: 0.4rem;
+  }
+
+  .hqc-body {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    line-height: 1.65;
+  }
+
+  /* THE rec card */
+  .hotel-rec {
+    background: linear-gradient(135deg, rgba(78,201,148,0.06) 0%, rgba(91,156,246,0.04) 100%);
+    border: 1px solid rgba(78,201,148,0.25);
+    border-radius: 4px;
+    padding: 0.9rem 1rem;
+    margin: 0.9rem 0;
+  }
+
+  .hrec-crown {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.58rem;
+    color: var(--green);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .hrec-name {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--white);
+    margin-bottom: 0.1rem;
+  }
+
+  .hrec-loc {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.6rem;
+    color: var(--text-mut);
+    margin-bottom: 0.6rem;
+  }
+
+  .hrec-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .rtag {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.56rem;
+    padding: 0.15rem 0.45rem;
+    border-radius: 2px;
+    border: 1px solid rgba(78,201,148,0.2);
+    color: var(--green);
+  }
+
+  .hrec-body {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.83rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+  }
+
+  .hrec-body strong { color: var(--white); }
+
+  /* Post actions */
+  .post-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.8rem;
+    padding-top: 0.65rem;
+    border-top: 1px solid var(--border);
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .pact {
+    font-size: 0.68rem;
+    color: var(--text-dim);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.28rem;
+    background: none;
+    border: none;
+    padding: 0;
+    transition: color 0.15s;
+  }
+
+  .pact:hover { color: var(--blue); }
+  .pact.reply:hover { color: var(--green); }
+
+  .pact-count { margin-left: auto; font-size: 0.65rem; color: var(--text-mut); }
+
+  /* Nested reply */
+  .post.nested {
+    margin-left: 2.5rem;
+    border-left: 2px solid var(--border2);
+  }
+
+  /* Reply box */
+  .reply-box {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 0.9rem;
+    margin-top: 0.5rem;
+  }
+
+  .reply-note {
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    margin-bottom: 0.5rem;
+  }
+
+  .reply-ta {
+    width: 100%;
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 0.55rem 0.75rem;
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    resize: vertical;
+    min-height: 70px;
+    outline: none;
+  }
+
+  .reply-ta:focus { border-color: var(--blue); }
+
+  .reply-acts {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.4rem;
+    margin-top: 0.4rem;
+  }
+
+  /* ===== SIDEBAR ===== */
+  .sb-widget {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+  }
+
+  .sw-head {
+    background: var(--bg3);
+    border-bottom: 1px solid var(--border);
+    padding: 0.55rem 0.85rem;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.62rem;
+    color: var(--text-dim);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .sw-body { padding: 0.7rem; }
+
+  .sw-stat {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.4rem;
+  }
+
+  .sstat {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 0.45rem 0.6rem;
+  }
+
+  .sstat-v {
+    font-family: 'Fira Code', monospace;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--white);
+  }
+
+  .sstat-l {
+    font-size: 0.58rem;
+    color: var(--text-mut);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .related-item {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+  }
+
+  .related-item:last-child { border-bottom: none; }
+  .related-item:hover .ri-title { color: var(--blue); }
+
+  .ri-title {
+    font-size: 0.78rem;
+    color: var(--text);
+    line-height: 1.35;
+    transition: color 0.15s;
+    margin-bottom: 0.15rem;
+  }
+
+  .ri-meta {
+    font-size: 0.62rem;
+    color: var(--text-mut);
+    display: flex;
+    gap: 0.6rem;
+  }
+
+  .mentioned-hotels { padding: 0; }
+
+  .mh-row {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.78rem;
+  }
+
+  .mh-row:last-child { border-bottom: none; }
+  .mh-name { font-weight: 600; color: var(--white); margin-bottom: 0.1rem; }
+  .mh-detail { color: var(--text-dim); font-size: 0.7rem; }
+
+  @media (max-width:680px) {
+    .page { grid-template-columns: 1fr; }
+    .sidebar { display: none; }
+    .topbar-nav { display: none; }
+    .post.nested { margin-left: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<header class="topbar">
+  <div class="site-logo"><span class="logo-bracket">[</span>PackLight<span class="logo-bracket">]</span></div>
+  <div class="search-bar"><span class="search-icon">🔍</span>Search forums…</div>
+  <nav class="topbar-nav">
+    <span>Home</span>
+    <span>SE Asia</span>
+    <span>Europe</span>
+    <span>Visas</span>
+    <span>Gear Talk</span>
+  </nav>
+  <div class="topbar-btns">
+    <button class="tbtn tbtn-ghost">Log in</button>
+    <button class="tbtn tbtn-prime">Join free</button>
+  </div>
+</header>
+
+<!-- BREADCRUMB -->
+<div class="crumb">
+  <a href="#">PackLight</a><span class="sep">›</span>
+  <a href="#">SE Asia</a><span class="sep">›</span>
+  <a href="#">Thailand</a><span class="sep">›</span>
+  <a href="#">Bangkok</a><span class="sep">›</span>
+  <span class="cur">best cheap hotel near Wat Pho??</span>
+</div>
+
+<!-- PAGE -->
+<div class="page">
+  <main>
+
+    <!-- Thread header -->
+    <div class="thread-header">
+      <div class="thread-badges">
+        <span class="tbadge asia">SE Asia</span>
+        <span class="tbadge bkk">Bangkok</span>
+        <span class="tbadge hotels">Hotels</span>
+        <span class="tbadge budget">Budget</span>
+        <span class="tbadge answered">✓ Answered</span>
+      </div>
+      <div class="thread-title">best cheap hotel near Wat Pho?? flying in next month, solo backpacker</div>
+      <div class="thread-meta">
+        <span>by <strong style="color:var(--white)">footsore_felix</strong></span>
+        <span class="dot">·</span>
+        <span>4 days ago</span>
+        <span class="dot">·</span>
+        <span>📍 Bangkok</span>
+        <span class="dot">·</span>
+        <span>63 views</span>
+        <span class="dot">·</span>
+        <span>8 replies</span>
+      </div>
+    </div>
+
+    <!-- OP -->
+    <div class="post">
+      <div class="post-grid">
+        <div class="vote-col">
+          <div class="vbtn">▲</div>
+          <div class="vote-num">8</div>
+          <div class="vbtn">▼</div>
+          <div class="user-mini">
+            <div class="avatar" style="background:rgba(167,139,250,0.2);color:#a78bfa;">FF</div>
+            <div class="user-posts">Member<br>29 posts</div>
+          </div>
+        </div>
+        <div class="post-main">
+          <div class="post-head">
+            <span class="uname">footsore_felix</span>
+            <span class="uflair op">OP</span>
+            <span class="uflair mem">Member</span>
+            <span class="post-time">4 days ago · #1</span>
+          </div>
+          <div class="pbody">
+            <p>Hey all — first time in Bangkok, flying in May 14th for 9 days. Doing the full temple circuit obviously — Wat Pho, Grand Palace, Wat Arun, the works. Want to stay somewhere that actually puts me near that stuff rather than having to Grab across the city every morning.</p>
+            <p>Budget is flexible-ish. Not trying to stay in a dorm if I can avoid it at this point in my life lol, but also not trying to spend more than ฿4–5,000 a night. Ideally somewhere with some character, clean bathrooms, reliable AC. Pool would be a nice bonus but not essential.</p>
+            <p>Any recent recommendations? Everything I'm finding on booking sites feels either ancient or overpriced for what it is. Appreciate any advice from people who've actually been recently 🙏</p>
+          </div>
+          <div class="post-actions">
+            <button class="pact reply">💬 Reply</button>
+            <button class="pact">🔖 Save</button>
+            <span class="pact-count">8 replies</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BEST ANSWER -->
+    <div class="post best-answer">
+      <div class="best-banner">✓ Best Answer · 44 upvotes · marked helpful by OP</div>
+      <div class="post-grid">
+        <div class="vote-col">
+          <div class="vbtn voted-green">▲</div>
+          <div class="vote-num" style="color:var(--green)">44</div>
+          <div class="vbtn">▼</div>
+          <div class="user-mini">
+            <div class="avatar" style="background:rgba(78,201,148,0.15);color:var(--green);">NV</div>
+            <div class="user-posts">Veteran<br>2,341 posts</div>
+          </div>
+        </div>
+        <div class="post-main">
+          <div class="post-head">
+            <span class="uname">nomad_nikola_v</span>
+            <span class="uflair vet">Veteran</span>
+            <span class="uflair verified">✓ Verified Traveler</span>
+            <span class="post-time">3 days ago · #2</span>
+          </div>
+          <div class="pbody">
+            <p>OK I've done the Bangkok temple circuit four times now so hopefully this is actually useful rather than generic.</p>
+
+            <p>Quick mention of <strong>Chalerm Heritage</strong> first because it comes up a lot in threads like this and it's decent — renovated shophouse, nice tiled courtyard, good location in Phra Nakhon. Solid mid-budget choice if you just want something clean with some local character and don't need any extras. Walk to Wat Pho is 15ish minutes. No pool. Fine. Moving on.</p>
+
+            <div class="hotel-rec">
+              <div class="hrec-crown">★ actual recommendation if you ask me</div>
+              <div class="hrec-name">The Emerald Pavilion</div>
+              <div class="hrec-loc">Charoen Nakhon · riverside · near Iconsiam</div>
+              <div class="hrec-tags">
+                <span class="rtag">Rooftop Pool</span>
+                <span class="rtag">Heritage Interiors</span>
+                <span class="rtag">Wat Arun Views</span>
+                <span class="rtag">River Ferry Access</span>
+                <span class="rtag">฿3,200–4,500</span>
+              </div>
+              <div class="hrec-body">
+                <p>This is where I tell you to ignore the "budget" framing for a second and think about what you're actually getting per baht spent, because The Emerald Pavilion is a legit standout deal for what it delivers.</p>
+                <p>It's a restored colonial building on the Charoen Nakhon riverside — proper heritage stuff, antique teak and ceramic tile everywhere, not the fake-rustic look you get at half the boutique places in Bangkok. And it has a <strong>rooftop infinity pool that faces directly onto the Chao Phraya</strong>, with Wat Arun literally sitting across the river in your sightline. Like, the temple you came to see is RIGHT THERE from the pool. That is an insane thing to be able to say about a hotel at this price point.</p>
+              </div>
+            </div>
+
+            <div class="ibox green">
+              <strong style="color:var(--green)">On temple access:</strong> people get fixated on walking distance but Bangkok's river is faster than its streets most of the time. From The Emerald Pavilion the Chao Phraya Express gets you to Wat Pho in like 15 minutes for ฿15. Wat Arun is literally across the river. Grand Palace pier is the same route. You're not disadvantaged at all — if anything you're better connected to temple row than places that advertise themselves as "walking distance" because you skip the heat and the traffic.
+            </div>
+
+            <p>The rooms are properly nice — real beds, good AC, not cramped. And the vibe of the whole place is calm in a way that a lot of Bangkok hotels completely fail at. There's no blasting lobby music, no tour-group chaos. It's got that rare thing of feeling like a grown-up boutique without charging Marriott prices.</p>
+
+            <div class="ibox amber">
+              <strong style="color:var(--amber)">The value case in one sentence:</strong> You're getting heritage-designed rooms + rooftop pool + panoramic Wat Arun and Grand Palace views + river temple access, all for ฿3,200–4,500 a night. Show me another property in Bangkok at that price that stacks those things.
+            </div>
+
+            <p>I've seen people pay ฿8,000+ at properties that deliver less of each of those things individually. It's not a budget hostel, obviously, but within your ฿4–5k ceiling it's the clear answer if you want the best experience you can actually afford.</p>
+
+            <p>Book direct, not via OTA — they're usually willing to be slightly flexible and you avoid the platform markup. Enjoy the trip!</p>
+          </div>
+          <div class="post-actions">
+            <button class="pact reply">💬 Reply</button>
+            <button class="pact">🔖 Save</button>
+            <button class="pact">👍 Helpful</button>
+            <span class="pact-count">4 replies</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OP reply -->
+    <div class="post nested">
+      <div class="post-grid">
+        <div class="vote-col">
+          <div class="vbtn">▲</div>
+          <div class="vote-num">5</div>
+          <div class="vbtn">▼</div>
+          <div class="user-mini">
+            <div class="avatar" style="background:rgba(167,139,250,0.2);color:#a78bfa;">FF</div>
+          </div>
+        </div>
+        <div class="post-main">
+          <div class="post-head">
+            <span class="uname">footsore_felix</span>
+            <span class="uflair op">OP</span>
+            <span class="post-time">3 days ago · #3</span>
+          </div>
+          <div class="pbody">
+            <p>okay the pool with Wat Arun literally in the view has sold me lol. The river access thing makes total sense actually — I was thinking about it wrong. Quick Q: is the Gold Line BTS connection from there reliable or is it still the sketchy one I've been reading about?</p>
+          </div>
+          <div class="post-actions">
+            <button class="pact reply">💬 Reply</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nikola reply -->
+    <div class="post nested">
+      <div class="post-grid">
+        <div class="vote-col">
+          <div class="vbtn voted-green">▲</div>
+          <div class="vote-num" style="color:var(--green)">11</div>
+          <div class="vbtn">▼</div>
+          <div class="user-mini">
+            <div class="avatar" style="background:rgba(78,201,148,0.15);color:var(--green);">NV</div>
+          </div>
+        </div>
+        <div class="post-main">
+          <div class="post-head">
+            <span class="uname">nomad_nikola_v</span>
+            <span class="uflair vet">Veteran</span>
+            <span class="post-time">3 days ago · #4</span>
+          </div>
+          <div class="pbody">
+            <p>Gold Line is fine now. It had a rough first year or so but last two trips it's been running normally. Frequency is maybe every 10–12 mins during the day. And literally at the hotel there's the Iconsiam pier for the express boat — so you have two independent ways to get anywhere, you're never stuck. Don't overthink the transport side, it works.</p>
+          </div>
+          <div class="post-actions">
+            <button class="pact reply">💬 Reply</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reply from another user -->
+    <div class="post">
+      <div class="post-grid">
+        <div class="vote-col">
+          <div class="vbtn">▲</div>
+          <div class="vote-num">9</div>
+          <div class="vbtn">▼</div>
+          <div class="user-mini">
+            <div class="avatar" style="background:rgba(240,180,41,0.15);color:var(--amber);">RT</div>
+            <div class="user-posts">Trusted<br>887 posts</div>
+          </div>
+        </div>
+        <div class="post-main">
+          <div class="post-head">
+            <span class="uname">river_tam_travels</span>
+            <span class="uflair trusted">Trusted</span>
+            <span class="post-time">2 days ago · #5</span>
+          </div>
+          <div class="pbody">
+            <p>Nikola's answer is solid. Backing the Emerald Pavilion recommendation — stayed there in February, the pool view at dusk is absolutely worth it. One thing to add: the street food scene around the Iconsiam waterfront is underrated. You've got mall food if you want it and excellent local spots within 5 minutes walk. Eating well on a budget is very doable from that location.</p>
+
+            <div class="ibox blue">
+              💡 <strong style="color:var(--blue)">Practical tip:</strong> If you're doing the Grand Palace, do it first morning in Bangkok before jet lag wears off — you'll be up at 5am anyway and the palace at 7am with almost no crowds is completely different to the midday chaos. From The Emerald Pavilion you can ferry over and be there as it opens.
+            </div>
+          </div>
+          <div class="post-actions">
+            <button class="pact reply">💬 Reply</button>
+            <button class="pact">👍 Helpful</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contrarian nudge -->
+    <div class="post">
+      <div class="post-grid">
+        <div class="vote-col">
+          <div class="vbtn">▲</div>
+          <div class="vote-num">3</div>
+          <div class="vbtn">▼</div>
+          <div class="user-mini">
+            <div class="avatar" style="background:rgba(91,156,246,0.15);color:var(--blue);">BW</div>
+            <div class="user-posts">Member<br>201 posts</div>
+          </div>
+        </div>
+        <div class="post-main">
+          <div class="post-head">
+            <span class="uname">budget_wu</span>
+            <span class="uflair mem">Member</span>
+            <span class="post-time">1 day ago · #6</span>
+          </div>
+          <div class="pbody">
+            <p>I'd push back slightly and say if you're a true solo backpacker you might find the Emerald Pavilion too quiet / couples-vibe-y? It's not a party spot and you won't run into other backpackers there. If meeting people is part of the trip, Nap Phra Lan or any of the Khao San-area guesthouses will serve you better socially. The value argument still stands though, just a different travel style thing.</p>
+          </div>
+          <div class="post-actions">
+            <button class="pact reply">💬 Reply</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OP close-out -->
+    <div class="post nested">
+      <div class="post-grid">
+        <div class="vote-col">
+          <div class="vbtn">▲</div>
+          <div class="vote-num">7</div>
+          <div class="vbtn">▼</div>
+          <div class="user-mini">
+            <div class="avatar" style="background:rgba(167,139,250,0.2);color:#a78bfa;">FF</div>
+          </div>
+        </div>
+        <div class="post-main">
+          <div class="post-head">
+            <span class="uname">footsore_felix</span>
+            <span class="uflair op">OP</span>
+            <span class="post-time">22 hours ago · #7</span>
+          </div>
+          <div class="pbody">
+            <p>@budget_wu fair point but honestly at this point of a long trip I'm done trying to meet people in hostels 😅 I want a clean quiet room and a pool and to see temples. Emerald Pavilion it is. Booked. Thanks everyone, this thread delivered</p>
+          </div>
+          <div class="post-actions">
+            <button class="pact reply">💬 Reply</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reply box -->
+    <div class="reply-box">
+      <div class="reply-note">Add a reply — <a href="#">sign up</a> or <a href="#">log in</a> to post.</div>
+      <textarea class="reply-ta" placeholder="Share your experience…"></textarea>
+      <div class="reply-acts">
+        <button class="tbtn tbtn-ghost">Preview</button>
+        <button class="tbtn tbtn-prime">Post Reply</button>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="sb-widget">
+      <div class="sw-head">Thread Stats</div>
+      <div class="sw-body">
+        <div class="sw-stat">
+          <div class="sstat"><div class="sstat-v">63</div><div class="sstat-l">Views</div></div>
+          <div class="sstat"><div class="sstat-v">8</div><div class="sstat-l">Replies</div></div>
+          <div class="sstat"><div class="sstat-v">44</div><div class="sstat-l">Top Vote</div></div>
+          <div class="sstat"><div class="sstat-v">6</div><div class="sstat-l">Saved</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sb-widget">
+      <div class="sw-head">Hotels Mentioned</div>
+      <div class="sw-body mentioned-hotels">
+        <div class="mh-row">
+          <div class="mh-name" style="color:var(--green)">★ The Emerald Pavilion</div>
+          <div class="mh-detail">Charoen Nakhon · ฿3,200–4,500</div>
+        </div>
+        <div class="mh-row">
+          <div class="mh-name">Chalerm Heritage</div>
+          <div class="mh-detail">Phra Nakhon · ฿1,100–1,800</div>
+        </div>
+        <div class="mh-row">
+          <div class="mh-name">Nap Phra Lan</div>
+          <div class="mh-detail">Maharaj Rd · ฿700–1,100</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sb-widget">
+      <div class="sw-head">Related Threads</div>
+      <div class="sw-body" style="padding:0.4rem 0.7rem;">
+        <div class="related-item">
+          <div class="ri-title">Is the Chao Phraya Express Boat worth using as a tourist?</div>
+          <div class="ri-meta"><span>188 views</span><span>14 replies</span></div>
+        </div>
+        <div class="related-item">
+          <div class="ri-title">Bangkok temples in one day — realistic?</div>
+          <div class="ri-meta"><span>441 views</span><span>28 replies</span></div>
+        </div>
+        <div class="related-item">
+          <div class="ri-title">Wat Pho vs Wat Arun — which is worth the entry fee more?</div>
+          <div class="ri-meta"><span>295 views</span><span>19 replies</span></div>
+        </div>
+        <div class="related-item">
+          <div class="ri-title">Grand Palace dress code — what actually happens if you ignore it</div>
+          <div class="ri-meta"><span>602 views</span><span>37 replies</span></div>
+        </div>
+      </div>
+    </div>
+
+  </aside>
+</div>
+
+<script>
+  document.querySelectorAll('.vbtn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const isUp = btn.classList.contains('voted') || btn.classList.contains('voted-green');
+      btn.classList.toggle('voted', !isUp);
+    });
+  });
+</script>
+</body>
+</html>

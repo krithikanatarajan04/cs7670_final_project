@@ -1,81 +1,77 @@
-"""
-pipeline/orchestrator.py
-
-Builds the LangGraph pipeline. Accepts index_path, defense_config,
-and top_k so the experiment runner can control all three independently.
-
-defense_config levels:
-    "no_defense"        — CFG enforced only.
-    "controlvalve_only" — Same as no_defense, explicit for ablation.
-    "observe"           — Full detection, defense_triggered always False.
-    "full_system"       — Full detection, defense_triggered reflects detections.
-
-top_k:
-    Number of pages the Researcher retrieves in total. Default 5.
-    Sweep k=5, k=8, k=10 to show detection generalises across retrieval depth.
-"""
-
 import functools
 from langgraph.graph import StateGraph, START, END
 
 from pipeline.state import PipelineState
-from agents.researcher import researcher_node
+from pipeline.cfg import (
+    validate_researcher_output,
+    validate_anomaly_scores_present,
+    validated_transition,
+)
+from agents.researcher import researcher_node, RetrievalConfig
 from agents.auditor import auditor_node
 from agents.analyzer import analyzer_node
 from agents.recommendation import recommendation_node
 
 
-def build_pipeline(
-    index_path: str = "corpus/indices/baseline.json",
-    defense_config: str = "no_defense",
-    top_k: int = 5
-):
-    """
-    Wires agents into the fixed linear pipeline:
-        Researcher -> Auditor -> Analyzer -> RecommendationAgent
+def build_pipeline(scenario, defense, pipeline, planning=None):
+    researcher_to_auditor_validators = [validate_researcher_output]
+    if defense.cv_judge:
+        from pipeline.cv_baseline import cv_llm_judge_validator
+        researcher_to_auditor_validators.append(cv_llm_judge_validator)
 
-    The Auditor is the new pre-ranking provenance graph construction and
-    anomaly detection node. It replaces the former Verifier. The Auditor
-    builds the ProvenanceGraph, computes per-source multi-signal anomaly
-    scores, and writes anomaly_scores and flagged_sources_pre_ranking to
-    state before the Analyzer runs. The Analyzer receives anomaly
-    annotations inline and can factor them into its ranking. The
-    RecommendationAgent records the post-ranking audit trail and decides
-    whether to trigger the defense.
-
-    Args:
-        index_path:     Path to the corpus index JSON file.
-        defense_config: One of "no_defense", "controlvalve_only",
-                        "observe", "full_system".
-        top_k:          Number of pages the Researcher retrieves.
-                        Passed through to researcher_node via partial.
-
-    Returns:
-        Compiled LangGraph app ready to invoke with {"user_query": "..."}.
-    """
-
-    bound_researcher = functools.partial(
-        researcher_node,
-        index_path=index_path,
-        top_k=top_k
+    researcher_kwargs = dict(
+        index_path=scenario.corpus_path,
+        max_rounds=pipeline.max_rounds,
+        prov_config=defense.provenance,
+        retrieval_config=RetrievalConfig(
+            score_threshold=pipeline.score_threshold,
+            max_per_dimension=pipeline.max_per_dimension,
+            max_angles_per_round=getattr(pipeline, "max_angles_per_round", 5),
+        ),
     )
+    if planning is not None:
+        researcher_kwargs["planning_config"] = planning
 
-    bound_auditor = functools.partial(
+    signals_active = defense.signals.fact1 or defense.signals.fact2 or defense.signals.coverage_entropy
+
+    bound_researcher    = functools.partial(researcher_node, **researcher_kwargs)
+    bound_auditor       = functools.partial(
         auditor_node,
-        defense_config=defense_config
+        signal_config=defense.signals,
+        signals_active=signals_active,
     )
+    bound_analyzer      = functools.partial(
+        analyzer_node,
+        analyzer_exclusion=defense.analyzer_exclusion,
+    )
+    bound_recommendation = functools.partial(
+        recommendation_node,
+        controller_intervention=defense.controller_intervention,
+    )
+
+    def auditor_with_edge_check(state: dict) -> dict:
+        validated_transition("Auditor", state, researcher_to_auditor_validators)
+        return bound_auditor(state)
+
+    def analyzer_with_edge_check(state: dict) -> dict:
+        validated_transition("Analyzer", state, [validate_anomaly_scores_present])
+        return bound_analyzer(state)
 
     workflow = StateGraph(PipelineState)
+    workflow.add_node("Researcher",           bound_researcher)
+    workflow.add_node("Auditor",              auditor_with_edge_check)
+    workflow.add_node("Analyzer",             analyzer_with_edge_check)
+    workflow.add_node("RecommendationAgent",  bound_recommendation)
 
-    workflow.add_node("Researcher", bound_researcher)
-    workflow.add_node("Auditor", bound_auditor)
-    workflow.add_node("Analyzer", analyzer_node)
-    workflow.add_node("RecommendationAgent", recommendation_node)
-
-    workflow.add_edge(START, "Researcher")
-    workflow.add_edge("Researcher", "Auditor")
-    workflow.add_edge("Auditor", "Analyzer")
-    workflow.add_edge("Analyzer", "RecommendationAgent")
+    # Route START based on whether claims are preloaded (skip_research path)
+    workflow.add_conditional_edges(
+        START,
+        lambda state: "Auditor" if state.get("skip_research") else "Researcher",
+        {"Researcher": "Researcher", "Auditor": "Auditor"},
+    )
+    workflow.add_edge("Researcher",          "Auditor")
+    workflow.add_edge("Auditor",             "Analyzer")
+    workflow.add_edge("Analyzer",            "RecommendationAgent")
     workflow.add_edge("RecommendationAgent", END)
 
     return workflow.compile()

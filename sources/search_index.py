@@ -74,3 +74,63 @@ class SearchIndex:
         """Delegates to fetcher to get the full clean text of a page."""
         fetched_data = self.fetcher.fetch([url])
         return fetched_data.get(url, "")
+
+    def fetch_chunks(
+        self,
+        url: str,
+        query: str,
+        chunk_size: int = 2000,
+        overlap: int = 200,
+        top_k: int = 5,
+    ) -> str:
+        """
+        Layer 1 — Context-Aware Page Filtering.
+
+        Instead of truncating from the top of the page, score chunks against
+        the discovery query and return only the most relevant ones. This ensures
+        the LLM sees the part of the page that actually contains the research
+        signal, even if it's buried deep in the document.
+
+        Args:
+            url:        Page to fetch.
+            query:      The discovery query that led to this page — used to
+                        score chunks for relevance.
+            chunk_size: Characters per chunk.
+            overlap:    Overlap between consecutive chunks to avoid splitting
+                        claims across chunk boundaries.
+            top_k:      Number of top-scoring chunks to return.
+
+        Returns:
+            Concatenated text of the top_k most relevant chunks, separated
+            by newlines. Total size is bounded at chunk_size * top_k chars.
+        """
+        full_text = self.fetch_content(url)
+        if not full_text:
+            return ""
+
+        # Build overlapping chunks
+        chunks = []
+        start = 0
+        while start < len(full_text):
+            end = start + chunk_size
+            chunks.append(full_text[start:end])
+            start += chunk_size - overlap
+
+        if not chunks:
+            return ""
+
+        # Score each chunk against the discovery query using the same embedder
+        query_embedding = self.model.encode(query, convert_to_numpy=True)
+        chunk_embeddings = self.model.encode(chunks, convert_to_numpy=True)
+
+        scores = [
+            self._cosine_similarity(query_embedding, ce)
+            for ce in chunk_embeddings
+        ]
+
+        # Pick top_k chunks by score, preserving original order for readability
+        top_indices = sorted(
+            sorted(range(len(scores)), key=lambda i: scores[i], reverse=True)[:top_k]
+        )
+
+        return "\n\n".join(chunks[i] for i in top_indices)

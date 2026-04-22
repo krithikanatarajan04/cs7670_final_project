@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Tidy Method – Apartment Cleaning Checklist Blog</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:#fdfaf7;color:#3a3028;font-family:'Crimson Pro',serif;font-size:17px;line-height:1.75;}
+  a{color:#c0614a;text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  /* HEADER */
+  header{background:#fff;border-bottom:1px solid #ede8e0;}
+  .header-inner{max-width:960px;margin:0 auto;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;}
+  .logo{font-family:'Quicksand',sans-serif;font-size:22px;font-weight:700;color:#3a3028;letter-spacing:-.01em;}
+  .logo span{color:#c0614a;}
+  .header-nav a{font-family:'Quicksand',sans-serif;font-size:13px;font-weight:600;color:#7a6a5a;margin-left:18px;}
+  .header-nav a:hover{color:#c0614a;text-decoration:none;}
+  /* CATEGORY BAR */
+  .cat-bar{background:#f5f0ea;border-bottom:1px solid #ede8e0;padding:8px 20px;display:flex;justify-content:center;gap:8px;flex-wrap:wrap;}
+  .cat-bar a{font-family:'Quicksand',sans-serif;font-size:12px;font-weight:600;color:#7a6a5a;padding:4px 14px;border-radius:20px;border:1px solid #d8d0c6;}
+  .cat-bar a:hover{background:#c0614a;color:#fff;border-color:#c0614a;text-decoration:none;}
+  /* HERO */
+  .post-hero{background:#fff;border-bottom:1px solid #ede8e0;text-align:center;padding:44px 20px 32px;}
+  .post-hero .badge{display:inline-block;background:#fdf0ec;color:#c0614a;font-family:'Quicksand',sans-serif;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:14px;}
+  .post-hero h1{font-size:38px;font-weight:600;color:#2a221a;max-width:680px;margin:0 auto 14px;line-height:1.25;}
+  .post-hero .deck{font-size:19px;font-style:italic;color:#7a6a5a;max-width:560px;margin:0 auto 18px;}
+  .post-hero .meta{font-family:'Quicksand',sans-serif;font-size:12px;color:#a09080;letter-spacing:.04em;}
+  /* LAYOUT */
+  .layout{max-width:960px;margin:0 auto;padding:32px 20px;display:grid;grid-template-columns:1fr 260px;gap:36px;}
+  /* CONTENT */
+  .content p{margin-bottom:16px;color:#3a3028;}
+  .content h2{font-family:'Quicksand',sans-serif;font-size:22px;font-weight:700;color:#2a221a;margin:28px 0 10px;}
+  /* CHECKLIST */
+  .checklist-box{background:#fff;border:1px solid #ede8e0;border-radius:8px;padding:18px;margin:18px 0;}
+  .checklist-box .cb-title{font-family:'Quicksand',sans-serif;font-size:16px;font-weight:700;color:#2a221a;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #f5f0ea;display:flex;justify-content:space-between;align-items:center;}
+  .cb-freq{font-size:11px;background:#f5f0ea;color:#7a6a5a;padding:3px 8px;border-radius:12px;font-weight:600;letter-spacing:.04em;}
+  .check-row{display:flex;align-items:flex-start;gap:10px;padding:7px 0;border-bottom:1px solid #fdf9f5;font-size:15px;}
+  .check-row:last-child{border:none;}
+  .check-row .box{width:18px;height:18px;border:2px solid #d8d0c6;border-radius:4px;flex-shrink:0;margin-top:3px;display:flex;align-items:center;justify-content:center;}
+  .check-row.done .box{background:#c0614a;border-color:#c0614a;color:#fff;font-size:12px;}
+  .check-row .task{color:#3a3028;}
+  .check-row .note{display:block;font-size:13px;color:#9a8a7a;font-style:italic;}
+  /* TIP BOX */
+  .tip-box{background:#fdf0ec;border-left:4px solid #c0614a;padding:12px 16px;border-radius:0 6px 6px 0;margin:16px 0;font-size:15px;color:#5a3020;}
+  .tip-box strong{color:#c0614a;font-family:'Quicksand',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:4px;}
+  /* TIME ESTIMATE */
+  .time-row{display:flex;gap:12px;margin:14px 0;flex-wrap:wrap;}
+  .time-chip{background:#f5f0ea;border:1px solid #d8d0c6;border-radius:6px;padding:10px 14px;font-family:'Quicksand',sans-serif;font-size:13px;font-weight:600;color:#3a3028;text-align:center;}
+  .time-chip span{display:block;font-size:20px;color:#c0614a;margin-bottom:2px;}
+  /* SIDEBAR */
+  .sidebar{}
+  .sw{background:#fff;border:1px solid #ede8e0;border-radius:8px;padding:14px;margin-bottom:16px;}
+  .sw h3{font-family:'Quicksand',sans-serif;font-size:14px;font-weight:700;color:#2a221a;border-bottom:1px solid #f5f0ea;padding-bottom:8px;margin-bottom:10px;}
+  .sw ul{list-style:none;font-size:14px;}
+  .sw ul li{padding:5px 0;border-bottom:1px solid #fdf9f5;color:#3a3028;}
+  .sw ul li:last-child{border:none;}
+  .sw ul li a{color:#c0614a;}
+  .subscribe-box{background:#c0614a;color:#fff;border-radius:8px;padding:16px;margin-bottom:16px;text-align:center;}
+  .subscribe-box h3{font-family:'Quicksand',sans-serif;font-size:16px;font-weight:700;margin-bottom:8px;}
+  .subscribe-box p{font-size:13px;opacity:.85;margin-bottom:10px;}
+  .subscribe-box input{width:100%;padding:8px;font-size:13px;border:none;border-radius:4px;margin-bottom:8px;}
+  .subscribe-box button{background:#2a221a;color:#fff;border:none;padding:8px 14px;font-family:'Quicksand',sans-serif;font-size:13px;font-weight:700;border-radius:4px;cursor:pointer;width:100%;}
+  /* TAGS */
+  .tags{margin-top:24px;padding-top:16px;border-top:1px solid #ede8e0;}
+  .tag{display:inline-block;background:#f5f0ea;color:#7a6a5a;font-family:'Quicksand',sans-serif;font-size:12px;font-weight:600;padding:4px 12px;border-radius:20px;margin:3px 2px;}
+  /* COMMENTS */
+  .comments-section{margin-top:32px;padding-top:24px;border-top:2px solid #ede8e0;}
+  .comments-section h3{font-family:'Quicksand',sans-serif;font-size:18px;font-weight:700;color:#2a221a;margin-bottom:18px;}
+  .comment{background:#fff;border:1px solid #ede8e0;border-radius:6px;padding:14px;margin-bottom:12px;}
+  .comment .author{font-family:'Quicksand',sans-serif;font-size:13px;font-weight:700;color:#c0614a;}
+  .comment .cdate{font-size:12px;color:#a09080;margin-left:8px;}
+  .comment p{font-size:15px;margin-top:6px;color:#3a3028;}
+  /* FOOTER */
+  footer{background:#2a221a;color:#7a6a5a;padding:24px;text-align:center;font-family:'Quicksand',sans-serif;font-size:12px;margin-top:40px;}
+  footer a{color:#9a8a7a;}
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="logo">The<span> Tidy</span> Method</div>
+    <div class="header-nav">
+      <a href="#">Blog</a>
+      <a href="#">Checklists</a>
+      <a href="#">Products</a>
+      <a href="#">About</a>
+    </div>
+  </div>
+</header>
+<div class="cat-bar">
+  <a href="#">Daily Routines</a>
+  <a href="#">Weekly Cleaning</a>
+  <a href="#">Deep Clean</a>
+  <a href="#">Small Spaces</a>
+  <a href="#">Decluttering</a>
+  <a href="#">Organization</a>
+</div>
+<div class="post-hero">
+  <div class="badge">Printable Checklist</div>
+  <h1>The Complete Apartment Cleaning Checklist (Daily, Weekly &amp; Monthly)</h1>
+  <div class="deck">Stop cleaning reactively. This system builds a routine that keeps your apartment consistently clean with less than two hours of effort a week.</div>
+  <div class="meta">By <strong>Maeve Callahan</strong> &nbsp;&bull;&nbsp; Published Oct 5, 2024 &nbsp;&bull;&nbsp; Updated Oct 11, 2024 &nbsp;&bull;&nbsp; 11 min read</div>
+</div>
+<div class="layout">
+  <div class="content">
+    <p>The difference between a clean apartment and a dirty one isn't usually time—it's habits and sequence. Most people clean too much at once and too infrequently, which makes each session feel like an overwhelming event rather than a normal part of life. This guide builds a three-tier system: daily tasks that take minutes, weekly tasks that take under an hour, and monthly tasks that address the things no one wants to think about until they become embarrassing.</p>
+    <p>Use the checklists below exactly as-is, or adapt them to your specific apartment layout. The times listed are realistic estimates based on a 700–1000 sq ft one or two-bedroom apartment. Smaller studio dwellers can trim about 30% off the totals.</p>
+
+    <h2>The Daily Routine (10–15 minutes total)</h2>
+    <p>The goal of the daily routine is containment—keeping entropy from compounding. Doing these tasks prevents the Friday-night spiral where you spend three hours undoing a week of accumulated disorder before anyone comes over.</p>
+    <div class="time-row">
+      <div class="time-chip"><span>2 min</span>Kitchen Wipe</div>
+      <div class="time-chip"><span>3 min</span>Quick Dishes</div>
+      <div class="time-chip"><span>2 min</span>Bathroom Counter</div>
+      <div class="time-chip"><span>3 min</span>Surfaces + Floor</div>
+      <div class="time-chip"><span>5 min</span>Reset + Put Away</div>
+    </div>
+    <div class="checklist-box">
+      <div class="cb-title">Daily Checklist<span class="cb-freq">Every Day</span></div>
+      <div class="check-row done"><div class="box">✓</div><div class="task">Wipe kitchen counter and stovetop after cooking<span class="note">A 30-second wipe prevents baked-on grime from accumulating</span></div></div>
+      <div class="check-row"><div class="box"></div><div class="task">Wash or rinse dishes—don't leave overnight<span class="note">Or load the dishwasher and run it if full</span></div></div>
+      <div class="check-row"><div class="box"></div><div class="task">Wipe bathroom sink counter and faucet<span class="note">Toothpaste and water spots take 20 seconds to wipe fresh; they take scrubbing if dried</span></div></div>
+      <div class="check-row"><div class="box"></div><div class="task">Do a 3-minute "reset" walk through every room<span class="note">Pick up anything out of place, put it where it belongs</span></div></div>
+      <div class="check-row"><div class="box"></div><div class="task">Empty any "drop zones" (entry table, kitchen island, bed)</div></div>
+    </div>
+
+    <h2>The Weekly Deep(er) Clean (45–60 minutes)</h2>
+    <p>Once a week, you go slightly beyond the surface. This is where you vacuum, mop, clean the toilet, and do the tasks that don't need to happen every day but that build up noticeably if skipped more than seven days.</p>
+
+    <div class="tip-box"><strong>💡 Pro Tip</strong>Do your weekly clean in the same order every time. Starting top-to-bottom (dusting before vacuuming, vacuuming before mopping) means you're never re-cleaning what you've already done. Pick a day and make it non-negotiable—Saturday morning before coffee, or Sunday evening before the week starts.</div>
+
+    <div class="checklist-box">
+      <div class="cb-title">Weekly Checklist<span class="cb-freq">Once Per Week</span></div>
+      <div class="check-row"><div class="box"></div><div class="task">Vacuum all floors (rugs, carpet, and hard floors for debris)</div></div>
+      <div class="check-row"><div class="box"></div><div class="task">Mop hard floors with appropriate cleaner<span class="note">Avoid soaking hardwood; use a damp mop only</span></div></div>
+      <div class="check-row"><div class="box"></div><div class="task">Clean toilet inside and outside<span class="note">Bowl, seat, lid, base—all of it. The base is the most forgotten.</span></div></div>
+      <div class="check-row"><div class="box"></div><div class="task">Scrub bathroom sink and tub/shower</div></div>
+      <div class="check-row"><div class="box"></div><div class="task">Wipe down all mirrors and glass surfaces</div></div>
+      <div class="check-row"><div class="box"></div><div class="task">Dust all surfaces, shelves, and electronics<span class="note">Work top to bottom so fallen dust gets vacuumed after</span></div></div>
+      <div class="check-row"><div class="box"></div><div class="task">Empty all trash cans (kitchen, bathroom, bedroom)</div></div>
+      <div class="check-row"><div class="box"></div><div class="task">Change kitchen sponge or sanitize if reusing</div></div>
+      <div class="check-row"><div class="box"></div><div class="task">Wipe down kitchen appliances (microwave, toaster, coffee maker exterior)</div></div>
+    </div>
+
+    <h2>The Monthly Tasks (30–45 minutes extra)</h2>
+    <p>Monthly tasks address the things that don't need frequent attention but become genuinely gross if never addressed. This list is shorter than most people expect, because the daily and weekly routines handle most ongoing maintenance already.</p>
+    <div class="checklist-box">
+      <div class="cb-title">Monthly Checklist<span class="cb-freq">Once Per Month</span></div>
+      <div class="check-row"><div class="box"></div><div class="task">Clean inside the refrigerator (remove everything, wipe shelves, check for expired items)</div></div>
+      <div class="check-row"><div class="box"></div><div class="task">Clean the oven and vent hood filter</div></div>
+      <div class="check-row"><div class="box"></div><div class="task">Wash all bedding including pillows and duvet cover</div></div>
+      <div class="check-row"><div class="box"></div><div class="task">Wipe down baseboards and window sills<span class="note">These collect dust in a way that's invisible until suddenly it isn't</span></div></div>
+      <div class="check-row"><div class="box"></div><div class="task">Clean behind and under large appliances (fridge, stove, washer if applicable)</div></div>
+      <div class="check-row"><div class="box"></div><div class="task">Descale the coffee maker and kettle</div></div>
+      <div class="check-row"><div class="box"></div><div class="task">Wipe down interior of all cabinets and drawers in kitchen</div></div>
+    </div>
+
+    <div class="tags">
+      <strong style="font-family:'Quicksand',sans-serif;font-size:12px;">Tags:</strong>
+      <span class="tag">cleaning</span><span class="tag">apartment life</span><span class="tag">checklist</span><span class="tag">routines</span><span class="tag">organization</span><span class="tag">printable</span>
+    </div>
+
+    <div class="comments-section">
+      <h3>Reader Comments (14)</h3>
+      <div class="comment">
+        <span class="author">SophieT</span><span class="cdate">Oct 6, 2024</span>
+        <p>I've tried so many cleaning schedules and this is honestly the first one that's actually stuck. The key for me was the "reset walk" concept. Naming it and giving it a time limit made it feel manageable.</p>
+      </div>
+      <div class="comment">
+        <span class="author">dev_dustin</span><span class="cdate">Oct 8, 2024</span>
+        <p>Would love a version of this for people with roommates—dividing the tasks fairly is where all my systems have broken down in the past lol</p>
+      </div>
+      <div class="comment">
+        <span class="author">CleananQuiet</span><span class="cdate">Oct 10, 2024</span>
+        <p>The note about vacuuming before mopping is so obvious in retrospect and I've been doing it wrong for years. Life changing in a tiny way.</p>
+      </div>
+    </div>
+  </div>
+  <aside class="sidebar">
+    <div class="subscribe-box">
+      <h3>Weekly Tidy Tips</h3>
+      <p>New checklists, routines, and organization ideas every Monday.</p>
+      <input type="email" placeholder="your@email.com">
+      <button>Subscribe Free</button>
+    </div>
+    <div class="sw">
+      <h3>Popular Posts</h3>
+      <ul>
+        <li><a href="#">The 20-Minute Deep Clean</a></li>
+        <li><a href="#">How to Clean a Bathroom in 8 Minutes</a></li>
+        <li><a href="#">10 Products Worth the Hype</a></li>
+        <li><a href="#">Declutter Before You Organize</a></li>
+        <li><a href="#">The "Flat Surface" Rule</a></li>
+      </ul>
+    </div>
+    <div class="sw">
+      <h3>Printable Downloads</h3>
+      <ul>
+        <li><a href="#">This Checklist (PDF) →</a></li>
+        <li><a href="#">Move-In/Move-Out Checklist →</a></li>
+        <li><a href="#">Seasonal Deep Clean List →</a></li>
+        <li><a href="#">Roommate Cleaning Split →</a></li>
+      </ul>
+    </div>
+    <div class="sw">
+      <h3>Cleaning Supplies I Use</h3>
+      <p style="font-size:13px;color:#7a6a5a;margin-bottom:8px;">(Some links are affiliate links—see disclosure policy)</p>
+      <ul>
+        <li><a href="#">Method All-Purpose Spray</a></li>
+        <li><a href="#">Scrub Daddy Sponges</a></li>
+        <li><a href="#">Bona Hardwood Floor Cleaner</a></li>
+        <li><a href="#">Bar Keepers Friend</a></li>
+      </ul>
+    </div>
+  </aside>
+</div>
+<footer>
+  &copy; 2024 The Tidy Method &nbsp;|&nbsp; <a href="#">Privacy Policy</a> &nbsp;|&nbsp; <a href="#">Affiliate Disclosure</a> &nbsp;|&nbsp; <a href="#">Contact</a><br>
+  <span style="font-size:10px;margin-top:6px;display:block;">This site contains affiliate links. We earn a small commission on qualifying purchases at no extra cost to you.</span>
+</footer>
+</body>
+</html>

@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Khlong San Loft — Thonburi Riverside, Bangkok</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400&family=Crimson+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1612;
+    --clay: #c2845a;
+    --warm-white: #f5f0e8;
+    --sage: #7a8c72;
+    --rust: #9e4f2a;
+    --paper: #ede8de;
+    --muted: #8a7d6e;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--warm-white);
+    color: var(--ink);
+    font-family: 'Crimson Pro', Georgia, serif;
+    font-weight: 300;
+    font-size: 19px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* Grain overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 100;
+    opacity: 0.6;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 48px;
+    background: rgba(245,240,232,0.88);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(194,132,90,0.2);
+  }
+
+  .nav-logo {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .nav-logo span {
+    color: var(--clay);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .nav-book {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 10px 22px;
+    background: var(--clay);
+    color: var(--warm-white);
+    border: none;
+    cursor: pointer;
+  }
+
+  /* Hero */
+  .hero {
+    padding-top: 100px;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+  }
+
+  .hero-left {
+    padding: 80px 64px 80px 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+
+  .hero-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--clay);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: var(--clay);
+  }
+
+  h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(48px, 6vw, 80px);
+    font-weight: 400;
+    line-height: 1.05;
+    color: var(--ink);
+    margin-bottom: 32px;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--clay);
+  }
+
+  .hero-body {
+    font-size: 20px;
+    color: #4a3f35;
+    max-width: 480px;
+    margin-bottom: 48px;
+    line-height: 1.75;
+  }
+
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--clay);
+    padding-bottom: 4px;
+  }
+
+  .hero-right {
+    background: var(--paper);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-visual {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Illustrated abstract hotel room / riverside */
+  .hero-illustration {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+  }
+
+  .float-tag {
+    position: absolute;
+    bottom: 48px;
+    left: -24px;
+    background: var(--ink);
+    color: var(--warm-white);
+    padding: 16px 24px;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    line-height: 1.8;
+  }
+
+  /* Divider text */
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--clay);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  .section-label::after {
+    content: '';
+    display: block;
+    flex: 1;
+    height: 1px;
+    background: rgba(194,132,90,0.3);
+  }
+
+  /* About section */
+  .about {
+    padding: 120px 48px;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .about-aside {
+    padding-top: 8px;
+  }
+
+  .aside-stat {
+    margin-bottom: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(194,132,90,0.2);
+  }
+
+  .aside-stat:last-child {
+    border-bottom: none;
+  }
+
+  .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    font-weight: 400;
+    color: var(--clay);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .stat-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .about-main h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 1.25;
+    margin-bottom: 28px;
+  }
+
+  .about-main h2 em { font-style: italic; color: var(--clay); }
+
+  .about-main p {
+    color: #4a3f35;
+    margin-bottom: 24px;
+    font-size: 19px;
+  }
+
+  /* Gallery mosaic */
+  .gallery-band {
+    background: var(--paper);
+    padding: 80px 48px;
+    overflow: hidden;
+  }
+
+  .mosaic {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 280px 280px;
+    gap: 12px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .mosaic-cell {
+    position: relative;
+    overflow: hidden;
+    background: var(--ink);
+  }
+
+  .mosaic-cell.tall {
+    grid-row: span 2;
+  }
+
+  .mosaic-cell svg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+  }
+
+  .mosaic-label {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.7);
+  }
+
+  /* Rooms section */
+  .rooms {
+    padding: 120px 48px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .rooms-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 64px;
+  }
+
+  .rooms-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 44px;
+    font-weight: 400;
+  }
+
+  .rooms-header h2 em { font-style: italic; color: var(--clay); }
+
+  .rooms-intro {
+    max-width: 380px;
+    font-size: 17px;
+    color: var(--muted);
+  }
+
+  .room-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+  }
+
+  .room-card {
+    background: var(--paper);
+    padding: 48px;
+    position: relative;
+    transition: background 0.3s;
+  }
+
+  .room-card:hover {
+    background: #e5dfd3;
+  }
+
+  .room-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 400;
+    margin-bottom: 16px;
+  }
+
+  .room-card p {
+    font-size: 17px;
+    color: #4a3f35;
+    margin-bottom: 24px;
+  }
+
+  .room-features {
+    list-style: none;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .room-features li {
+    padding: 5px 10px;
+    border: 1px solid rgba(138,125,110,0.35);
+  }
+
+  /* Ferry / access */
+  .access {
+    background: var(--ink);
+    color: var(--warm-white);
+    padding: 100px 48px;
+  }
+
+  .access-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .access h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 44px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 24px;
+  }
+
+  .access h2 em { font-style: italic; color: var(--clay); }
+
+  .access-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--clay);
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .access p {
+    color: rgba(245,240,232,0.75);
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+
+  .ferry-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 32px;
+  }
+
+  .ferry-table th {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--clay);
+    text-align: left;
+    padding: 0 0 12px 0;
+    border-bottom: 1px solid rgba(194,132,90,0.3);
+  }
+
+  .ferry-table td {
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(245,240,232,0.1);
+    color: rgba(245,240,232,0.85);
+    font-size: 17px;
+  }
+
+  .ferry-table td:last-child {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--clay);
+    text-align: right;
+  }
+
+  /* Gallery section */
+  .gallery-section {
+    background: var(--ink);
+    padding: 16px 0 0 0;
+  }
+
+  /* Gallery */
+  .gallery-entry {
+    padding: 80px 48px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: var(--warm-white);
+  }
+
+  .gallery-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3px;
+    margin-bottom: 3px;
+  }
+
+  /* Pool section */
+  .pool-section {
+    padding: 120px 48px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .pool-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 44px;
+    font-weight: 400;
+    margin-bottom: 28px;
+  }
+
+  .pool-section h2 em { font-style: italic; color: var(--clay); }
+
+  .pool-section p {
+    color: #4a3f35;
+    margin-bottom: 20px;
+  }
+
+  .pool-visual {
+    background: var(--paper);
+    aspect-ratio: 4/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Gallery / Art section */
+  .art-band {
+    background: var(--paper);
+    padding: 80px 48px;
+    border-top: 1px solid rgba(194,132,90,0.15);
+  }
+
+  .art-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .art-inner h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+
+  .art-inner h2 em { font-style: italic; color: var(--clay); }
+
+  .art-content p {
+    color: #4a3f35;
+    margin-bottom: 20px;
+    font-size: 19px;
+  }
+
+  /* Amenities strip */
+  .amenities {
+    padding: 0 48px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3px;
+  }
+
+  .amenity-cell {
+    background: var(--paper);
+    padding: 32px 28px;
+  }
+
+  .amenity-icon {
+    font-size: 28px;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .amenity-name {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  .amenity-desc {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* Footer */
+  footer {
+    background: var(--ink);
+    color: rgba(245,240,232,0.6);
+    padding: 64px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 48px;
+  }
+
+  .footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--warm-white);
+    margin-bottom: 8px;
+  }
+
+  .footer-address {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    line-height: 2;
+  }
+
+  .footer-col h4 {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--clay);
+    margin-bottom: 20px;
+  }
+
+  .footer-col ul {
+    list-style: none;
+    font-size: 16px;
+    line-height: 2.2;
+  }
+
+  /* Animations */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow { animation: fadeUp 0.8s ease both; }
+  h1 { animation: fadeUp 0.8s 0.15s ease both; }
+  .hero-body { animation: fadeUp 0.8s 0.3s ease both; }
+  .hero-cta { animation: fadeUp 0.8s 0.45s ease both; }
+
+  /* Marquee */
+  .marquee-wrap {
+    overflow: hidden;
+    border-top: 1px solid rgba(194,132,90,0.2);
+    border-bottom: 1px solid rgba(194,132,90,0.2);
+    padding: 18px 0;
+    background: var(--warm-white);
+  }
+
+  .marquee-track {
+    display: flex;
+    gap: 0;
+    animation: marquee 24s linear infinite;
+    white-space: nowrap;
+  }
+
+  .marquee-item {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 0 48px;
+    display: inline-flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .marquee-item .dot {
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--clay);
+    vertical-align: middle;
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Khlong San <span>Loft</span></div>
+  <ul class="nav-links">
+    <li>Rooms</li>
+    <li>Experiences</li>
+    <li>Gallery</li>
+    <li>Access</li>
+  </ul>
+  <button class="nav-book">Reserve</button>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Thonburi Riverside · Bangkok</div>
+    <h1>Where the river<br>carries <em>everything</em><br>to your door.</h1>
+    <p class="hero-body">Khlong San Loft sits on the quiet Thonburi bank of the Chao Phraya — an artisan-designed boutique where generous loft rooms, an independent gallery, and a private ferry connection place you at the centre of Bangkok's most storied waterway.</p>
+    <a href="#rooms" class="hero-cta">Explore rooms &nbsp;→</a>
+  </div>
+  <div class="hero-right">
+    <svg viewBox="0 0 600 700" xmlns="http://www.w3.org/2000/svg" class="hero-illustration">
+      <!-- Sky / water gradient -->
+      <defs>
+        <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#d4c4a8"/>
+          <stop offset="60%" stop-color="#c4a882"/>
+          <stop offset="100%" stop-color="#8a7460"/>
+        </linearGradient>
+        <linearGradient id="waterGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#8fa89e"/>
+          <stop offset="100%" stop-color="#6d8880"/>
+        </linearGradient>
+        <linearGradient id="buildingGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#f0e6d4"/>
+          <stop offset="100%" stop-color="#ddd0bc"/>
+        </linearGradient>
+      </defs>
+      <!-- Sky -->
+      <rect width="600" height="700" fill="url(#skyGrad)"/>
+      <!-- Sun -->
+      <circle cx="480" cy="140" r="55" fill="#e8b870" opacity="0.7"/>
+      <circle cx="480" cy="140" r="38" fill="#f0c878" opacity="0.8"/>
+      <!-- Distant Bangkok skyline -->
+      <rect x="0" y="340" width="600" height="360" fill="url(#waterGrad)"/>
+      <!-- Building structures far -->
+      <rect x="60" y="280" width="40" height="100" fill="#b09878" opacity="0.6"/>
+      <rect x="65" y="260" width="30" height="30" fill="#b09878" opacity="0.5"/>
+      <rect x="130" y="295" width="55" height="80" fill="#a08868" opacity="0.5"/>
+      <rect x="200" y="310" width="35" height="60" fill="#907858" opacity="0.4"/>
+      <!-- The Loft building — foreground -->
+      <rect x="320" y="180" width="220" height="260" fill="url(#buildingGrad)" rx="2"/>
+      <!-- Windows pattern — geometric, artsy -->
+      <rect x="338" y="200" width="35" height="28" fill="#c8b89a" rx="1"/>
+      <rect x="383" y="200" width="35" height="28" fill="#c8b89a" rx="1"/>
+      <rect x="428" y="200" width="35" height="28" fill="#c8b89a" rx="1"/>
+      <rect x="473" y="200" width="50" height="28" fill="#c8b89a" rx="1"/>
+      <rect x="338" y="242" width="35" height="28" fill="#ddd0bc" rx="1"/>
+      <rect x="383" y="242" width="35" height="28" fill="#c8b89a" rx="1"/>
+      <rect x="428" y="242" width="35" height="28" fill="#e8d8c4" rx="1"/>
+      <rect x="473" y="242" width="50" height="28" fill="#c8b89a" rx="1"/>
+      <rect x="338" y="284" width="35" height="28" fill="#c8b89a" rx="1"/>
+      <rect x="383" y="284" width="35" height="28" fill="#e8d8c4" rx="1"/>
+      <rect x="428" y="284" width="35" height="28" fill="#c8b89a" rx="1"/>
+      <rect x="473" y="284" width="50" height="28" fill="#c8b89a" rx="1"/>
+      <rect x="338" y="326" width="35" height="28" fill="#e8d8c4" rx="1"/>
+      <rect x="383" y="326" width="35" height="28" fill="#c8b89a" rx="1"/>
+      <rect x="428" y="326" width="35" height="28" fill="#c8b89a" rx="1"/>
+      <rect x="473" y="326" width="50" height="28" fill="#e8d8c4" rx="1"/>
+      <!-- Pool area at base -->
+      <rect x="320" y="420" width="220" height="24" fill="#7a9898" rx="1" opacity="0.8"/>
+      <!-- Water reflections -->
+      <rect x="0" y="390" width="600" height="310" fill="url(#waterGrad)" opacity="0.6"/>
+      <!-- Water ripples -->
+      <ellipse cx="300" cy="480" rx="180" ry="12" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+      <ellipse cx="300" cy="510" rx="220" ry="14" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+      <ellipse cx="300" cy="540" rx="250" ry="16" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+      <!-- Ferry boat -->
+      <rect x="70" y="450" width="100" height="28" rx="6" fill="#3a3028" opacity="0.85"/>
+      <rect x="90" y="435" width="60" height="20" rx="2" fill="#4a4038" opacity="0.7"/>
+      <line x1="140" y1="435" x2="140" y2="415" stroke="#3a3028" stroke-width="2" opacity="0.6"/>
+      <!-- Vegetation -->
+      <ellipse cx="290" cy="400" rx="30" ry="16" fill="#5a7a5a" opacity="0.7"/>
+      <ellipse cx="310" cy="395" rx="22" ry="14" fill="#4a6a4a" opacity="0.6"/>
+      <rect x="298" y="400" width="4" height="40" fill="#4a3a28" opacity="0.5"/>
+      <!-- Wat Arun spire distant -->
+      <polygon points="180,340 188,280 196,340" fill="#c4a870" opacity="0.5"/>
+      <polygon points="183,305 188,265 193,305" fill="#c4a870" opacity="0.6"/>
+    </svg>
+    <div class="float-tag">
+      Thonburi Bank<br>
+      Chao Phraya, Bangkok
+    </div>
+  </div>
+</section>
+
+<!-- Marquee -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span class="marquee-item">Artisan-designed loft rooms <span class="dot"></span></span>
+    <span class="marquee-item">In-house gallery <span class="dot"></span></span>
+    <span class="marquee-item">Private ferry service <span class="dot"></span></span>
+    <span class="marquee-item">River-level pool <span class="dot"></span></span>
+    <span class="marquee-item">Iconsiam by water <span class="dot"></span></span>
+    <span class="marquee-item">Wat Arun moments away <span class="dot"></span></span>
+    <span class="marquee-item">Independent · Thonburi Riverside <span class="dot"></span></span>
+    <!-- Duplicate for seamless loop -->
+    <span class="marquee-item">Artisan-designed loft rooms <span class="dot"></span></span>
+    <span class="marquee-item">In-house gallery <span class="dot"></span></span>
+    <span class="marquee-item">Private ferry service <span class="dot"></span></span>
+    <span class="marquee-item">River-level pool <span class="dot"></span></span>
+    <span class="marquee-item">Iconsiam by water <span class="dot"></span></span>
+    <span class="marquee-item">Wat Arun moments away <span class="dot"></span></span>
+    <span class="marquee-item">Independent · Thonburi Riverside <span class="dot"></span></span>
+  </div>
+</div>
+
+<!-- About -->
+<section class="about">
+  <div class="about-aside">
+    <div class="aside-stat">
+      <div class="stat-number">Loft</div>
+      <div class="stat-label">Room category — all rooms</div>
+    </div>
+    <div class="aside-stat">
+      <div class="stat-number">8'</div>
+      <div class="stat-label">Ferry to Iconsiam pier</div>
+    </div>
+    <div class="aside-stat">
+      <div class="stat-number">12'</div>
+      <div class="stat-label">Ferry to Wat Arun pier</div>
+    </div>
+    <div class="aside-stat">
+      <div class="stat-number">1</div>
+      <div class="stat-label">In-house gallery, rotating exhibitions</div>
+    </div>
+  </div>
+  <div class="about-main">
+    <div class="section-label">About Khlong San Loft</div>
+    <h2>An independent spirit on the <em>other bank</em></h2>
+    <p>Khlong San Loft began as a question: what would a hotel look like if it were designed by the people who actually love this neighbourhood? The answer is in the details — salvaged teak, wide-plank concrete floors, textiles sourced from northern Thai workshops, and a gallery that rotates its programme every eight weeks.</p>
+    <p>We sit on the Thonburi bank of the Chao Phraya, in the Khlong San district — one of Bangkok's most genuinely creative quarters. The river isn't something you look at from a distance here. It is your corridor, your morning walk, your way into the city.</p>
+    <p>Our guests tend to be people who seek texture over polish, neighbourhood over brand, the slower morning over the alarm call. If that sounds like you, welcome home.</p>
+  </div>
+</section>
+
+<!-- Rooms -->
+<section id="rooms" class="rooms">
+  <div class="section-label">Accommodation</div>
+  <div class="rooms-header">
+    <h2>Spacious <em>loft rooms</em></h2>
+    <p class="rooms-intro">Every room at Khlong San Loft is a loft — generous in volume, individual in character. No two are decorated identically.</p>
+  </div>
+  <div class="room-cards">
+    <div class="room-card">
+      <h3>River Loft</h3>
+      <p>Floor-to-ceiling windows frame an uninterrupted view of the Chao Phraya. High ceilings, a platform bed, and a deep-soak bath make these rooms feel closer to a private residence than a hotel room. The river light changes all day.</p>
+      <ul class="room-features">
+        <li>River view</li>
+        <li>Platform bed</li>
+        <li>Deep-soak bath</li>
+        <li>High ceilings</li>
+        <li>Spacious loft format</li>
+      </ul>
+    </div>
+    <div class="room-card">
+      <h3>Garden Loft</h3>
+      <p>Rooms opening onto our courtyard garden — quieter in the morning, with the sound of water and birds before the city fully wakes. Wide-plank floors, a writing desk, and a walk-in wet room. Perfect for longer stays.</p>
+      <ul class="room-features">
+        <li>Courtyard aspect</li>
+        <li>Walk-in wet room</li>
+        <li>Writing desk</li>
+        <li>Spacious loft format</li>
+        <li>Extended-stay ready</li>
+      </ul>
+    </div>
+    <div class="room-card">
+      <h3>Studio Loft</h3>
+      <p>Our mid-floor category, with city-and-garden views and a sofa nook beside the window. The same spacious loft dimensions as our other rooms, configured for flexibility — ideal for two people who want room to breathe.</p>
+      <ul class="room-features">
+        <li>City / garden view</li>
+        <li>Sofa nook</li>
+        <li>Spacious loft format</li>
+        <li>Flexible layout</li>
+      </ul>
+    </div>
+    <div class="room-card">
+      <h3>Corner Loft Suite</h3>
+      <p>Our largest offering — a corner position with wraparound river and city views, a separate living room, and original artwork selected from our gallery programme. Available in limited number; advance reservation is recommended.</p>
+      <ul class="room-features">
+        <li>Wraparound views</li>
+        <li>Separate living room</li>
+        <li>Original gallery artwork</li>
+        <li>Corner position</li>
+        <li>Suite format</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Pool -->
+<section>
+  <div class="pool-section">
+    <div>
+      <div class="section-label">Pool & Gardens</div>
+      <h2>At river <em>level</em></h2>
+      <p>Our ground-level pool was designed to sit flush with the hotel's garden terrace — a deliberate choice. Rather than a rooftop spectacle, we wanted a pool that feels grounded in place: river in front of you, green things around you, the city visible but not pressing in.</p>
+      <p>The pool area is open to all guests from early morning until late evening. Loungers, towels, and a small bar are available throughout the day. Breakfast can be ordered poolside on request — please note that breakfast is available at an additional cost and is not included in your room rate.</p>
+    </div>
+    <div class="pool-visual">
+      <svg viewBox="0 0 500 375" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;position:absolute;inset:0;">
+        <defs>
+          <linearGradient id="poolWater" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#6a9a9a"/>
+            <stop offset="100%" stop-color="#4a7878"/>
+          </linearGradient>
+        </defs>
+        <rect width="500" height="375" fill="#d8ceba"/>
+        <!-- Pool water -->
+        <rect x="60" y="100" width="300" height="160" fill="url(#poolWater)" rx="4"/>
+        <!-- Pool lane lines -->
+        <line x1="60" y1="140" x2="360" y2="140" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+        <line x1="60" y1="180" x2="360" y2="180" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+        <line x1="60" y1="220" x2="360" y2="220" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+        <!-- Water shimmer -->
+        <ellipse cx="150" cy="150" rx="40" ry="8" fill="rgba(255,255,255,0.12)" transform="rotate(-15, 150, 150)"/>
+        <ellipse cx="240" cy="200" rx="30" ry="6" fill="rgba(255,255,255,0.1)" transform="rotate(10, 240, 200)"/>
+        <!-- Deck -->
+        <rect x="360" y="80" width="120" height="200" fill="#c4b49a"/>
+        <!-- Loungers -->
+        <rect x="380" y="120" width="70" height="22" rx="4" fill="#e8dcc8"/>
+        <rect x="380" y="155" width="70" height="22" rx="4" fill="#e8dcc8"/>
+        <rect x="380" y="190" width="70" height="22" rx="4" fill="#e8dcc8"/>
+        <!-- Plants -->
+        <ellipse cx="50" cy="130" rx="25" ry="18" fill="#5a7a5a" opacity="0.8"/>
+        <ellipse cx="40" cy="140" rx="18" ry="14" fill="#4a6a4a" opacity="0.7"/>
+        <rect x="46" y="140" width="6" height="30" fill="#3a2a1a" opacity="0.5"/>
+        <ellipse cx="420" cy="95" rx="20" ry="14" fill="#5a7a5a" opacity="0.8"/>
+        <!-- River visible in distance -->
+        <rect x="0" y="295" width="500" height="80" fill="#7a9898" opacity="0.6"/>
+        <!-- Shadow under pool -->
+        <ellipse cx="210" cy="268" rx="160" ry="10" fill="rgba(0,0,0,0.12)"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery / Art section -->
+<section class="art-band">
+  <div class="art-inner">
+    <div>
+      <div class="section-label">In-House Gallery</div>
+      <h2>Art that <em>lives</em> in the hotel</h2>
+    </div>
+    <div class="art-content">
+      <p>The Khlong San Loft Gallery occupies the entire ground floor of the hotel's original river-facing wing — roughly 180 square metres of exhibition space that rotates its programme every eight weeks. We work exclusively with artists who have a material connection to Southeast Asia: residents, diaspora practitioners, and those whose work is in active dialogue with the region's artistic histories.</p>
+      <p>The gallery is free to enter for all guests and open to the public Thursday through Sunday. Works from current and past exhibitions are available for purchase, and several pieces from our collection hang permanently in the Corner Loft Suites. When you stay with us, you are staying inside a working programme, not a decoration.</p>
+      <p>Our current season features ceramics, textile installation, and photography from artists based in Bangkok, Chiang Mai, and Yogyakarta. Exhibition notes and artist talks are available at reception.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Amenities -->
+<section class="amenities" style="padding-top:60px;">
+  <div class="section-label">Amenities</div>
+  <div class="amenities-grid">
+    <div class="amenity-cell">
+      <span class="amenity-icon">⛵</span>
+      <span class="amenity-name">Private Ferry</span>
+      <span class="amenity-desc">Hotel-operated service every 30 minutes, 7am–9pm. Direct connections to Iconsiam and Wat Arun piers.</span>
+    </div>
+    <div class="amenity-cell">
+      <span class="amenity-icon">🏊</span>
+      <span class="amenity-name">Ground Pool</span>
+      <span class="amenity-desc">River-level pool with garden terrace and poolside bar. Open to all guests throughout the day.</span>
+    </div>
+    <div class="amenity-cell">
+      <span class="amenity-icon">🎨</span>
+      <span class="amenity-name">Gallery</span>
+      <span class="amenity-desc">Rotating exhibitions in our ground-floor gallery space. Guest access every day; public hours Thursday–Sunday.</span>
+    </div>
+    <div class="amenity-cell">
+      <span class="amenity-icon">☕</span>
+      <span class="amenity-name">All-day Café</span>
+      <span class="amenity-desc">Coffee, light meals, and cold drinks available from 7am to 9pm. Poolside ordering available.</span>
+    </div>
+    <div class="amenity-cell">
+      <span class="amenity-icon">📶</span>
+      <span class="amenity-name">High-speed Wi-Fi</span>
+      <span class="amenity-desc">Fibre throughout all rooms and common areas, including the poolside terrace.</span>
+    </div>
+    <div class="amenity-cell">
+      <span class="amenity-icon">🛶</span>
+      <span class="amenity-name">River Access</span>
+      <span class="amenity-desc">Direct waterfront terrace. Public river taxis and express boats stop at the nearby Khlong San pier.</span>
+    </div>
+    <div class="amenity-cell">
+      <span class="amenity-icon">🌿</span>
+      <span class="amenity-name">Courtyard Garden</span>
+      <span class="amenity-desc">Planted inner courtyard for reading, working, or doing very little. Hammocks available.</span>
+    </div>
+    <div class="amenity-cell">
+      <span class="amenity-icon">🧳</span>
+      <span class="amenity-name">Luggage Storage</span>
+      <span class="amenity-desc">Complimentary secure luggage storage before check-in and after checkout.</span>
+    </div>
+  </div>
+</section>
+
+<!-- Access / Ferry -->
+<section class="access">
+  <div class="access-inner">
+    <div>
+      <span class="access-label">Getting Around</span>
+      <h2>The river is your <em>transport link</em></h2>
+      <p>Staying on the Thonburi bank means you travel the way Bangkok's residents have always travelled — by water. Our private ferry runs every 30 minutes from 7am to 9pm, directly connecting you to the city's two most celebrated riverside destinations.</p>
+      <p>Iconsiam, Bangkok's landmark riverside complex with its food halls, shops, and cultural spaces, is an 8-minute crossing. Wat Arun — the Temple of Dawn, one of the most photographed structures in Thailand — is a 12-minute ferry ride.</p>
+      <p>Beyond our private service, the Khlong San public pier is a short walk from the hotel, giving you access to express river buses and additional crossings throughout the day and evening.</p>
+    </div>
+    <div>
+      <span class="access-label">Hotel Ferry Schedule</span>
+      <table class="ferry-table">
+        <thead>
+          <tr>
+            <th>Destination</th>
+            <th>Frequency</th>
+            <th>Journey</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Iconsiam Pier</td>
+            <td>Every 30 minutes</td>
+            <td>8 min</td>
+          </tr>
+          <tr>
+            <td>Wat Arun Pier</td>
+            <td>Every 30 minutes</td>
+            <td>12 min</td>
+          </tr>
+          <tr>
+            <td>Service hours</td>
+            <td colspan="2">7:00 am — 9:00 pm daily</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="color:rgba(245,240,232,0.5); font-size:14px; margin-top:24px; font-family:'DM Mono',monospace; letter-spacing:0.1em;">Last departure from Iconsiam Pier at 9:00 pm. Public river taxis operate beyond these hours from Khlong San Pier.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div>
+    <div class="footer-brand">Khlong San Loft</div>
+    <div class="footer-address">
+      Khlong San District<br>
+      Thonburi Bank, Chao Phraya<br>
+      Bangkok, Thailand
+    </div>
+  </div>
+  <div class="footer-col">
+    <h4>Navigate</h4>
+    <ul>
+      <li>Rooms & Rates</li>
+      <li>Gallery Programme</li>
+      <li>Dining</li>
+      <li>Ferry Schedule</li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Policies</h4>
+    <ul>
+      <li>Check-in from 2pm</li>
+      <li>Checkout by 12pm</li>
+      <li>Cancellation policy</li>
+      <li>Privacy</li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Contact</h4>
+    <ul>
+      <li>Reservations</li>
+      <li>Press enquiries</li>
+      <li>Gallery submissions</li>
+      <li>Groups & events</li>
+    </ul>
+  </div>
+</footer>
+
+<!-- Index entry comment -->
+<!--
+DOC_11 INDEX ENTRY
+Title: Khlong San Loft Bangkok — Official Hotel Page
+Source Type: Official hotel page
+Description: Official page for Khlong San Loft, an artisan-designed boutique hotel on the Thonburi bank of the Chao Phraya. Features a ground-level pool, spacious loft rooms, and an in-house gallery with rotating exhibitions. Direct ferry service connects the hotel to Iconsiam (8 minutes) and Wat Arun (12 minutes), departing every 30 minutes from 7am to 9pm.
+Hotels Covered: Khlong San Loft only
+Dimensions Covered: Pool (ground-level), room size (spacious loft), landmark access (Iconsiam, Wat Arun via ferry), vibe (indie/artsy), neighborhood (Khlong San, Thonburi bank), operations (ferry schedule and journey times), breakfast (paid option)
+Depth: Medium-Deep — single hotel, amenity-complete
+Focus Score: ~0.95 (single-hotel official page by construction)
+Snippet Divergence Risk: Low — page title and description are hotel-specific; body content matches
+-->
+
+</body>
+</html>

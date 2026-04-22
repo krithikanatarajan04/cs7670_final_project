@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chalerm Heritage Bangkok: A Budget Sleeper in the Heart of Old Town</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+
+  :root {
+    --bg: #f8f4ee;
+    --paper: #fffcf7;
+    --ink: #222018;
+    --muted: #6e6558;
+    --rule: #cfc7b8;
+    --accent: #4a6741;
+    --accent-warm: #8a6c3a;
+    --light: #eae4d8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: var(--bg);
+    color: var(--ink);
+    font-family: 'Lora', Georgia, serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.8;
+  }
+
+  .page {
+    max-width: 710px;
+    margin: 0 auto;
+    padding: 56px 44px 100px;
+  }
+
+  .masthead {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    padding-bottom: 16px;
+    margin-bottom: 48px;
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .masthead .site-name {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+
+  .masthead .date-line {
+    font-size: 11.5px;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    font-family: 'Lora', Georgia, serif;
+    font-style: italic;
+  }
+
+  header {
+    margin-bottom: 48px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .kicker {
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+    font-family: 'Lora', Georgia, serif;
+    font-weight: 400;
+  }
+
+  h1 {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: clamp(24px, 3.6vw, 38px);
+    font-weight: 700;
+    line-height: 1.22;
+    color: var(--ink);
+    margin-bottom: 22px;
+  }
+
+  .deck {
+    font-size: 17.5px;
+    font-style: italic;
+    color: var(--muted);
+    line-height: 1.65;
+    margin-bottom: 24px;
+  }
+
+  .byline-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    padding-top: 18px;
+    border-top: 1px solid var(--rule);
+    font-style: italic;
+  }
+
+  .byline-row .sep { color: var(--rule); font-style: normal; }
+
+  article p { margin-bottom: 26px; }
+  article p:last-child { margin-bottom: 0; }
+
+  h2 {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 21px;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 52px 0 18px;
+    padding-left: 14px;
+    border-left: 4px solid var(--accent);
+  }
+
+  .drop-cap::first-letter {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 4.5em;
+    float: left;
+    line-height: 0.76;
+    margin: 7px 11px 0 -2px;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  .pull-quote {
+    margin: 38px 0;
+    padding: 18px 26px;
+    background: var(--light);
+    border-top: 2px solid var(--accent-warm);
+    border-bottom: 2px solid var(--accent-warm);
+    font-style: italic;
+    font-size: 19.5px;
+    color: var(--ink);
+    line-height: 1.55;
+  }
+
+  .field-note {
+    font-size: 14px;
+    color: var(--muted);
+    font-style: italic;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    padding: 16px 20px;
+    margin: 32px 0;
+    line-height: 1.6;
+  }
+
+  .field-note::before {
+    content: "Field note: ";
+    font-style: normal;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.04em;
+    font-size: 10.5px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 4px;
+    font-family: 'Lora', Georgia, serif;
+  }
+
+  .verdict-box {
+    background: var(--ink);
+    color: #e8e3da;
+    padding: 28px 32px;
+    margin: 52px 0 0;
+    border-left: 5px solid var(--accent);
+  }
+
+  .verdict-box .label {
+    font-size: 10px;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+    font-weight: 400;
+  }
+
+  .verdict-box p {
+    font-size: 15px;
+    line-height: 1.72;
+    color: #d8d2c8;
+  }
+
+  .index-json {
+    margin-top: 72px;
+    padding-top: 28px;
+    border-top: 2px solid var(--rule);
+  }
+
+  .index-json h3 {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 16px;
+    font-weight: 400;
+  }
+
+  .index-json pre {
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    padding: 22px;
+    overflow-x: auto;
+    line-height: 1.65;
+    color: var(--muted);
+    border-radius: 2px;
+  }
+
+  @media (max-width: 600px) {
+    .page { padding: 36px 24px 72px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="masthead">
+    <span class="site-name">Boutique Bangkok Review</span>
+    <span class="date-line">Rattanakosin / Old Town</span>
+  </div>
+
+  <header>
+    <p class="kicker">Hotel Review &mdash; Rattanakosin, Old Town Bangkok</p>
+    <h1>Chalerm Heritage Bangkok: A Budget Sleeper in the Heart of Old Town</h1>
+    <p class="deck">Three weeks in Bangkok, costs kept low. Chalerm Heritage was weeks two and three. By the time I left I knew the courtyard at six in the morning, which floors slept quietly, and exactly how much you can get right on a budget price.</p>
+    <div class="byline-row">
+      <span>By a long-stay budget traveler</span>
+      <span class="sep">&middot;</span>
+      <span>14-night solo stay, weeks two and three of a longer Bangkok trip</span>
+    </div>
+  </header>
+
+  <article>
+
+    <p class="drop-cap">The first week of a long Bangkok trip is always the adjustment week — you're calibrating transport, figuring out where to eat, making the mid-range hotel mistakes that everyone makes before they know better. By week two I had the city's logic fairly well internalised, and I moved to Chalerm Heritage in Rattanakosin with a clearer sense of what I needed: a clean room in a quiet part of the old city, breakfast that kept the morning simple, and a price point that let me spend the money on the actual trip instead of the place to sleep. Chalerm Heritage is a budget guesthouse by Bangkok boutique standards, and it is the only budget-tier option among the handful of properties I've reviewed in this series. What it does within that tier is worth understanding precisely.</p>
+
+    <p>I stayed fourteen nights. I know this property the way you only know a place after you've lived inside its routines long enough that they become your routines. What follows is written from that position.</p>
+
+    <h2>The Neighborhood at 6am</h2>
+
+    <p>Rattanakosin — Bangkok's Old Town — is a different city at six in the morning from what it is at noon. At noon it's tourist infrastructure, tuk-tuks, temple queues, heat. At six it's monks collecting alms along the sois, street carts setting up, the smell of something frying somewhere close, the particular quality of light that comes off stone that has been absorbing heat for decades. I spent a lot of mornings walking before anything was fully open, and after two weeks I had routes. The hotel's location is good for this: Wat Suthat is a five-minute walk, the Giant Swing standing directly in front of it, and both are unambiguously finer in the early hours than at any other time of day. If you're in Rattanakosin and not making the walk to Wat Suthat before eight in the morning at least once, you're missing the neighborhood's best version of itself.</p>
+
+    <p>There's no BTS station within reasonable walking distance of this address, and that's not a minor footnote — it's a logistical reality. Getting to Sukhumvit or Silom requires a tuk-tuk, a taxi, or a willingness to engage with the bus system. For me, on that particular trip, this was fine: the historic core was where I wanted to be. If your days involve frequent transit across the city, Chalerm Heritage's Old Town location will add friction to every journey.</p>
+
+    <h2>The Rooms</h2>
+
+    <p>The rooms are approximately eighteen square metres, which is compact. Compact but functional — those two words are doing real work here, and I mean them with precision rather than as a diplomatic evasion. Eighteen square metres means the suitcase lives open on the floor or it lives closed under the bed. It does not mean both, simultaneously, without arrangement. The bathroom is adequate. The bed is comfortable. There is a window, a wardrobe, a small desk, a chair. Everything the room needs to do, it does. Nothing is wasted on space that isn't there.</p>
+
+    <div class="field-note">The rooms are approximately 18 sqm. If you're travelling with two people and two full suitcases, have a conversation about spatial logistics before you arrive. For solo travel at this price point in this neighborhood, the footprint is entirely workable.</div>
+
+    <p>The hotel has no elevator. This is stated on the property listing in small print, and I'll repeat it here in larger print: there is no lift. If you're on the fourth floor with a heavy bag after a long travel day, you will know about the stairs. I was on the third floor for most of my stay and managed without complaint, but I mention the stair question because it's the kind of detail that matters differently depending on who you are and what you're carrying.</p>
+
+    <div class="pull-quote">"After ten days I'd learned that floors one and two face the street and absorb the morning's initial sounds. Floors three and four are the quiet floors."</div>
+
+    <p>On noise: the hotel is generally quiet — this is a residential neighborhood in Bangkok's historic district, not Sukhumvit — but there are internal gradations worth knowing. Floors one and two face the street and absorb the morning's initial sounds: the first motorbikes, the early vendors, the start of the city coming to life around half past five. It's not loud in an urban sense, but it's present. Floors three and four are the quiet floors. I was on the third floor from week two onward and slept without issue every night. If you're a light sleeper, ask for floor three or four. If you arrive and they've put you on the second, it's worth mentioning your preference — in my experience the staff were accommodating when rooms were available.</p>
+
+    <h2>Breakfast in the Courtyard</h2>
+
+    <p>Breakfast is included in the room rate. At Chalerm Heritage's price point, this is not a given, and it shifts the value calculation noticeably. The format is simple and Thai and exactly what the setting calls for: rice congee, soft-boiled eggs, toast, instant coffee, served in the ground-floor courtyard. It is not elaborate. The congee is fine — good, actually, in the unpretentious way that congee at six-thirty in the morning in a quiet courtyard is always good. The instant coffee is instant coffee; I supplemented it with a proper cup from a place three streets over on most mornings, but the included option got me through until I was ready to leave the building.</p>
+
+    <p>The courtyard itself is one of the hotel's better features — a small open space that gives the breakfast experience more air than the price point would suggest you'd get. I ate there every morning for fourteen days. The routine of it — the same table, the same order, the neighborhood waking up audible from over the wall — became one of the things I remembered about the stay.</p>
+
+    <h2>The Value Calculus</h2>
+
+    <p>Chalerm Heritage is the only budget-tier option I've encountered among the boutique properties in this area, and the budget positioning is accurate: it costs what it says it costs, delivers what a budget guesthouse should deliver, and makes no pretense about what it isn't. There is no pool. The rooms are compact. The aesthetic is quiet and cultural rather than designed or artistically self-conscious. What it offers instead is a location that mid-range hotels would charge significantly more for, an included breakfast that most budget properties don't bother with, a genuinely quiet environment in a neighborhood that gives you Bangkok's historical core on foot, and a level of operational simplicity that becomes comfortable quickly.</p>
+
+    <p>I had a long conversation with another long-stay guest in the courtyard one morning — she'd been there for three weeks herself, a different kind of traveler than me but with the same basic calculation: keep costs down, be in the right part of the city, don't sacrifice sleep quality. Chalerm Heritage satisfied all three of her criteria. It satisfied mine. The quiet, culturally-oriented character of the place and of the surrounding neighborhood accumulates into something that feels right for a particular kind of extended stay.</p>
+
+    <div class="verdict-box">
+      <p class="label">Who This Hotel Is For</p>
+      <p>Budget-conscious travelers — solo or couple — for whom the Rattanakosin Old Town is the actual destination rather than a transit hub. If you want temple access on foot (Wat Suthat and the Giant Swing are five minutes; Wat Pho and the Grand Palace are accessible with modest additional effort), an included breakfast that functions well, and a quiet sleep environment at the budget tier, Chalerm Heritage delivers on all of it honestly. If you need a pool, elevator access, proximity to the BTS, or spacious rooms, this property isn't designed to provide those things and doesn't pretend otherwise. What it is, it is very well. Stay long enough to learn the breakfast routine and the quiet floors, and it becomes genuinely comfortable in the way that simple, well-run budget accommodation can be.</p>
+    </div>
+
+  </article>
+
+  <div class="index-json">
+    <h3>Document Index Entry</h3>
+    <pre>{
+  "doc_id": "doc_10",
+  "title": "Chalerm Heritage Bangkok: A Budget Sleeper in the Heart of Old Town",
+  "source_type": "Hotel-specific review",
+  "description": "Thorough review of Chalerm Heritage, a quiet budget guesthouse steps from Wat Suthat and the Giant Swing in Rattanakosin. Written from a 14-night stay, covering compact room size (~18 sqm), no elevator, floor-level noise variation (floors 1–2 face street; floors 3–4 quietest), included courtyard breakfast (congee, soft-boiled eggs, toast, instant coffee), the neighborhood at 6am, and the honest value calculus of the only budget-tier hotel in the comparison.",
+  "hotels_covered": ["Chalerm Heritage"],
+  "dimensions_covered": [
+    "Price tier",
+    "Neighborhood",
+    "Landmark access",
+    "BTS proximity",
+    "Pool",
+    "Room size",
+    "Noise level",
+    "Breakfast",
+    "Vibe",
+    "Physical / Operational details"
+  ],
+  "depth_per_hotel": "Deep (all dimensions for Chalerm Heritage, 5+ claims)",
+  "focus_score": 1.0,
+  "corroboration_role": "Unique source for: compact room size (~18 sqm), no elevator, floor-level noise distinction (floors 1–2 affected, floors 3–4 quiet), breakfast specifics (congee, soft-boiled eggs, toast, instant coffee, courtyard setting). Corroborates: budget price tier, Wat Suthat 5-min walk, Giant Swing 5-min walk, no pool, no BTS access, quiet overall environment, breakfast included, Rattanakosin/Old Town neighborhood, quiet/cultural vibe.",
+  "snippet_divergence_risk": "Low — title accurately signals single-property budget Old Town review"
+}</pre>
+  </div>
+
+</div>
+</body>
+</html>

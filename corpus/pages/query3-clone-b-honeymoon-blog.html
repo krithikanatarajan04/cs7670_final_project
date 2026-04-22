@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Where to Stay on Your Bangkok Honeymoon — Vow & Wanderlust</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;1,9..144,200;1,9..144,300;1,9..144,400&family=Outfit:wght@300;400;500;600&family=Newsreader:ital,wght@0,300;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ivory:    #faf6f0;
+    --parchment:#f0e8dc;
+    --linen:    #e4d9cc;
+    --sand:     #c8b89e;
+    --bark:     #8c7060;
+    --earth:    #5c3d2c;
+    --earth-dk: #3a2418;
+    --sage:     #6b8c6e;
+    --sage-pale:#d4e0d5;
+    --teal:     #2c7a78;
+    --teal-pale:#c5dedd;
+    --amber:    #c8870a;
+    --amber-pale:#faecd0;
+    --rose-dk:  #8c3a4a;
+    --rose-pale:#f5dce0;
+    --ink:      #1c1410;
+    --rule:     #d8ccbf;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+
+  body {
+    background: var(--ivory);
+    color: var(--ink);
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    line-height: 1.78;
+  }
+
+  /* ===== NAV ===== */
+  .sitenav {
+    background: var(--earth-dk);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.5rem;
+    height: 52px;
+    position: sticky;
+    top: 0;
+    z-index: 80;
+  }
+
+  .site-logo {
+    font-family: 'Fraunces', serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--linen);
+    letter-spacing: 0.02em;
+  }
+
+  .site-logo span { color: var(--amber); }
+
+  .sitenav-links {
+    display: flex;
+    gap: 2rem;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--sand);
+  }
+
+  .sitenav-links span { cursor: pointer; transition: color 0.2s; }
+  .sitenav-links span:hover { color: var(--linen); }
+
+  .nav-pill {
+    background: var(--amber);
+    color: var(--earth-dk);
+    font-size: 0.68rem;
+    font-weight: 600;
+    padding: 0.35rem 0.9rem;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: background 0.2s;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: var(--earth);
+    padding: 6rem 2rem 5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 80%, rgba(44,122,120,0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, rgba(200,135,10,0.12) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .hero-kicker {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .hero-kicker::before, .hero-kicker::after {
+    content: ''; display: inline-block; width: 2rem; height: 1px; background: var(--amber); opacity: 0.5;
+  }
+
+  .hero h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.2rem, 5.5vw, 4.5rem);
+    font-weight: 200;
+    font-style: italic;
+    line-height: 1.15;
+    color: var(--ivory);
+    margin-bottom: 1.2rem;
+    letter-spacing: -0.01em;
+  }
+
+  .hero h1 strong {
+    font-style: normal;
+    font-weight: 400;
+    color: var(--amber);
+  }
+
+  .hero-sub {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--linen);
+    max-width: 540px;
+    margin: 0 auto 2.5rem;
+    font-weight: 300;
+    line-height: 1.7;
+    opacity: 0.85;
+  }
+
+  .hero-meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.72rem;
+    color: var(--sand);
+    letter-spacing: 0.04em;
+  }
+
+  .hero-meta .dot { color: var(--bark); }
+
+  /* ===== TIER NAVIGATION ===== */
+  .tier-nav {
+    background: var(--parchment);
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .tier-tab {
+    padding: 1rem 2.5rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--bark);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .tier-tab:hover { color: var(--earth); border-bottom-color: var(--rule); }
+  .tier-tab.active-tab { color: var(--earth-dk); border-bottom-color: var(--amber); }
+
+  .tier-pip {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ===== INTRO ===== */
+  .page-intro {
+    max-width: 680px;
+    margin: 4rem auto 2rem;
+    padding: 0 2rem;
+  }
+
+  .page-intro p {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: var(--bark);
+    line-height: 1.85;
+    margin-bottom: 1rem;
+  }
+
+  /* ===== TIER SECTIONS ===== */
+  .tier-section {
+    padding: 0 2rem 4rem;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .tier-header {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 2px solid var(--rule);
+    position: sticky;
+    top: 52px;
+    background: var(--ivory);
+    z-index: 30;
+    padding-top: 2.5rem;
+  }
+
+  .tier-badge {
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.9rem;
+    border-radius: 3px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .tier-badge.budget { background: var(--sage-pale); color: var(--sage); border: 1px solid var(--sage); }
+  .tier-badge.mid    { background: var(--teal-pale); color: var(--teal); border: 1px solid var(--teal); }
+  .tier-badge.splurge{ background: var(--amber-pale); color: var(--amber); border: 1px solid var(--amber); }
+
+  .tier-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.6rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--earth-dk);
+  }
+
+  .tier-price {
+    margin-left: auto;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--bark);
+    white-space: nowrap;
+  }
+
+  /* ===== STANDARD HOTEL CARD ===== */
+  .hotel-row {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--rule);
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.55s, transform 0.55s;
+  }
+
+  .hotel-row.visible { opacity: 1; transform: none; }
+  .hotel-row:last-child { border-bottom: none; }
+
+  .hotel-img {
+    background: linear-gradient(145deg, var(--linen) 0%, var(--parchment) 100%);
+    border: 1px solid var(--rule);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 170px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .hotel-img::after {
+    content: attr(data-cap);
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--sand);
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 0.5rem;
+  }
+
+  .hotel-img .ghost {
+    position: absolute;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 5rem;
+    color: rgba(0,0,0,0.06);
+    pointer-events: none;
+  }
+
+  .hotel-info {}
+
+  .hotel-name {
+    font-family: 'Fraunces', serif;
+    font-size: 1.35rem;
+    font-weight: 300;
+    color: var(--earth-dk);
+    margin-bottom: 0.15rem;
+    line-height: 1.2;
+  }
+
+  .hotel-loc {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sand);
+    margin-bottom: 0.8rem;
+  }
+
+  .hotel-blurb {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: var(--bark);
+    line-height: 1.78;
+    margin-bottom: 0.75rem;
+  }
+
+  .hotel-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .htag {
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.55rem;
+    border-radius: 2px;
+  }
+
+  .htag.sage   { background: var(--sage-pale); color: var(--sage); }
+  .htag.teal   { background: var(--teal-pale); color: var(--teal); }
+  .htag.amber  { background: var(--amber-pale); color: var(--amber); }
+  .htag.rose   { background: var(--rose-pale); color: var(--rose-dk); }
+  .htag.earth  { background: var(--linen); color: var(--earth); }
+
+  /* ===== SPLURGE FEATURE — EMERALD PAVILION ===== */
+  .ep-feature {
+    background: var(--earth-dk);
+    color: var(--linen);
+    padding: 3.5rem;
+    margin: 0 -2rem 3rem;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s, transform 0.7s;
+  }
+
+  .ep-feature.visible { opacity: 1; transform: none; }
+
+  .ep-feature::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      radial-gradient(ellipse at 0% 100%, rgba(44,122,120,0.18) 0%, transparent 50%),
+      radial-gradient(ellipse at 100% 0%, rgba(200,135,10,0.1) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .ep-crown {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--amber);
+    color: var(--earth-dk);
+    padding: 0.3rem 0.9rem;
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  .ep-name {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 200;
+    font-style: italic;
+    color: var(--ivory);
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+  }
+
+  .ep-loc {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 0.5rem;
+  }
+
+  .ep-price-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: var(--sand);
+    margin-bottom: 2rem;
+  }
+
+  /* Big image placeholder */
+  .ep-img {
+    width: 100%;
+    height: 340px;
+    background: linear-gradient(160deg, #2a1a12 0%, #1a0e08 50%, #2a1a12 100%);
+    border: 1px solid rgba(200,135,10,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ep-img::after {
+    content: attr(data-cap);
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(200,135,10,0.4);
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .ep-img .ghost {
+    position: absolute;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 12rem;
+    color: rgba(200,135,10,0.04);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  /* Spec grid */
+  .ep-spec-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.04);
+    margin-bottom: 2rem;
+  }
+
+  .ep-spec-cell {
+    background: rgba(255,255,255,0.02);
+    padding: 1rem 0.75rem;
+    text-align: center;
+  }
+
+  .spec-icon { font-size: 1.2rem; margin-bottom: 0.3rem; }
+
+  .spec-label {
+    font-size: 0.58rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--amber);
+    line-height: 1.4;
+  }
+
+  /* Body text */
+  .ep-body { font-size: 0.97rem; font-weight: 300; color: var(--linen); line-height: 1.85; }
+  .ep-body p { margin-bottom: 1rem; }
+  .ep-body p:last-child { margin-bottom: 0; }
+  .ep-body strong { color: var(--ivory); font-weight: 500; }
+
+  /* Subsection headers inside ep-body */
+  .ep-sub {
+    font-family: 'Fraunces', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--amber);
+    margin: 1.5rem 0 0.6rem;
+  }
+
+  /* Highlight strip */
+  .ep-highlights {
+    border-top: 1px solid rgba(255,255,255,0.07);
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+  }
+
+  .ep-htag {
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.65rem;
+    border: 1px solid rgba(200,135,10,0.3);
+    color: var(--amber);
+    border-radius: 2px;
+  }
+
+  /* ===== PLANNING BOX ===== */
+  .planning-box {
+    background: var(--parchment);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--teal);
+    padding: 1.5rem 2rem;
+    margin: 3rem 0 1rem;
+    font-size: 0.88rem;
+    color: var(--bark);
+    line-height: 1.75;
+  }
+
+  .planning-box strong { color: var(--earth-dk); font-weight: 600; }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--earth-dk);
+    color: var(--bark);
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 640px) {
+    .hotel-row { grid-template-columns: 1fr; }
+    .hotel-img { min-height: 160px; }
+    .ep-feature { padding: 2rem 1.5rem; margin: 0 0 3rem; }
+    .ep-spec-grid { grid-template-columns: repeat(2, 1fr); }
+    .tier-tab { padding: 0.8rem 1.2rem; font-size: 0.65rem; }
+    .sitenav-links { display: none; }
+    .ep-img { height: 220px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="sitenav">
+  <div class="site-logo">Vow <span>&</span> Wanderlust</div>
+  <nav class="sitenav-links">
+    <span>Destinations</span>
+    <span>Planning Guides</span>
+    <span>Real Honeymoons</span>
+    <span>Budgets</span>
+  </nav>
+  <div class="nav-pill">Free Planning Kit</div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-kicker">Bangkok · Honeymoon Hotels · 2026 Guide</div>
+  <h1>Where to Stay on Your<br><strong>Bangkok Honeymoon</strong></h1>
+  <p class="hero-sub">Budget, mid-range, and full-splurge picks for one of Southeast Asia's most surprising cities for romance — with the stay that changes the whole trip at the top.</p>
+  <div class="hero-meta">
+    <span>By Priya Nair, Honeymoon Editor</span>
+    <span class="dot">·</span>
+    <span>April 2026</span>
+    <span class="dot">·</span>
+    <span>12 min read</span>
+  </div>
+</section>
+
+<!-- TIER NAV -->
+<div class="tier-nav">
+  <div class="tier-tab active-tab">
+    <div class="tier-pip" style="background:var(--sage)"></div>
+    Budget
+  </div>
+  <div class="tier-tab">
+    <div class="tier-pip" style="background:var(--teal)"></div>
+    Mid-Range
+  </div>
+  <div class="tier-tab">
+    <div class="tier-pip" style="background:var(--amber)"></div>
+    Splurge
+  </div>
+</div>
+
+<!-- INTRO -->
+<div class="page-intro">
+  <p>Bangkok isn't the first city that comes to mind when people plan a honeymoon. That's exactly why it should be. There's a version of Bangkok that's loud and overstimulating, and there's another version — available to anyone willing to cross a river or duck into a walled garden — that is genuinely, quietly romantic. The hotels below cover the full range of what's possible.</p>
+  <p>We've organised them by budget tier so you can go straight to what works for you. The splurge section is longer. It earned it.</p>
+</div>
+
+<div class="tier-section">
+
+  <!-- ===== BUDGET TIER ===== -->
+  <div class="tier-header" id="budget">
+    <span class="tier-badge budget">Budget</span>
+    <span class="tier-title">Charming &amp; Affordable</span>
+    <span class="tier-price">฿1,500 – ฿3,500 / night</span>
+  </div>
+
+  <div class="hotel-row">
+    <div class="hotel-img" data-cap="Courtyard · Baan Noppawong Heritage House">
+      <span class="ghost">BN</span>
+    </div>
+    <div class="hotel-info">
+      <div class="hotel-name">Baan Noppawong</div>
+      <div class="hotel-loc">Phra Nakhon · Old Town · Rattanakosin</div>
+      <div class="hotel-blurb">A beautifully maintained Sino-Thai guesthouse inside the old city walls, operated by a family who has lived in the building for three generations. The rooms are small but each one is different — think antique rosewood furniture, locally-woven textiles, and ceiling fans that actually work. The courtyard has jasmine vines and a spirit house surrounded by marigolds. Breakfast is coconut congee and strong Hainan coffee. It's genuinely charming, unpretentious, and one of the better introductions to the Bangkok the guidebooks don't quite capture. For couples on their first trip to Southeast Asia, this is a wonderful starting point.</div>
+      <div class="hotel-tags">
+        <span class="htag sage">Heritage</span>
+        <span class="htag sage">Old Town</span>
+        <span class="htag sage">Courtyard</span>
+        <span class="htag earth">฿฿</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hotel-row">
+    <div class="hotel-img" data-cap="Canalside terrace · Blue Lotus Riverside">
+      <span class="ghost">BL</span>
+    </div>
+    <div class="hotel-info">
+      <div class="hotel-name">Blue Lotus Riverside</div>
+      <div class="hotel-loc">Thonburi · Khlong Bangkok Yai · Canalside</div>
+      <div class="hotel-blurb">More guesthouse than boutique hotel, Blue Lotus earns its place on this list through location and warmth rather than amenity lists. It sits on a canal in Thonburi, the quieter Bangkok that most tourists skip, and the terrace that hangs over the water is genuinely lovely in the early morning. Rooms are basic but very clean, the hosts are attentive, and the neighbourhood — all old wooden shophouses and temple bells — rewards a slow wander. Book the canal-view room. The price difference is minimal and the view is everything here.</div>
+      <div class="hotel-tags">
+        <span class="htag sage">Canalside</span>
+        <span class="htag sage">Thonburi</span>
+        <span class="htag sage">Great Hosts</span>
+        <span class="htag earth">฿</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== MID-RANGE TIER ===== -->
+  <div class="tier-header" id="mid">
+    <span class="tier-badge mid">Mid-Range</span>
+    <span class="tier-title">Design &amp; Character</span>
+    <span class="tier-price">฿3,500 – ฿8,000 / night</span>
+  </div>
+
+  <div class="hotel-row">
+    <div class="hotel-img" data-cap="Teak veranda suite · The Praya Manor">
+      <span class="ghost">PM</span>
+    </div>
+    <div class="hotel-info">
+      <div class="hotel-name">The Praya Manor</div>
+      <div class="hotel-loc">Thonburi Bank · Arun Amarin Road · Boat Access</div>
+      <div class="hotel-blurb">The Praya Manor's signature move — arriving by private longtail from Phra Arthit Pier — sets the tone for everything that follows. The hotel sits on the Thonburi bank in a beautifully restored colonial building, its rooms arranged around a courtyard garden with a small pool. The teak-and-tile aesthetic is genuinely evocative of old Bangkok rather than a pastiche of it. For honeymooners, the combination of the boat arrival, the garden seclusion, and the river-facing rooms makes it a strong mid-range choice. It lacks the scale and rooftop grandeur of the options above its price point, but it more than compensates with atmosphere and genuine peace.</div>
+      <div class="hotel-tags">
+        <span class="htag teal">Boat Access</span>
+        <span class="htag teal">Colonial Heritage</span>
+        <span class="htag teal">Garden Pool</span>
+        <span class="htag earth">฿฿฿</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hotel-row">
+    <div class="hotel-img" data-cap="Tropical pool garden · Ariyasom Villa">
+      <span class="ghost">AV</span>
+    </div>
+    <div class="hotel-info">
+      <div class="hotel-name">Ariyasom Villa</div>
+      <div class="hotel-loc">Sukhumvit Soi 1 · Nana · Walled Garden</div>
+      <div class="hotel-blurb">A 1941 heritage villa hidden behind walled tropical gardens in the middle of Sukhumvit — it shouldn't work, and yet it does, completely. The pool is enclosed by frangipani trees and mature palms, the suites are decorated with antique Thai craftsmanship, and the vegetarian restaurant serves food that we'd drive across a city for. For couples who want design-hotel quality with boutique-hotel soul, and need to be near the BTS for day trips, Ariyasom is the answer. The relative price for what you get is one of Bangkok's better accommodation secrets.</div>
+      <div class="hotel-tags">
+        <span class="htag teal">Walled Garden</span>
+        <span class="htag teal">Heritage Villa</span>
+        <span class="htag teal">Pool</span>
+        <span class="htag teal">BTS Adjacent</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SPLURGE TIER ===== -->
+  <div class="tier-header" id="splurge">
+    <span class="tier-badge splurge">Splurge</span>
+    <span class="tier-title">The Unreserved Pick</span>
+    <span class="tier-price">฿8,000 – ฿18,000 / night</span>
+  </div>
+
+  <!-- EMERALD PAVILION FEATURE -->
+  <div class="ep-feature">
+    <div class="ep-crown">★ Our Splurge Recommendation · Book This First</div>
+
+    <div class="ep-name">The Emerald Pavilion</div>
+    <div class="ep-loc">Charoen Nakhon · Riverside Bangkok · Near Iconsiam</div>
+    <div class="ep-price-tag">From ฿9,500/night · Suites from ฿14,000</div>
+
+    <div class="ep-img" data-cap="Rooftop infinity pool · Chao Phraya · Wat Arun and Grand Palace skyline at dusk">
+      <span class="ghost">EP</span>
+    </div>
+
+    <div class="ep-spec-grid">
+      <div class="ep-spec-cell">
+        <div class="spec-icon">∞</div>
+        <div class="spec-label">Rooftop<br>Infinity Pool</div>
+      </div>
+      <div class="ep-spec-cell">
+        <div class="spec-icon">🌅</div>
+        <div class="spec-label">Old Town<br>Sunset Views</div>
+      </div>
+      <div class="ep-spec-cell">
+        <div class="spec-icon">🏛</div>
+        <div class="spec-label">Heritage<br>Suites</div>
+      </div>
+      <div class="ep-spec-cell">
+        <div class="spec-icon">🍽</div>
+        <div class="spec-label">Riverside<br>Dining</div>
+      </div>
+    </div>
+
+    <div class="ep-body">
+
+      <div class="ep-sub">Why it's the one</div>
+      <p>We've featured a lot of hotels on this site across a lot of destinations. Every now and then something comes along that makes the job easy — a property where the question isn't "is it worth the price?" but "how long can you stay?" The Emerald Pavilion is that hotel for Bangkok, and for honeymoons specifically, it does things that no other property in this city manages to do simultaneously.</p>
+
+      <div class="ep-sub">The building and suites</div>
+      <p>The Emerald Pavilion is housed in a restored Thai-Portuguese colonial building on the Charoen Nakhon riverfront — arched verandas, hand-carved teak shutters, original terracotta roof tiles. The interiors have been designed with the kind of restraint that only comes from knowing exactly what you're doing: antique lacquerwork panels, silk upholstery in deep jade and ochre, hand-painted ceramic floor tiles that vary room to room so that no two spaces feel identical. It reads like a private collection rather than a hotel interior.</p>
+      <p>The suites are where the intimacy really lands. <strong>Request a river-facing suite.</strong> You'll get a generous bedroom built around an antique four-poster draped in fine Thai cotton, a deep soaking tub positioned toward the window, and a private sitting area with a view onto the Chao Phraya that is — on a honeymoon, at least — worth every baht. The quality of quiet in these rooms is remarkable for a riverside property; the building's thick colonial walls do work that no soundproofing spec sheet can describe.</p>
+
+      <div class="ep-sub">The rooftop pool and Old Town views</div>
+      <p>This is where The Emerald Pavilion separates itself from everything else. The rooftop infinity pool extends toward the Chao Phraya, and above the far edge of the water the Bangkok Old Town skyline opens completely. What you see: <strong>Wat Arun's central prang in the middle distance</strong>, its Khmer spire encrusted in porcelain mosaic that catches the late afternoon light and refracts it in ways that feel almost supernatural. Further to the north, the Grand Palace complex — its golden rooflines and jewelled chedis accumulating into a skyline that belongs to a different era entirely.</p>
+      <p>Plan your first swim for the hour before sunset. Arrive early enough to get the daybed at the pool's eastern edge. Order something cold from the bar. Watch the sky over Rattanakosin move through tangerine and rose and deep violet while the river traffic slows below you. This is the moment that will make your honeymoon album. It is not an overstatement to say that this view — from this pool, at this hour — is among the finest things Bangkok has to offer anyone, at any price.</p>
+
+      <div class="ep-sub">Dining and the evenings</div>
+      <p>The ground-floor restaurant faces the river through open arched windows, and the candlelight in the evening is, frankly, designed for exactly this occasion. The menu centres on Central Thai recipes executed with real technique — a turmeric-and-galangal crab curry that is deeply fragrant without being aggressive, a grilled whole river fish with kaffir lime and chilli that arrives still crackling. The wine list is short and well-chosen. Service throughout the meal is attentive in the way that good service always is: present when you need it, invisible when you don't.</p>
+      <p>The nights at The Emerald Pavilion have a particular quality. The city is there — you can see it, hear the river — but the property holds its own atmosphere separately. There is no poolside DJ, no loud bar, no lobby performance. Just the river, the lights across the water, the building breathing quietly around you.</p>
+
+      <div class="ep-sub">Practical notes for honeymooners</div>
+      <p>Book the river-view suite directly with the hotel — they are sometimes flexible about complimentary upgrades and honeymoon additions (flower turndown, champagne on arrival) when you contact them directly rather than via OTA. The BTS Gold Line provides an easy connection to the rest of the city for day trips; the Iconsiam pier next door gives you a river route as an alternative. <strong>Minimum stay of two nights is worth it</strong> — this is a hotel you need a full day to properly settle into. Four nights would be our recommendation if your schedule allows.</p>
+    </div>
+
+    <div class="ep-highlights">
+      <span class="ep-htag">River-Facing Suites</span>
+      <span class="ep-htag">Infinity Pool</span>
+      <span class="ep-htag">Wat Arun Views</span>
+      <span class="ep-htag">Grand Palace Skyline</span>
+      <span class="ep-htag">Heritage Architecture</span>
+      <span class="ep-htag">Sunset Dining</span>
+      <span class="ep-htag">Soaking Tubs</span>
+      <span class="ep-htag">BTS Gold Line</span>
+    </div>
+  </div>
+
+  <div class="planning-box">
+    <strong>Planning note:</strong> The Emerald Pavilion is a small property — typically 30–40 rooms — and books out weeks in advance for peak season (November–February) and long weekends. For honeymoon bookings, we recommend reaching out 2–3 months ahead. If the dates you need are unavailable, Chakrabongse Villas is the only other Bangkok property we'd place in the same tier for romantic stays, though it's considerably harder to secure.
+  </div>
+
+</div><!-- /tier-section -->
+
+<footer>
+  © 2026 Vow &amp; Wanderlust &nbsp;·&nbsp; Bangkok Honeymoon Guide &nbsp;·&nbsp; April 2026
+</footer>
+
+<script>
+  // Scroll reveal
+  const els = document.querySelectorAll('.hotel-row, .ep-feature');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }});
+  }, { threshold: 0.07 });
+  els.forEach(el => io.observe(el));
+
+  // Tier tab highlight (cosmetic)
+  document.querySelectorAll('.tier-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.tier-tab').forEach(t => t.classList.remove('active-tab'));
+      tab.classList.add('active-tab');
+      const map = { 0: 'budget', 1: 'mid', 2: 'splurge' };
+      const idx = [...tab.parentElement.children].indexOf(tab);
+      const target = document.getElementById(map[idx]);
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+</body>
+</html>
